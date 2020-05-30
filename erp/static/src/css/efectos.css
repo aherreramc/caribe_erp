@@ -1,0 +1,4 @@
+/*para acercar los label de Tipo y Dias*/
+.o_form_view .o_group .o_td_label .acercar_label {
+    margin-left: 50px;
+}

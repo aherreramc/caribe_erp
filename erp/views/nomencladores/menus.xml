@@ -1,0 +1,44 @@
+<openerp>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Nomencladores" id="erp.nomencladores_menu_root"/>
+
+
+        <!-- menu categories -->
+        <menuitem name="Tipos" id="erp.nomencladores_categoria_tipo" parent="erp.nomencladores_menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Entidades" id="erp.nomencladores_categoria_entidades" parent="erp.nomencladores_menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Relacionadas con la oferta" id="erp.nomencladores_categoria_oferta" parent="erp.nomencladores_menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Varios" id="erp.nomencladores_categoria_varios" parent="erp.nomencladores_menu_root"/>
+
+
+
+        <!-- actions -->
+        <menuitem name="Marca" id="erp.nomencladores_menu_marca" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_marca_action"/>
+
+        <!-- actions -->
+        <menuitem name="Materiales" id="erp.nomencladores_menu_material" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_material_action"/>
+
+        <!-- actions -->
+        <menuitem name="Potencia" id="erp.nomencladores_menu_potencia" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_potencia_action"/>
+
+        <!-- actions -->
+        <menuitem name="Tipo de espiga" id="erp.nomencladores_menu_tipo_de_espiga" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_tipo_de_espiga_action"/>
+
+        <!-- actions -->
+        <menuitem name="Tipo de producto" id="erp.nomencladores_menu_tipo_de_producto" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_tipo_de_producto_action"/>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,4 @@
+/*para modificar largo date input de fecha de emision/vencimiento*/
+.datepicker_input_largo .o_datepicker_input {
+    width: 104%;
+}
