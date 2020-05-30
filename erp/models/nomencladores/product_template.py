@@ -40,8 +40,6 @@ class ProductTemplate(models.Model):
     cantidad_contenedor_40 = fields.Integer(string='Cantidad contenedor de 40')
     cantidad_contenedor_40_hc = fields.Integer(string='Cantidad contenedor de 40 HC')
 
-    tipo_de_producto = fields.Many2one('erp.nomencladores.tipo_de_producto', string='Tipo de producto')
-
     marca = fields.Many2one('erp.nomencladores.marca', ondelete='cascade')
 
     repuestos = fields.Many2many('product.template', 'erp_nomencladores_producto_respuesto', 'repuesto_id', 'principal_id', 'Producto principal:')
