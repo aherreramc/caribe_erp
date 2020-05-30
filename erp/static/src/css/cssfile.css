@@ -1,0 +1,415 @@
+/************************************
+ *REGLAS GENERALES
+ ************************************/
+
+/*para todos los label de campo*/
+.o_form_view .o_group.o_inner_group > tbody > tr > td {
+    vertical-align: middle; /*originalmente top*/
+}
+
+/*para columna label de campo*/
+.o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label {
+    width: 0%;
+    padding: 0 0 0 0; /*originalmente 0 15px 0 0*/
+    min-width: 100px; /*originalmente 150px*/
+}
+
+/*acerca el label al input y el padding provoca que los label largos se hagan de dos lineas*/
+.o_form_view .o_group .o_td_label .label_dos_lineas {
+    margin-left: 25px;
+    padding-right: 10px;
+}
+
+/*el padding al final provoca que los label largos se hagan de dos lineas*/
+.o_form_view .o_group .o_td_label .label_dos_lineas_simple {
+    padding-right: 10px;
+}
+
+.o_form_view .o_group .o_td_label .acercar_label_medio {
+    margin-left: 25px;
+}
+
+/*modifica tamaño de los campos numéricos*/
+.o_form_view .o_group .o_form_field.numerico {
+    width: 50%;
+}
+
+.o_form_view .o_group .o_form_field.label_importe {
+    width: 52%;
+}
+
+/*para labels que no salgan en negrita*/
+.o_form_view .o_group .o_form_label.negrita {
+    font-weight: bold;
+}
+
+/**************************
+ *REGLAS PARA VISTA EFECTOS
+ **************************/
+
+/*para acercar los label de Tipo y Dias*/
+.o_form_view .o_group .o_td_label .acercar_label {
+    margin-left: 50px;
+}
+
+.o_form_view .o_group .o_form_field.tasa_input{
+    width: 60px;
+}
+
+/************************************
+ *REGLAS PARA VISTA CARTAS DE CREDITO
+ ************************************/
+
+/*para modificar largo date input de fecha de emision/vencimiento*/
+.datepicker_input_largo .o_datepicker_input {
+    width: 104%;
+}
+
+/**************************
+ *REGLAS PARA VISTA COBROS
+ **************************/
+
+/*para acercar los label de Tipo y Dias*/
+.o_form_view .o_group .o_td_label .acercar_label {
+    margin-left: 50px;
+}
+
+.o_form_view .o_form_label.a_lo_largo{
+    display: block;
+}
+
+/****************************
+ *REGLAS PARA VISTA TRASPASOS
+ ****************************/
+
+.o_form_view .o_group .o_form_field.estado_cuenta {
+    width: 110%;
+}
+
+.fuente{
+    font-family: Consolas;
+}
+
+.fuente_clara{
+    color: #585858;
+}
+
+.letra_chica{
+    font-size:small;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.italica{
+    font-style: italic;
+}
+
+.tabla_productos{
+    border-top:1px solid #cacaca;
+    width: 100%;
+}
+
+.espacio_al_principio{
+    padding-left: 40px;
+}
+
+.espacio_al_final{
+    padding-right: 5px;
+}
+
+.linea{
+    border-top: 1px solid #cacaca;
+    width: 100%;
+    margin-top: 15px
+}
+
+.ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-top: 1px solid black;
+}
+
+.tabla_productos tr.ultima_linea > td.celda_larga{
+    border:none;
+    padding-right: 10px;
+}
+
+.tabla_productos tr th,.tabla_productos tr td{
+    border-bottom: none;
+    width: 12.5%;
+    padding-top: 5px;
+    padding-left: 2px;
+}
+
+.tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
+    width: 25%;
+    padding-top: 5px;
+}
+
+.tabla_totales tr th,.tabla_totales tr td{
+    width: 14%;
+    padding-top: 5px;
+    padding-left: 2px;
+}
+
+.tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
+    border: none;
+    width: 30%;
+    padding-top: 5px;
+}
+
+.tabla_totales tr.ultima_linea > td{
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-top: 1.5px solid black;
+}
+
+.etiqueta{
+    position: absolute;
+    top:-10px;
+    left: 25px;
+    background-color: white;
+}
+
+.bordeado{
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+}
+
+.bordeado_serio{
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+.bordeado_serio_ancho{
+    border: 3px solid #585858;
+}
+
+.bordeado_lateral_izq{
+    border-left: 1px solid black;
+}
+
+.bordeado_lateral_der{
+    border-right: 1px solid black;
+}
+
+.despegar{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.despegar-al-final{
+    margin-right: 5px;
+}
+
+.depegar_adentro{
+    padding-top: 8px;
+}
+
+.bajar{
+    margin-top: 15px;
+}
+
+.bajar_poco{
+    margin-top: 5px;
+}
+
+.tabla_default,.tabla_totales{
+    width: 100%;
+}
+
+.tabla_linea_head tr th, .under_linea{
+    border-bottom: 1px solid black;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+  position: relative;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+  position: relative;
+  min-height: 1px;
+}
+
+.col-xs-1 {
+  float: left;
+  width: 8.333333%;
+}
+
+.col-mi-1 {
+  float: left;
+  width: 8.333333%;
+}
+
+.col-xs-2 {
+  float: left;
+  width: 16.666667%;
+}
+
+.col-mi-2 {
+  float: left;
+  width: 16.666667%;
+}
+
+.col-xs-3 {
+  float: left;
+  width: 25%;
+}
+
+.col-mi-3 {
+  float: left;
+  width: 25%;
+}
+
+.col-xs-4 {
+  float: left;
+  width: 33.333333%;
+}
+
+.col-mi-4 {
+  float: left;
+  width: 33.333333%;
+}
+
+.col-xs-5 {
+  float: left;
+  width: 41.666667%;
+}
+
+.col-mi-5 {
+  float: left;
+  width: 41.666667%;
+}
+
+.col-xs-6 {
+  float: left;
+  width: 50%;
+}
+
+.col-mi-6 {
+  float: left;
+  width: 50%;
+}
+
+.col-xs-7 {
+  float: left;
+  width: 58.333333%;
+}
+
+.col-mi-7 {
+  float: left;
+  width: 58.333333%;
+}
+
+.col-xs-8 {
+  float: left;
+  width: 66.666667%;
+}
+
+.col-mi-8 {
+  float: left;
+  width: 66.666667%;
+}
+
+.col-xs-9 {
+  float: left;
+  width: 75%;
+}
+
+.col-mi-9 {
+  float: left;
+  width: 75%;
+}
+
+.col-xs-10 {
+  float: left;
+  width: 83.333333%;
+}
+
+.col-mi-10 {
+  float: left;
+  width: 83.333333%;
+}
+
+.col-xs-11 {
+  float: left;
+  width: 91.666667%;
+}
+
+.col-mi-11 {
+  float: left;
+  width: 91.666667%;
+}
+
+.col-xs-12 {
+  float: left;
+  width: 100%;
+}
+
+.col-mi-12 {
+  float: left;
+  width: 100%;
+}
+
+.offset-xs-1 {
+  margin-left: 8.333333%;
+}
+
+.offset-xs-2 {
+  margin-left: 16.666667%;
+}
+
+.offset-xs-3 {
+  margin-left: 25%;
+}
+
+.offset-xs-4 {
+  margin-left: 33.333333%;
+}
+
+.offset-xs-5 {
+  margin-left: 41.666667%;
+}
+
+.offset-xs-6 {
+  margin-left: 50%;
+}
+
+.offset-xs-7 {
+  margin-left: 58.333333%;
+}
+
+.offset-xs-8 {
+  margin-left: 66.666667%;
+}
+
+.offset-xs-9 {
+  margin-left: 75%;
+}
+
+.offset-xs-10 {
+  margin-left: 83.333333%;
+}
+
+.offset-xs-11 {
+  margin-left: 91.666667%;
+}
+

@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_tipo_de_producto_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.tipo_de_producto</field>
+            <field name="name">Tipo de producto</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_tipo_de_producto_lista">
+            <field name="name">Tipo de producto</field>
+            <field name="model">erp.nomencladores.tipo_de_producto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Tipo de producto"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tipo_de_producto_form" model="ir.ui.view">
+            <field name="name">Tipo de producto</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.tipo_de_producto</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Tipo de producto"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

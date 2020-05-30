@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- DEGREES-->
+        <!-- Acusmata-->
+        <record id="groupo_permisos_visibilidad_lista_precios" model="res.groups">
+            <field name="name">Groupo permisos visibilidad lista precios</field>
+        </record>
+
+        <record id="groupo_permisos_visibilidad_precios_formularios" model="res.groups">
+            <field name="name">Groupo permisos visibilidad precios formularios</field>
+        </record>
+
+
+
+    </data>
+</odoo>

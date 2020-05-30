@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_marca_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.marca</field>
+            <field name="name">Marca</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_marca_lista">
+            <field name="name">Marca</field>
+            <field name="model">erp.nomencladores.marca</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Marca"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="marca_form" model="ir.ui.view">
+            <field name="name">marca</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.marca</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Marca"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
