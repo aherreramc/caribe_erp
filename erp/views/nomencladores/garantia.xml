@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_garantia_nomenclador_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.garantia_nomenclador</field>
+            <field name="name">Garantias</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_garantia_lista">
+            <field name="name">Garantias</field>
+            <field name="model">erp.nomencladores.garantia_nomenclador</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Garantía"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="garantia_form" model="ir.ui.view">
+            <field name="name">Garantias</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.garantia_nomenclador</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Garantía"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

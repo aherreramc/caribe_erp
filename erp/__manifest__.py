@@ -36,6 +36,14 @@
         'views/nomencladores/potencia.xml',
         'views/nomencladores/material.xml',
         'views/nomencladores/marca.xml',
+        'views/nomencladores/embalaje.xml',
+        'views/nomencladores/puerto.xml',
+        'views/nomencladores/representante_cliente.xml',
+        'views/nomencladores/dias_para_cobros_y_pagos.xml',
+        'views/nomencladores/etapa.xml',
+        'views/nomencladores/pago_nomenclador.xml',
+        'views/nomencladores/garantia.xml',
+        'views/nomencladores/firma.xml',
 
         'views/nomencladores/menus.xml',
 

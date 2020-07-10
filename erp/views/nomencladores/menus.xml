@@ -40,5 +40,35 @@
                   action="erp.nomencladores_tipo_de_producto_action"/>
 
 
+
+        <!-- actions -->
+        <menuitem name="Embalajes por defecto" id="erp.nomencladores_menu_embalaje" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_embalaje_action"/>
+
+        <!-- actions -->
+        <menuitem name="Puertos" id="erp.nomencladores_menu_puerto" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_puerto_action"/>
+
+        <!-- actions -->
+        <menuitem name="Representantes" id="erp.nomencladores_menu_representante_cliente" parent="erp.nomencladores_categoria_entidades"
+                  action="erp.nomencladores_representante_cliente_action"/>
+
+        <!-- actions -->
+        <menuitem name="Días" id="erp.nomencladores_menu_dias" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_dias_para_cobros_y_pagos_action"/>
+
+        <!-- actions -->
+        <menuitem name="Etapas" id="erp.nomencladores_menu_etapas" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_etapa_action"/>
+
+        <!-- actions -->
+        <menuitem name="Pagos por defecto" id="erp.nomencladores_menu_pago_nomenclador" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_pago_nomenclador_action"/>
+
+        <!-- actions -->
+        <menuitem name="Garantías por defecto" id="erp.nomencladores_garantia_action" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_garantia_nomenclador_action"/>
+
+
     </data>
 </openerp>

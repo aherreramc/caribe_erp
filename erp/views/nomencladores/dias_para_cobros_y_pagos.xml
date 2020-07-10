@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_dias_para_cobros_y_pagos_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.dias_para_cobros_y_pagos</field>
+            <field name="name">Días</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_dias_para_cobros_y_pagos_lista">
+            <field name="name">Días</field>
+            <field name="model">erp.nomencladores.dias_para_cobros_y_pagos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Días"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dias_para_cobros_y_pagos_form" model="ir.ui.view">
+            <field name="name">Días</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.dias_para_cobros_y_pagos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Días"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
