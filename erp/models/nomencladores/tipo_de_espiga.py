@@ -8,3 +8,6 @@ class TipoDeEspiga(models.Model):
 
     name = fields.Char(required=True, string="Nombre:")
     active = fields.Boolean('Activo', default=True,help="Si se encuentra marcado, el instrumento no será visualizado pero tampoco eliminado.")
+
+    compannia = fields.Many2one('res.company', string='Compañía', required=True,
+                        default=lambda self: self.env['res.company']._company_default_get())

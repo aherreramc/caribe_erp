@@ -1,0 +1,35 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_firma_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.firma</field>
+            <field name="name">Firma</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_firma_lista">
+            <field name="name">Firma</field>
+            <field name="model">erp.nomencladores.firma</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Firma"/>
+                    <field name="firma" string="Firma"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="firma_form" model="ir.ui.view">
+            <field name="name">Firma</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.firma</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Firma"/>
+                            <field name="firma" string="Firma"  widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_representante_cliente_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.representante_cliente</field>
+            <field name="name">Representante</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_representante_cliente_lista">
+            <field name="name">Representante</field>
+            <field name="model">erp.nomencladores.representante_cliente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Representante"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="representante_clienteo_form" model="ir.ui.view">
+            <field name="name">Representante</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.representante_cliente</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="tratamiento" string="Tratamiento" required="1"/>
+                            <field name="name" string="Representante"/>
+                            <field name="empresa" string="Empresa"/>
+                            <field name="cargo" string="Cargo"/>
+                            <field name="compannia" string="Compañía"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
