@@ -62,9 +62,16 @@ class Pontencia(models.Model):
                     nombre_tabla += "_"
 
 
+            # self._cr.execute("""
+            #         update """ + nombre_tabla + """
+            #         set id = '""" + new_id + """'
+            #
+            #         where id = '""" + str(model.res_id) + """'
+            #     """)
+
             self._cr.execute("""
                     update """ + nombre_tabla + """
-                    set id = '""" + new_id + """'
+                    set id = '""" + str(new_id) + """'
 
                     where id = '""" + str(model.res_id) + """'
                 """)
