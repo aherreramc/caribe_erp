@@ -22,6 +22,15 @@ class Pontencia(models.Model):
 
         new_id = 100000
         for model in model_data:
+            model_entity = model.model
+
+            nombre_tabla = ""
+            for c in model_entity:
+                if c != ".":
+                    nombre_tabla += c
+                else:
+                    nombre_tabla += "_"
+
             self._cr.execute("""
                     update """ + nombre_tabla + """
                     set id = '""" + str(new_id) + """'
