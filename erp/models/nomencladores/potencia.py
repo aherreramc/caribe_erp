@@ -24,7 +24,7 @@ class Pontencia(models.Model):
                                                ('model', '=', "erp.nomencladores.marca")
 
                                                ])
-
+        consulta = ""
         for model in model_data:
             model_entity = model.model
 
@@ -44,9 +44,16 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
-            self._cr.execute("""
+            consulta += """
                     update """ + nombre_tabla + """
                     set id = '""" + new_id + """'
 
                     where id = '""" + str(model.res_id) + """'
-                """)
+                """ + """   -----   """
+
+            # self._cr.execute("""
+            #         update """ + nombre_tabla + """
+            #         set id = '""" + new_id + """'
+            #
+            #         where id = '""" + str(model.res_id) + """'
+            #     """)
