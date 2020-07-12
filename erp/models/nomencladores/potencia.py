@@ -20,7 +20,7 @@ class Pontencia(models.Model):
 
         for model in model_data:
             model_entity = model.model
-            entity = self.env['' + model_entity + ''].browse(model_data.res_id)
+            entity = self.env['' + model_entity + ''].browse(model.res_id)
 
             migrate_id = ""
 
@@ -39,5 +39,5 @@ class Pontencia(models.Model):
                     update """ + model_entity + """
                     set id = '""" + new_id + """'
 
-                    where id = '""" + str(model_data.res_id) + """'
+                    where id = '""" + str(model.res_id) + """'
                 """)
