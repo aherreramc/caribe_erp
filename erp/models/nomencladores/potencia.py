@@ -3,6 +3,8 @@
 from odoo import models, fields, api
 import odoo.addons.decimal_precision as dp
 
+from openerp.exceptions import except_orm, Warning, RedirectWarning
+
 
 class Pontencia(models.Model):
     _name = 'erp.nomencladores.potencia'
@@ -25,6 +27,7 @@ class Pontencia(models.Model):
             migrate_id = ""
 
             pila = []
+            raise except_orm(entity.name)
             for c in reversed(entity.name):
                 if c.isdigit():
                     pila.append(c)
