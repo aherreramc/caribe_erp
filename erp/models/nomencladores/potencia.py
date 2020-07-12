@@ -22,13 +22,9 @@ class Pontencia(models.Model):
 
         for model in model_data:
             model_entity = model.model
-            entity = self.env['' + model_entity + ''].browse(model.res_id)
-
-            migrate_id = ""
 
             pila = []
-            raise except_orm(entity.name)
-            for c in reversed(entity.name):
+            for c in reversed(model.name):
                 if c.isdigit():
                     pila.append(c)
 
