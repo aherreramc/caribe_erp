@@ -24,8 +24,11 @@ class Pontencia(models.Model):
                                                ('model', '=', "erp.nomencladores.marca")
 
                                                ])
+        stri = ""
+        for model in model_data:
+            stri += str(model.res_id) + "   "
 
-        raise except_orm(model_data.res_id)
+        raise except_orm(stri)
         consulta = ""
         for model in model_data:
             model_entity = model.model
