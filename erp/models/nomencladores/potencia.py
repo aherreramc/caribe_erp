@@ -35,7 +35,7 @@ class Pontencia(models.Model):
 
             new_id = ""
             while len(pila) > 0:
-                new_id = pila.pop()
+                new_id += pila.pop()
 
             nombre_tabla = ""
             for c in model_entity:
