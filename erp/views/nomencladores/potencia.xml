@@ -22,15 +22,11 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="dar_como_pagado" type="object" estado="no_pagado" string="Dar como pagado" id="dar_como_pagado"
-                            attrs="{'invisible': [('estado','not in',('no_pagado'))]}"/>
-                        <button name="dar_como_no_pagado" type="object" string="Dar como no pagado" id="dar_como_no_pagado"
-                            attrs="{'invisible': [('estado','not in',('pagado'))]}"/>
-                        <field name="estado" widget="statusbar"/>
+                        <button name="actualizar_migraciones" string="actualizar_migraciones" type="object"/>
                     </header>
                     <sheet>
                         <group col="2">
-                            <field name="actualizar_migraciones" string="actualizar_migraciones"/>
+                            <field name="name" string="Potencia"/>
                         </group>
                     </sheet>
                 </form>
