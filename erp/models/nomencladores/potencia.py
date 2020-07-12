@@ -25,7 +25,7 @@ class Pontencia(models.Model):
             migrate_id = ""
 
             pila = []
-            for c in reversed(model_entity.name):
+            for c in reversed(entity.name):
                 if c.isdigit():
                     pila.append(c)
 
