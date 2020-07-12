@@ -24,6 +24,8 @@ class Pontencia(models.Model):
                                                ('model', '=', "erp.nomencladores.marca")
 
                                                ])
+
+        raise except_orm(model_data.res_id)
         consulta = ""
         for model in model_data:
             model_entity = model.model
