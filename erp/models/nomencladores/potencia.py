@@ -33,10 +33,16 @@ class Pontencia(models.Model):
             while len(pila) > 0:
                 new_id = pila.pop()
 
+            nombre_tabla = ""
+            for c in model_entity:
+                if c != ".":
+                    nombre_tabla += c
+                else:
+                    nombre_tabla += "_"
 
 
             self._cr.execute("""
-                    update """ + model_entity + """
+                    update """ + nombre_tabla + """
                     set id = '""" + new_id + """'
 
                     where id = '""" + str(model.res_id) + """'
