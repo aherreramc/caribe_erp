@@ -20,6 +20,18 @@ class Pontencia(models.Model):
                                                        ('model', '=', "erp.nomencladores.material")
                                                        ])
 
+        new_id = 100000
+        for model in model_data:
+            self._cr.execute("""
+                    update """ + nombre_tabla + """
+                    set id = '""" + str(new_id) + """'
+
+                    where id = '""" + str(model.res_id) + """'
+                """)
+
+            new_id += 1
+
+
         for model in model_data:
             model_entity = model.model
 
