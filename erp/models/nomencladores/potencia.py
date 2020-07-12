@@ -20,28 +20,6 @@ class Pontencia(models.Model):
                                                        ('model', '=', "erp.nomencladores.material")
                                                        ])
 
-        new_id = 100000
-        for model in model_data:
-            model_entity = model.model
-
-            nombre_tabla = ""
-            for c in model_entity:
-                if c != ".":
-                    nombre_tabla += c
-                else:
-                    nombre_tabla += "_"
-
-            self._cr.execute("""
-                    update """ + nombre_tabla + """
-                    set id = '""" + str(new_id) + """'
-
-                    where id = '""" + str(model.res_id) + """'
-                """)
-
-            new_id += 1
-
-
-        new_id = 100000
         for model in model_data:
             model_entity = model.model
 
@@ -50,9 +28,9 @@ class Pontencia(models.Model):
                 if c.isdigit():
                     pila.append(c)
 
-            # new_id = ""
-            # while len(pila) > 0:
-            #     new_id += pila.pop()
+            new_id = ""
+            while len(pila) > 0:
+                new_id += pila.pop()
 
             nombre_tabla = ""
             for c in model_entity:
@@ -62,18 +40,9 @@ class Pontencia(models.Model):
                     nombre_tabla += "_"
 
 
-            # self._cr.execute("""
-            #         update """ + nombre_tabla + """
-            #         set id = '""" + new_id + """'
-            #
-            #         where id = '""" + str(model.res_id) + """'
-            #     """)
-
             self._cr.execute("""
                     update """ + nombre_tabla + """
-                    set id = '""" + str(new_id) + """'
+                    set id = '""" + new_id + """'
 
                     where id = '""" + str(model.res_id) + """'
                 """)
-
-            new_id += 1
