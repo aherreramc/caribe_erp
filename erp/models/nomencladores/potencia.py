@@ -20,7 +20,7 @@ class Pontencia(models.Model):
 
         for model in model_data:
             model_entity = model.model
-            entity = self.env['' + model_entity + ''].find(model_data.res_id)
+            entity = self.env['' + model_entity + ''].browse(model_data.res_id)
 
             migrate_id = ""
 
