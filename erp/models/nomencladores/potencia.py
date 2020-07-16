@@ -17,7 +17,8 @@ class Pontencia(models.Model):
     def actualizar_migraciones(self):
         model_data = self.env['ir.model.data'].search(['|',
                                                        ('model', '=', "erp.nomencladores.marca"),
-                                                       ('model', '=', "erp.nomencladores.material")
+                                                       ('model', '=', "erp.nomencladores.material"),
+                                                       ('model', '=', "product.template"),
                                                        ])
 
         for model in model_data:
