@@ -98,16 +98,16 @@ class Pontencia(models.Model):
 
     def actualizar_migraciones(self):
         consulta_product_template = """
-                        update ir_attachment
-                        set res_model = 'erp.nomencladores.producto',
-                        file_size = 109449,
-                        index_content = 'ALICIA EMK6  Automatic shut-off: the moka switches off automatically Keep-warm function: this special device keeps coffee hot for 30 minutes Transparent coffee container and lid to monitor coffee brewing. Cool-touch base: you can put the moka on every surface, thanks to the cool touch base. 3 or 6 cups: you can make 6 cups of coffee or 3 cups by using the special 3 cups adaptor. Independent base: cordless coffee maker with 360° rotational base Dimensions (wxdxh)mm122x185x235WeightKg1Input max powerW450Rated voltage/FrequencyV~Hz110-50Capacitycups3-6TECHNICAL DATA ELECTRIC COFFEE MAKER HOUSEHOLD APPLIANCES ALICIA LA MOKA DE™ LONGHI EMK6 Transparent lid and coffee container, unbreakable and easy to clean The cool touch base allows to put the moka everywhere The electric coffee maker switches off automatically and keeps coffee warm for 30 minutes. Coffee doesn™t boil over. ﬁKEEP-WARMﬂ SYSTEM: coffee is kept warm and good for 30 minutes. The coffee maker switches off when you lift it from the electric base, but switching it on again coffee is kept warm for another 30 minutes  ',
-                        res_field = 'ficha_tecnica',
-                        mimetype = 'application/pdf',
+                update ir_attachment
+                set res_model = 'erp.nomencladores.producto',
+                file_size = 109449,
+                index_content = 'ALICIA EMK6  Automatic shut-off: the moka switches off automatically Keep-warm function: this special device keeps coffee hot for 30 minutes Transparent coffee container and lid to monitor coffee brewing. Cool-touch base: you can put the moka on every surface, thanks to the cool touch base. 3 or 6 cups: you can make 6 cups of coffee or 3 cups by using the special 3 cups adaptor. Independent base: cordless coffee maker with 360° rotational base Dimensions (wxdxh)mm122x185x235WeightKg1Input max powerW450Rated voltage/FrequencyV~Hz110-50Capacitycups3-6TECHNICAL DATA ELECTRIC COFFEE MAKER HOUSEHOLD APPLIANCES ALICIA LA MOKA DE™ LONGHI EMK6 Transparent lid and coffee container, unbreakable and easy to clean The cool touch base allows to put the moka everywhere The electric coffee maker switches off automatically and keeps coffee warm for 30 minutes. Coffee doesn™t boil over. ﬁKEEP-WARMﬂ SYSTEM: coffee is kept warm and good for 30 minutes. The coffee maker switches off when you lift it from the electric base, but switching it on again coffee is kept warm for another 30 minutes  ',
+                res_field = 'ficha_tecnica',
+                mimetype = 'application/pdf'
 
 
 
-                        where id = 290
-                """
+                where id = 290
+        """
 
         self._cr.execute(consulta_product_template)
