@@ -56,6 +56,14 @@ class Pontencia(models.Model):
                 self._cr.execute(consulta)
 
             else: #sustituto
+                consulta_eliminar_product_product_inicial = """
+                        DELETE FROM product_product
+                        WHERE product_tmpl_id = 7234
+                """
+
+                self._cr.execute(consulta_eliminar_product_product_inicial)
+
+
                 #poniendo un temporal
                 consulta_product_product = """
                         update product_product
