@@ -15,11 +15,16 @@ class Pontencia(models.Model):
                                 default=lambda self: self.env['res.company']._company_default_get())
 
     def actualizar_migraciones(self):
+        # model_data = self.env['ir.model.data'].search(['|',
+        #                                                ('model', '=', "erp.nomencladores.marca"),
+        #                                                ('model', '=', "erp.nomencladores.material"),
+        #                                                ('model', '=', "product.template"),
+        #                                                ])
+
         model_data = self.env['ir.model.data'].search(['|',
-                                                       ('model', '=', "erp.nomencladores.marca"),
-                                                       ('model', '=', "erp.nomencladores.material"),
-                                                       ('model', '=', "product.template"),
-                                                       ])
+
+                                               ('model', '=', "product.template"),
+                                               ])
 
         for model in model_data:
             model_entity = model.model
@@ -40,10 +45,14 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
-
-            self._cr.execute("""
+            consulta = """
                     update """ + nombre_tabla + """
                     set id = '""" + new_id + """'
 
                     where id = '""" + str(model.res_id) + """'
-                """)
+                """
+
+            raise except_orm(consulta)
+
+
+            self._cr.execute(consulta)
