@@ -21,9 +21,8 @@ class Pontencia(models.Model):
         #                                                ('model', '=', "product.template"),
         #                                                ])
 
-        model_data = self.env['ir.model.data'].search(['|',
-
-                                               ('model', '=', "product.template"),
+        model_data = self.env['ir.model.data'].search([
+                                               ('model', '=', "product.template")
                                                ])
 
         for model in model_data:
