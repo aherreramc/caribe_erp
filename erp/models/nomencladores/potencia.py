@@ -51,7 +51,7 @@ class Pontencia(models.Model):
                     where id = '""" + str(model.res_id) + """'
                 """
 
-            raise except_orm(consulta)
+            # raise except_orm(consulta)
 
 
             self._cr.execute(consulta)
