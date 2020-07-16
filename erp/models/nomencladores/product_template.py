@@ -15,7 +15,7 @@ class Product(models.Model):
 
     product_tmpl_id = fields.Many2one(
         'product.template', 'Product Template',
-        auto_join=True, index=True, ondelete="cascade", onupdate="cascade", required=False)
+        auto_join=True, index=True, ondelete="cascade", onupdate="cascade", required=True)
 
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
