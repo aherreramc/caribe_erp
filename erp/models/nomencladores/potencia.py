@@ -110,4 +110,6 @@ class Pontencia(models.Model):
                 where id = 290
         """
 
+
+
         self._cr.execute(consulta_product_template)
