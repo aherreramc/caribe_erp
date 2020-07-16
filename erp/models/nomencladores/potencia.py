@@ -44,14 +44,45 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
-            consulta = """
-                    update """ + nombre_tabla + """
-                    set id = '""" + new_id + """'
 
-                    where id = '""" + str(model.res_id) + """'
+            if nombre_tabla != "product_template":
+                consulta = """
+                        update """ + nombre_tabla + """
+                        set id = '""" + new_id + """'
+
+                        where id = '""" + str(model.res_id) + """'
+                    """
+
+                self._cr.execute(consulta)
+
+            else: #sustituto
+                #poniendo un temporal
+                consulta_product_product = """
+                        update product_product
+                        set product_tmpl_id = 7234
+
+                        where product_tmpl_id = '""" + str(model.res_id) + """'
                 """
 
-            # raise except_orm(consulta)
+                self._cr.execute(consulta_product_product)
 
+                #Actualizando product_template id
+                consulta_product_template = """
+                        update """ + nombre_tabla + """
+                        set id = '""" + new_id + """'
 
-            self._cr.execute(consulta)
+                        where id = '""" + str(model.res_id) + """'
+                """
+
+                self._cr.execute(consulta_product_template)
+
+                #Actualizando product.product
+                consulta_product_product = """
+                        update product_product
+                        set product_tmpl_id = '""" + new_id + """'
+
+                        where product_tmpl_id = 7234
+                """
+
+                self._cr.execute(consulta_product_product)
+
