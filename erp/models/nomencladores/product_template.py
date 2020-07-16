@@ -5,6 +5,18 @@ from odoo import api, fields, models, SUPERUSER_ID, tools, _
 
 import odoo.addons.decimal_precision as dp
 
+class Product(models.Model):
+    _inherit = 'product.product'
+
+    # product_tmpl_id = fields.Many2one(
+    #     'product.template', 'Product Template',
+    #     auto_join=True, index=True, ondelete="cascade", onupdate="cascade", required=True)
+
+
+    product_tmpl_id = fields.Many2one(
+        'product.template', 'Product Template',
+        auto_join=True, index=True, ondelete="cascade", onupdate="cascade", required=False)
+
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
