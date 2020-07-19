@@ -24,6 +24,18 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
+        new_id = 10000
+        for model in model_data:
+            consulta_product_template = """
+                update """ + nombre_tabla + """
+                set id = '""" + new_id + """'
+
+                where id = '""" + str(model.res_id) + """'
+                """
+
+            self._cr.execute(consulta_product_template)
+            new_id += 1
+
         for model in model_data:
             model_entity = model.model
 
