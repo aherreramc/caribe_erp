@@ -101,6 +101,8 @@ class Pontencia(models.Model):
 
         count = f.read()
 
+        raise except_orm(count)
+
         while int(count) > 0:
             count -= 1
 
