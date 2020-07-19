@@ -104,7 +104,7 @@ class Pontencia(models.Model):
         # file = open ('attachements.txt','r')
         # for f in file:
         attachement_id = 300
-        while 856 > 0:
+        while count > 0:
             count -= 1
 
             f.readline()
