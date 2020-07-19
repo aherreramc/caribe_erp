@@ -99,7 +99,7 @@ class Pontencia(models.Model):
 
         f = open ('attachements.txt','r')
 
-        count = f.readline()
+        count = int(f.readline())
 
         while int(count) > 0:
             count -= 1
@@ -139,7 +139,9 @@ class Pontencia(models.Model):
             consulta_product_template = """
                 INSERT INTO ir_attachment (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
                     , name, res_name)
-                VALUES (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas, name, res_name)
+                VALUES ('""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """'
+                        , '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """'
+                        , '""" + str(db_datas) + """', '""" + str(res_name) + """')
             """
 
             self._cr.execute(consulta_product_template)
