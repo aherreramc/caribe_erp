@@ -126,8 +126,6 @@ class Pontencia(models.Model):
             f.readline()
             res_name = f.readline()
 
-            raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
-
             model_data = self.env['ir.model.data'].search([
                                                ('model', '=', "product.template")
                                                ])
@@ -155,6 +153,8 @@ class Pontencia(models.Model):
                         , '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """'
                         , '""" + str(db_datas) + """', '""" + str(res_name) + """')
             """
+
+            raise except_orm(consulta_product_template)
 
             self._cr.execute(consulta_product_template)
 
