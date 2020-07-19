@@ -107,14 +107,23 @@ class Pontencia(models.Model):
         while 856 > 0:
             count -= 1
 
+            f.readline()
             res_id = f.readline()
+            f.readline()
             file_size = f.readline()
+            f.readline()
             res_field = f.readline()
+            f.readline()
             mimetype = f.readline()
+            f.readline()
             store_fname = f.readline()
+            f.readline()
             company_id = f.readline()
+            f.readline()
             db_datas = f.readline()
+            f.readline()
             name = f.readline()
+            f.readline()
             res_name = f.readline()
 
             raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
