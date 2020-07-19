@@ -97,62 +97,55 @@ class Pontencia(models.Model):
         #         self._cr.execute(consulta_product_product)
 
 
+        f = open ('attachements.txt','r')
 
-        file = open("HOLA.txt", "w")
-        file.write("hOLA" + os.linesep)
+        count = f.read()
 
-        file.close()
+        while count > 0:
+            count -= 1
+
+            res_id = f.read()
+            file_size = f.read()
+            res_field = f.read()
+            mimetype = f.read()
+            store_fname = f.read()
+            company_id = f.read()
+            db_datas = f.read()
+            name = f.read()
+            res_name = f.read()
+
+            raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
+
+            model_data = self.env['ir.model.data'].search([
+                                               ('model', '=', "product.template")
+                                               ])
+
+            for model in model_data:
+
+                pila = []
+                for c in reversed(model.name):
+                    if c.isdigit():
+                        pila.append(c)
+
+                new_id = ""
+                while len(pila) > 0:
+                    new_id += pila.pop()
+
+                if new_id == res_id:
+                    res_id = model.res_id
 
 
-        # f = open ('attachements.txt','r')
-        #
-        # count = f.read()
-        #
-        # while count > 0:
-        #     count -= 1
-        #
-        #     res_id = f.read()
-        #     file_size = f.read()
-        #     res_field = f.read()
-        #     mimetype = f.read()
-        #     store_fname = f.read()
-        #     company_id = f.read()
-        #     db_datas = f.read()
-        #     name = f.read()
-        #     res_name = f.read()
-        #
-        #     raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
-        #
-        #     model_data = self.env['ir.model.data'].search([
-        #                                        ('model', '=', "product.template")
-        #                                        ])
-        #
-        #     for model in model_data:
-        #
-        #         pila = []
-        #         for c in reversed(model.name):
-        #             if c.isdigit():
-        #                 pila.append(c)
-        #
-        #         new_id = ""
-        #         while len(pila) > 0:
-        #             new_id += pila.pop()
-        #
-        #         if new_id == res_id:
-        #             res_id = model.res_id
-        #
-        #
-        #
-        #     consulta_product_template = """
-        #         INSERT INTO ir_attachment (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
-        #             , name, res_name)
-        #         VALUES (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas, name, res_name)
-        #     """
-        #
-        #     self._cr.execute(consulta_product_template)
-        #
-        #
-        # f.close()
+
+            consulta_product_template = """
+                INSERT INTO ir_attachment (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
+                    , name, res_name)
+                VALUES (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas, name, res_name)
+            """
+
+            self._cr.execute(consulta_product_template)
+
+
+        f.close()
 
 
 
