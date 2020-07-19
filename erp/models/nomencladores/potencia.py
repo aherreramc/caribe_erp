@@ -101,20 +101,18 @@ class Pontencia(models.Model):
 
         count = f.readline()
 
-        raise except_orm(count)
-
         while int(count) > 0:
             count -= 1
 
-            res_id = f.read()
-            file_size = f.read()
-            res_field = f.read()
-            mimetype = f.read()
-            store_fname = f.read()
-            company_id = f.read()
-            db_datas = f.read()
-            name = f.read()
-            res_name = f.read()
+            res_id = f.readline()
+            file_size = f.readline()
+            res_field = f.readline()
+            mimetype = f.readline()
+            store_fname = f.readline()
+            company_id = f.readline()
+            db_datas = f.readline()
+            name = f.readline()
+            res_name = f.readline()
 
             raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
 
