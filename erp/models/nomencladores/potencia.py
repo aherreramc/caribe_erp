@@ -55,6 +55,8 @@ class Pontencia(models.Model):
 
                 self._cr.execute(consulta)
 
+                raise except_orm(consulta)
+
             else: #sustituto
                 consulta_eliminar_product_product_inicial = """
                         DELETE FROM product_product
