@@ -144,13 +144,13 @@ class Pontencia(models.Model):
                 while len(pila) > 0:
                     new_id += pila.pop()
 
-                if model.id == 11289:
-                    raise except_orm(str(model.id) + "   " + str(new_id) + "   " + str(res_id))
+                # if model.id == 11289:
+                #     raise except_orm(str(model.id) + "   " + str(new_id) + "   " + str(res_id))
 
                 if new_id == res_id:
                     res_id = model.res_id
 
-                    raise except_orm(model)
+                    raise except_orm("AA" + str(res_id))
 
 
 
