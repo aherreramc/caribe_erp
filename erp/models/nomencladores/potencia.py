@@ -148,7 +148,6 @@ class Pontencia(models.Model):
                 if new_id == res_id:
                     res_id = model.res_id
 
-            raise except_orm(res_id)
 
 
 
@@ -159,6 +158,8 @@ class Pontencia(models.Model):
             """
 
             attachement_id += 1
+
+            raise except_orm(consulta_product_template)
 
 
             self._cr.execute(consulta_product_template)
