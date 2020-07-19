@@ -144,6 +144,8 @@ class Pontencia(models.Model):
                 while len(pila) > 0:
                     new_id += pila.pop()
 
+                raise except_orm(new_id)
+
                 if new_id == res_id:
                     res_id = model.res_id
 
