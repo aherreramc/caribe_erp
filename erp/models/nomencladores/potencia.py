@@ -57,7 +57,7 @@ class Pontencia(models.Model):
             else: #sustituto
                 consulta_eliminar_product_product_inicial = """
                         DELETE FROM product_product
-                        WHERE product_tmpl_id = 7234
+                        WHERE product_tmpl_id = 2499
                 """
 
                 self._cr.execute(consulta_eliminar_product_product_inicial)
@@ -66,7 +66,7 @@ class Pontencia(models.Model):
                 #poniendo un temporal
                 consulta_product_product = """
                         update product_product
-                        set product_tmpl_id = 7234
+                        set product_tmpl_id = 2499
 
                         where product_tmpl_id = '""" + str(model.res_id) + """'
                 """
@@ -88,7 +88,7 @@ class Pontencia(models.Model):
                         update product_product
                         set product_tmpl_id = '""" + new_id + """'
 
-                        where product_tmpl_id = 7234
+                        where product_tmpl_id = 2499
                 """
 
                 self._cr.execute(consulta_product_product)
