@@ -49,6 +49,8 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
+            raise except_orm(model)
+
 
             if nombre_tabla != "product_template":
                 consulta = """
