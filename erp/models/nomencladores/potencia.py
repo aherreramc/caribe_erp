@@ -99,7 +99,7 @@ class Pontencia(models.Model):
 
         f = open ('attachements.txt','r')
 
-        count = f.read()
+        count = f.readline()
 
         raise except_orm(count)
 
