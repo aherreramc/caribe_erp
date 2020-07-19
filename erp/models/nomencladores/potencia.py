@@ -145,7 +145,7 @@ class Pontencia(models.Model):
                     new_id += pila.pop()
 
                 if model.id == 11289:
-                    raise except_orm(str(model.id) + "   " + str(new_id) + "   " + str(res_id) + "   " + str(new_id == res_id))
+                    raise except_orm(str(model.id) + "   " + str(new_id) + "   " + str(res_id) + "   " + str(int(new_id) == int(res_id)))
 
                 if new_id == res_id:
                     res_id = model.res_id
