@@ -127,6 +127,8 @@ class Pontencia(models.Model):
             res_name = f.readline()
             f.readline()
             type = f.readline()
+            f.readline()
+            checksum = f.readline()
 
             model_data = self.env['ir.model.data'].search([
                                                ('model', '=', "product.template")
@@ -150,11 +152,23 @@ class Pontencia(models.Model):
 
             consulta_product_template = """
                 INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
-                    , name, type, public)
-                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """', 'TRUE')
+                    , name, type, public, checksum)
+                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """', 'TRUE', '""" + str(checksum) + """')
             """
 
             attachement_id += 1
+
+
+            consulta_product_template = """
+                        update ir_attachment
+                        set checksum = 'd31f6e519570693d59f7f2ccda760e194eebad43'
+
+                        where id = 313
+                """
+
+
+
+
 
             # raise except_orm(consulta_product_template)
 
