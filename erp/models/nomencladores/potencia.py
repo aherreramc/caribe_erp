@@ -20,112 +20,132 @@ class Pontencia(models.Model):
         #                                        ('model', '=', "erp.nomencladores.material")
         #                                        ])
 
-        model_data = self.env['ir.model.data'].search([
+        # model_data = self.env['ir.model.data'].search([
+        #                                        ('model', '=', "product.template")
+        #                                        ], order='res_id desc')
+        #
+        # for model in model_data:
+        #     model_entity = model.model
+        #
+        #     pila = []
+        #     for c in reversed(model.name):
+        #         if c.isdigit():
+        #             pila.append(c)
+        #
+        #     new_id = ""
+        #     while len(pila) > 0:
+        #         new_id += pila.pop()
+        #
+        #     nombre_tabla = ""
+        #     for c in model_entity:
+        #         if c != ".":
+        #             nombre_tabla += c
+        #         else:
+        #             nombre_tabla += "_"
+        #
+        #
+        #     if nombre_tabla != "product_template":
+        #         consulta = """
+        #                 update """ + nombre_tabla + """
+        #                 set id = '""" + new_id + """'
+        #
+        #                 where id = '""" + str(model.res_id) + """'
+        #             """
+        #
+        #         self._cr.execute(consulta)
+        #
+        #     else: #sustituto
+        #         consulta_eliminar_product_product_inicial = """
+        #                 DELETE FROM product_product
+        #                 WHERE product_tmpl_id = 2499
+        #         """
+        #
+        #         self._cr.execute(consulta_eliminar_product_product_inicial)
+        #
+        #
+        #         #poniendo un temporal
+        #         consulta_product_product = """
+        #                 update product_product
+        #                 set product_tmpl_id = 2499
+        #
+        #                 where product_tmpl_id = '""" + str(model.res_id) + """'
+        #         """
+        #
+        #         self._cr.execute(consulta_product_product)
+        #
+        #         #Actualizando product_template id
+        #         consulta_product_template = """
+        #                 update """ + nombre_tabla + """
+        #                 set id = '""" + new_id + """'
+        #
+        #                 where id = '""" + str(model.res_id) + """'
+        #         """
+        #
+        #         self._cr.execute(consulta_product_template)
+        #
+        #         # raise except_orm(consulta_product_template)
+        #
+        #         #Actualizando product.product
+        #         consulta_product_product = """
+        #                 update product_product
+        #                 set product_tmpl_id = '""" + new_id + """'
+        #
+        #                 where product_tmpl_id = 2499
+        #         """
+        #
+        #         self._cr.execute(consulta_product_product)
+
+
+
+        f = open ('attachements.txt','r')
+
+        count = f.read()
+
+        while count > 0:
+            count -= 1
+
+            res_id = f.read()
+            file_size = f.read()
+            res_field = f.read()
+            mimetype = f.read()
+            store_fname = f.read()
+            company_id = f.read()
+            db_datas = f.read()
+            name = f.read()
+            res_name = f.read()
+
+            raise except_orm(str(res_id) + "--" + str(file_size) + "--" + str(res_field) + "--")
+
+            model_data = self.env['ir.model.data'].search([
                                                ('model', '=', "product.template")
-                                               ], order='res_id desc')
+                                               ])
 
-        for model in model_data:
-            model_entity = model.model
+            for model in model_data:
 
-            pila = []
-            for c in reversed(model.name):
-                if c.isdigit():
-                    pila.append(c)
+                pila = []
+                for c in reversed(model.name):
+                    if c.isdigit():
+                        pila.append(c)
 
-            new_id = ""
-            while len(pila) > 0:
-                new_id += pila.pop()
+                new_id = ""
+                while len(pila) > 0:
+                    new_id += pila.pop()
 
-            nombre_tabla = ""
-            for c in model_entity:
-                if c != ".":
-                    nombre_tabla += c
-                else:
-                    nombre_tabla += "_"
-
-
-            if nombre_tabla != "product_template":
-                consulta = """
-                        update """ + nombre_tabla + """
-                        set id = '""" + new_id + """'
-
-                        where id = '""" + str(model.res_id) + """'
-                    """
-
-                self._cr.execute(consulta)
-
-            else: #sustituto
-                consulta_eliminar_product_product_inicial = """
-                        DELETE FROM product_product
-                        WHERE product_tmpl_id = 2499
-                """
-
-                self._cr.execute(consulta_eliminar_product_product_inicial)
-
-
-                #poniendo un temporal
-                consulta_product_product = """
-                        update product_product
-                        set product_tmpl_id = 2499
-
-                        where product_tmpl_id = '""" + str(model.res_id) + """'
-                """
-
-                self._cr.execute(consulta_product_product)
-
-                #Actualizando product_template id
-                consulta_product_template = """
-                        update """ + nombre_tabla + """
-                        set id = '""" + new_id + """'
-
-                        where id = '""" + str(model.res_id) + """'
-                """
-
-                self._cr.execute(consulta_product_template)
-
-                # raise except_orm(consulta_product_template)
-
-                #Actualizando product.product
-                consulta_product_product = """
-                        update product_product
-                        set product_tmpl_id = '""" + new_id + """'
-
-                        where product_tmpl_id = 2499
-                """
-
-                self._cr.execute(consulta_product_product)
+                if new_id == res_id:
+                    res_id = model.res_id
 
 
 
-        # f = open ('attachements.txt','r')
-        #
-        # count = f.read()
-        #
-        # while count > 0:
-        #     count -= 1
-        #
-        #     res_id = f.read()
-        #     file_size = f.read()
-        #     res_field = f.read()
-        #     mimetype = f.read()
-        #     store_fname = f.read()
-        #
-        #     consulta_product_template = """
-        #         update ir_attachment
-        #
-        #         set res_model = 'product.template',
-        #         res_id = '""" + str(res_id) + """',
-        #         file_size = '""" + str(file_size) + """',
-        #         res_field = '""" + str(res_field) + """',
-        #         mimetype = '""" + str(mimetype) + """'
-        #
-        #         where store_fname = '""" + str(store_fname) + """'
-        #     """
-        #
-        #     self._cr.execute(consulta_product_template)
-        #
-        #
-        # f.close()
+            consulta_product_template = """
+                INSERT INTO ir_attachment (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
+                    , name, res_name)
+                VALUES (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas, name, res_name)
+            """
+
+            self._cr.execute(consulta_product_template)
+
+
+        f.close()
 
         # consulta_product_template = """
         #         update ir_attachment
@@ -140,7 +160,7 @@ class Pontencia(models.Model):
         #
         #         where id = 290
         # """
-        #
-        #
-        #
+
+
+
         # self._cr.execute(consulta_product_template)
