@@ -152,6 +152,7 @@ class Pontencia(models.Model):
                 VALUES ('""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """', '""" + str(db_datas) + """', '""" + str(res_name) + """')
             """
 
+            raise except_orm(consulta_product_template)
 
             self._cr.execute(consulta_product_template)
 
