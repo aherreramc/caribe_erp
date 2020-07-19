@@ -150,7 +150,7 @@ class Pontencia(models.Model):
                 if int(new_id) == int(res_id):
                     res_id = model.res_id
 
-                    # raise except_orm("AA" + str(res_id))
+                    raise except_orm("AA" + str(res_id))
 
 
 
