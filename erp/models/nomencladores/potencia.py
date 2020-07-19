@@ -132,6 +132,8 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
+            raise except_orm(res_id)
+
             for model in model_data:
 
                 pila = []
@@ -149,9 +151,9 @@ class Pontencia(models.Model):
 
 
             consulta_product_template = """
-                INSERT INTO ir_attachment (id, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
+                INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
                     , name, type)
-                VALUES ('""" + str(attachement_id) + """','""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """')
+                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """')
             """
 
             attachement_id += 1
