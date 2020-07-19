@@ -101,7 +101,7 @@ class Pontencia(models.Model):
 
         count = f.read()
 
-        while count > 0:
+        while int(count) > 0:
             count -= 1
 
             res_id = f.read()
