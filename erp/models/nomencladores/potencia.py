@@ -16,20 +16,14 @@ class Pontencia(models.Model):
 
     def actualizar_migraciones(self):
         # model_data = self.env['ir.model.data'].search(['|',
-        #                                                ('model', '=', "erp.nomencladores.marca"),
-        #                                                ('model', '=', "erp.nomencladores.material"),
-        #                                                ('model', '=', "product.template"),
-        #                                                ])
+        #                                        ('model', '=', "erp.nomencladores.marca"),
+        #                                        ('model', '=', "erp.nomencladores.material")
+        #                                        ])
 
-        model_data = self.env['ir.model.data'].search(['|',
-                                               ('model', '=', "erp.nomencladores.marca"),
-                                               ('model', '=', "erp.nomencladores.material")
+        model_data = self.env['ir.model.data'].search([
+                                               ('model', '=', "product.template")
                                                ])
 
-        # model_data = self.env['ir.model.data'].search([
-        #                                        ('model', '=', "product.template")
-        #                                        ])
-        #
         for model in model_data:
             model_entity = model.model
 
@@ -49,8 +43,6 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
-            # raise except_orm(nombre_tabla)
-
 
             if nombre_tabla != "product_template":
                 consulta = """
@@ -61,8 +53,6 @@ class Pontencia(models.Model):
                     """
 
                 self._cr.execute(consulta)
-
-                # raise except_orm(consulta)
 
             else: #sustituto
                 consulta_eliminar_product_product_inicial = """
