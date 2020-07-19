@@ -170,6 +170,7 @@ class Pontencia(models.Model):
 
 
 
+
             # raise except_orm(consulta_product_template)
 
 
