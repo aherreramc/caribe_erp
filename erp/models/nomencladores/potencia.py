@@ -97,12 +97,15 @@ class Pontencia(models.Model):
         #         self._cr.execute(consulta_product_product)
 
 
-        f = open ('attachements.txt','r')
+        # f = open ('attachements.txt','r')
+        #
+        # count = int(f.readline())
 
-        count = int(f.readline())
+        file = open ('attachements.txt','r')
+        for f in file:
 
-        while int(count) > 0:
-            count -= 1
+        # while 856 > 0:
+        #     count -= 1
 
             res_id = f.readline()
             file_size = f.readline()
