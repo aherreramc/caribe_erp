@@ -22,9 +22,8 @@ class Pontencia(models.Model):
 
         model_data = self.env['ir.model.data'].search([
                                                ('model', '=', "product.template")
-                                               ])
+                                               ], order='res_id desc')
 
-        new_idd = 10000
         for model in model_data:
             model_entity = model.model
 
