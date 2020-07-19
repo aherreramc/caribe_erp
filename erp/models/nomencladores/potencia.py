@@ -134,29 +134,29 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
-            for model in model_data:
-
-                pila = []
-                for c in reversed(model.name):
-                    if c.isdigit():
-                        pila.append(c)
-
-                new_id = ""
-                while len(pila) > 0:
-                    new_id += pila.pop()
-
-
-                if int(new_id) == int(res_id):
-                    res_id = model.res_id
-
-
-            consulta_product_template = """
-                INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
-                    , name, type, public, checksum)
-                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """', 'TRUE', '""" + str(checksum) + """')
-            """
-
-            attachement_id += 1
+            # for model in model_data:
+            #
+            #     pila = []
+            #     for c in reversed(model.name):
+            #         if c.isdigit():
+            #             pila.append(c)
+            #
+            #     new_id = ""
+            #     while len(pila) > 0:
+            #         new_id += pila.pop()
+            #
+            #
+            #     if int(new_id) == int(res_id):
+            #         res_id = model.res_id
+            #
+            #
+            # consulta_product_template = """
+            #     INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
+            #         , name, type, public, checksum)
+            #     VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """', 'TRUE', '""" + str(checksum) + """')
+            # """
+            #
+            # attachement_id += 1
 
 
             consulta_product_template = """
