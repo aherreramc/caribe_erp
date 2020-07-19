@@ -132,7 +132,6 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
-
             for model in model_data:
 
                 pila = []
@@ -144,21 +143,15 @@ class Pontencia(models.Model):
                 while len(pila) > 0:
                     new_id += pila.pop()
 
-                # if model.id == 11289:
-                #     raise except_orm(str(model.id) + "   " + str(new_id) + "   " + str(res_id) + "   " + str(int(new_id) == int(res_id)))
 
                 if int(new_id) == int(res_id):
                     res_id = model.res_id
-
-                    raise except_orm("AA" + str(res_id))
-
-
 
 
             consulta_product_template = """
                 INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
                     , name, type)
-                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """')
+                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """')
             """
 
             attachement_id += 1
