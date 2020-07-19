@@ -151,7 +151,7 @@ class Pontencia(models.Model):
             consulta_product_template = """
                 INSERT INTO ir_attachment (id, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
                     , name, type, company_id)
-                VALUES ('""" + str(attachement_id) + """','""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """', '""" + str(db_datas) + """', '""" + str(res_name) + """', '""" + str(type) + """', 1)
+                VALUES ('""" + str(attachement_id) + """','""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '""" + str(res_name) + """', '""" + str(type) + """')
             """
 
             attachement_id += 1
