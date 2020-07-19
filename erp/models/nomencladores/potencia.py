@@ -132,6 +132,8 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
+            raise except_orm(model_data)
+
 
 
             for model in model_data:
