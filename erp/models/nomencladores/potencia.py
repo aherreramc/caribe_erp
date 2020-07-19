@@ -84,7 +84,7 @@ class Pontencia(models.Model):
 
                 self._cr.execute(consulta_product_template)
 
-                raise except_orm(consulta_product_template)
+                # raise except_orm(consulta_product_template)
 
                 #Actualizando product.product
                 consulta_product_product = """
