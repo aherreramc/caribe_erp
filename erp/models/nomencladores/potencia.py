@@ -103,7 +103,7 @@ class Pontencia(models.Model):
 
         # file = open ('attachements.txt','r')
         # for f in file:
-
+        attachement_id = 300
         while 856 > 0:
             count -= 1
 
@@ -125,6 +125,8 @@ class Pontencia(models.Model):
             name = f.readline()
             f.readline()
             res_name = f.readline()
+            f.readline()
+            type = f.readline()
 
             model_data = self.env['ir.model.data'].search([
                                                ('model', '=', "product.template")
@@ -147,10 +149,12 @@ class Pontencia(models.Model):
 
 
             consulta_product_template = """
-                INSERT INTO ir_attachment (res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
-                    , name)
-                VALUES ('""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """', '""" + str(db_datas) + """', '""" + str(res_name) + """')
+                INSERT INTO ir_attachment (id, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
+                    , name, type)
+                VALUES ('""" + str(attachement_id) + """','""" + str(new_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(company_id) + """', '""" + str(db_datas) + """', '""" + str(res_name) + """', '""" + str(type) + """')
             """
+
+            attachement_id += 1
 
             raise except_orm(consulta_product_template)
 
