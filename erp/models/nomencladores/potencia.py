@@ -150,13 +150,13 @@ class Pontencia(models.Model):
 
             consulta_product_template = """
                 INSERT INTO ir_attachment (id, res_model, res_id, file_size, res_field, mimetype, store_fname, company_id, db_datas
-                    , name, type)
-                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """')
+                    , name, type, public)
+                VALUES ('""" + str(attachement_id) + """', 'product.template' , '""" + str(res_id) + """', '""" + str(file_size) + """', '""" + str(res_field) + """', '""" + str(mimetype) + """', '""" + str(store_fname) + """', '""" + str(1) + """', '""" + str(db_datas) + """', '', '""" + str(type) + """', 'TRUE')
             """
 
             attachement_id += 1
 
-            raise except_orm(consulta_product_template)
+            # raise except_orm(consulta_product_template)
 
 
             self._cr.execute(consulta_product_template)
