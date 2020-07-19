@@ -132,7 +132,7 @@ class Pontencia(models.Model):
                                                ('model', '=', "product.template")
                                                ])
 
-            raise except_orm(res_id)
+
 
             for model in model_data:
 
@@ -147,6 +147,8 @@ class Pontencia(models.Model):
 
                 if new_id == res_id:
                     res_id = model.res_id
+
+            raise except_orm(res_id)
 
 
 
