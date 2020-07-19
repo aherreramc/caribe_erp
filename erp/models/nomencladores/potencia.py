@@ -49,7 +49,7 @@ class Pontencia(models.Model):
                 else:
                     nombre_tabla += "_"
 
-            raise except_orm(nombre_tabla)
+            # raise except_orm(nombre_tabla)
 
 
             if nombre_tabla != "product_template":
