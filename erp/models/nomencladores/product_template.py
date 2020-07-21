@@ -158,29 +158,29 @@ class ProductTemplate(models.Model):
             self.name_to_search += str(self.descripcion_cliente)
 
 
-    @api.onchange('volumen_caja_master', 'cantidad_por_caja_master', 'cantidad_minima_de_orden', 'cantidad_contenedor_20'
-                  , 'cantidad_contenedor_40', 'cantidad_contenedor_40_hc')
-    def _onchange_actualizar_ofertas_y_contratos(self):
-        if self._origin.id is not False:
-            lineas_de_ofertas = self.env['erp.operaciones.linea_de_oferta'].search([('producto', '=', self._origin.id)])
-
-            for linea_de_oferta in lineas_de_ofertas:
-                #Actualizando en caso que proceda el/los campo volumen_caja_master y volumen_total_de_linea_producto
-                volumen_total_de_linea_producto = 0
-
-                if linea_de_oferta.cantidad_por_caja_master != 0:
-                    volumen_total_de_linea_producto = linea_de_oferta.cantidad_producto_total_oferta * self.volumen_caja_master / linea_de_oferta.cantidad_por_caja_master
-
-
-                linea_de_oferta.write({
-                    'volumen_caja_master': self.volumen_caja_master,
-                    'volumen_total_de_linea_producto': volumen_total_de_linea_producto
-                })
-
-                #Actualizando en caso que proceda el/los campo cantidad_por_caja_master
-                linea_de_oferta.write({
-                    'cantidad_por_caja_master': self.cantidad_por_caja_master
-                })
+    # @api.onchange('volumen_caja_master', 'cantidad_por_caja_master', 'cantidad_minima_de_orden', 'cantidad_contenedor_20'
+    #               , 'cantidad_contenedor_40', 'cantidad_contenedor_40_hc')
+    # def _onchange_actualizar_ofertas_y_contratos(self):
+    #     if self._origin.id is not False:
+    #         lineas_de_ofertas = self.env['erp.operaciones.linea_de_oferta'].search([('producto', '=', self._origin.id)])
+    #
+    #         for linea_de_oferta in lineas_de_ofertas:
+    #             #Actualizando en caso que proceda el/los campo volumen_caja_master y volumen_total_de_linea_producto
+    #             volumen_total_de_linea_producto = 0
+    #
+    #             if linea_de_oferta.cantidad_por_caja_master != 0:
+    #                 volumen_total_de_linea_producto = linea_de_oferta.cantidad_producto_total_oferta * self.volumen_caja_master / linea_de_oferta.cantidad_por_caja_master
+    #
+    #
+    #             linea_de_oferta.write({
+    #                 'volumen_caja_master': self.volumen_caja_master,
+    #                 'volumen_total_de_linea_producto': volumen_total_de_linea_producto
+    #             })
+    #
+    #             #Actualizando en caso que proceda el/los campo cantidad_por_caja_master
+    #             linea_de_oferta.write({
+    #                 'cantidad_por_caja_master': self.cantidad_por_caja_master
+    #             })
 
     @api.depends('largo', 'alto', 'profundidad')
     def _compute_medidas(self):
