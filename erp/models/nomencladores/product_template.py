@@ -72,6 +72,7 @@ class ProductTemplate(models.Model):
     explotado = fields.Binary("", attachment=True, help="")
     explotado_ingles = fields.Binary("", attachment=True, help="")
     ficha_tecnica = fields.Binary("", attachment=True, help="")
+    ficha_tecnica_rondover = fields.Binary("", attachment=True, help="")
     ficha_tecnica_ingles = fields.Binary("", attachment=True, help="")
     caja = fields.Binary("", attachment=True, help="")
     manual_de_usuario = fields.Binary("", attachment=True, help="")
