@@ -1,0 +1,36 @@
+<openerp>
+    <data>
+        <record id="erp.nomencladores_degradation_type_action" model="ir.actions.act_window">
+            <field name="res_model">erp.nomencladores.degradation_type</field>
+            <field name="name">Degradation Type</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.nomencladores_degradation_type_lista">
+            <field name="name">Degradation Type</field>
+            <field name="model">erp.nomencladores.degradation_type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Degradation Type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="degradation_type_form" model="ir.ui.view">
+            <field name="name">Degradation Type</field>
+            <field name="priority" eval="0"/>
+            <field name="model">erp.nomencladores.degradation_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="actualizar_migraciones" string="actualizar_migraciones" type="object"/>
+                    </header>
+                    <sheet>
+                        <group col="2">
+                            <field name="name" string="Degradation Type"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

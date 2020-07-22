@@ -14,5 +14,6 @@ from . import etapa
 from . import pago_nomenclador
 from . import garantia
 from . import firma
+from . import degradation_type
 
 

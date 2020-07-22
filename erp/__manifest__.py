@@ -44,6 +44,7 @@
         'views/nomencladores/pago_nomenclador.xml',
         'views/nomencladores/garantia.xml',
         'views/nomencladores/firma.xml',
+        'views/nomencladores/degradation_type.xml',
 
         'views/nomencladores/menus.xml',
 

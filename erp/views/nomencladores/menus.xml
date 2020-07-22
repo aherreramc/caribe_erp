@@ -39,6 +39,10 @@
         <menuitem name="Tipo de producto" id="erp.nomencladores_menu_tipo_de_producto" parent="erp.nomencladores_categoria_tipo"
                   action="erp.nomencladores_tipo_de_producto_action"/>
 
+        <!-- actions -->
+        <menuitem name="Degradation Type" id="erp.nomencladores_menu_degradation_type" parent="erp.nomencladores_categoria_tipo"
+                  action="erp.nomencladores_degradation_type_action"/>
+
 
 
         <!-- actions -->

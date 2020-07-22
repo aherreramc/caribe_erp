@@ -9,6 +9,9 @@ import odoo.addons.decimal_precision as dp
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
+    barcode_image = fields.Binary("", attachment=True, help="")
+    size = fields.Char(string="Descripción-cliente-español")
+
     name = fields.Char(string="Nombre")
     descripcion_cliente = fields.Char(string="Descripción-cliente-español")
     descripcion_proveedor = fields.Char(string="Descripción-proveedor")
