@@ -21,12 +21,10 @@
             <field name="model">erp.nomencladores.degradation_type</field>
             <field name="arch" type="xml">
                 <form>
-                    <header>
-                        <button name="actualizar_migraciones" string="actualizar_migraciones" type="object"/>
-                    </header>
                     <sheet>
                         <group col="2">
                             <field name="name" string="Degradation Type"/>
+                            <field name="company_id" string="Degradation Type" invisible="1"/>
                         </group>
                     </sheet>
                 </form>
