@@ -11,6 +11,7 @@ class ProductTemplate(models.Model):
 
     barcode_image = fields.Binary("", attachment=True, help="")
     size = fields.Char(string="Descripción-cliente-español")
+    degradation_type = fields.Many2one('erp.nomencladores.degradation_type', string='Degradation Type')
 
     name = fields.Char(string="Nombre")
     descripcion_cliente = fields.Char(string="Descripción-cliente-español")
