@@ -74,7 +74,7 @@
                   action="erp.nomencladores_garantia_nomenclador_action"/>
 
         <!-- actions -->
-        <menuitem name="Products" id="erp.products_rondover_action" parent="erp.nomencladores_categoria_oferta"
+        <menuitem name="Products Rondover" id="erp.products_rondover_action" parent="erp.nomencladores_categoria_oferta"
                   action="erp.product_template_rondover_action"/>
 
 
