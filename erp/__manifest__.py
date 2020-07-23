@@ -45,6 +45,7 @@
         'views/nomencladores/garantia.xml',
         'views/nomencladores/firma.xml',
         'views/nomencladores/degradation_type.xml',
+        'views/nomencladores/product_template_rondover.xml',
 
         'views/nomencladores/menus.xml',
 
