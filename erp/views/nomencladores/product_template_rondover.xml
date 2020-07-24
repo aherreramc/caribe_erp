@@ -2,7 +2,7 @@
     <data>
         <record id="erp.product_template_rondover_action" model="ir.actions.act_window">
             <field name="res_model">product.template</field>
-            <field name="name">Product</field>
+            <field name="name">Product Rondover</field>
         </record>
 
         <record model="ir.ui.view" id="erp.product_template_rondover_list">
