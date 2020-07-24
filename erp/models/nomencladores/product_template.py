@@ -99,10 +99,6 @@ class ProductTemplate(models.Model):
     certificate_2 = fields.Binary("", attachment=True, help="")
     certificate_3 = fields.Binary("", attachment=True, help="")
 
-    image_barcode = fields.Binary(
-        "Variant Image", attachment=True,
-        help="This field holds the image used as image for the product variant, limited to 1024x1024px.")
-
 
     def name_get(self):
 
