@@ -94,9 +94,14 @@ class ProductTemplate(models.Model):
     no_tiene_manual_de_usuario = fields.Boolean('No tiene', default=False)
     no_tiene_certificado_onure = fields.Boolean('No tiene', default=False)
 
+    # Campos de Rondover
     certificate_1 = fields.Binary("", attachment=True, help="")
     certificate_2 = fields.Binary("", attachment=True, help="")
     certificate_3 = fields.Binary("", attachment=True, help="")
+
+    image_barcode = fields.Binary(
+        "Variant Image", attachment=True,
+        help="This field holds the image used as image for the product variant, limited to 1024x1024px.")
 
 
     def name_get(self):
