@@ -15,10 +15,6 @@ class ProductLabelReport(models.AbstractModel):
     def render_html(self, docids, data=None):
         self.model = self.env.context.get('active_model')
         product = self.env[self.model].browse(self.env.context.get('active_id'))
-
-        fecha_desde = data['form']['fecha_desde']
-        fecha_hasta = data['form']['fecha_hasta']
-        cartas = []
          
         docargs = {
             'doc_ids': self.ids,
