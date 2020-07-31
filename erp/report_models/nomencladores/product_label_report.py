@@ -13,6 +13,7 @@ class ProductLabelReport(models.AbstractModel):
     
     @api.model
     def render_html(self, docids, data=None):
+        raise except_orm("Hola")
         self.model = self.env.context.get('active_model')
         product = self.env[self.model].browse(self.env.context.get('active_id'))
          
