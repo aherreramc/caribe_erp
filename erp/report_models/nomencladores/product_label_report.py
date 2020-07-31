@@ -13,7 +13,6 @@ class ProductLabelReport(models.AbstractModel):
     
     @api.model
     def _get_report_values(self, docids, data=None):
-        raise except_orm("Hola")
         self.model = self.env.context.get('active_model')
         product = self.env[self.model].browse(self.env.context.get('active_id'))
          
