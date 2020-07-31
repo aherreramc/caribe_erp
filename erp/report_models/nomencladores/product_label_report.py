@@ -13,12 +13,34 @@ class ProductLabelReport(models.AbstractModel):
     
     @api.model
     def _get_report_values(self, docids, data=None):
-        self.model = self.env.context.get('active_model')
-        product = self.env[self.model].browse(self.env.context.get('active_id'))
-         
+        # self.model = self.env.context.get('active_model')
+        # product = self.env[self.model].browse(self.env.context.get('active_id'))
+
+        report_obj = self.env['ir.actions.report']
+        report = report_obj._get_report_from_name('erp.product_label_report')
+
         docargs = {
-            'doc_ids': self.ids,
-            'doc_model': self.model,
-            'product' : product,
+            'doc_ids': docids,
+            'doc_model': report.model,
+            'product': self,
         }
-        return self.env['report'].render('erp.product_label_report', docargs)
+        return docargs
+         
+        # docargs = {
+        #     'doc_ids': self.ids,
+        #     'doc_model': self.model,
+        #     'product' : product,
+        # }
+        # return self.env['report'].render('erp.product_label_report', docargs)
+
+
+    #   @api.model
+    # def _get_report_values(self, docids, data=None):
+    #     report_obj = self.env['ir.actions.report']
+    #     report = report_obj._get_report_from_name('module.report_name')
+    #     docargs = {
+    #         'doc_ids': docids,
+    #         'doc_model': report.model,
+    #         'docs': self,
+    #     }
+    #     return docargs
