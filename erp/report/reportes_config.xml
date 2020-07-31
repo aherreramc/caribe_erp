@@ -3,7 +3,7 @@
     <data>
 
         <report
-                id="action_product_label_report"
+                id="product_label_report"
                 model="product.template"
                 string="Product Label"
                 report_type="qweb-pdf"
