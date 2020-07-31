@@ -12,7 +12,7 @@ class ProductLabelReport(models.AbstractModel):
     _name = 'report.erp.product_label_report'
     
     @api.model
-    def render_html(self, docids, data=None):
+    def _get_report_values(self, docids, data=None):
         raise except_orm("Hola")
         self.model = self.env.context.get('active_model')
         product = self.env[self.model].browse(self.env.context.get('active_id'))
