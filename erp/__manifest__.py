@@ -52,6 +52,8 @@
         #Reportes
         'report/nomencladores/product_label_report.xml',
 
+        'report/reportes_config.xml',
+
 
 
         #security
