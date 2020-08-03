@@ -20,7 +20,7 @@ class ProductLabelReport(models.AbstractModel):
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('erp.product_label_report')
 
-        # raise except_orm(self.name)
+        raise except_orm(product.name)
 
         docargs = {
             'doc_ids': docids,
