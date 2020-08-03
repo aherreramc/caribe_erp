@@ -14,7 +14,7 @@ class ProductLabelReport(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         self.model = self.env.context.get('active_model')
-        product = self.env[self.model].browse(self.env.context.get('active_id'))
+        product = self.env['product.template'].browse(self.env.context.get('active_id'))
 
 
         report_obj = self.env['ir.actions.report']
