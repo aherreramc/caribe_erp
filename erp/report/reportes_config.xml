@@ -39,6 +39,15 @@
                                             </div>
                                         </div>
 
+                                         <div class="row">
+                                            <div class="col-7">
+                                                <p><span t-field="product.name"/></p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p><span t-field="product.size"/></p>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="col-3">
