@@ -31,20 +31,24 @@
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="row">
-                                            <div class="col-7">
+                                            <div class="col-8">
                                                 <p>Producto:</p>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-4">
                                                 <p>Tamaño:</p>
                                             </div>
                                         </div>
 
-                                         <div class="row">
-                                            <div class="col-7">
-                                                <p><span t-field="product.name"/></p>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p>
+                                                    <span t-field="product.name"/>
+                                                </p>
                                             </div>
-                                            <div class="col-2">
-                                                <p><span t-field="product.size"/></p>
+                                            <div class="col-4">
+                                                <p>
+                                                    <span t-field="product.size"/>
+                                                </p>
                                             </div>
                                         </div>
 
@@ -60,7 +64,6 @@
                                 </div>
 
 
-
                                 <div class="col-4">
 
                                 </div>
@@ -73,6 +76,16 @@
                             Header
                         </div>
                     </div>
+
+                    <style type="text/css">
+                        .row {
+                        border: 1px solid;
+                        }
+
+                        .row + .row {
+                        border-top:0 ;
+                        }
+                    </style>
                 </t>
             </t>
 
