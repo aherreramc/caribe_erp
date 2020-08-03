@@ -14,13 +14,18 @@ class ProductLabelReport(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         self.model = self.env.context.get('active_model')
-        product = self.env['product.template'].browse(self.env.context.get('active_id'))
+        # product = self.env['product.template'].browse(self.env.context.get('active_id'))
+        #
+        # self.model = self.env.context.get('active_model')
+        docs = self.env[self.model].browse(self.env.context.get('active_id'))
+
+        raise except_orm(docs)
 
 
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('erp.product_label_report')
 
-        raise except_orm(product.name)
+        # raise except_orm(product.name)
 
         docargs = {
             'doc_ids': docids,
