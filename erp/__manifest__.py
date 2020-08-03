@@ -52,7 +52,7 @@
         #Reportes
         'report/nomencladores/product_label_report.xml',
 
-        'report/reportes_config.xml',
+        # 'report/reportes_config.xml',
 
 
 
