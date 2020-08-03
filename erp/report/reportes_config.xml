@@ -15,27 +15,56 @@
         <template id="product_label_report">
             <!-- Re-browse of the record with the partner lang -->
             <t t-call="web.html_container">
-                    <t t-call="web.external_layout">
-                        <div class="header">
-                            Header
-                        </div>
+                <t t-call="web.external_layout">
+                    <div class="header">
+                        Header
+                    </div>
 
-                        <div class="page">
-                            <div class="oe_structure"/>
-                            <div class="row">
-                                <div class="col-6">
-                                    <strong>Invoice and shipping address:
-                                        <span t-field="product.name"/>
-                                    </strong>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <p>Producto:</p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>Tamaño:</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>Código:</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="oe_structure"/>
+
+
+
+                                <div class="col-4">
+
+                                </div>
+
+
                             </div>
                         </div>
 
                         <div class="footer">
                             Header
                         </div>
-                    </t>
+                    </div>
+                </t>
             </t>
 
         </template>
