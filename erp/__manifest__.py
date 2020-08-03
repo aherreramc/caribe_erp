@@ -50,7 +50,7 @@
         'views/nomencladores/menus.xml',
 
         #Reportes
-        'report/nomencladores/product_label_report.xml',
+        # 'report/nomencladores/product_label_report.xml',
 
         # 'report/reportes_config.xml',
 
