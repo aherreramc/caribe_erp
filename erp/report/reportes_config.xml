@@ -24,7 +24,7 @@
                         <div class="oe_structure"/>
                         <div class="row">
                             <div class="col-6">
-                                <strong>Invoice and shipping address:
+                                <strong>Invoice and shipping address: <span t-field="product.name"/>
                                 </strong>
                             </div>
                             <div class="oe_structure"/>

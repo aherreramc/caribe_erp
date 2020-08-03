@@ -16,7 +16,6 @@ class ProductLabelReport(models.AbstractModel):
         # self.model = self.env.context.get('active_model')
         # product = self.env[self.model].browse(self.env.context.get('active_id'))
 
-        raise except_orm("AA")
 
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('erp.product_label_report')
