@@ -49,7 +49,6 @@ class ProductLabelReport(models.AbstractModel):
 
         product = self.env['product.template'].browse(docids)
 
-        raise except_orm(product.name)
 
 
         docargs = {

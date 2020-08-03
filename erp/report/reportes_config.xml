@@ -15,7 +15,6 @@
         <template id="product_label_report">
             <!-- Re-browse of the record with the partner lang -->
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="product">
                     <t t-call="web.external_layout">
                         <div class="header">
                             Header
@@ -37,7 +36,6 @@
                             Header
                         </div>
                     </t>
-                </t>
             </t>
 
         </template>
