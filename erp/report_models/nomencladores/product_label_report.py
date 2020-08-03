@@ -17,9 +17,9 @@ class ProductLabelReport(models.AbstractModel):
         # product = self.env['product.template'].browse(self.env.context.get('active_id'))
         #
         # self.model = self.env.context.get('active_model')
-        docs = self.env[self.model].browse(self.env.context.get('active_id'))
+        # docs = self.env[self.model].browse(self.env.context.get('active_id'))
 
-        raise except_orm(docs)
+        raise except_orm(docids)
 
 
         report_obj = self.env['ir.actions.report']
