@@ -47,7 +47,7 @@ class ProductLabelReport(models.AbstractModel):
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('module.report_name')
 
-        product = self.env['product.template'].browse(self.env.context.get('active_id'))
+        product = self.env['product.template'].browse(docids)
 
         raise except_orm(product.name)
 
