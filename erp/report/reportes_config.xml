@@ -80,7 +80,6 @@
                     <style type="text/css">
                         .col {
                         border: 1px solid;
-                        border: 0px;
                         }
 
                         .row + .row {
