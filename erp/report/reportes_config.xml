@@ -53,6 +53,21 @@
                                         </p>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Contenido:</p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p>
+                                                <span t-field="product.descripcion_cliente"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="col-4">
@@ -64,19 +79,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-12">
-                                <p>Contenido:</p>
-                            </div>
-                        </div>
-
-                         <div class="row">
-                            <div class="col-12">
-                                <p>
-                                    <span t-field="product.descripcion_cliente"/>
-                                </p>
-                            </div>
-                        </div>
 
                         <div class="footer">
                             Footer
