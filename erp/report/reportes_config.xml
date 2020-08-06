@@ -6,7 +6,7 @@
                 id="product_label_reporte"
                 model="product.template"
                 string="Product Label"
-                report_type="qweb-pdf"
+                report_type="qweb-html"
                 name="erp.product_label_report"
                 attachment_use="True"
                 file="erp.product_label_report"
@@ -28,52 +28,99 @@
 
 
                         </div>
+
                         <div class="row">
                             <div class="col-8">
                                 <div class="row">
                                     <div class="col-8">
-                                        <p>Producto:</p>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p>Producto:</p>
+                                            </div>
+                                            <div class="col-4">
+                                                <p>
+                                                    <p>Tamaño:</p>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p>
+                                                    <span t-field="product.name"/>
+                                                </p>
+                                            </div>
+                                            <div class="col-4">
+                                                <p>
+                                                    <span t-field="product.size"/>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>Contenido:</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>
+                                                    <span t-field="product.descripcion_cliente"/>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6 columna_telefono">
+                                                <p>
+                                                    (998) 131 2322
+                                                </p>
+                                            </div>
+                                            <div class="col-6 columna_pagina">
+                                                <p>
+                                                    BIOTIVS.COM
+                                                </p>
+                                            </div>
+                                        </div>
+
                                     </div>
+
                                     <div class="col-4">
-                                        <p>
-                                            <p>Tamaño:</p>
-                                        </p>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>Código:</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-8">
-                                        <p>
-                                            <span t-field="product.name"/>
-                                        </p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>
-                                            <span t-field="product.size"/>
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p>Contenido:</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p>
-                                            <span t-field="product.descripcion_cliente"/>
-                                        </p>
-                                    </div>
-                                </div>
-
                             </div>
-
                             <div class="col-4">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <p>Código:</p>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div style="width:105%; margin-left:-15px;">
+                                                    <img src="/caribe_erp/static/src/img/this_side_up.PNG"
+                                                         style="width:100%"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div style="width:105%; margin-left:-15px;">
+                                                    <img src="/caribe_erp/static/src/img/inflamable.PNG"
+                                                         style="width:100%"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div style="width:105%; margin-left:-15px;">
+                                                    <img src="/caribe_erp/static/src/img/this_side_up.PNG"
+                                                         style="width:100%"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+
                                     </div>
                                 </div>
                             </div>
@@ -93,6 +140,16 @@
                         .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
                         .col-12{
                         border: 1px solid;
+                        }
+
+                        .columna_telefono{
+                        color: #FFA160;
+                        text-align: left;
+                        }
+
+                        .columna_pagina{
+                        color: #FFA160;
+                        text-align: right;
                         }
 
                         <!--.row + .row {-->
