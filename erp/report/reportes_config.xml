@@ -20,12 +20,10 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-8">
-
                                     <div style="width:105%; margin-left:-15px;">
                                         <img src="/erp/static/src/img/report_label_presentation.PNG"
                                              style="width:100%"/>
                                     </div>
-
                                 </div>
                                 <div class="col-4">
                                     <div class="row">
@@ -100,19 +98,6 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row">
-                                                <div class="col-6 columna_telefono">
-                                                    <p>
-                                                        (998) 131 2322
-                                                    </p>
-                                                </div>
-                                                <div class="col-6 columna_pagina">
-                                                    <p>
-                                                        BIOTIVS.COM
-                                                    </p>
-                                                </div>
-                                            </div>
-
                                         </div>
 
                                         <div class="col-4">
@@ -121,6 +106,18 @@
                                                     <p>Código:</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 columna_telefono">
+                                            <p>
+                                                (998) 131 2322
+                                            </p>
+                                        </div>
+                                        <div class="col-6 columna_pagina">
+                                            <p>
+                                                BIOTIVS.COM
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
