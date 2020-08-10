@@ -6,7 +6,7 @@
                 id="product_label_reporte"
                 model="product.template"
                 string="Product Label"
-                report_type="qweb-html"
+                report_type="qweb-pdf"
                 name="erp.product_label_report"
                 attachment_use="True"
                 file="erp.product_label_report"
@@ -25,17 +25,17 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-8">
-                                        <div style="width:100%;">
+                                        <div style="width:100%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
-                                                 style="width:100%; margin: auto;"/>
+                                                 style="width:100%;"/>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="row">
                                             <div class="col-12">
-                                                <div style="width:100%;">
+                                                <div style="width:100%; margin: auto;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:100%; margin: auto;"/>
+                                                         style="width:100%;"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,25 +137,25 @@
                                                     <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <div style="width:90%">
+                                                                <div style="width:100%; margin: auto;">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%; margin: auto;"/>
+                                                                         style="width:100%;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <div style="width:90%">
+                                                                <div style="width:100%; margin: auto;">
                                                                     <img src="/erp/static/src/img/inflamable.PNG"
-                                                                         style="width:100%; margin: auto;"/>
+                                                                         style="width:100%;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <div style="width:90%">
+                                                                <div style="width:90%; margin: auto;">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%; margin: auto;"/>
+                                                                         style="width:100%;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
