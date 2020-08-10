@@ -188,7 +188,7 @@
 
                         .columna_pagina{
                         border:none;
-                        text-align: left;
+                        text-align: right;
                         }
 
                         <!--.row + .row {-->
