@@ -70,37 +70,37 @@
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <div class="row">
-                                                            <div class="col-8">
+                                                        <div class="row border">
+                                                            <div class="col-8 border_right">
                                                                 <p>Producto:</p>
                                                             </div>
-                                                            <div class="col-4">
+                                                            <div class="col-4 border_none">
                                                                 <p>
                                                                     <p>Tamaño:</p>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
-                                                            <div class="col-8">
+                                                        <div class="row border">
+                                                            <div class="col-8 border_right">
                                                                 <p>
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-4">
+                                                            <div class="col-4 border_none">
                                                                 <p>
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
+                                                        <div class="row border">
                                                             <div class="col-12 border_none">
                                                                 <p>Contenido:</p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
+                                                        <div class="row border">
                                                             <div class="col-12 border_none">
                                                                 <p>
                                                                     <span t-field="product.descripcion_cliente"/>
@@ -179,6 +179,14 @@
 
                         .border_none{
                         border:none;
+                        }
+
+                        .border{
+                         border: 1px solid;
+                        }
+
+                        .border_right{
+                        border-right: 1px solid;
                         }
 
                         .columna_telefono{
