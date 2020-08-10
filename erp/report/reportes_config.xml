@@ -6,7 +6,7 @@
                 id="product_label_reporte"
                 model="product.template"
                 string="Product Label"
-                report_type="qweb-html"
+                report_type="qweb-pdf"
                 name="erp.product_label_report"
                 attachment_use="True"
                 file="erp.product_label_report"
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row border_none">
-                                    <div class="col-8" style="margin: auto;">
+                                    <div class="col-8 border_none" style="margin: auto;">
                                         <div style="width:100%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
                                                  style="width:100%;"/>
