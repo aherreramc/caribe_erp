@@ -180,7 +180,7 @@
                         }
 
                         .border_none{
-                        border:none;
+                        border:none !important;
                         }
 
                         .border{
