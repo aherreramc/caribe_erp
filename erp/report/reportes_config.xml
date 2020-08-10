@@ -170,13 +170,13 @@
                     <style type="text/css">
                         .col {
                         border: 2px solid;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
                         .col-12{
                         border: 2px solid;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         .border_none{
@@ -185,24 +185,24 @@
 
                         .border{
                          border: 2px solid;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         .border_right{
                         border-right: 2px solid;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         .columna_telefono{
                         border:none;
                         text-align: left;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         .columna_pagina{
                         border:none;
                         text-align: right;
-                        border-color: black;
+                        border-color: black !important;
                         }
 
                         <!--.row + .row {-->
