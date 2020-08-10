@@ -143,16 +143,20 @@
                                                                  style="width:100%"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div style="width:90%">
-                                                            <img src="/erp/static/src/img/inflamable.PNG"
-                                                                 style="width:100%"/>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div style="width:90%">
+                                                                <img src="/erp/static/src/img/inflamable.PNG"
+                                                                     style="width:100%"/>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div style="width:90%">
-                                                            <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                 style="width:100%"/>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div style="width:90%">
+                                                                <img src="/erp/static/src/img/this_side_up.PNG"
+                                                                     style="width:100%"/>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,7 +188,7 @@
                         }
 
                         .border{
-                         border: 2px solid;
+                        border: 2px solid;
                         border-color: black !important;
                         }
 
@@ -206,11 +210,11 @@
                         }
 
                         .orange{
-                            color: #ffb17b;
+                        color: #ffb17b;
                         }
 
                         .verde{
-                            color: #2d7e5e;
+                        color: #2d7e5e;
                         }
 
                         <!--.row + .row {-->
