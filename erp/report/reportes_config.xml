@@ -27,7 +27,7 @@
                                     <div class="col-8">
                                         <div style="width:100%;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
-                                                 style="width:100%"/>
+                                                 style="width:100%; margin: auto;"/>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -35,7 +35,7 @@
                                             <div class="col-12">
                                                 <div style="width:100%;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:100%"/>
+                                                         style="width:100%; margin: auto;"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -139,7 +139,7 @@
                                                             <div class="col-12">
                                                                 <div style="width:90%">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%"/>
+                                                                         style="width:100%; margin: auto;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -147,7 +147,7 @@
                                                             <div class="col-12">
                                                                 <div style="width:90%">
                                                                     <img src="/erp/static/src/img/inflamable.PNG"
-                                                                         style="width:100%"/>
+                                                                         style="width:100%; margin: auto;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -155,7 +155,7 @@
                                                             <div class="col-12">
                                                                 <div style="width:90%">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%"/>
+                                                                         style="width:100%; margin: auto;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
