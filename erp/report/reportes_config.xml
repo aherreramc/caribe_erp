@@ -24,40 +24,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row border_none">
-                                    <div class="col-8 border_none" style="margin: auto;">
-                                        <div style="width:100%; margin: auto;">
-                                            <img src="/erp/static/src/img/report_label_presentation.PNG"
-                                                 style="width:100%;"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div style="width:100%; margin: auto;">
-                                                    <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:100%;"/>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="verde">Número de Orden:</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="verde">Código de envío:</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p></p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p></p>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                 </div>
 
 
