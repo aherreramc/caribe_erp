@@ -121,12 +121,12 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-6 columna_telefono">
+                                            <div class="col-6 border_none">
                                                 <p>
                                                     (998) 131 2322
                                                 </p>
                                             </div>
-                                            <div class="col-6 columna_pagina">
+                                            <div class="col-6 border_none">
                                                 <p>
                                                     BIOTIVS.COM
                                                 </p>
@@ -175,6 +175,10 @@
                         .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
                         .col-12{
                         border: 1px solid;
+                        }
+
+                        .border_none{
+                            border:none;
                         }
 
                         <!--.row + .row {-->
