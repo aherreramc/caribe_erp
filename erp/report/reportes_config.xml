@@ -95,13 +95,13 @@
                                                         </div>
 
                                                         <div class="row">
-                                                            <div class="col-12">
+                                                            <div class="col-12 border_none">
                                                                 <p>Contenido:</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="row">
-                                                            <div class="col-12">
+                                                            <div class="col-12 border_none">
                                                                 <p>
                                                                     <span t-field="product.descripcion_cliente"/>
                                                                 </p>
