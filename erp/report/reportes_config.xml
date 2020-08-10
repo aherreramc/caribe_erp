@@ -12,7 +12,7 @@
                 file="erp.product_label_report"
         />
 
-        <template id="report_saleorder_document">
+        <template id="product_label_report">
             <!-- Re-browse of the record with the partner lang -->
             <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
             <t t-call="web.external_layout">
