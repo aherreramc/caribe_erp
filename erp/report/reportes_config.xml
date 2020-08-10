@@ -14,21 +14,94 @@
 
         <template id="product_label_report">
             <!-- Re-browse of the record with the partner lang -->
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <div class="oe_structure"/>
-                    <div class="row">
-                        <div class="col-6">
-                            hola
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="header">
+                        Header
+                    </div>
+
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+
+                        <div class="row">
+
+
                         </div>
-                        <div class="col-6">
-                            mundo
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Producto:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>
+                                            <p>Tamaño:</p>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>
+                                            <span t-field="product.name"/>
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>
+                                            <span t-field="product.size"/>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Código:</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Contenido:</p>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    <span t-field="product.size"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="footer">
+                            Footer
                         </div>
                     </div>
-                </div>
+
+                    <style type="text/css">
+                        .col {
+                        border: 1px solid;
+                        }
+
+                        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
+                        .col-12{
+                        border: 1px solid;
+                        }
+
+                        <!--.row + .row {-->
+                        <!--border-top:0 ;-->
+                        <!--}-->
+                    </style>
+                </t>
             </t>
+
         </template>
 
 
     </data>
-</odoo>
+</odoo> 
