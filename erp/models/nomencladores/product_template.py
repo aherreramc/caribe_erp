@@ -116,7 +116,7 @@ class ProductTemplate(models.Model):
                 display_value += ": "
             display_value += self.descripcion_cliente
 
-        data.append((producto.id, display_value))
+        data.append((self.id, display_value))
 
         return data
 
