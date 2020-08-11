@@ -5,6 +5,8 @@ from odoo import api, fields, models, SUPERUSER_ID, tools, _
 
 import odoo.addons.decimal_precision as dp
 
+from openerp.exceptions import except_orm, Warning, RedirectWarning
+
 
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
@@ -101,7 +103,7 @@ class ProductTemplate(models.Model):
 
 
     def name_get(self):
-        raise except_orm("Hola")
+
         res = super(ProductTemplate, self).name_get()
         data = []
         data.append(("Hola", "Mundo"))
