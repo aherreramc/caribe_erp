@@ -108,15 +108,16 @@ class ProductTemplate(models.Model):
 
         display_value = ''
 
-        if self.name is not False:
-            display_value += self.name
+        for product in self:
+            if product.name is not False:
+                display_value += product.name
 
-        if self.descripcion_cliente is not False:
-            if self.name is not False:
-                display_value += ": "
-            display_value += self.descripcion_cliente
+            if product.descripcion_cliente is not False:
+                if product.name is not False:
+                    display_value += ": "
+                display_value += product.descripcion_cliente
 
-        data.append((self.id, display_value))
+            data.append((product.id, display_value))
 
         return data
 
