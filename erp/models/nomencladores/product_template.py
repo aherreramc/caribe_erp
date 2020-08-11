@@ -106,9 +106,9 @@ class ProductTemplate(models.Model):
         res = super(ProductTemplate, self).name_get()
         data = []
 
-        display_value = ''
-
         for product in self:
+            display_value = ''
+
             if product.name is not False:
                 display_value += product.name
 
@@ -116,6 +116,8 @@ class ProductTemplate(models.Model):
                 if product.name is not False:
                     display_value += ": "
                 display_value += product.descripcion_cliente
+
+            raise except_orm(display_value)
 
             data.append((product.id, display_value))
 
