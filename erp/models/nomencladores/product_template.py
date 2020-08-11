@@ -106,7 +106,7 @@ class ProductTemplate(models.Model):
 
         res = super(ProductTemplate, self).name_get()
         data = []
-        data.append(("Hola", "Mundo"))
+        data.append((self.id, "Mundo"))
 
         # for producto in self:
         #     display_value = ''
