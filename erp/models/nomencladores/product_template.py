@@ -101,6 +101,7 @@ class ProductTemplate(models.Model):
 
 
     def name_get(self):
+        raise except_orm("Hola")
         res = super(ProductTemplate, self).name_get()
         data = []
         data.append(("Hola", "Mundo"))
