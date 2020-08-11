@@ -100,7 +100,6 @@ class ProductTemplate(models.Model):
     certificate_3 = fields.Binary("", attachment=True, help="")
 
 
-    @api.multi
     def name_get(self):
         res = super(ProductTemplate, self).name_get()
         data = []
