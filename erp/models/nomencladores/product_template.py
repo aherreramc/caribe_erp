@@ -103,42 +103,21 @@ class ProductTemplate(models.Model):
 
 
     def name_get(self):
-
         res = super(ProductTemplate, self).name_get()
         data = []
-        data.append((self.id, "Mundo"))
 
-        # for producto in self:
-        #     display_value = ''
-        #
-        #     if producto.descripcion_cliente is not False:
-        #         display_value += "" + producto.descripcion_cliente
-        #
-        #     if producto.name is not False:
-        #         display_value += ", Modelo: " + producto.name
-        #
-        #     if producto.tipo_de_producto.id is not False and producto.tipo_de_producto.name == 'Pieza de repuesto':
-        #         if len(producto.repuestos) > 0:
-        #             display_value += ", Repuesto de: "
-        #             cantidad_de_repuestos_restantes = len(producto.repuestos)
-        #
-        #             for repuesto in producto.repuestos:
-        #                 display_value += repuesto.name
-        #
-        #                 if cantidad_de_repuestos_restantes > 2:
-        #                     display_value += ", "
-        #                     cantidad_de_repuestos_restantes -= 1
-        #                 elif cantidad_de_repuestos_restantes == 2:
-        #                     display_value += " y "
-        #                     cantidad_de_repuestos_restantes -= 1
-        #
-        #         if producto.posicion is not False:
-        #             display_value += ", Posición: " + producto.posicion
-        #
-        #     if producto.marca.name is not False:
-        #         display_value += ", Marca: " + producto.marca.name
-        #
-        #     data.append((producto.id, display_value))
+        display_value = ''
+
+        if self.name is not False:
+            display_value += self.name
+
+        if self.descripcion_cliente is not False:
+            if self.name is not False:
+                display_value += ": "
+            display_value += self.descripcion_cliente
+
+        data.append((producto.id, display_value))
+
         return data
 
     def name_get_to_string(self):
