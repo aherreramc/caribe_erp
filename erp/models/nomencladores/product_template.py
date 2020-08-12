@@ -117,8 +117,6 @@ class ProductTemplate(models.Model):
                     display_value += ": "
                 display_value += product.descripcion_cliente
 
-            raise except_orm(display_value)
-
             data.append((product.id, display_value))
 
         return data
