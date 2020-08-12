@@ -135,6 +135,7 @@ class ProductTemplate(models.Model):
 
     @api.model
     def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        raise except_orm("Hola")
         args = args or []
         recs = self.browse()
         if name:
