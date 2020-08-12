@@ -129,10 +129,9 @@ class ProductTemplate(models.Model):
         return nombre_a_mostrar
 
 
-
-
-    @api.model
-    def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+    # @api.model
+    # def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+    def _name_search(self, name='', args=None, operator='ilike', limit=100):
         raise except_orm("Hola")
         args = args or []
         recs = self.browse()
