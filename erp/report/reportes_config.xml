@@ -62,7 +62,7 @@
                                 </div>
 
 
-                                <div class="row">
+                                <div class="row border orange">
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-12">
@@ -191,7 +191,6 @@
 
                         .border{
                         border: 1px solid;
-                        border-color: black !important;
                         }
 
                         .border_right{
