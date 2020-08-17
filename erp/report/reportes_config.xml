@@ -67,9 +67,9 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="row">
-                                                    <div class="col-8">
-                                                        <div class="row border">
-                                                            <div class="col-8 border_right">
+                                                    <div class="col-8 ">
+                                                        <div class="row">
+                                                            <div class="col-8 border_right orange">
                                                                 <p class="verde">Producto:</p>
                                                             </div>
                                                             <div class="col-4 border_none">
@@ -174,29 +174,28 @@
                     </div>
 
                     <style type="text/css">
-                        .col {
-                        border: 2px solid;
-                        border-color: black !important;
-                        }
+                        <!--.col {-->
+                        <!--border: 1px solid;-->
+                        <!--border-color: black !important;-->
+                        <!--}-->
 
-                        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
-                        .col-12{
-                        border: 2px solid;
-                        border-color: black !important;
-                        }
+                        <!--.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,-->
+                        <!--.col-12{-->
+                        <!--border: 1px solid;-->
+                        <!--border-color: black !important;-->
+                        <!--}-->
 
                         .border_none{
                         border:none !important;
                         }
 
                         .border{
-                        border: 2px solid;
+                        border: 1px solid;
                         border-color: black !important;
                         }
 
                         .border_right{
-                        border-right: 2px solid;
-                        border-color: black !important;
+                        border-right: 1px solid;
                         }
 
                         .columna_telefono{
@@ -212,7 +211,7 @@
                         }
 
                         .orange{
-                        color: #ffb17b;
+                        color: #f09d60;
                         }
 
                         .verde{
