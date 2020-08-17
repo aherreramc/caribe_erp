@@ -62,14 +62,14 @@
                                 </div>
 
 
-                                <div class="row border orange">
+                                <div class="row border border_orange">
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-8 ">
                                                         <div class="row">
-                                                            <div class="col-8 border_right orange">
+                                                            <div class="col-8 border_right_orange">
                                                                 <p class="verde">Producto:</p>
                                                             </div>
                                                             <div class="col-4 border_none">
@@ -80,7 +80,7 @@
                                                         </div>
 
                                                         <div class="row border">
-                                                            <div class="col-8 border_right">
+                                                            <div class="col-8 border_right_orange">
                                                                 <p class="verde">
                                                                     <span t-field="product.name"/>
                                                                 </p>
@@ -189,12 +189,14 @@
                         border:none !important;
                         }
 
-                        .border{
+                        .border_orange{
                         border: 1px solid;
+                        border-color: #f09d60;
                         }
 
-                        .border_right{
+                        .border_right_orange{
                         border-right: 1px solid;
+                        border-color: #f09d60;
                         }
 
                         .columna_telefono{
