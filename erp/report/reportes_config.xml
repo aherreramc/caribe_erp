@@ -195,8 +195,8 @@
                         }
 
                         .border_right_orange{
-                        border-right: 1px solid;
-                        border-color: #f09d60;
+                        border-right: 1px solid !important;
+                        border-color: #f09d60 !important;
                         }
 
                         .columna_telefono{
