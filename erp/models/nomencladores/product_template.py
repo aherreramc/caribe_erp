@@ -179,10 +179,6 @@ class ProductTemplate(models.Model):
     #                 'cantidad_por_caja_master': self.cantidad_por_caja_master
     #             })
 
-    @api.depends('largo', 'alto', 'profundidad')
-    def _compute_medidas(self):
-        self.medidas = str(self.largo) + "*" + str(self.alto) + "*" + str(self.profundidad)
-
 
     @api.depends('image_variant', 'image')
     def _compute_images(self):
