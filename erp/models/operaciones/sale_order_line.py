@@ -4,6 +4,7 @@ import odoo
 from odoo import api, fields, models, SUPERUSER_ID, tools, _
 
 import odoo.addons.decimal_precision as dp
+from openerp.exceptions import except_orm, Warning, RedirectWarning
 
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 
@@ -22,6 +23,7 @@ class SaleOrderLineTemplate(models.Model):
 # #
 # #
     def name_get(self):
+        raise except_orm("Hola")
         result = []
         for so_line in self.sudo():
             name = '%s - %s' % (so_line.product_id.descripcion_cliente)
