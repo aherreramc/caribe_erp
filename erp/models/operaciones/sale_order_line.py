@@ -21,11 +21,11 @@ class SaleOrderLineTemplate(models.Model):
 #     #     return result
 #
 #
-#     def name_get(self):
-#         result = []
-#         for so_line in self.sudo():
-#             name = '%s - %s' % (so_line.product_id.descripcion_cliente)
-#             # if so_line.order_partner_id.ref:
-#             #     name = '%s (%s)' % (name, so_line.order_partner_id.ref)
-#             result.append((so_line.id, name))
-#         return result
+    def name_get(self):
+        result = []
+        for so_line in self.sudo():
+            name = '%s - %s' % (so_line.product_id.descripcion_cliente)
+            # if so_line.order_partner_id.ref:
+            #     name = '%s (%s)' % (name, so_line.order_partner_id.ref)
+            result.append((so_line.id, name))
+        return result
