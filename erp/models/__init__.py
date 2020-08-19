@@ -2,3 +2,4 @@
 from doctest import _normalize_module
 
 from . import nomencladores
+from . import operaciones
