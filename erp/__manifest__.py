@@ -29,9 +29,9 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        #Views
+        # Views
 
-        #Nomencladores
+        # Nomencladores
         'views/nomencladores/tipo_de_espiga.xml',
         'views/nomencladores/tipo_de_producto.xml',
         'views/nomencladores/potencia.xml',
@@ -50,14 +50,14 @@
 
         'views/nomencladores/menus.xml',
 
-        #Reportes
+        # Reportes
         # 'report/nomencladores/product_label_report.xml',
+        'report/operaciones/quotations_report.xml',
 
+        'report/operaciones/reportes_operaciones_config.xml',
         'report/reportes_config.xml',
 
-
-
-        #security
+        # security
         'security/security.xml',
 
     ],
@@ -70,5 +70,3 @@
     'application': True,
     'auto_install': False,
 }
-
-

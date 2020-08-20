@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="quotations_report"
+                model="sale.order.line"
+                string="Cotización"
+                report_type="qweb-html"
+                name="erp.quotations_report"
+                attachment_use="True"
+                file="Cotización"
+        />
+    </data>
+</odoo>
