@@ -3,7 +3,7 @@
     <data>
         <report
                 id="quotations_report"
-                model="sale.order.line"
+                model="sale.order"
                 string="Cotización"
                 report_type="qweb-html"
                 name="erp.quotations_report"
