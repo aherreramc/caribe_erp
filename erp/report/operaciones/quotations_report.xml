@@ -78,19 +78,15 @@
                         }
 
                         .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5 {
-                        min-height: 1px;
-                        position: relative;
+                        float: left;
+                        max-width: 20%;
                         }
 
                         .col-xs-5 {
                         float: left;
-                        width: 20%;
+                        max-width: 20%;
                         }
 
-                        .col-5{
-                        width: 20%;
-                        float: left;
-                        }
 
 
                     </style>
