@@ -9,63 +9,63 @@
                     <div class="page">
                         <div class="oe_structure"/>
 
-                        <div class="container">
-                            <div class="row border_orange border_radius_10">
-                                <div class="col-12">
-                                    <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>ATENCIÓN</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FACTURAR</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>DIRECCIÓN</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FOLIO</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FECHA</span>
-                                        </div>
-                                    </div>
-                                    <div class="row abs-center text-center second_table_firt_row">
 
+                        <div class="row border_orange border_radius_10">
+                            <div class="col-12">
+                                <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
+                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <span>ATENCIÓN</span>
                                     </div>
+                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <span>FACTURAR</span>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <span>DIRECCIÓN</span>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <span>FOLIO</span>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <span>FECHA</span>
+                                    </div>
+                                </div>
+                                <div class="row abs-center text-center second_table_firt_row">
+
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row abs-center text-center">
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>CANT</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>UNIDAD</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>CÓDIGO</span>
-                            </div>
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                <span>DESCRIPCIÓN</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>PZAS X CAJA</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>PZAS TOTALES</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>PRECIO UNITARIO</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>PRECIO POR PZA</span>
-                            </div>
-                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                <span>TOTAL</span>
+                        <div class="row border_orange border_radius_10">
+                            <div class="row abs-center text-center">
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>CANT</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>UNIDAD</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>CÓDIGO</span>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <span>DESCRIPCIÓN</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>PZAS X CAJA</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>PZAS TOTALES</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>PRECIO UNITARIO</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>PRECIO POR PZA</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <span>TOTAL</span>
+                                </div>
                             </div>
                         </div>
-
 
                     </div>
 
@@ -110,15 +110,15 @@
                         }
 
                         .border_radius_10{
-                            border-radius: 10px;
+                        border-radius: 10px;
                         }
 
                         .firt_table_firt_row{
-                            min-height: 20px;
+                        min-height: 20px;
                         }
 
                         .second_table_firt_row{
-                            min-height: 60px;
+                        min-height: 60px;
                         }
 
 
@@ -128,4 +128,4 @@
 
         </template>
     </data>
-</odoo> 
+</odoo>
