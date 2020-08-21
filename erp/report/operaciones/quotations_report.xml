@@ -27,6 +27,15 @@
                             </div>
                         </div>
 
+
+                        <div class="row-fluid">
+    <div class="span2">1</div>
+    <div class="span2">2</div>
+    <div class="span2">3</div>
+    <div class="span2">4</div>
+    <div class="span2">5</div>
+</div>
+
                     </div>
 
                     <style type="text/css">
