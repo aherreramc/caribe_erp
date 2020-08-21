@@ -29,12 +29,31 @@
 
 
                         <div class="row-fluid">
-    <div class="span2">1</div>
-    <div class="span2">2</div>
-    <div class="span2">3</div>
-    <div class="span2">4</div>
-    <div class="span2">5</div>
-</div>
+                            <div class="span2">1</div>
+                            <div class="span2">2</div>
+                            <div class="span2">3</div>
+                            <div class="span2">4</div>
+                            <div class="span2">5</div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-5">
+                                <span>ATENCIÓN</span>
+                            </div>
+                            <div class="col-5">
+                                <span>FACTURAR</span>
+                            </div>
+                            <div class="col-5">
+                                <span>DIRECCIÓN</span>
+                            </div>
+                            <div class="col-5">
+                                <span>FOLIO</span>
+                            </div>
+                            <div class="col-5">
+                                <span>FECHA</span>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -68,25 +87,9 @@
                         width: 20%;
                         }
 
-                        @media (min-width: 768px) {
-                        .col-sm-5 {
-                        float: left;
+                        .col-5{
                         width: 20%;
-                        }
-                        }
-
-                        @media (min-width: 992px) {
-                        .col-md-5 {
                         float: left;
-                        width: 20%;
-                        }
-                        }
-
-                        @media (min-width: 1200px) {
-                        .col-lg-5 {
-                        float: left;
-                        width: 20%;
-                        }
                         }
 
 
