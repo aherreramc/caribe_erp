@@ -9,25 +9,29 @@
                     <div class="page">
                         <div class="oe_structure"/>
 
-                        <div class="row abs-center">
-                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <span>ATENCIÓN</span>
+                        <div class="row border_orange">
+                            <div class="row abs-center text-center">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <span>ATENCIÓN</span>
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <span>FACTURAR</span>
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <span>DIRECCIÓN</span>
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <span>FOLIO</span>
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <span>FECHA</span>
+                                </div>
                             </div>
-                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <span>FACTURAR</span>
-                            </div>
-                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <span>DIRECCIÓN</span>
-                            </div>
-                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <span>FOLIO</span>
-                            </div>
-                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <span>FECHA</span>
+                            <div class="row abs-center text-center">
                             </div>
                         </div>
 
-                        <div class="row abs-center">
+                        <div class="row abs-center text-center">
                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                 <span>CANT</span>
                             </div>
