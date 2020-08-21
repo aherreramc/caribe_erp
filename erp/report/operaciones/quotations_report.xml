@@ -12,7 +12,7 @@
                         <div class="container">
                             <div class="row border_orange">
                                 <div class="col-12">
-                                    <div class="row abs-center text-center">
+                                    <div class="row abs-center text-center border_gross_bottom_orange">
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                                             <span>ATENCIÓN</span>
                                         </div>
@@ -76,6 +76,11 @@
 
                         .border_orange{
                         border: 1px solid;
+                        border-color: #f09d60;
+                        }
+
+                        .border_gross_bottom_orange{
+                        border-bottom: 2px solid;
                         border-color: #f09d60;
                         }
 
