@@ -133,10 +133,24 @@
                                             </p>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <p>SUBTOTAL</p>
-                                            <p>DESCUENTO</p>
-                                            <p>SUBTOTAL NETO</p>
-                                            <p>IVA</p>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>SUBTOTAL</p>
+                                                    <p>DESCUENTO</p>
+                                                    <p>SUBTOTAL NETO</p>
+                                                    <p>IVA</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>TOTAL FINAL</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>VIGENCIA DE COTIZACIÓN</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
