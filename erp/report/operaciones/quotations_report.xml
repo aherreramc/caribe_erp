@@ -65,13 +65,37 @@
                                         </div>
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                             <span>TOTAL</span>
-                                            <span t-field="doc.name"/>
                                         </div>
                                     </div>
                                     <t t-foreach="doc.order_line" t-as="line">
                                         <div class="row border_order_line_row abs-center text-center">
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>CÓDIGO</span>
+                                                <span t-field="doc.product_id.name"/>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                <span t-field="doc.product_id.descripcion_cliente"/>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span t-field="doc.product_id.product_uom_qty"/>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>UNIDAD</span>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>PZAS X CAJA</span>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>PZAS TOTALES</span>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>PRECIO UNITARIO</span>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>PRECIO POR PZA</span>
+                                            </div>
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <span>TOTAL</span>
+                                                <span t-field="doc.name"/>
                                             </div>
                                         </div>
                                     </t>
@@ -133,8 +157,8 @@
                             }
 
                             .border_order_line_row{
-                                border-top: 2px solid !important;
-                                border-color: #f09d60 !important;
+                            border-top: 2px solid !important;
+                            border-color: #f09d60 !important;
                             }
 
 
