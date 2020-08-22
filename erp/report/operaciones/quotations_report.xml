@@ -5,7 +5,7 @@
             <!-- Re-browse of the record with the partner lang -->
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.external_layout">
+
 
                         <div class="page">
                             <div class="oe_structure"/>
@@ -223,7 +223,7 @@
 
                         </style>
                     </t>
-                </t>
+
             </t>
 
         </template>
