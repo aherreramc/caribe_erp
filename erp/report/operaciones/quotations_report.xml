@@ -141,12 +141,12 @@
                                                     <p>IVA</p>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row border_order_line_row">
                                                 <div class="col-12">
                                                     <p>TOTAL FINAL</p>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row border_order_line_row">
                                                 <div class="col-12">
                                                     <p>VIGENCIA DE COTIZACIÓN</p>
                                                 </div>
@@ -174,12 +174,12 @@
                             }
 
                             .border_left_orange{
-                            border-right: 1px solid !important;
+                            border-left: 2px solid !important;
                             border-color: #f09d60 !important;
                             }
 
                             .border_right_orange{
-                            border-right: 1px solid !important;
+                            border-right: 2px solid !important;
                             border-color: #f09d60 !important;
                             }
 
