@@ -36,9 +36,9 @@
                                 </div>
                             </div>
 
-                            <div class="row border_orange border_radius_10 orange">
+                            <div class="row border_orange border_radius_10">
                                 <div class="col-12">
-                                    <div class="row abs-center text-center">
+                                    <div class="row abs-center text-center orange">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                             <span>CÓDIGO</span>
                                         </div>
