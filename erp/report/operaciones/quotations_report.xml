@@ -66,7 +66,6 @@
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                             <span>TOTAL</span>
                                             <span t-field="doc.name"/>
-                                            <span t-field="doc.order_line"/>
                                         </div>
                                     </div>
                                     <t t-foreach="doc.order_line" t-as="line">
@@ -131,6 +130,12 @@
 
                             .second_table_firt_row{
                             min-height: 60px;
+                            }
+
+                            .border_order_line{
+                                border-top: 2px solid !important;
+                                border-bottom: 2px solid !important;
+                                border-color: #f09d60 !important;
                             }
 
 
