@@ -82,20 +82,22 @@
                                                 <span>UNIDAD</span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>PZAS X CAJA</span>
+                                                <div t-if="line.product_packaging">
+                                                    <span t-field="line.product_packaging.qty"/>
+                                                </div>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span>PZAS TOTALES</span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>PRECIO UNITARIO</span>
+                                                <span t-field="line.price_unit"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span>PRECIO POR PZA</span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span>TOTAL</span>
-                                                <span t-field="doc.name"/>
+                                                <span t-field="line.price_subtotal"/>
                                             </div>
                                         </div>
                                     </t>
