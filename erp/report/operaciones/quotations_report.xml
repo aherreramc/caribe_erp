@@ -127,7 +127,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
-                                            <p>CONDICIONES</p>
+                                            <p class="orange">CONDICIONES</p>
                                             <p>
 
                                             </p>
@@ -135,20 +135,20 @@
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <p>SUBTOTAL</p>
-                                                    <p>DESCUENTO</p>
-                                                    <p>SUBTOTAL NETO</p>
-                                                    <p>IVA</p>
+                                                    <p class="orange">SUBTOTAL</p>
+                                                    <p class="orange">DESCUENTO</p>
+                                                    <p class="orange">SUBTOTAL NETO</p>
+                                                    <p class="orange">IVA</p>
                                                 </div>
                                             </div>
                                             <div class="row border_order_line_row">
                                                 <div class="col-12">
-                                                    <p>TOTAL FINAL</p>
+                                                    <p class="orange">TOTAL FINAL</p>
                                                 </div>
                                             </div>
                                             <div class="row border_order_line_row">
                                                 <div class="col-12">
-                                                    <p>VIGENCIA DE COTIZACIÓN</p>
+                                                    <p class="orange">VIGENCIA DE COTIZACIÓN</p>
                                                 </div>
                                             </div>
                                         </div>
