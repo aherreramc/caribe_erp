@@ -101,6 +101,24 @@
                                             </div>
                                         </div>
                                     </t>
+
+                                    <div class="row border_order_line_row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div>
+                                                <p class="orange">DATOS BANCARIOS</p>
+                                            </div>
+                                            <div>
+                                                <p>Beneficiario</p>
+                                                <p><span t-esc="o.company_id.name"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
