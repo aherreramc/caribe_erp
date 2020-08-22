@@ -66,6 +66,7 @@
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                             <span>TOTAL</span>
                                             <span t-field="doc.name"/>
+                                            <span t-field="len(doc.order_line)"/>
                                         </div>
                                     </div>
                                     <t t-foreach="doc.order_line" t-as="line">
