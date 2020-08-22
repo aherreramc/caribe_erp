@@ -134,7 +134,6 @@
 
                             .border_order_line_row{
                                 border-top: 2px solid !important;
-                                border-bottom: 2px solid !important;
                                 border-color: #f09d60 !important;
                             }
 
