@@ -109,7 +109,7 @@
                                             </div>
                                             <div>
                                                 <p>Beneficiario</p>
-                                                <p><span t-esc="o.company_id.name"/></p>
+                                                <p><span t-esc="doc.company_id.name"/></p>
                                             </div>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
