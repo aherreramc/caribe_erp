@@ -109,14 +109,34 @@
                                             </div>
                                             <div>
                                                 <p>Beneficiario</p>
-                                                <p><span t-esc="doc.company_id.name"/></p>
+                                                <p>
+                                                    <span t-esc="doc.company_id.name"/>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Cuenta</p>
+                                                <p>
+
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>CLABE</p>
+                                                <p>
+
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <p>CONDICIONES</p>
+                                            <p>
 
+                                            </p>
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
+                                            <p>SUBTOTAL</p>
+                                            <p>DESCUENTO</p>
+                                            <p>SUBTOTAL NETO</p>
+                                            <p>IVA</p>
                                         </div>
                                     </div>
                                 </div>
