@@ -76,14 +76,14 @@
                                                 <span t-field="line.name"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span t-field="'%.0f'%line.product_uom_qty"/>
+                                                <span t-field="'%.0f'%(line.product_uom_qty)"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span></span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <div t-if="line.product_packaging">
-                                                    <span t-field="'%.0f'%line.product_packaging.qty"/>
+                                                    <span t-field="'%.0f'(%line.product_packaging.qty)"/>
                                                 </div>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
