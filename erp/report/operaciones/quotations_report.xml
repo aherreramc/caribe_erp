@@ -73,7 +73,9 @@
                                                 <span t-field="line.product_id.name"/>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-justify">
-                                                <span t-field="line.name"/>
+                                                <span t-field="int(line.name)"/>
+
+
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span t-field="line.product_uom_qty"/>
