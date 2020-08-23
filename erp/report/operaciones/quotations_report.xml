@@ -79,7 +79,7 @@
                                                 <span t-field="line.product_uom_qty"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>UNIDAD</span>
+                                                <span></span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <div t-if="line.product_packaging">
@@ -87,16 +87,15 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>PZAS TOTALES</span>
+                                                <span></span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span t-field="line.price_unit"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>PRECIO POR PZA</span>
+                                                <span></span>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span>TOTAL</span>
                                                 <span t-field="line.price_subtotal"/>
                                             </div>
                                         </div>
