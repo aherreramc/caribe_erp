@@ -76,7 +76,7 @@
                                                 <span t-field="line.name"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                                                <span><t t-esc="{.0f } % (line.product_uom_qty)"/></span>
+                                                <span t-field="line.product_uom_qty"/>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <span></span>
