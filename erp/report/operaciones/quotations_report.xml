@@ -83,7 +83,7 @@
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                                                 <div t-if="line.product_packaging">
-                                                    <span t-field="%line.product_packaging.qty"/>
+                                                    <span t-field="line.product_packaging.qty"/>
                                                 </div>
                                             </div>
                                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
