@@ -12,4 +12,4 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 class SaleOrderTemplate(models.Model):
     _inherit = 'sale.order'
 
-    condiciones = fields.Text('Condiciones')
+    condiciones = fields.Html('Condiciones')
