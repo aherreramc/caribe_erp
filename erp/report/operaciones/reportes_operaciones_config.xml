@@ -5,7 +5,7 @@
                 id="quotations_report"
                 model="sale.order"
                 string="Cotización"
-                report_type="qweb-html"
+                report_type="qweb-pdf"
                 name="erp.quotations_report"
                 attachment_use="True"
                 file="Cotización"
