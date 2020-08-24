@@ -133,7 +133,8 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <p class="orange">SUBTOTAL
-                                                    <span t-esc="doc.amount_without_discount_total"/>
+                                                    <t t-set="amount_without_discount_total" t-value="doc.amount_untaxed + doc.discount_total"/>
+                                                    <span t-esc="amount_without_discount_total"/>
                                                 </p>
                                                 <p class="orange">DESCUENTO
                                                     <span t-esc="doc.discount_total"/>
