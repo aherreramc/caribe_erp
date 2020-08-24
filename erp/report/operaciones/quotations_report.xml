@@ -136,7 +136,7 @@
                                                     <span t-esc="doc.amount_untaxed"/>
                                                 </p>
                                                 <p class="orange">DESCUENTO
-
+                                                    <span t-esc="doc.discount_total"/>
                                                 </p>
                                                 <p class="orange">SUBTOTAL NETO
                                                     <span t-esc="doc.amount_untaxed"/>
