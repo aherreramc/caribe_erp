@@ -14,7 +14,7 @@ class SaleOrderTemplate(models.Model):
 
     condiciones = fields.Html('Condiciones')
 
-    # discount_total = fields.Monetary(compute='_compute_amount', string='Discount', readonly=True, store=True)
+    discount_total = fields.Monetary(compute='_compute_amount', string='Discount', readonly=True, store=True)
 
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
