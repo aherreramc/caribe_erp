@@ -36,15 +36,15 @@ class SaleOrderTemplate(models.Model):
 
     def _discount_total(self):
         self.discount_total = 0.00
-        #
-        # """
-        # Compute the amounts of the SO line.
-        # """
-        # for line in self.order_line:
-        #     price = line.price_unit
-        #     taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty,
-        #                                     product=line.product_id, partner=line.order_id.partner_id)
-        #
-        #     self.discount_total += taxes['total_excluded']
+
+        """
+        Compute the amounts of the SO line.
+        """
+        for line in self.order_line:
+            price = line.price_unit
+            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty,
+                                            product=line.product_id, partner=line.order_id.partner_id)
+
+            self.discount_total += taxes['total_excluded']
 
 
