@@ -33,7 +33,7 @@ class SaleOrderTemplate(models.Model):
                                             product=line.product_id, partner=line.order_id.partner_id)
 
             self.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
-            self.amount_without_discount_total += taxes_discounted['total_excluded']
+            # self.amount_without_discount_total += taxes_discounted['total_excluded']
 
 
 
