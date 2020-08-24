@@ -12,6 +12,8 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 class SaleOrderLineTemplate(models.Model):
     _inherit = 'sale.order.line'
 
+    discount_total = fields.Monetary(string='Discount', readonly=True, store=True)
+
     @api.onchange('product_id')
     def product_id_change(self):
         result = super(SaleOrderLineTemplate, self).product_id_change()
