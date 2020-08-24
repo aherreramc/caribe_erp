@@ -49,7 +49,6 @@ class SaleOrderTemplate(models.Model):
 
             self.amount_without_discount_total += taxes_discounted['total_excluded']
 
-            raise except_orm(self.amount_without_discount_total)
 
 
 
