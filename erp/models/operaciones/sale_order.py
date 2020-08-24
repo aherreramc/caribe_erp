@@ -13,11 +13,12 @@ class SaleOrderTemplate(models.Model):
     condiciones = fields.Html('Condiciones')
 
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
-
+    amount_without_discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
 
     @api.depends('order_line.price_total')
     def _discount_total(self):
         self.discount_total = 0.00
+        self.amount_without_discount_total = 0.00
 
         """
         Compute the amounts of the SO line.
@@ -32,6 +33,7 @@ class SaleOrderTemplate(models.Model):
                                             product=line.product_id, partner=line.order_id.partner_id)
 
             self.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
+            self.amount_without_discount_total += taxes_discounted['total_excluded']
 
 
 
