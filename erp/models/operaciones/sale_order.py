@@ -18,9 +18,6 @@ class SaleOrderTemplate(models.Model):
     @api.depends('order_line.price_total')
     def _discount_total(self):
         self.discount_total = 0.00
-        self.amount_without_discount_total = 1
-
-        raise except_orm(self.amount_without_discount_total + 2)
 
         """
         Compute the amounts of the SO line.
@@ -41,7 +38,6 @@ class SaleOrderTemplate(models.Model):
     def _amount_without_discount_total(self):
         self.amount_without_discount_total = 0.00
 
-        raise except_orm(self.amount_without_discount_total + 2)
 
         """
         Compute the amounts of the SO line.
