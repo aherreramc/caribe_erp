@@ -13,12 +13,11 @@ class SaleOrderTemplate(models.Model):
     condiciones = fields.Html('Condiciones')
 
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
-    amount_without_discount_total = fields.Monetary(compute='_discount_total', string='', store=True)
+    amount_without_discount_total = fields.Monetary(compute='_amount_without_discount_total', string='', store=True)
 
     @api.depends('order_line.price_total')
     def _discount_total(self):
         self.discount_total = 0.00
-        self.amount_without_discount_total = 0.00
 
         """
         Compute the amounts of the SO line.
@@ -33,7 +32,21 @@ class SaleOrderTemplate(models.Model):
                                             product=line.product_id, partner=line.order_id.partner_id)
 
             self.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
-            # self.amount_without_discount_total += taxes_discounted['total_excluded']
+
+
+    @api.depends('order_line.price_total')
+    def _amount_without_discount_total(self):
+        self.amount_without_discount_total = 0.00
+
+        """
+        Compute the amounts of the SO line.
+        """
+        for line in self.order_line:
+            price_discounted = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
+            taxes_discounted = line.tax_id.compute_all(price_discounted, line.order_id.currency_id, line.product_uom_qty,
+                                            product=line.product_id, partner=line.order_id.partner_id)
+
+            self.amount_without_discount_total += taxes_discounted['total_excluded']
 
 
 
