@@ -148,7 +148,9 @@
                                         </div>
                                         <div class="row border_order_line_row">
                                             <div class="col-12">
-                                                <p class="orange">TOTAL FINAL</p>
+                                                 <p class="orange">TOTAL FINAL
+                                                    <span t-esc="doc.amount_total"/>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row border_order_line_row">
