@@ -50,6 +50,7 @@ class SaleOrderTemplate(models.Model):
             taxes_discounted = line.tax_id.compute_all(price_discounted, line.order_id.currency_id, line.product_uom_qty,
                                             product=line.product_id, partner=line.order_id.partner_id)
 
-            self.discount_total += taxes['total_excluded'] - taxes_discounted['total_excluded']
+            self.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
+
 
 
