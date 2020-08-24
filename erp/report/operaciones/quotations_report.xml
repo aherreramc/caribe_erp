@@ -39,31 +39,31 @@
                         <div class="row border_orange border_radius_10 mt-3">
                             <div class="col-12">
                                 <div class="row abs-center text-center orange">
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>CÓDIGO</span>
                                     </div>
                                     <div class="col-3">
                                         <span>DESCRIPCIÓN</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>CANT</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>UNIDAD</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>PZAS X CAJA</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>PZAS TOTALES</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>PRECIO UNITARIO</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>PRECIO POR PZA</span>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 pl-0 ml-0 pr-0 mr-0">
                                         <span>TOTAL</span>
                                     </div>
                                 </div>
