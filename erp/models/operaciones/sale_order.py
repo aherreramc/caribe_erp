@@ -34,6 +34,7 @@ class SaleOrderTemplate(models.Model):
     #             'price_subtotal': taxes['total_excluded'],
     #         })
 
+    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
     def _discount_total(self):
         self.discount_total = 0.00
 
