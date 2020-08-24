@@ -17,9 +17,9 @@ class SaleOrderTemplate(models.Model):
     discount_total = fields.Monetary(compute='_compute_amount', string='Discount', readonly=True, store=True)
 
 
-    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
+    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id', 'discount_total')
     def _compute_amount(self):
-        # self.discount_total = 0.00
+        self.discount_total = 0.00
 
         """
         Compute the amounts of the SO line.
@@ -28,7 +28,7 @@ class SaleOrderTemplate(models.Model):
             price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
             taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_id)
 
-            # self.discount_total += line.total_excluded - taxes['total_excluded']
+            self.discount_total += line.total_excluded - taxes['total_excluded']
 
             line.update({
                 'price_tax': taxes['total_included'] - taxes['total_excluded'],
