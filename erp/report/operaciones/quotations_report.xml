@@ -5,7 +5,7 @@
             <xpath expr="." position="inside">
                 <!--These links will be called when loading your Odoo -->
                 <!--En cada vista se ha incluido un ccs general(cssfile.css) y otro con las particularidades de la vista (<nombre_vista>.css)-->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
             </xpath>
         </template>
 
@@ -13,7 +13,7 @@
 
             <xpath expr="." position="inside">
 
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
 
             </xpath>
 
