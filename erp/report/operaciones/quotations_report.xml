@@ -1,6 +1,25 @@
 <odoo>
-
     <data>
+
+        <template id="quotations_reporte" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!--These links will be called when loading your Odoo -->
+                <!--En cada vista se ha incluido un ccs general(cssfile.css) y otro con las particularidades de la vista (<nombre_vista>.css)-->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            </xpath>
+        </template>
+
+        <template id="quotations_reporte" inherit_id="report.assets_common">
+
+            <xpath expr="." position="inside">
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+            </xpath>
+
+        </template>
+
+
         <template id="quotations_reporte">
             <!-- Re-browse of the record with the partner lang -->
             <t t-call="web.html_container">
@@ -13,36 +32,36 @@
 
                         <div class="row">
 
-                                <div class="col-1">
-                                    <span>CÓDIGO</span>
-                                </div>
-                                <div class="col-3">
-                                    <span>DESCRIPCIÓN</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>CANT</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>UNIDAD</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>PZAS X CAJA</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>PZAS TOTALES</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>PRECIO UNITARIO</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>PRECIO POR PZA</span>
-                                </div>
-                                <div class="col-1">
-                                    <span>TOTAL</span>
-                                </div>
-
-
+                            <div class="col-1">
+                                <span>CÓDIGO</span>
                             </div>
+                            <div class="col-3">
+                                <span>DESCRIPCIÓN</span>
+                            </div>
+                            <div class="col-1">
+                                <span>CANT</span>
+                            </div>
+                            <div class="col-1">
+                                <span>UNIDAD</span>
+                            </div>
+                            <div class="col-1">
+                                <span>PZAS X CAJA</span>
+                            </div>
+                            <div class="col-1">
+                                <span>PZAS TOTALES</span>
+                            </div>
+                            <div class="col-1">
+                                <span>PRECIO UNITARIO</span>
+                            </div>
+                            <div class="col-1">
+                                <span>PRECIO POR PZA</span>
+                            </div>
+                            <div class="col-1">
+                                <span>TOTAL</span>
+                            </div>
+
+
+                        </div>
                     </div>
                 </t>
             </t>
