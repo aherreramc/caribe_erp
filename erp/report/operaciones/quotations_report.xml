@@ -5,34 +5,14 @@
 
 
             <div class="page">
-                <div class="oe_structure"/>
+
 
                 <div class="row">
 
                     <div class="col-1">
                         <span>CÓDIGO</span>
                     </div>
-                    <div class="col-3">
-                        <span>DESCRIPCIÓN</span>
-                    </div>
-                    <div class="col-1">
-                        <span>CANT</span>
-                    </div>
-                    <div class="col-1">
-                        <span>UNIDAD</span>
-                    </div>
-                    <div class="col-1">
-                        <span>PZAS X CAJA</span>
-                    </div>
-                    <div class="col-1">
-                        <span>PZAS TOTALES</span>
-                    </div>
-                    <div class="col-1">
-                        <span>PRECIO UNITARIO</span>
-                    </div>
-                    <div class="col-1">
-                        <span>PRECIO POR PZA</span>
-                    </div>
+
                     <div class="col-1">
                         <span>TOTAL</span>
                     </div>
