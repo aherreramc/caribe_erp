@@ -1,268 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
+        <template id="quotations_report">
+            <!-- Re-browse of the record with the partner lang -->
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
 
-    <template id="quotations_report">
-        <!-- Re-browse of the record with the partner lang -->
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t t-call="web.internal_layout">
-                    <div class="page">
-                        <div class="oe_structure"/>
 
-                        <div class="row border_orange border_radius_10 orange">
-                            <div class="col-12">
-                                <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <span>ATENCIÓN</span>
-                                    </div>
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <span>FACTURAR</span>
-                                    </div>
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <span>DIRECCIÓN</span>
-                                    </div>
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <span>FOLIO</span>
-                                    </div>
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <span>FECHA</span>
-                                    </div>
-                                </div>
-                                <div class="row abs-center text-center second_table_firt_row">
+                    <t t-foreach="docs" t-as="doc">
 
+
+                        <div class="page">
+                            <div class="oe_structure"/>
+
+
+                            <div class="row border_orange border_radius_10 orange">
+                                <div class="col-12">
+                                    <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                            <span>ATENCIÓN</span>
+                                        </div>
+                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                            <span>FACTURAR</span>
+                                        </div>
+                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                            <span>DIRECCIÓN</span>
+                                        </div>
+                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                            <span>FOLIO</span>
+                                        </div>
+                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                            <span>FECHA</span>
+                                        </div>
+                                    </div>
+                                    <div class="row abs-center text-center second_table_firt_row">
+
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+
+                                <div class="col-1">
+                                    <span>CÓDIGO</span>
+                                </div>
+                                <div class="col-3">
+                                    <span>DESCRIPCIÓN</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>CANT</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>UNIDAD</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PZAS X CAJA</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PZAS TOTALES</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PRECIO UNITARIO</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PRECIO POR PZA</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>TOTAL</span>
+                                </div>
+
+                            </div>
+
+                            <div class="row border_orange border_radius_10 mt-3">
+                                <div class="col-12">
+                                    <div class="row abs-center text-center orange">
+                                        <div class="col-1">
+                                            <span>CÓDIGO</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <span>DESCRIPCIÓN</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>CANT</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>UNIDAD</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>PZAS X CAJA</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>PZAS TOTALES</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>PRECIO UNITARIO</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>PRECIO POR PZA</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span>TOTAL</span>
+                                        </div>
+                                    </div>
+                                    <t t-foreach="doc.order_line" t-as="line">
+                                        <div class="row border_order_line_row abs-center text-center">
+                                            <div class="col-1">
+                                                <span t-field="line.product_id.name"/>
+                                            </div>
+                                            <div class="col-3 text-justify">
+                                                <span t-field="line.name"/>
+                                            </div>
+                                            <div class="col-1">
+                                                <span t-field="line.product_uom_qty"/>
+                                            </div>
+                                            <div class="col-1">
+                                                <span></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <div t-if="line.product_packaging">
+                                                    <span t-field="line.product_packaging.qty"/>
+                                                </div>
+                                            </div>
+                                            <!--<div class="col-1">-->
+                                            <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span t-field="line.price_unit"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span t-field="line.price_subtotal"/>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </t>
+
+                                    <div class="row border_order_line_row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div>
+                                                <p class="orange">DATOS BANCARIOS</p>
+                                            </div>
+                                            <div>
+                                                <p>Beneficiario</p>
+                                                <p>
+                                                    <span t-esc="doc.company_id.name"/>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Cuenta</p>
+                                                <p>
+
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>CLABE</p>
+                                                <p>
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
+                                            <p class="orange">CONDICIONES</p>
+                                            <span t-raw="doc.condiciones"/>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="orange">SUBTOTAL
+                                                        <t t-set="amount_without_discount_total"
+                                                           t-value="doc.amount_untaxed - doc.discount_total"/>
+                                                        <span t-esc="amount_without_discount_total"/>
+                                                    </p>
+                                                    <p class="orange">DESCUENTO
+                                                        <span t-esc="doc.discount_total"/>
+                                                    </p>
+                                                    <p class="orange">SUBTOTAL NETO
+                                                        <span t-esc="doc.amount_untaxed"/>
+                                                    </p>
+                                                    <p class="orange">IVA
+                                                        <span t-esc="doc.amount_tax"/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row border_order_line_row">
+                                                <div class="col-12">
+                                                    <p class="orange">TOTAL FINAL
+                                                        <span t-esc="doc.amount_total"/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row border_order_line_row">
+                                                <div class="col-12">
+                                                    <p class="orange">VIGENCIA DE COTIZACIÓN</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="row">
+                        <style type="text/css">
+                            .border_none{
+                            border:none !important;
+                            }
 
-                            <div class="col-1">
-                                <span>CÓDIGO</span>
-                            </div>
-                            <div class="col-3">
-                                <span>DESCRIPCIÓN</span>
-                            </div>
-                            <div class="col-1">
-                                <span>CANT</span>
-                            </div>
-                            <div class="col-1">
-                                <span>UNIDAD</span>
-                            </div>
-                            <div class="col-1">
-                                <span>PZAS X CAJA</span>
-                            </div>
-                            <div class="col-1">
-                                <span>PZAS TOTALES</span>
-                            </div>
-                            <div class="col-1">
-                                <span>PRECIO UNITARIO</span>
-                            </div>
-                            <div class="col-1">
-                                <span>PRECIO POR PZA</span>
-                            </div>
-                            <div class="col-1">
-                                <span>TOTAL</span>
-                            </div>
+                            .border_orange{
+                            border: 1px solid;
+                            border-color: #f09d60;
+                            }
 
-                        </div>
+                            .border_gross_bottom_orange{
+                            border-bottom: 2px solid;
+                            border-color: #f09d60;
+                            }
 
-                        <div class="row border_orange border_radius_10 mt-3">
-                            <div class="col-12">
-                                <div class="row abs-center text-center orange">
-                                    <div class="col-1">
-                                        <span>CÓDIGO</span>
-                                    </div>
-                                    <div class="col-3">
-                                        <span>DESCRIPCIÓN</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>CANT</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>UNIDAD</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>PZAS X CAJA</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>PZAS TOTALES</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>PRECIO UNITARIO</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>PRECIO POR PZA</span>
-                                    </div>
-                                    <div class="col-1">
-                                        <span>TOTAL</span>
-                                    </div>
-                                </div>
-                                <t t-foreach="doc.order_line" t-as="line">
-                                    <div class="row border_order_line_row abs-center text-center">
-                                        <div class="col-1">
-                                            <span t-field="line.product_id.name"/>
-                                        </div>
-                                        <div class="col-3 text-justify">
-                                            <span t-field="line.name"/>
-                                        </div>
-                                        <div class="col-1">
-                                            <span t-field="line.product_uom_qty"/>
-                                        </div>
-                                        <div class="col-1">
-                                            <span></span>
-                                        </div>
-                                        <div class="col-1">
-                                            <div t-if="line.product_packaging">
-                                                <span t-field="line.product_packaging.qty"/>
-                                            </div>
-                                        </div>
-                                        <!--<div class="col-1">-->
-                                        <!--<span></span>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-1">-->
-                                        <!--<span t-field="line.price_unit"/>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-1">-->
-                                        <!--<span></span>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-1">-->
-                                        <!--<span t-field="line.price_subtotal"/>-->
-                                        <!--</div>-->
-                                    </div>
-                                </t>
+                            .border_left_orange{
+                            border-left: 2px solid !important;
+                            border-color: #f09d60 !important;
+                            }
 
-                                <div class="row border_order_line_row">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <div>
-                                            <p class="orange">DATOS BANCARIOS</p>
-                                        </div>
-                                        <div>
-                                            <p>Beneficiario</p>
-                                            <p>
-                                                <span t-esc="doc.company_id.name"/>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>Cuenta</p>
-                                            <p>
+                            .border_right_orange{
+                            border-right: 2px solid !important;
+                            border-color: #f09d60 !important;
+                            }
 
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>CLABE</p>
-                                            <p>
+                            .orange{
+                            color: #f09d60;
+                            }
 
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
-                                        <p class="orange">CONDICIONES</p>
-                                        <span t-raw="doc.condiciones"/>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <p class="orange">SUBTOTAL
-                                                    <t t-set="amount_without_discount_total"
-                                                       t-value="doc.amount_untaxed - doc.discount_total"/>
-                                                    <span t-esc="amount_without_discount_total"/>
-                                                </p>
-                                                <p class="orange">DESCUENTO
-                                                    <span t-esc="doc.discount_total"/>
-                                                </p>
-                                                <p class="orange">SUBTOTAL NETO
-                                                    <span t-esc="doc.amount_untaxed"/>
-                                                </p>
-                                                <p class="orange">IVA
-                                                    <span t-esc="doc.amount_tax"/>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row border_order_line_row">
-                                            <div class="col-12">
-                                                <p class="orange">TOTAL FINAL
-                                                    <span t-esc="doc.amount_total"/>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row border_order_line_row">
-                                            <div class="col-12">
-                                                <p class="orange">VIGENCIA DE COTIZACIÓN</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5 {
+                            float: left;
+                            max-width: 20%;
+                            }
 
-                    <style type="text/css">
-                        .border_none{
-                        border:none !important;
-                        }
+                            .col-xs-5 {
+                            float: left;
+                            max-width: 20%;
+                            }
 
-                        .border_orange{
-                        border: 1px solid;
-                        border-color: #f09d60;
-                        }
+                            .abs-center {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            }
 
-                        .border_gross_bottom_orange{
-                        border-bottom: 2px solid;
-                        border-color: #f09d60;
-                        }
+                            .border_radius_10{
+                            border-radius: 10px;
+                            }
 
-                        .border_left_orange{
-                        border-left: 2px solid !important;
-                        border-color: #f09d60 !important;
-                        }
+                            .firt_table_firt_row{
+                            min-height: 20px;
+                            }
 
-                        .border_right_orange{
-                        border-right: 2px solid !important;
-                        border-color: #f09d60 !important;
-                        }
+                            .second_table_firt_row{
+                            min-height: 60px;
+                            }
 
-                        .orange{
-                        color: #f09d60;
-                        }
-
-                        .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5 {
-                        float: left;
-                        max-width: 20%;
-                        }
-
-                        .col-xs-5 {
-                        float: left;
-                        max-width: 20%;
-                        }
-
-                        .abs-center {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        }
-
-                        .border_radius_10{
-                        border-radius: 10px;
-                        }
-
-                        .firt_table_firt_row{
-                        min-height: 20px;
-                        }
-
-                        .second_table_firt_row{
-                        min-height: 60px;
-                        }
-
-                        .border_order_line_row{
-                        border-top: 2px solid !important;
-                        border-color: #f09d60 !important;
-                        }
+                            .border_order_line_row{
+                            border-top: 2px solid !important;
+                            border-color: #f09d60 !important;
+                            }
 
 
-                    </style>
+                        </style>
+                    </t>
                 </t>
             </t>
-        </t>
 
-    </template>
+        </template>
+    </data>
 </odoo>
