@@ -36,6 +36,40 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <span>CÓDIGO</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>DESCRIPCIÓN</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>CANT</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>UNIDAD</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>PZAS X CAJA</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>PZAS TOTALES</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>PRECIO UNITARIO</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>PRECIO POR PZA</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>TOTAL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row border_orange border_radius_10 mt-3">
                             <div class="col-12">
                                 <div class="row abs-center text-center orange">
@@ -87,16 +121,16 @@
                                             </div>
                                         </div>
                                         <!--<div class="col-1">-->
-                                            <!--<span></span>-->
+                                        <!--<span></span>-->
                                         <!--</div>-->
                                         <!--<div class="col-1">-->
-                                            <!--<span t-field="line.price_unit"/>-->
+                                        <!--<span t-field="line.price_unit"/>-->
                                         <!--</div>-->
                                         <!--<div class="col-1">-->
-                                            <!--<span></span>-->
+                                        <!--<span></span>-->
                                         <!--</div>-->
                                         <!--<div class="col-1">-->
-                                            <!--<span t-field="line.price_subtotal"/>-->
+                                        <!--<span t-field="line.price_subtotal"/>-->
                                         <!--</div>-->
                                     </div>
                                 </t>
@@ -133,7 +167,8 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <p class="orange">SUBTOTAL
-                                                    <t t-set="amount_without_discount_total" t-value="doc.amount_untaxed - doc.discount_total"/>
+                                                    <t t-set="amount_without_discount_total"
+                                                       t-value="doc.amount_untaxed - doc.discount_total"/>
                                                     <span t-esc="amount_without_discount_total"/>
                                                 </p>
                                                 <p class="orange">DESCUENTO
@@ -149,7 +184,7 @@
                                         </div>
                                         <div class="row border_order_line_row">
                                             <div class="col-12">
-                                                 <p class="orange">TOTAL FINAL
+                                                <p class="orange">TOTAL FINAL
                                                     <span t-esc="doc.amount_total"/>
                                                 </p>
                                             </div>
