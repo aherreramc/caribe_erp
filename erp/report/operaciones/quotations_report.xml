@@ -1,45 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <template id="quotations_report">
-            <!-- Re-browse of the record with the partner lang -->
-            <t t-call="web.html_container">
-                <t t-call="web.external_layout">
 
+    <template id="quotations_report">
+        <!-- Re-browse of the record with the partner lang -->
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
 
-                    <t t-foreach="docs" t-as="doc">
-
-
-                        <div class="page">
-                            <div class="oe_structure"/>
-
-
-                            <div class="row border_orange border_radius_10 orange">
-                                <div class="col-12">
-                                    <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>ATENCIÓN</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FACTURAR</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>DIRECCIÓN</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FOLIO</span>
-                                        </div>
-                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FECHA</span>
-                                        </div>
-                                    </div>
-                                    <div class="row abs-center text-center second_table_firt_row">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
+                        <div class="row">
 
                                 <div class="col-1">
                                     <span>CÓDIGO</span>
@@ -71,205 +41,212 @@
 
                             </div>
 
-                            <div class="row border_orange border_radius_10 mt-3">
-                                <div class="col-12">
-                                    <div class="row abs-center text-center orange">
-                                        <div class="col-1">
-                                            <span>CÓDIGO</span>
-                                        </div>
-                                        <div class="col-3">
-                                            <span>DESCRIPCIÓN</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>CANT</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>UNIDAD</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>PZAS X CAJA</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>PZAS TOTALES</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>PRECIO UNITARIO</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>PRECIO POR PZA</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span>TOTAL</span>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row border_none">
+                                    <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
+                                        <div style="width:95%; margin: auto;">
+                                            <img src="/erp/static/src/img/report_label_presentation.PNG"
+                                                 style="width:95%;"/>
                                         </div>
                                     </div>
-                                    <t t-foreach="doc.order_line" t-as="line">
-                                        <div class="row border_order_line_row abs-center text-center">
-                                            <div class="col-1">
-                                                <span t-field="line.product_id.name"/>
-                                            </div>
-                                            <div class="col-3 text-justify">
-                                                <span t-field="line.name"/>
-                                            </div>
-                                            <div class="col-1">
-                                                <span t-field="line.product_uom_qty"/>
-                                            </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <div t-if="line.product_packaging">
-                                                    <span t-field="line.product_packaging.qty"/>
+
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div style="width:95%; margin: auto;">
+                                                    <img src="/erp/static/src/img/report_label_bag.PNG"
+                                                         style="width:95%;"/>
                                                 </div>
-                                            </div>
-                                            <!--<div class="col-1">-->
-                                            <!--<span></span>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-1">-->
-                                            <!--<span t-field="line.price_unit"/>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-1">-->
-                                            <!--<span></span>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-1">-->
-                                            <!--<span t-field="line.price_subtotal"/>-->
-                                            <!--</div>-->
-                                        </div>
-                                    </t>
-
-                                    <div class="row border_order_line_row">
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <div>
-                                                <p class="orange">DATOS BANCARIOS</p>
-                                            </div>
-                                            <div>
-                                                <p>Beneficiario</p>
-                                                <p>
-                                                    <span t-esc="doc.company_id.name"/>
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <p>Cuenta</p>
-                                                <p>
-
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <p>CLABE</p>
-                                                <p>
-
-                                                </p>
                                             </div>
                                         </div>
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
-                                            <p class="orange">CONDICIONES</p>
-                                            <span t-raw="doc.condiciones"/>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="verde">Número de Orden:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="verde">Código de envío:</p>
+                                            </div>
                                         </div>
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <p class="orange">SUBTOTAL
-                                                        <t t-set="amount_without_discount_total"
-                                                           t-value="doc.amount_untaxed - doc.discount_total"/>
-                                                        <span t-esc="amount_without_discount_total"/>
-                                                    </p>
-                                                    <p class="orange">DESCUENTO
-                                                        <span t-esc="doc.discount_total"/>
-                                                    </p>
-                                                    <p class="orange">SUBTOTAL NETO
-                                                        <span t-esc="doc.amount_untaxed"/>
-                                                    </p>
-                                                    <p class="orange">IVA
-                                                        <span t-esc="doc.amount_tax"/>
-                                                    </p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p></p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                        <div class="row border">
+                                                            <div class="col-8 border_right">
+                                                                <p class="verde">Producto:</p>
+                                                            </div>
+                                                            <div class="col-4 border_none">
+                                                                <p>
+                                                                    <p class="verde">Tamaño:</p>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border">
+                                                            <div class="col-8 border_right">
+                                                                <p class="verde">
+                                                                    <span t-field="product.name"/>
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-4 border_none">
+                                                                <p class="verde">
+                                                                    <span t-field="product.size"/>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border">
+                                                            <div class="col-12 border_none">
+                                                                <p class="verde">Contenido:</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border">
+                                                            <div class="col-12 border_none">
+                                                                <p class="verde">
+                                                                    <span t-field="product.descripcion_cliente"/>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <p class="verde">Código:</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row border_order_line_row">
-                                                <div class="col-12">
-                                                    <p class="orange">TOTAL FINAL
-                                                        <span t-esc="doc.amount_total"/>
-                                                    </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 columna_telefono">
+                                                <p class="orange">
+                                                    (998) 131 2322
+                                                </p>
+                                            </div>
+                                            <div class="col-6 columna_pagina">
+                                                <p class="orange">
+                                                    BIOTIVS.COM
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div style="width:100%; margin: auto;">
+                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
+                                                                         style="width:100%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div style="width:100%; margin: auto;">
+                                                                    <img src="/erp/static/src/img/inflamable.PNG"
+                                                                         style="width:100%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div style="width:90%; margin: auto;">
+                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
+                                                                         style="width:100%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row border_order_line_row">
-                                                <div class="col-12">
-                                                    <p class="orange">VIGENCIA DE COTIZACIÓN</p>
-                                                </div>
+                                            <div class="col-6">
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                    </div>
 
-                        <style type="text/css">
-                            .border_none{
-                            border:none !important;
-                            }
+                    <style type="text/css">
+                        .col {
+                        border: 2px solid;
+                        border-color: black !important;
+                        }
 
-                            .border_orange{
-                            border: 1px solid;
-                            border-color: #f09d60;
-                            }
+                        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
+                        .col-12{
+                        border: 2px solid;
+                        border-color: black !important;
+                        }
 
-                            .border_gross_bottom_orange{
-                            border-bottom: 2px solid;
-                            border-color: #f09d60;
-                            }
+                        .border_none{
+                        border:none !important;
+                        }
 
-                            .border_left_orange{
-                            border-left: 2px solid !important;
-                            border-color: #f09d60 !important;
-                            }
+                        .border{
+                        border: 2px solid;
+                        border-color: black !important;
+                        }
 
-                            .border_right_orange{
-                            border-right: 2px solid !important;
-                            border-color: #f09d60 !important;
-                            }
+                        .border_right{
+                        border-right: 2px solid;
+                        border-color: black !important;
+                        }
 
-                            .orange{
-                            color: #f09d60;
-                            }
+                        .columna_telefono{
+                        border:none;
+                        text-align: left;
+                        border-color: black !important;
+                        }
 
-                            .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5 {
-                            float: left;
-                            max-width: 20%;
-                            }
+                        .columna_pagina{
+                        border:none;
+                        text-align: right;
+                        border-color: black !important;
+                        }
 
-                            .col-xs-5 {
-                            float: left;
-                            max-width: 20%;
-                            }
+                        .orange{
+                        color: #ffb17b;
+                        }
 
-                            .abs-center {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            }
+                        .verde{
+                        color: #2d7e5e;
+                        }
 
-                            .border_radius_10{
-                            border-radius: 10px;
-                            }
-
-                            .firt_table_firt_row{
-                            min-height: 20px;
-                            }
-
-                            .second_table_firt_row{
-                            min-height: 60px;
-                            }
-
-                            .border_order_line_row{
-                            border-top: 2px solid !important;
-                            border-color: #f09d60 !important;
-                            }
-
-
-                        </style>
-                    </t>
+                        <!--.row + .row {-->
+                        <!--border-top:0 ;-->
+                        <!--}-->
+                    </style>
                 </t>
             </t>
+        </t>
 
-        </template>
-    </data>
+    </template>
 </odoo>
