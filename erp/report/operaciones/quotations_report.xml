@@ -115,26 +115,26 @@
                                             <div class="col-1">
                                                 <span t-field="line.product_uom_qty"/>
                                             </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <div t-if="line.product_packaging">
-                                                    <span t-field="line.product_packaging.qty"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <span t-field="line.price_unit"/>
-                                            </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <span t-field="line.price_subtotal"/>
-                                            </div>
+                                            <!--<div class="col-1">-->
+                                                <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                                <!--<div t-if="line.product_packaging">-->
+                                                    <!--<span t-field="line.product_packaging.qty"/>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                                <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                                <!--<span t-field="line.price_unit"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                                <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                                <!--<span t-field="line.price_subtotal"/>-->
+                                            <!--</div>-->
                                         </div>
 
                                         <!--<t t-set="count_order_lines" t-value="count_order_lines + 1"/>-->
