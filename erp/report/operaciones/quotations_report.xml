@@ -137,7 +137,7 @@
                                             </div>
                                         </div>
 
-                                        <t t-set="count_order_lines" t-value="count_order_lines + 1"/>
+                                        <!--<t t-set="count_order_lines" t-value="count_order_lines + 1"/>-->
                                     </t>
 
                                     <div class="row border_order_line_row">
