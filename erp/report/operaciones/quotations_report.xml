@@ -103,7 +103,7 @@
                                         </div>
                                     </div>
 
-                                    <t t-set="count_order_lines" t-value="0"/>
+                                    <!--<t t-set="count_order_lines" t-value="0"/>-->
                                     <t t-foreach="doc.order_line" t-as="line">
                                         <div class="row border_order_line_row abs-center text-center">
                                             <div class="col-1">
