@@ -39,6 +39,38 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+
+                                <div class="col-1">
+                                    <span>CÓDIGO</span>
+                                </div>
+                                <div class="col-3">
+                                    <span>DESCRIPCIÓN</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>CANT</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>UNIDAD</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PZAS X CAJA</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PZAS TOTALES</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PRECIO UNITARIO</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>PRECIO POR PZA</span>
+                                </div>
+                                <div class="col-1">
+                                    <span>TOTAL</span>
+                                </div>
+
+                            </div>
+
                             <div class="row border_orange border_radius_10 mt-3">
                                 <div class="col-12">
                                     <div class="row abs-center text-center orange">
@@ -70,7 +102,6 @@
                                             <span>TOTAL</span>
                                         </div>
                                     </div>
-                                    <!--<t t-set="count_order_lines" t-value="0"/>-->
                                     <t t-foreach="doc.order_line" t-as="line">
                                         <div class="row border_order_line_row abs-center text-center">
                                             <div class="col-1">
@@ -90,31 +121,20 @@
                                                     <span t-field="line.product_packaging.qty"/>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <span t-field="line.price_unit"/>
-                                            </div>
-                                            <div class="col-1">
-                                                <span></span>
-                                            </div>
-                                            <div class="col-1">
-                                                <span t-field="line.price_subtotal"/>
-                                            </div>
-                                        </div>
-
-                                        <!--<t t-set="count_order_lines" t-value="count_order_lines + 1"/>-->
-                                    </t>
-
-                                    <!--<t t-foreach="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" t-as="i">-->
-                                        <!--<t t-if="count_order_lines > i">-->
-                                            <!--<div class="row border_order_line_row abs-center text-center">-->
-                                                <!--linea-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span></span>-->
                                             <!--</div>-->
-                                        <!--</t>-->
-                                    <!--</t>-->
-
+                                            <!--<div class="col-1">-->
+                                            <!--<span t-field="line.price_unit"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span></span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-1">-->
+                                            <!--<span t-field="line.price_subtotal"/>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </t>
 
                                     <div class="row border_order_line_row">
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
