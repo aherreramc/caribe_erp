@@ -113,13 +113,13 @@
                                     <t t-foreach="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" t-as="i">
                                         <t t-if="count_order_lines > i">
                                             <div class="row border_order_line_row abs-center text-center">
-                                                linea
+
                                             </div>
                                         </t>
                                     </t>
 
                                     <div class="row border_order_line_row">
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="col-4">
                                             <div>
                                                 <p class="orange">DATOS BANCARIOS</p>
                                             </div>
@@ -142,11 +142,11 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
+                                        <div class="col-4 border_left_orange border_right_orange">
                                             <p class="orange">CONDICIONES</p>
                                             <span t-raw="doc.condiciones"/>
                                         </div>
-                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="col-4">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <p class="orange">SUBTOTAL
