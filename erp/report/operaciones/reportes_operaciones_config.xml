@@ -2,11 +2,11 @@
 <odoo>
     <data>
         <report
-                id="quotations_report"
+                id="quotations_reporte"
                 model="sale.order"
                 string="Cotización"
                 report_type="qweb-pdf"
-                name="erp.quotations_report"
+                name="erp.quotations_reporte"
                 attachment_use="True"
                 file="Cotización"
         />
