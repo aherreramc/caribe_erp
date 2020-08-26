@@ -53,7 +53,7 @@
         # Reportes
         # 'report/nomencladores/product_label_report.xml',
         'report/operaciones/quotations_report.xml',
-        'report/operaciones/quotations_report.xml',
+        'report/operaciones/header_quotation.xml',
 
         'report/operaciones/reportes_operaciones_config.xml',
         'report/reportes_config.xml',
