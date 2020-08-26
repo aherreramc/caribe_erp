@@ -10,8 +10,6 @@
                     <t t-foreach="docs" t-as="doc">
 
 
-
-
                         <div class="page">
                             <div class="oe_structure"/>
 
@@ -121,7 +119,7 @@
                                     </t>
 
                                     <div class="row border_order_line_row">
-                                        <div class="col-4">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                             <div>
                                                 <p class="orange">DATOS BANCARIOS</p>
                                             </div>
@@ -144,11 +142,11 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-4 border_left_orange border_right_orange">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border_left_orange border_right_orange">
                                             <p class="orange">CONDICIONES</p>
                                             <span t-raw="doc.condiciones"/>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <p class="orange">SUBTOTAL
