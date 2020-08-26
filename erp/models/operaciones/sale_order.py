@@ -17,21 +17,23 @@ class SaleOrderTemplate(models.Model):
 
     @api.depends('order_line.price_total')
     def _discount_total(self):
-        self.discount_total = 0.00
 
-        """
-        Compute the amounts of the SO line.
-        """
-        for line in self.order_line:
-            price = line.price_unit
-            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty,
-                                            product=line.product_id, partner=line.order_id.partner_id)
+        for order in self:
+            order.discount_total = 0.00
 
-            price_discounted = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
-            taxes_discounted = line.tax_id.compute_all(price_discounted, line.order_id.currency_id, line.product_uom_qty,
-                                            product=line.product_id, partner=line.order_id.partner_id)
+            """
+            Compute the amounts of the SO line.
+            """
+            for line in order.order_line:
+                price = line.price_unit
+                taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty,
+                                                product=line.product_id, partner=line.order_id.partner_id)
 
-            self.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
+                price_discounted = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
+                taxes_discounted = line.tax_id.compute_all(price_discounted, line.order_id.currency_id, line.product_uom_qty,
+                                                product=line.product_id, partner=line.order_id.partner_id)
+
+                order.discount_total += -(taxes['total_excluded'] - taxes_discounted['total_excluded'])
 
 
     @api.depends('order_line.price_total')
