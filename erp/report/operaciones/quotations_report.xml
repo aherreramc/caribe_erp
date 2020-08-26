@@ -9,7 +9,7 @@
 
                     <t t-foreach="docs" t-as="doc">
 
-                        <t t-call="erp.header_quotation"/>
+
 
 
                         <div class="page">
