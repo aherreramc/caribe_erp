@@ -121,15 +121,15 @@
                                                     <span t-field="line.product_packaging.qty"/>
                                                 </div>
                                             </div>
-                                            <!--<div class="col-1">-->
-                                            <!--<span></span>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-1">-->
-                                            <!--<span t-field="line.price_unit"/>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-1">-->
-                                            <!--<span></span>-->
-                                            <!--</div>-->
+                                            <div class="col-1">
+                                            <span></span>
+                                            </div>
+                                            <div class="col-1">
+                                            <span t-field="line.price_unit"/>
+                                            </div>
+                                            <div class="col-1">
+                                            <span></span>
+                                            </div>
                                             <!--<div class="col-1">-->
                                             <!--<span t-field="line.price_subtotal"/>-->
                                             <!--</div>-->
