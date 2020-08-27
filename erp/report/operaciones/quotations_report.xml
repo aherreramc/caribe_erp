@@ -250,7 +250,7 @@
                     </style>
                 </t>
 
-                <t t-call="erp.footer_quotation"/>
+                <!--<t t-call="erp.footer_quotation"/>-->
             </t>
             <!--</t>-->
 
