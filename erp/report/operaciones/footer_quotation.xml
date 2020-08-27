@@ -3,7 +3,7 @@
 
     <template id="footer_quotation">
 
-        <div class="footer">
+        <div class="header">
 
             <div class="row">
                 Footer
