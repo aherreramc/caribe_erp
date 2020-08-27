@@ -11,9 +11,9 @@
 
                         <div class="oe_structure"/>
 
-                              <div class="row">
+                        <div class="row">
                             <div class="col-12 border_orange">
-                               <p>product_label_repo </p>
+                               <p>product_label_repo 333333 </p>
                             </div>
                         </div>
 
@@ -191,8 +191,8 @@
                         }
 
                         .border_orange{
-                            border: 1px solid;
-                            border-color: #f09d60;
+                            border: 1px solid !important;
+                            border-color: #f09d60 !important;
                         }
 
                         .border_right{
