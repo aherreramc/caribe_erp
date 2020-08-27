@@ -12,7 +12,7 @@
                         <div class="oe_structure"/>
                         <div class="row border_orange">
                             <div class="col-12">
-                                <div class="row border_none">
+                                <div class="row border_orange">
                                     <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
                                         <div style="width:95%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
