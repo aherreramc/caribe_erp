@@ -11,9 +11,9 @@
 
                         <div class="oe_structure"/>
 
-                        <div class="row border_orange">
+                        <div class="row border_red">
                             <div class="col-12">
-                                <div class="row border_orange">
+                                <div class="row border_orange_bottom">
                                     <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
                                         <div style="width:95%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
@@ -58,7 +58,7 @@
                                                 <div class="row">
                                                     <div class="col-8">
                                                         <div class="row border_orange">
-                                                            <div class="col-8 border_right">
+                                                            <div class="col-8 border_orange">
                                                                 <p class="verde">Producto:</p>
                                                             </div>
                                                             <div class="col-4 border_none">
@@ -69,7 +69,7 @@
                                                         </div>
 
                                                         <div class="row border_orange">
-                                                            <div class="col-8 border_right">
+                                                            <div class="col-8 border_orange">
                                                                 <p class="verde">
                                                                     <span t-field="product.name"/>
                                                                 </p>
@@ -169,16 +169,19 @@
                         border:none !important;
                         }
 
-
-
-                        .border_orange{
-                            border: 1px solid !important;
-                            border-color: #f09d60 !important;
+                        .border_red{
+                        border: 1px solid !important;
+                        border-top-right-radius: 10px;
+                        border-color: #ff2e17 !important;
                         }
 
-                        .border_right{
-                        border-right: 2px solid;
-                        border-color: black !important;
+                        .border_orange{
+                        border: 1px solid !important;
+                        border-color: #f09d60 !important;
+                        }
+                        .border_orange_bottom{
+                        border_bottom: 1px solid !important;
+                        border-color: #f09d60 !important;
                         }
 
                         .columna_telefono{
