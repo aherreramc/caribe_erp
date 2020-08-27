@@ -14,7 +14,7 @@
                         <div class="row border_red">
                             <div class="col-12">
                                 <div class="row border_orange_bottom">
-                                    <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
+                                    <div class="col-8 border_orange_right" style="margin-top: auto; margin-bottom: auto;">
                                         <div style="width:95%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
                                                  style="width:95%;"/>
@@ -26,7 +26,7 @@
                                             <div class="col-12">
                                                 <div style="width:95%; margin: auto;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:95%;"/>
+                                                         style="width:50%;"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,8 +170,8 @@
                         }
 
                         .border_red{
-                        border: 1px solid !important;
-                        border-top-right-radius: 10px;
+                        border: 2px solid !important;
+                        border-top-right-radius: 60px;
                         border-color: #ff2e17 !important;
                         }
 
@@ -180,7 +180,11 @@
                         border-color: #f09d60 !important;
                         }
                         .border_orange_bottom{
-                        border_bottom: 1px solid !important;
+                        border-bottom: 1px solid !important;
+                        border-color: #f09d60 !important;
+                        }
+                        .border_orange_right{
+                        border-right: 1px solid !important;
                         border-color: #f09d60 !important;
                         }
 
