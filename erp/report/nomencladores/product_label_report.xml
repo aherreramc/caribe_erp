@@ -11,12 +11,6 @@
 
                         <div class="oe_structure"/>
 
-                        <div class="row">
-                            <div class="col-12 border_orange">
-                               <p>product_label_repo 333333 </p>
-                            </div>
-                        </div>
-
                         <div class="row border_orange">
                             <div class="col-12">
                                 <div class="row border_orange">
@@ -57,14 +51,13 @@
                                     </div>
                                 </div>
 
-
                                 <div class="row">
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <div class="row border">
+                                                        <div class="row border_orange">
                                                             <div class="col-8 border_right">
                                                                 <p class="verde">Producto:</p>
                                                             </div>
@@ -75,7 +68,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border">
+                                                        <div class="row border_orange">
                                                             <div class="col-8 border_right">
                                                                 <p class="verde">
                                                                     <span t-field="product.name"/>
@@ -88,13 +81,13 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border">
+                                                        <div class="row border_orange">
                                                             <div class="col-12 border_none">
                                                                 <p class="verde">Contenido:</p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border">
+                                                        <div class="row border_orange">
                                                             <div class="col-12 border_none">
                                                                 <p class="verde">
                                                                     <span t-field="product.descripcion_cliente"/>
@@ -170,25 +163,13 @@
                     </div>
 
                     <style type="text/css">
-                        .col {
-                        border: 2px solid;
-                        border-color: black !important;
-                        }
 
-                        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,
-                        .col-12{
-                        border: 2px solid;
-                        border-color: black !important;
-                        }
 
                         .border_none{
                         border:none !important;
                         }
 
-                        .border{
-                        border: 2px solid;
-                        border-color: black !important;
-                        }
+
 
                         .border_orange{
                             border: 1px solid !important;
