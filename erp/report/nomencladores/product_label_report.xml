@@ -14,7 +14,8 @@
                         <div class="row border_red">
                             <div class="col-12">
                                 <div class="row border_orange_bottom">
-                                    <div class="col-8 border_orange_right" style="margin-top: auto; margin-bottom: auto;">
+                                    <div class="col-8 border_orange_right"
+                                         style="margin-top: auto; margin-bottom: auto;">
                                         <div style="width:95%; margin: auto;">
                                             <img src="/erp/static/src/img/report_label_presentation.PNG"
                                                  style="width:95%;"/>
@@ -24,7 +25,7 @@
                                     <div class="col-4">
                                         <div class="row">
                                             <div class="col-12">
-                                                <div style="width:95%; margin: auto;">
+                                                <div class="text-right" style="width:95%; margin: auto;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
                                                          style="width:50%;"/>
                                                 </div>
@@ -32,7 +33,7 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-6 font_regular">
                                                 <p class="verde">Número de Orden:</p>
                                             </div>
                                             <div class="col-6">
@@ -170,7 +171,7 @@
                         }
 
                         .border_red{
-                        border: 2px solid !important;
+                        border: 1px solid !important;
                         border-top-right-radius: 60px;
                         border-color: #ff2e17 !important;
                         }
@@ -198,6 +199,10 @@
                         border:none;
                         text-align: right;
                         border-color: black !important;
+                        }
+
+                        .font_regular p{
+                        font-size: 14px;
                         }
 
                         .orange{
