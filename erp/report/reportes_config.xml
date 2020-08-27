@@ -9,7 +9,7 @@
                 report_type="qweb-pdf"
                 name="erp.product_label_repo"
                 attachment_use="True"
-                file="erp.product_label_report"
+                file="erp.product_label_repo"
         />
 
         <template id="product_label_report">
@@ -18,6 +18,8 @@
                 <t t-call="web.external_layout">
 
                     <div class="page">
+
+                        product_label_repo
 
 
                         <div class="oe_structure"/>
