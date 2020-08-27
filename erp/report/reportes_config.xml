@@ -12,227 +12,227 @@
                 file="erp.product_label_repo"
         />
 
-        <template id="product_label_repo">
-            <!-- Re-browse of the record with the partner lang -->
-            <t t-call="web.html_container">
-                <t t-call="web.external_layout">
+        <!--<template id="product_label_repo">-->
+            <!--&lt;!&ndash; Re-browse of the record with the partner lang &ndash;&gt;-->
+            <!--<t t-call="web.html_container">-->
+                <!--<t t-call="web.external_layout">-->
 
 
-                    <div class="page">
+                    <!--<div class="page">-->
 
-                        <div class="row">
-                            <div class="col-12 border_orange">
-                               <p>product_label_repo </p>
-                            </div>
-                        </div>
-
-
-                        <div class="oe_structure"/>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row border_none">
-                                    <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
-                                        <div style="width:95%; margin: auto;">
-                                            <img src="/erp/static/src/img/report_label_presentation.PNG"
-                                                 style="width:95%;"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div style="width:95%; margin: auto;">
-                                                    <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:95%;"/>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="verde">Número de Orden:</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="verde">Código de envío:</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p></p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p></p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
+                        <!--<div class="row">-->
+                            <!--<div class="col-12 border_orange">-->
+                               <!--<p>product_label_repo </p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
 
-                                <div class="row border border_orange">
-                                    <div class="col-8">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-8 ">
-                                                        <div class="row">
-                                                            <div class="col-8 border_right_orange">
-                                                                <p class="verde">Producto:</p>
-                                                            </div>
-                                                            <div class="col-4 border_none">
-                                                                <p>
-                                                                    <p class="verde">Tamaño:</p>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                        <!--<div class="oe_structure"/>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-12">-->
+                                <!--<div class="row border_none">-->
+                                    <!--<div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">-->
+                                        <!--<div style="width:95%; margin: auto;">-->
+                                            <!--<img src="/erp/static/src/img/report_label_presentation.PNG"-->
+                                                 <!--style="width:95%;"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
 
-                                                        <div class="row border">
-                                                            <div class="col-8 border_right_orange">
-                                                                <p class="verde">
-                                                                    <span t-field="product.name"/>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-4 border_none">
-                                                                <p class="verde">
-                                                                    <span t-field="product.size"/>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                    <!--<div class="col-4">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-12">-->
+                                                <!--<div style="width:95%; margin: auto;">-->
+                                                    <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
+                                                         <!--style="width:95%;"/>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                                        <div class="row border">
-                                                            <div class="col-12 border_none">
-                                                                <p class="verde">Contenido:</p>
-                                                            </div>
-                                                        </div>
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6">-->
+                                                <!--<p class="verde">Número de Orden:</p>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6">-->
+                                                <!--<p class="verde">Código de envío:</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6">-->
+                                                <!--<p></p>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6">-->
+                                                <!--<p></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                                        <div class="row border">
-                                                            <div class="col-12 border_none">
-                                                                <p class="verde">
-                                                                    <span t-field="product.descripcion_cliente"/>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                                    </div>
 
-                                                    <div class="col-4">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <p class="verde">Código:</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6 columna_telefono">
-                                                <p class="orange">
-                                                    (998) 131 2322
-                                                </p>
-                                            </div>
-                                            <div class="col-6 columna_pagina">
-                                                <p class="orange">
-                                                    BIOTIVS.COM
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div style="width:100%; margin: auto;">
-                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%;"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div style="width:100%; margin: auto;">
-                                                                    <img src="/erp/static/src/img/inflamable.PNG"
-                                                                         style="width:100%;"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div style="width:90%; margin: auto;">
-                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
-                                                                         style="width:100%;"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
+                                <!--<div class="row border border_orange">-->
+                                    <!--<div class="col-8">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-12">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-8 ">-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-8 border_right_orange">-->
+                                                                <!--<p class="verde">Producto:</p>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="col-4 border_none">-->
+                                                                <!--<p>-->
+                                                                    <!--<p class="verde">Tamaño:</p>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                                        <!--<div class="row border">-->
+                                                            <!--<div class="col-8 border_right_orange">-->
+                                                                <!--<p class="verde">-->
+                                                                    <!--<span t-field="product.name"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="col-4 border_none">-->
+                                                                <!--<p class="verde">-->
+                                                                    <!--<span t-field="product.size"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                    <style type="text/css">
-                        <!--.col {-->
+                                                        <!--<div class="row border">-->
+                                                            <!--<div class="col-12 border_none">-->
+                                                                <!--<p class="verde">Contenido:</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+
+                                                        <!--<div class="row border">-->
+                                                            <!--<div class="col-12 border_none">-->
+                                                                <!--<p class="verde">-->
+                                                                    <!--<span t-field="product.descripcion_cliente"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+
+                                                    <!--</div>-->
+
+                                                    <!--<div class="col-4">-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-12">-->
+                                                                <!--<p class="verde">Código:</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6 columna_telefono">-->
+                                                <!--<p class="orange">-->
+                                                    <!--(998) 131 2322-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6 columna_pagina">-->
+                                                <!--<p class="orange">-->
+                                                    <!--BIOTIVS.COM-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-4">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-12">-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-12">-->
+                                                                <!--<div style="width:100%; margin: auto;">-->
+                                                                    <!--<img src="/erp/static/src/img/this_side_up.PNG"-->
+                                                                         <!--style="width:100%;"/>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-12">-->
+                                                                <!--<div style="width:100%; margin: auto;">-->
+                                                                    <!--<img src="/erp/static/src/img/inflamable.PNG"-->
+                                                                         <!--style="width:100%;"/>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-12">-->
+                                                                <!--<div style="width:90%; margin: auto;">-->
+                                                                    <!--<img src="/erp/static/src/img/this_side_up.PNG"-->
+                                                                         <!--style="width:100%;"/>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6">-->
+
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<style type="text/css">-->
+                        <!--&lt;!&ndash;.col {&ndash;&gt;-->
+                        <!--&lt;!&ndash;border: 1px solid;&ndash;&gt;-->
+                        <!--&lt;!&ndash;border-color: black !important;&ndash;&gt;-->
+                        <!--&lt;!&ndash;}&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,&ndash;&gt;-->
+                        <!--&lt;!&ndash;.col-12{&ndash;&gt;-->
+                        <!--&lt;!&ndash;border: 1px solid;&ndash;&gt;-->
+                        <!--&lt;!&ndash;border-color: black !important;&ndash;&gt;-->
+                        <!--&lt;!&ndash;}&ndash;&gt;-->
+
+                        <!--.border_none{-->
+                        <!--border:none !important;-->
+                        <!--}-->
+
+                        <!--.border_orange{-->
                         <!--border: 1px solid;-->
+                        <!--border-color: #f09d60;-->
+                        <!--}-->
+
+                        <!--.border_right_orange{-->
+                        <!--border-right: 1px solid !important;-->
+                        <!--border-color: #f09d60 !important;-->
+                        <!--}-->
+
+                        <!--.columna_telefono{-->
+                        <!--border:none;-->
+                        <!--text-align: left;-->
                         <!--border-color: black !important;-->
                         <!--}-->
 
-                        <!--.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11,-->
-                        <!--.col-12{-->
-                        <!--border: 1px solid;-->
+                        <!--.columna_pagina{-->
+                        <!--border:none;-->
+                        <!--text-align: right;-->
                         <!--border-color: black !important;-->
                         <!--}-->
 
-                        .border_none{
-                        border:none !important;
-                        }
-
-                        .border_orange{
-                        border: 1px solid;
-                        border-color: #f09d60;
-                        }
-
-                        .border_right_orange{
-                        border-right: 1px solid !important;
-                        border-color: #f09d60 !important;
-                        }
-
-                        .columna_telefono{
-                        border:none;
-                        text-align: left;
-                        border-color: black !important;
-                        }
-
-                        .columna_pagina{
-                        border:none;
-                        text-align: right;
-                        border-color: black !important;
-                        }
-
-                        .orange{
-                        color: #f09d60;
-                        }
-
-                        .verde{
-                        color: #2d7e5e;
-                        }
-
-                        <!--.row + .row {-->
-                        <!--border-top:0 ;-->
+                        <!--.orange{-->
+                        <!--color: #f09d60;-->
                         <!--}-->
-                    </style>
-                </t>
-            </t>
 
-        </template>
+                        <!--.verde{-->
+                        <!--color: #2d7e5e;-->
+                        <!--}-->
+
+                        <!--&lt;!&ndash;.row + .row {&ndash;&gt;-->
+                        <!--&lt;!&ndash;border-top:0 ;&ndash;&gt;-->
+                        <!--&lt;!&ndash;}&ndash;&gt;-->
+                    <!--</style>-->
+                <!--</t>-->
+            <!--</t>-->
+
+        <!--</template>-->
     </data>
 </odoo> 

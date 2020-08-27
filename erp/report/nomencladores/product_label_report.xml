@@ -10,6 +10,13 @@
 
 
                         <div class="oe_structure"/>
+
+                              <div class="row">
+                            <div class="col-12 border_orange">
+                               <p>product_label_repo </p>
+                            </div>
+                        </div>
+
                         <div class="row border_orange">
                             <div class="col-12">
                                 <div class="row border_orange">
