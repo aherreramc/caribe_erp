@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="header_quotation">
+
+        <div class="header">
+
+            <div class="row">
+                Header
+
+            </div>
+
+
+            <style type="text/css">
+
+
+
+            </style>
+        </div>
+    </template>
+
+</odoo> 
