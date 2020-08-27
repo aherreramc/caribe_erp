@@ -10,7 +10,7 @@
 
 
                         <div class="oe_structure"/>
-                        <div class="row">
+                        <div class="row border_orange">
                             <div class="col-12">
                                 <div class="row border_none">
                                     <div class="col-8 border_none" style="margin-top: auto; margin-bottom: auto;">
@@ -181,6 +181,11 @@
                         .border{
                         border: 2px solid;
                         border-color: black !important;
+                        }
+
+                        .border_orange{
+                            border: 1px solid;
+                            border-color: #f09d60;
                         }
 
                         .border_right{
