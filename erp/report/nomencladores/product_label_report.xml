@@ -25,15 +25,15 @@
                                     <div class="col-4">
                                         <div class="row">
                                             <div class="col-12">
-                                                <div class="text-right" style="width:95%; margin: auto;">
+                                                <div class="text-center" style="width:95%; margin: auto;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
                                                          style="width:50%;"/>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-6 font_regular">
+                                        <div class="row font_regular">
+                                            <div class="col-6">
                                                 <p class="verde">Número de Orden:</p>
                                             </div>
                                             <div class="col-6">
