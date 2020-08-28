@@ -43,32 +43,32 @@
 
                             <div class="row border_orange border_radius_10 mt-3">
                                 <div class="col-12">
-                                    <div class="d-flex flex-row abs-center text-center orange">
-                                        <div >
+                                    <div class="row abs-center text-center orange">
+                                        <div class="col-1">
                                             <span class="font_titles">CÓDIGO</span>
                                         </div>
-                                        <div >
+                                        <div class="col-3">
                                             <span class="font_titles">DESCRIPCIÓN</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">CANT</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">UNIDAD</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">PZAS X CAJA</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">PZAS TOTALES</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">PRECIO UNITARIO</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">PRECIO POR PZA</span>
                                         </div>
-                                        <div >
+                                        <div class="col-1">
                                             <span class="font_titles">TOTAL</span>
                                         </div>
                                     </div>
