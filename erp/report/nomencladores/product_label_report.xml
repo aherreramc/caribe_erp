@@ -42,8 +42,10 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-6 h-100 border_orange_right">
+                                                 <p class="verde font_regular"></p>
                                             </div>
                                             <div class="col-6 h-100">
+                                                 <p class="verde font_regular"></p>
                                             </div>
                                         </div>
 
@@ -112,13 +114,13 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-6 columna_telefono">
-                                                <p class="orange font_bold_footer_table">
+                                            <div class="col-6 columna_telefono parent">
+                                                <p class="orange font_bold_footer_table child">
                                                     (998) 131 2322
                                                 </p>
                                             </div>
-                                            <div class="col-6 columna_pagina">
-                                                <p class="orange font_bold_footer_table">
+                                            <div class="col-6 columna_pagina parent">
+                                                <p class="orange font_bold_footer_table child">
                                                     BIOTIVS.COM
                                                 </p>
                                             </div>
@@ -169,7 +171,7 @@
                     <style type="text/css">
 
                         .parent {
-                        padding: 2% 0;
+                        padding: 3% 0;
                         }
                         .child {
                         padding: 4% 0;
