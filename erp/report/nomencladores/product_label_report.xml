@@ -74,20 +74,20 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-4 border_orange_right">
-                                                                <p class="verde text-center font_regular_simple">
+                                                                <p class="verde font_regular_simple">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row  border_orange_right">
-                                                            <div class="col-12 border_orange_bottom">
+                                                        <div class="row border_orange_bottom">
+                                                            <div class="col-12 border_orange_right">
                                                                 <p class="verde font_bold">Contenido:</p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row  border_orange_right">
-                                                            <div class="col-12 border_orange_bottom">
+                                                        <div class="row border_orange_bottom">
+                                                            <div class="col-12 border_orange_right">
                                                                 <p class="verde font_regular_simple">
                                                                     <span t-field="product.descripcion_cliente"/>
                                                                 </p>
@@ -96,9 +96,9 @@
 
                                                     </div>
 
-                                                    <div class="col-4 ">
+                                                    <div class="col-4 border_orange_bottom">
                                                         <div class="row">
-                                                            <div class="col-12 border_orange_bottom">
+                                                            <div class="col-12 ">
                                                                 <p class="verde font_bold">Código:</p>
                                                             </div>
                                                         </div>
