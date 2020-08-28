@@ -74,14 +74,14 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-4 border_orange_right">
-                                                                <p class="verde align-middle text-center font_regular_simple">
+                                                                <p class="verde text-center font_regular_simple">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
                                                         </div>
 
                                                         <div class="row border_orange_bottom border_orange_right">
-                                                            <div class="col-12">
+                                                            <div class="col-12 ">
                                                                 <p class="verde font_bold">Contenido:</p>
                                                             </div>
                                                         </div>
