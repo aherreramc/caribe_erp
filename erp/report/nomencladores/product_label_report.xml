@@ -74,7 +74,7 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-4 border_orange_right">
-                                                                <p class="verde font_regular_simple">
+                                                                <p class="verde align-middle font_regular_simple">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
@@ -97,9 +97,14 @@
                                                     </div>
 
                                                     <div class="col-4 border_orange_bottom">
-                                                        <div class="row">
+                                                        <div class="row border_orange_bottom">
                                                             <div class="col-12 ">
                                                                 <p class="verde font_bold">Código:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 ">
+                                                                <p class="verde font_bold"></p>
                                                             </div>
                                                         </div>
                                                     </div>
