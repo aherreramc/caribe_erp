@@ -44,10 +44,10 @@
                             <div class="row border_orange border_radius_10 mt-3">
                                 <div class="col-12">
                                     <div class="row abs-center text-center orange">
-                                        <div class="col-1">
+                                        <div class="col-2">
                                             <span class="font_titles2">CÓDIGO</span>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-3">
                                             <span class="font_titles2">DESCRIPCIÓN</span>
                                         </div>
                                         <div class="col-1">
@@ -77,10 +77,10 @@
 
                                     <t t-foreach="doc.order_line" t-as="line">
                                         <div class="row border_order_line_row abs-center text-center">
-                                            <div class="col-1">
+                                            <div class="col-2">
                                                 <span t-field="line.product_id.name"/>
                                             </div>
-                                            <div class="col-4 text-justify">
+                                            <div class="col-3 text-justify">
                                                 <span t-field="line.name"/>
                                             </div>
                                             <div class="col-1">
@@ -114,7 +114,7 @@
 
                                     <t t-foreach="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" t-as="i">
                                         <t t-if="count_order_lines > i">
-                                            <div class="row border_order_line_row abs-center text-center">
+                                            <div class="row border_order_line_row abs-center text-center font_titles row_table">
 
                                             </div>
                                         </t>
@@ -187,14 +187,16 @@
                         </div>
 
                         <style type="text/css">
+                            .row_table{
+                            min-height: 60px;
+                            }
                             .font_titles{
                             font-size: 10px;
                             font-weight: bold;
                             }
                             .font_titles2{
-                            font-size: 9px;
+                            font-size: 8px;
                             font-weight: bold;
-                            line-height: 1;
                             }
                             .border_none{
                             border:none !important;
