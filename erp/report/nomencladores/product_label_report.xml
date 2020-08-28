@@ -73,8 +73,8 @@
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-4 border_orange_right"  >
-                                                                <p class="verde font_regular_simple" style="padding-top: auto; margin-bottom: auto;">
+                                                            <div class="col-4 border_orange_right parent">
+                                                                <p class="verde font_regular_simple child">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
@@ -167,6 +167,13 @@
                     </div>
 
                     <style type="text/css">
+
+                        .parent {
+                        padding: 5% 0;
+                        }
+                        .child {
+                        padding: 10% 0;
+                        }
 
                         .report_label_bag{
                         width:95%;
