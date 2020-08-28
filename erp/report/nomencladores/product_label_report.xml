@@ -68,8 +68,8 @@
                                                         </div>
 
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-8 border_orange_right">
-                                                                <p class="verde font_bold_product">
+                                                            <div class="col-8 border_orange_right parent">
+                                                                <p class="verde font_bold_product child">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
@@ -169,10 +169,10 @@
                     <style type="text/css">
 
                         .parent {
-                        padding: 5% 0;
+                        padding: 2% 0;
                         }
                         .child {
-                        padding: 10% 0;
+                        padding: 4% 0;
                         }
 
                         .report_label_bag{
