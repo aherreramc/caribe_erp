@@ -43,7 +43,7 @@
 
                             <div class="row border_orange border_radius_10 mt-3">
                                 <div class="col-12">
-                                    <div class="row abs-center text-center orange">
+                                    <div class="d-flex flex-row abs-center text-center orange">
                                         <div class="col">
                                             <span class="font_titles">CÓDIGO</span>
                                         </div>
