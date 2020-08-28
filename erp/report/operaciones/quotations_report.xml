@@ -45,31 +45,31 @@
                                 <div class="col-12">
                                     <div class="row abs-center text-center orange">
                                         <div class="col-1">
-                                            <span class="font_titles">CÓDIGO</span>
+                                            <span class="font_titles2">CÓDIGO</span>
                                         </div>
-                                        <div class="col-3">
-                                            <span class="font_titles">DESCRIPCIÓN</span>
-                                        </div>
-                                        <div class="col-1">
-                                            <span class="font_titles">CANT</span>
+                                        <div class="col-4">
+                                            <span class="font_titles2">DESCRIPCIÓN</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">UNIDAD</span>
+                                            <span class="font_titles2">CANT</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">PZAS X CAJA</span>
+                                            <span class="font_titles2">UNIDAD</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">PZAS TOTALES</span>
+                                            <span class="font_titles2">PZAS X CAJA</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">PRECIO UNITARIO</span>
+                                            <span class="font_titles2">PZAS TOTALES</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">PRECIO POR PZA</span>
+                                            <span class="font_titles2">PRECIO UNITARIO</span>
                                         </div>
                                         <div class="col-1">
-                                            <span class="font_titles">TOTAL</span>
+                                            <span class="font_titles2">PRECIO POR PZA</span>
+                                        </div>
+                                        <div class="col-1">
+                                            <span class="font_titles2">TOTAL</span>
                                         </div>
                                     </div>
 
@@ -80,7 +80,7 @@
                                             <div class="col-1">
                                                 <span t-field="line.product_id.name"/>
                                             </div>
-                                            <div class="col-3 text-justify">
+                                            <div class="col-4 text-justify">
                                                 <span t-field="line.name"/>
                                             </div>
                                             <div class="col-1">
@@ -189,6 +189,10 @@
                         <style type="text/css">
                             .font_titles{
                             font-size: 10px;
+                            font-weight: bold;
+                            }
+                            .font_titles2{
+                            font-size: 8px;
                             font-weight: bold;
                             }
                             .border_none{
