@@ -45,31 +45,31 @@
                                 <div class="col-12">
                                     <div class="row abs-center text-center orange">
                                         <div class="col-1">
-                                            <span>CÓDIGO</span>
+                                            <span class="font_titles">CÓDIGO</span>
                                         </div>
                                         <div class="col-3">
-                                            <span>DESCRIPCIÓN</span>
+                                            <span class="font_titles">DESCRIPCIÓN</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>CANT</span>
+                                            <span class="font_titles">CANT</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>UNIDAD</span>
+                                            <span class="font_titles">UNIDAD</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>PZAS X CAJA</span>
+                                            <span class="font_titles">PZAS X CAJA</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>PZAS TOTALES</span>
+                                            <span class="font_titles">PZAS TOTALES</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>PRECIO UNITARIO</span>
+                                            <span class="font_titles">PRECIO UNITARIO</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>PRECIO POR PZA</span>
+                                            <span class="font_titles">PRECIO POR PZA</span>
                                         </div>
                                         <div class="col-1">
-                                            <span>TOTAL</span>
+                                            <span class="font_titles">TOTAL</span>
                                         </div>
                                     </div>
 
@@ -123,7 +123,7 @@
                                     <div class="row border_order_line_row">
                                         <div class="col-4">
                                             <div>
-                                                <p class="orange">DATOS BANCARIOS</p>
+                                                <p class="orange font_titles">DATOS BANCARIOS</p>
                                             </div>
                                             <div>
                                                 <p>Beneficiario</p>
@@ -145,38 +145,38 @@
                                             </div>
                                         </div>
                                         <div class="col-4 border_left_orange border_right_orange">
-                                            <p class="orange">CONDICIONES</p>
+                                            <p class="orange font_titles">CONDICIONES</p>
                                             <span t-raw="doc.condiciones"/>
                                         </div>
                                         <div class="col-4">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <p class="orange">SUBTOTAL
+                                                    <p class="orange font_titles">SUBTOTAL
                                                         <t t-set="amount_without_discount_total"
                                                            t-value="doc.amount_untaxed - doc.discount_total"/>
                                                         <span t-esc="amount_without_discount_total"/>
                                                     </p>
-                                                    <p class="orange">DESCUENTO
+                                                    <p class="orange font_titles">DESCUENTO
                                                         <span t-esc="doc.discount_total"/>
                                                     </p>
-                                                    <p class="orange">SUBTOTAL NETO
+                                                    <p class="orange font_titles">SUBTOTAL NETO
                                                         <span t-esc="doc.amount_untaxed"/>
                                                     </p>
-                                                    <p class="orange">IVA
+                                                    <p class="orange font_titles">IVA
                                                         <span t-esc="doc.amount_tax"/>
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="row border_order_line_row">
                                                 <div class="col-12">
-                                                    <p class="orange">TOTAL FINAL
+                                                    <p class="orange font_titles">TOTAL FINAL
                                                         <span t-esc="doc.amount_total"/>
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="row border_order_line_row">
                                                 <div class="col-12">
-                                                    <p class="orange">VIGENCIA DE COTIZACIÓN</p>
+                                                    <p class="orange font_titles">VIGENCIA DE COTIZACIÓN</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,7 +188,8 @@
 
                         <style type="text/css">
                             .font_titles{
-                            font-size: 10px;
+                            font-size: 14px;
+                            font-weight: bold;
                             }
                             .border_none{
                             border:none !important;
