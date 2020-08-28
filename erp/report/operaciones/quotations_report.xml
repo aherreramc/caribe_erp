@@ -20,19 +20,19 @@
                                 <div class="col-12">
                                     <div class="row abs-center text-center border_gross_bottom_orange firt_table_firt_row">
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>ATENCIÓN</span>
+                                            <span class="font_titles">ATENCIÓN</span>
                                         </div>
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FACTURAR</span>
+                                            <span class="font_titles">FACTURAR</span>
                                         </div>
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>DIRECCIÓN</span>
+                                            <span class="font_titles">DIRECCIÓN</span>
                                         </div>
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FOLIO</span>
+                                            <span class="font_titles">FOLIO</span>
                                         </div>
                                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                            <span>FECHA</span>
+                                            <span class="font_titles">FECHA</span>
                                         </div>
                                     </div>
                                     <div class="row abs-center text-center second_table_firt_row">
@@ -187,6 +187,9 @@
                         </div>
 
                         <style type="text/css">
+                            .font_titles{
+                            font-size: 18px;
+                            }
                             .border_none{
                             border:none !important;
                             }
