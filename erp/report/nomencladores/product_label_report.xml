@@ -68,12 +68,12 @@
                                                         </div>
 
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-8 border_orange_right parent_bold">
+                                                            <div class="col-8 text-center border_orange_right parent_bold">
                                                                 <p class="verde font_bold_product child_bold">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-4 border_orange_right parent">
+                                                            <div class="col-4 text-center border_orange_right parent">
                                                                 <p class="verde font_regular_simple child">
                                                                     <span t-field="product.size"/>
                                                                 </p>
