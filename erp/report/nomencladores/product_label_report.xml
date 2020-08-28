@@ -27,25 +27,23 @@
                                             <div class="col-12">
                                                 <div class="text-center" style="width:95%; margin: auto;">
                                                     <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:50%;"/>
+                                                         style="width:40%;"/>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="row font_regular">
-                                            <div class="col-6">
-                                                <p class="verde">Número de Orden:</p>
+                                        <div class="row border_orange_bottom">
+                                            <div class="col-6 border_orange_right">
+                                                <p class="verde font_regular">Número de Orden:</p>
                                             </div>
                                             <div class="col-6">
-                                                <p class="verde">Código de envío:</p>
+                                                <p class="verde font_regular">Código de envío:</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-6">
-                                                <p></p>
+                                            <div class="col-6 border_orange_right">
                                             </div>
                                             <div class="col-6">
-                                                <p></p>
                                             </div>
                                         </div>
 
@@ -53,43 +51,43 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8">
+                                    <div class="col-8 border_orange_right">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <div class="row border_orange">
-                                                            <div class="col-8 border_orange">
+                                                        <div class="row">
+                                                            <div class="col-8">
                                                                 <p class="verde">Producto:</p>
                                                             </div>
-                                                            <div class="col-4 border_none">
+                                                            <div class="col-4">
                                                                 <p>
                                                                     <p class="verde">Tamaño:</p>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border_orange">
-                                                            <div class="col-8 border_orange">
+                                                        <div class="row ">
+                                                            <div class="col-8 ">
                                                                 <p class="verde">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-4 border_none">
+                                                            <div class="col-4">
                                                                 <p class="verde">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border_orange">
-                                                            <div class="col-12 border_none">
+                                                        <div class="row">
+                                                            <div class="col-12 ">
                                                                 <p class="verde">Contenido:</p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border_orange">
-                                                            <div class="col-12 border_none">
+                                                        <div class="row">
+                                                            <div class="col-12">
                                                                 <p class="verde">
                                                                     <span t-field="product.descripcion_cliente"/>
                                                                 </p>
@@ -126,7 +124,7 @@
                                             <div class="col-6">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <div class="row">
+                                                        <div class="row border_orange_bottom">
                                                             <div class="col-12">
                                                                 <div style="width:100%; margin: auto;">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
@@ -134,7 +132,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
+                                                        <div class="row border_orange_bottom">
                                                             <div class="col-12">
                                                                 <div style="width:100%; margin: auto;">
                                                                     <img src="/erp/static/src/img/inflamable.PNG"
@@ -153,7 +151,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-6 border_orange_right">
 
                                             </div>
                                         </div>
@@ -201,8 +199,12 @@
                         border-color: black !important;
                         }
 
-                        .font_regular p{
+                        .font_regular{
                         font-size: 14px;
+                        }
+                        .font_bold {
+                        font-size: 14px;
+                        font-weight: 700;
                         }
 
                         .orange{
