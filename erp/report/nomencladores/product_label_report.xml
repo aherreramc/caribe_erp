@@ -80,14 +80,14 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border_orange_bottom border_orange_right">
-                                                            <div class="col-12 ">
+                                                        <div class="row  border_orange_right">
+                                                            <div class="col-12 border_orange_bottom">
                                                                 <p class="verde font_bold">Contenido:</p>
                                                             </div>
                                                         </div>
 
-                                                        <div class="row border_orange_bottom border_orange_right">
-                                                            <div class="col-12">
+                                                        <div class="row  border_orange_right">
+                                                            <div class="col-12 border_orange_bottom">
                                                                 <p class="verde font_regular_simple">
                                                                     <span t-field="product.descripcion_cliente"/>
                                                                 </p>
