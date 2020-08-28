@@ -40,8 +40,8 @@
                                                 <p class="verde font_regular">Código de envío:</p>
                                             </div>
                                         </div>
-                                        <div class="row h-100">
-                                            <div class="col-6border_orange_right">
+                                        <div class="row">
+                                            <div class="col-6 border_orange_right">
                                                  <p class="verde font_regular"></p>
                                             </div>
                                             <div class="col-6">
