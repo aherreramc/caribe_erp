@@ -73,8 +73,8 @@
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-4 border_orange_right">
-                                                                <p class="verde align-middle font_regular_simple">
+                                                            <div class="col-4 border_orange_right" style="margin: auto">
+                                                                <p class="verde font_regular_simple">
                                                                     <span t-field="product.size"/>
                                                                 </p>
                                                             </div>
