@@ -51,18 +51,18 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8 ">
+                                    <div class="col-8 border_orange_right">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-8">
                                                         <div class="row">
                                                             <div class="col-8">
-                                                                <p class="verde">Producto:</p>
+                                                                <p class="verde font_bold">Producto:</p>
                                                             </div>
                                                             <div class="col-4">
                                                                 <p>
-                                                                    <p class="verde">Tamaño:</p>
+                                                                    <p class="verde font_bold">Tamaño:</p>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -99,7 +99,7 @@
                                                     <div class="col-4">
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <p class="verde">Código:</p>
+                                                                <p class="verde font_bold">Código:</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -151,7 +151,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6 border_orange_right">
+                                            <div class="col-6">
 
                                             </div>
                                         </div>
@@ -200,10 +200,10 @@
                         }
 
                         .font_regular{
-                        font-size: 32px;
+                        font-size: 20px;
                         }
                         .font_bold {
-                        font-size: 32px;
+                        font-size: 20px;
                         font-weight: 700;
                         }
 
