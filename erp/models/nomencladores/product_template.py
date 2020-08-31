@@ -128,6 +128,26 @@ class ProductTemplate(models.Model):
 
         return nombre_a_mostrar
 
+    def name_get_without_process(self):
+        return super(ProductTemplate, self).name_get()
+        # return res
+        # data = []
+        #
+        # for product in self:
+        #     display_value = ''
+        #
+        #     if product.name is not False:
+        #         display_value += product.name
+        #
+        #     if product.descripcion_cliente is not False:
+        #         if product.name is not False:
+        #             display_value += ": "
+        #         display_value += product.descripcion_cliente
+        #
+        #     data.append((product.id, display_value))
+        #
+        # return data
+
 
     # @api.model
     # def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
