@@ -16,6 +16,7 @@ class ProductTemplate(models.Model):
     degradation_type = fields.Many2one('erp.nomencladores.degradation_type', string='Degradation Type')
 
     name = fields.Char(string="Nombre")
+    related_name = fields.Char(string="Name", related='name')
     descripcion_cliente = fields.Char(string="Descripción-cliente-español")
     descripcion_proveedor = fields.Char(string="Descripción-proveedor")
     descripcion_cliente_ingles = fields.Char(string="Descripción-cliente-inglés")
