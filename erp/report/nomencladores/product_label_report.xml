@@ -73,8 +73,8 @@
                                                         <div class="row border_orange_bottom">
                                                             <div class="col-8 text-center border_orange_right abs-center">
                                                                 <p class="verde font_bold" style="font-style: normal">
-                                                                    <t t-if="product.categ_id">
-                                                                        <span t-field="product.categ_id.name"/>
+                                                                    <t t-if="product.categ_id" class="icons">
+                                                                        <span class="icons" t-field="product.categ_id.name"/>
                                                                     </t>
                                                                 </p>
                                                             </div>
@@ -155,7 +155,7 @@
                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <div class="icons">
-                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
+                                                                    <img src="/erp/static/src/img/away_from_heat.PNG"
                                                                          style="width:80%;"/>
                                                                 </div>
                                                             </div>
