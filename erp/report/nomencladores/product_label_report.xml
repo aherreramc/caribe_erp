@@ -27,7 +27,7 @@
                                             <div class="col-12">
                                                 <div class="text-center report_label_bag">
                                                     <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
-                                                         <!--style="width:30%;"/>-->
+                                                    <!--style="width:30%;"/>-->
                                                     <img t-att-src="'data:image/png;base64,%s' % product.image_variant"/>
                                                 </div>
                                             </div>
@@ -43,10 +43,10 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-6 border_orange_right">
-                                                 <p class="verde font_regular"></p>
+                                                <p class="verde font_regular"></p>
                                             </div>
                                             <div class="col-6">
-                                                 <p class="verde font_regular"></p>
+                                                <p class="verde font_regular"></p>
                                             </div>
                                         </div>
 
@@ -72,8 +72,10 @@
 
                                                         <div class="row border_orange_bottom">
                                                             <div class="col-8 text-center border_orange_right parent_bold">
-                                                                <p class="verde font_bold_product child_bold">
-                                                                    <span t-field="product.categ_id.name"/>
+                                                                <p class="verde font_bold">
+                                                                    <t t-if="product.categ_id">
+                                                                        <span t-field="product.categ_id.name"/>
+                                                                    </t>
                                                                 </p>
                                                             </div>
                                                             <div class="col-4 text-center border_orange_right parent">
@@ -107,7 +109,9 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 ">
-                                                                <p class="verde font_bold"><span t-field="product.name"/></p>
+                                                                <p class="verde font_bold_product child_bold">
+                                                                    <span t-field="product.name"/>
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -163,10 +167,11 @@
                                                 <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>-->
                                                 <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
                                                 <p>
-                                                        <span>
-                                                            <img t-att-src="'data:image/png;base64,%s' % product.barcode_image" class="alejandro_centrar_imagen_en_td"/>
-                                                        </span>
-                                                    </p>
+                                                    <span>
+                                                        <img t-att-src="'data:image/png;base64,%s' % product.barcode_image"
+                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                    </span>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
