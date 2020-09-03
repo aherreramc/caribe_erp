@@ -26,8 +26,9 @@
                                         <div class="row border_orange_bottom">
                                             <div class="col-12">
                                                 <div class="text-center report_label_bag">
-                                                    <img src="/erp/static/src/img/report_label_bag.PNG"
-                                                         style="width:30%;"/>
+                                                    <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
+                                                         <!--style="width:30%;"/>-->
+                                                    <img t-att-src="'data:image/png;base64,%s' % product.image_variant" style="width:30%;"/>
                                                 </div>
                                             </div>
                                         </div>
