@@ -72,9 +72,9 @@
 
                                                         <div class="row border_orange_bottom">
                                                             <div class="col-8 text-center border_orange_right abs-center">
-                                                                <p class="verde font_bold" style="font-style: normal">
-                                                                    <t t-if="product.categ_id" class="icons">
-                                                                        <span class="icons" t-field="product.categ_id.name"/>
+                                                                <p class="verde font_bold icons" style="font-style: normal">
+                                                                    <t t-if="product.categ_id">
+                                                                        <span  t-field="product.categ_id.name"/>
                                                                     </t>
                                                                 </p>
                                                             </div>
