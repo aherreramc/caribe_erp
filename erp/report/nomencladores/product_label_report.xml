@@ -28,7 +28,7 @@
                                                 <div class="text-center report_label_bag">
                                                     <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
                                                          <!--style="width:30%;"/>-->
-                                                    <img t-att-src="'data:image/png;base64,%s' % product.image_variant" style="width:30%;"/>
+                                                    <img t-att-src="'data:image/png;base64,%s' % product.image_variant"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -160,7 +160,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-
+                                                <img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>
                                             </div>
                                         </div>
                                     </div>
