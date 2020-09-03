@@ -168,8 +168,10 @@
                                                 <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
                                                 <p>
                                                     <span>
-                                                        <img t-att-src="'data:image/png;base64,%s' % product.barcode_image"
-                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                        <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"-->
+                                                             <!--class="alejandro_centrar_imagen_en_td"/>-->
+                                                        <!---->
+                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 100)" style="width:300px;height:50px;"/>
                                                     </span>
                                                 </p>
                                             </div>
