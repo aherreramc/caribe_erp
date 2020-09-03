@@ -166,13 +166,12 @@
                                             <div class="col-6">
                                                 <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>-->
                                                 <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
-                                                <p>
+                                                <p class="alejandro_centrar_imagen_en_td icons">
                                                     <span>
                                                         <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"-->
                                                              <!--class="alejandro_centrar_imagen_en_td"/>-->
                                                         <!---->
-                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 100)"
-                                                             class="alejandro_centrar_imagen_en_td icons"/>
+                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 100)"/>
                                                     </span>
                                                 </p>
                                             </div>
