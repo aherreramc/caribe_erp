@@ -161,7 +161,12 @@
                                             </div>
                                             <div class="col-6">
                                                 <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>-->
-                                                <img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>
+                                                <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
+                                                <p>
+                                                        <span>
+                                                            <img t-att-src="'data:image/png;base64,%s' % product.barcode_image" class="alejandro_centrar_imagen_en_td"/>
+                                                        </span>
+                                                    </p>
                                             </div>
                                         </div>
                                     </div>
