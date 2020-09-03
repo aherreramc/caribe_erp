@@ -109,7 +109,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 ">
-                                                                <p class="verde font_bold_product child_bold">
+                                                                <p class="verde font_bold_product child_bold icons">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
