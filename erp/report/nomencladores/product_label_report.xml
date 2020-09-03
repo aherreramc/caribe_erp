@@ -172,7 +172,7 @@
                                                              <!--class="alejandro_centrar_imagen_en_td"/>-->
                                                         <!---->
                                                         <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 100)"
-                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                             class="alejandro_centrar_imagen_en_td icons"/>
                                                     </span>
                                                 </p>
                                             </div>
