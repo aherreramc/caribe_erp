@@ -71,7 +71,7 @@
                                                         </div>
 
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-8 text-center border_orange_right">
+                                                            <div class="col-8 text-center border_orange_right abs-center">
                                                                 <p class="verde font_bold" style="font-style: normal">
                                                                     <t t-if="product.categ_id">
                                                                         <span t-field="product.categ_id.name"/>
@@ -273,6 +273,13 @@
 
                         .verde{
                         color: #2d7e5e;
+                        }
+
+                        .abs-center {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 100vh;
                         }
 
                         <!--.row + .row {-->
