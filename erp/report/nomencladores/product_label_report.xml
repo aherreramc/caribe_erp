@@ -108,8 +108,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12 text-center border_orange_right abs-center">
-                                                                <p class="verde font_bold icons" style="font-style: normal">
+                                                            <div class="col-12 text-center border_orange_right icons">
+                                                                <p class="verde font_bold" style="font-style: normal">
                                                                     <t t-if="product.categ_id">
                                                                         <span  t-field="product.categ_id.name"/>
                                                                     </t>
