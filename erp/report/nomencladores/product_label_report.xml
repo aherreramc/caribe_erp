@@ -160,7 +160,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>
+                                                <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>-->
+                                                <img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>
                                             </div>
                                         </div>
                                     </div>
