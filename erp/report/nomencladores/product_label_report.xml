@@ -108,11 +108,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons">
-                                                                    <span t-field="product.name"/>
+                                                            <div class="col-12 text-center border_orange_right abs-center">
+                                                                <p class="verde font_bold icons" style="font-style: normal">
+                                                                    <t t-if="product.categ_id">
+                                                                        <span  t-field="product.categ_id.name"/>
+                                                                    </t>
                                                                 </p>
                                                             </div>
+
+                                                            <!--<div class="col-12 text-center abs-center">-->
+                                                                <!--<p class="verde font_bold_product child_bold icons">-->
+                                                                    <!--<span t-field="product.name"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
                                                         </div>
                                                     </div>
                                                 </div>
