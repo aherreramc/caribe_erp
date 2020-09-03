@@ -71,8 +71,9 @@
                                                         </div>
 
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-8 text-center border_orange_right parent_bold">
-                                                                <p class="verde font_bold">
+                                                            <div class="col-8 text-center border_orange_right parent_bold"
+                                                                style="margin: auto;">
+                                                                <p class="verde font_bold" style="font-style: normal;">
                                                                     <t t-if="product.categ_id">
                                                                         <span t-field="product.categ_id.name"/>
                                                                     </t>
