@@ -171,7 +171,8 @@
                                                         <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"-->
                                                              <!--class="alejandro_centrar_imagen_en_td"/>-->
                                                         <!---->
-                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 100)"/>
+                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 300, 80)"
+                                                         style="width:92%;"/>
                                                     </span>
                                                 </p>
                                             </div>
