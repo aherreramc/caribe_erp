@@ -168,11 +168,13 @@
                                                 <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
                                                 <p class="alejandro_centrar_imagen_en_td icons">
                                                     <span>
-                                                        <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"-->
-                                                             <!--class="alejandro_centrar_imagen_en_td"/>-->
-                                                        <!---->
-                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"
-                                                         style="width:92%;"/>
+                                                        <img t-att-src="'data:image/png;base64,%s' % product.barcode_image"
+                                                             class="alejandro_centrar_imagen_en_td"/>
+
+                                                        <!--<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"-->
+                                                         <!--style="width:95%;"/>-->
+
+                                                        <!--<img t-att-src="'data:image/png;base64,%s' % linea.producto.image_variant" class="alejandro_centrar_imagen_en_td"/>-->
                                                     </span>
                                                 </p>
                                             </div>
@@ -283,6 +285,18 @@
                         align-items: center;
                         justify-content: center;
                         min-height: 100vh;
+                        }
+
+                        .alejandro_centrar_imagen_en_td{
+
+                        margin-top: 3px;
+                        margin-bottom: 3px;
+
+                        margin-left: 3px;
+                        margin-right: 3px;
+
+                        max-width: 100px;
+                        max-height: 100px;
                         }
 
                         <!--.row + .row {-->
