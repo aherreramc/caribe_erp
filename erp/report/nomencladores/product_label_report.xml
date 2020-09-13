@@ -29,6 +29,9 @@
                                                     <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
                                                     <!--style="width:30%;"/>-->
                                                     <img t-att-src="'data:image/png;base64,%s' % product.image_variant"/>
+                                                    <img t-att-src="'data:image/png;base64,%s' % linea.producto.image_variant" class="alejandro_centrar_imagen_en_td"/>
+
+                                                    <img t-if="product.image_small" t-att-src="'data:image/jpg;base64,%s' % (product.image_small,)" style="max-height:45pt;max-width:90%"/>
                                                 </div>
                                             </div>
                                         </div>
