@@ -256,7 +256,7 @@
                         font-style: italic;
                         }
                         .font_bold_product {
-                        font-size: 36px;
+                        font-size: 32px;
                         font-weight: bold;
                         }
 
