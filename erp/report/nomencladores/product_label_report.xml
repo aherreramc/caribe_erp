@@ -43,11 +43,14 @@
 
                                                     <!--<span t-field="o.image_field_name" t-field-options='{"widget": "image"}'/>-->
 
-                                                    <img t-attf-src="data:image/*;base64,{{product.image_1920}}"/>
+                                                    <p>
+                                                        <img t-attf-src="data:image/*;base64,{{product.image_1920}}"
+                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                    </p>
 
                                                     <!--<span>-->
-                                                        <!--<img t-att-src="'data:image/png;base64,%s' % product.image_1920"-->
-                                                             <!--class="alejandro_centrar_imagen_en_td"/>-->
+                                                    <!--<img t-att-src="'data:image/png;base64,%s' % product.image_1920"-->
+                                                    <!--class="alejandro_centrar_imagen_en_td"/>-->
                                                     <!--</span>-->
 
 
@@ -197,7 +200,7 @@
                                                          class="alejandro_centrar_imagen_en_td"/>
 
                                                     <img t-att-src="'data:image/png;base64,%s' % product.image_variant"
-                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                         class="alejandro_centrar_imagen_en_td"/>
 
                                                     <!--<img t-att-src="'data:image/png;base64,%s' % linea.producto.image_variant" class="alejandro_centrar_imagen_en_td"/>-->
                                                 </span>
