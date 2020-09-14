@@ -31,7 +31,9 @@
                                                     <!--<img t-att-src="'data:image/png;base64,%s' % product.image_variant"/>-->
                                                     <!--<img t-att-src="'data:image/png;base64,%s' % product.image_variant" class="alejandro_centrar_imagen_en_td"/>-->
 
-                                                    <img t-if="product.image_small" t-att-src="'data:image/jpg;base64,%s' % (product.image_small,)" style="max-height:45pt;max-width:90%"/>
+                                                    <!--<img t-if="product.image_small" t-att-src="'data:image/jpg;base64,%s' % (product.image_small,)" style="max-height:45pt;max-width:90%"/>-->
+
+                                                    <span t-field="product.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
                                                 </div>
                                             </div>
                                         </div>
