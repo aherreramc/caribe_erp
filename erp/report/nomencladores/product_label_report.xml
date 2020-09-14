@@ -111,7 +111,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1.2em;">
+                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1.0em;">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
