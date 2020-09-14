@@ -26,34 +26,10 @@
                                         <div class="row border_orange_bottom">
                                             <div class="col-12">
                                                 <div class="text-center report_label_bag">
-                                                    <!--<img src="/erp/static/src/img/report_label_bag.PNG"-->
-                                                    <!--style="width:30%;"/>-->
-                                                    <!--<img t-att-src="'data:image/png;base64,%s' % product.image_variant"/>-->
-                                                    <!--<img t-att-src="'data:image/png;base64,%s' % product.image_variant" class="alejandro_centrar_imagen_en_td"/>-->
-
-                                                    <!--<img t-if="product.image_small" t-att-src="'data:image/jpg;base64,%s' % (product.image_small,)" style="max-height:45pt;max-width:90%"/>-->
-
-                                                    <!--<span t-field="product.image_variant" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
-                                                    <!--<span t-field="product.image_1920" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
-
-                                                    <!--<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"-->
-                                                    <!--class="alejandro_centrar_imagen_en_td"/>-->
-
-                                                    <!--<span t-field="product.image_1920" t-field-options='{"widget": "image","class": "oe_avatar"}' />-->
-
-                                                    <!--<span t-field="o.image_field_name" t-field-options='{"widget": "image"}'/>-->
-
                                                     <p>
                                                         <img t-attf-src="data:image/*;base64,{{product.image_1920}}"
                                                              class="image_product"/>
                                                     </p>
-
-                                                    <!--<span>-->
-                                                    <!--<img t-att-src="'data:image/png;base64,%s' % product.image_1920"-->
-                                                    <!--class="alejandro_centrar_imagen_en_td"/>-->
-                                                    <!--</span>-->
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -320,7 +296,7 @@
                         }
 
                         .image_product{
-                        max-height: 160px;
+                        max-height: 100px;
                         max-width: 100%;
                         }
 
