@@ -36,10 +36,10 @@
 
                                         <div class="row border_orange_bottom">
                                             <div class="col-6 border_orange_right">
-                                                <p class="verde font_regular">Número de Orden:</p>
+                                                <p class="verde font_regular" style="padding-bottom:2em;">Número de Orden:</p>
                                             </div>
                                             <div class="col-6">
-                                                <p class="verde font_regular">Código de envío:</p>
+                                                <p class="verde font_regular" style="padding-bottom:2em;">Código de envío:</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -111,7 +111,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons">
+                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1em;">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
@@ -166,19 +166,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"/>-->
-                                                <!--<img t-attf-src="'data:image/*;base64,{{product.barcode_image}}'"/>-->
-                                                <span>
-                                                    <!--<img t-att-src="'data:image/png;base64,%s' % product.barcode_image"-->
-                                                    <!--class="alejandro_centrar_imagen_en_td"/>-->
 
+                                                <span>
                                                     <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"
                                                          class="alejandro_centrar_imagen_en_td"/>
-
-                                                    <img t-att-src="'data:image/png;base64,%s' % product.image_variant"
-                                                         class="alejandro_centrar_imagen_en_td"/>
-
-                                                    <!--<img t-att-src="'data:image/png;base64,%s' % linea.producto.image_variant" class="alejandro_centrar_imagen_en_td"/>-->
                                                 </span>
                                             </div>
                                         </div>
