@@ -39,7 +39,11 @@
                                                     <!--<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"-->
                                                     <!--class="alejandro_centrar_imagen_en_td"/>-->
 
-                                                    <span t-field="product.image_1920" t-field-options='{"widget": "image","class": "oe_avatar"}' />
+                                                    <!--<span t-field="product.image_1920" t-field-options='{"widget": "image","class": "oe_avatar"}' />-->
+
+                                                    <!--<span t-field="o.image_field_name" t-field-options='{"widget": "image"}'/>-->
+
+                                                    <img t-attf-src="data:image/*;base64,{{product.image_1920}}"/>
 
                                                     <!--<span>-->
                                                         <!--<img t-att-src="'data:image/png;base64,%s' % product.image_1920"-->
