@@ -34,12 +34,12 @@
                                                     <!--<img t-if="product.image_small" t-att-src="'data:image/jpg;base64,%s' % (product.image_small,)" style="max-height:45pt;max-width:90%"/>-->
 
                                                     <!--<span t-field="product.image_variant" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
-                                                    <span t-field="product.image_1920" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+                                                    <!--<span t-field="product.image_1920" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
 
                                                     <!--<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"-->
                                                     <!--class="alejandro_centrar_imagen_en_td"/>-->
 
-                                                    <!--<span t-field="product.image_variant" t-field-options='{"widget": "image","class": "oe_avatar"}' />-->
+                                                    <span t-field="product.image_1920" t-field-options='{"widget": "image","class": "oe_avatar"}' />
 
                                                     <!--<span>-->
                                                         <!--<img t-att-src="'data:image/png;base64,%s' % product.image_1920"-->
