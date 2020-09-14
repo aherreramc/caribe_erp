@@ -111,7 +111,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1em;">
+                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1.5em;">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
@@ -166,7 +166,6 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-
                                                 <span>
                                                     <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"
                                                          class="alejandro_centrar_imagen_en_td"/>
@@ -197,8 +196,8 @@
                         .report_label_bag{
                         width:95%;
                         margin: auto;
-                        padding-bottom:25px;
-                        padding-top:25px;
+                        padding-bottom:5px;
+                        padding-top:5px;
                         }
 
                         .icons{
