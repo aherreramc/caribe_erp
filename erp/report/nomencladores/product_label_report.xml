@@ -45,7 +45,7 @@
 
                                                     <p>
                                                         <img t-attf-src="data:image/*;base64,{{product.image_1920}}"
-                                                             class="alejandro_centrar_imagen_en_td"/>
+                                                             class="image_product"/>
                                                     </p>
 
                                                     <!--<span>-->
@@ -319,9 +319,12 @@
                         max-width: 100%;
                         }
 
-                        <!--.row + .row {-->
-                        <!--border-top:0 ;-->
-                        <!--}-->
+                        .image_product{
+                        max-height: 160px;
+                        max-width: 100%;
+                        }
+
+
                     </style>
                 </t>
             </t>
