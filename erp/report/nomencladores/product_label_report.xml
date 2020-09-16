@@ -36,10 +36,14 @@
 
                                         <div class="row border_orange_bottom">
                                             <div class="col-6 border_orange_right">
-                                                <p class="verde font_regular" style="padding-bottom:2em;">Número de Orden:</p>
+                                                <p class="verde font_regular" style="padding-bottom:2em;">Número de
+                                                    Orden:
+                                                </p>
                                             </div>
                                             <div class="col-6">
-                                                <p class="verde font_regular" style="padding-bottom:2em;">Código de envío:</p>
+                                                <p class="verde font_regular" style="padding-bottom:2em;">Código de
+                                                    envío:
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -111,7 +115,8 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons" style="padding-top:1.3em;">
+                                                                <p class="verde font_bold_product child_bold icons"
+                                                                   style="padding-top:1.3em;">
                                                                     <span t-field="product.name"/>
                                                                 </p>
                                                             </div>
@@ -169,6 +174,13 @@
                                                 <span>
                                                     <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"
                                                          class="alejandro_centrar_imagen_en_td"/>
+
+                                                    <td style="text-align: center; vertical-align: middle;"
+                                                        class="col-5">
+                                                        <img t-if="product.name"
+                                                             t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 150)"
+                                                             style="width:100%;height:20%;"/>
+                                                    </td>
                                                 </span>
                                             </div>
                                         </div>
