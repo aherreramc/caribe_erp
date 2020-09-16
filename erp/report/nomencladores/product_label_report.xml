@@ -167,10 +167,8 @@
                                             </div>
                                             <div class="col-6">
                                                 <span>
-                                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s;height=%s;' % ('Code128', product.name, 200, 200)"
+                                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"
                                                          class="alejandro_centrar_imagen_en_td"/>
-
-
                                                 </span>
                                             </div>
                                         </div>
