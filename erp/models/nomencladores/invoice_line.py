@@ -8,8 +8,8 @@ import odoo.addons.decimal_precision as dp
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 
 
-class SaleOrderLineTemplate(models.Model):
-    _inherit = 'sale.order.line'
+class InvoiceLineTemplate(models.Model):
+    _inherit = 'invoice.line'
 
     codigo_descripcion = fields.Char(string="Descripción", compute='_compute_codigo_descripcion')
 

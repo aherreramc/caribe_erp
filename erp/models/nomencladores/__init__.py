@@ -15,6 +15,6 @@ from . import pago_nomenclador
 from . import garantia
 from . import firma
 from . import degradation_type
-from . import sale_order_line
+from . import invoice_line
 
 
