@@ -15,4 +15,4 @@ class InvoiceLineTemplate(models.Model):
 
     @api.depends('product_id')
     def _compute_codigo_descripcion(self):
-        self.name_to_search = str(self.name)
+        self.name
