@@ -9,7 +9,7 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 
 
 class AccountInvoiceLineTemplate(models.Model):
-    _inherit = 'account.invoice.line'
+    _inherit = 'account.move.line'
 
     # codigo_descripcion = fields.Char(string="Descripción", compute='_compute_codigo_descripcion')
     #
