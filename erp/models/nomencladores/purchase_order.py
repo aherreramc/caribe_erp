@@ -22,7 +22,7 @@ class SaleOrderTemplate(models.Model):
 
         for purchase_order in self:
             for sale_order in self:
-
+                raise except_orm(sale_order.order_line)
                 for sale_order_line in sale_order.order_line:
                     is_present = False
                     for purchase_line in purchase_order.order_line:
