@@ -22,7 +22,6 @@ class SaleOrderTemplate(models.Model):
 
         for purchase_order in self:
             for sale_order in self:
-                raise except_orm("GGff")
 
                 for sale_order_line in sale_order.order_line:
                     is_present = False
