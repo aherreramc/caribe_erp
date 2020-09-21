@@ -19,10 +19,9 @@ class SaleOrderTemplate(models.Model):
     @api.onchange('sale_orders')
     def sale_orders_change(self):
 
-
         for purchase_order in self:
             for sale_order in purchase_order.sale_orders:
-                raise except_orm(sale_order.order_line)
+
                 for sale_order_line in sale_order.order_line:
                     is_present = False
                     for purchase_line in purchase_order.order_line:
