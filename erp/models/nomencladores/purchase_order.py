@@ -46,7 +46,7 @@ class SaleOrderTemplate(models.Model):
                             'state': sale_order_line.state,
                             'qty_invoiced': sale_order_line.qty_invoiced,
                             'qty_received': 0,
-                            'partner_id': sale_order_line.partner_id,
+                            'partner_id': sale_order_line.order_id.partner_id,
                             'currency_id': sale_order_line.currency_id,
                         }
 
