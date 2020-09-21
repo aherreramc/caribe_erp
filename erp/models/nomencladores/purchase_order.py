@@ -23,9 +23,9 @@ class SaleOrderTemplate(models.Model):
         for purchase_order in self:
             for sale_order in self:
 
-                for purchase_line in purchase_order.order_line:
+                for sale_order_line in sale_order.order_line:
                     is_present = False
-                    for sale_order_line in sale_order.order_line:
+                    for purchase_line in purchase_order.order_line:
                         if purchase_line.product_id is not False and sale_order_line.product_id is not False \
                             and purchase_line.product_id.id == sale_order_line.product_id.id:
                             is_present = True
