@@ -18,6 +18,7 @@ class SaleOrderTemplate(models.Model):
 
     @api.onchange('sale_orders')
     def sale_orders_change(self):
+        raise except_orm("GG")
 
         for purchase_order in self:
             for sale_order in self:
