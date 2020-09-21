@@ -39,7 +39,6 @@ class SaleOrderTemplate(models.Model):
                             'product_qty': sale_order_line.product_uom_qty,
                             'product_uom': sale_order_line.product_uom,
                             'price_unit': sale_order_line.price_unit,
-                            'taxes_id': sale_order_line.taxes_id,
                             'price_subtotal': sale_order_line.price_subtotal,
                             'price_total': sale_order_line.price_total,
                             'price_tax': sale_order_line.price_tax,
