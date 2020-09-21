@@ -33,7 +33,7 @@ class SaleOrderTemplate(models.Model):
 
                     if is_present is False:
 
-                        purchase_order.order_line += {
+                        purchase_order.order_line += [{
                             'product_id': sale_order_line.product_id.id,
                             'name': sale_order_line.name,
                             'product_qty': sale_order_line.product_uom_qty,
@@ -48,6 +48,6 @@ class SaleOrderTemplate(models.Model):
                             'qty_received': 0,
                             'partner_id': sale_order_line.order_id.partner_id,
                             'currency_id': sale_order_line.currency_id,
-                        }
+                        }]
 
 
