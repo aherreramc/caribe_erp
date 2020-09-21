@@ -31,9 +31,9 @@ class SaleOrderTemplate(models.Model):
                             is_present = True
                             purchase_line.product_qty += sale_order_line.product_qty
                             break
-
+                    raise except_orm(is_present)
                     if is_present is False:
-                        raise except_orm("GG")
+
                         purchase_order.order_line.append({
                             'product_id': sale_order_line.product_id.id,
                             'name': sale_order_line.name,
