@@ -32,7 +32,8 @@ class SaleOrderTemplate(models.Model):
                             break
 
                     if is_present is False:
-                        purchase_order.order_line.append({
+
+                        purchase_order.order_line += {
                             'product_id': sale_order_line.product_id.id,
                             'name': sale_order_line.name,
                             'product_qty': sale_order_line.product_qty,
@@ -48,6 +49,6 @@ class SaleOrderTemplate(models.Model):
                             'qty_received': sale_order_line.qty_received,
                             'partner_id': sale_order_line.partner_id,
                             'currency_id': sale_order_line.currency_id,
-                        })
+                        }
 
 
