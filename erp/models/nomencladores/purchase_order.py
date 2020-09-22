@@ -35,20 +35,20 @@ class SaleOrderTemplate(models.Model):
                     if is_present is False:
 
                         line = {
-                            'product_id': sale_order_line.product_id.id,
+                            # 'product_id': sale_order_line.product_id.id,
                             'name': sale_order_line.name,
                             'product_qty': sale_order_line.product_uom_qty,
-                            'product_uom': sale_order_line.product_uom,
-                            'price_unit': sale_order_line.price_unit,
-                            'price_subtotal': sale_order_line.price_subtotal,
-                            'price_total': sale_order_line.price_total,
-                            'price_tax': sale_order_line.price_tax,
+                            # 'product_uom': sale_order_line.product_uom,
+                            # 'price_unit': sale_order_line.price_unit,
+                            # 'price_subtotal': sale_order_line.price_subtotal,
+                            # 'price_total': sale_order_line.price_total,
+                            # 'price_tax': sale_order_line.price_tax,
                             'purchase_id': purchase_order.id,
-                            'state': sale_order_line.state,
-                            'qty_invoiced': sale_order_line.qty_invoiced,
-                            'qty_received': 0,
-                            'partner_id': sale_order_line.order_id.partner_id,
-                            'currency_id': sale_order_line.currency_id
+                            # 'state': sale_order_line.state,
+                            # 'qty_invoiced': sale_order_line.qty_invoiced,
+                            # 'qty_received': 0,
+                            # 'partner_id': sale_order_line.order_id.partner_id,
+                            # 'currency_id': sale_order_line.currency_id
                         }
 
                         lines += [line]
