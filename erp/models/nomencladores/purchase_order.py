@@ -18,6 +18,7 @@ class SaleOrderTemplate(models.Model):
 
     @api.onchange('sale_orders')
     def sale_orders_change(self):
+        lines = []
 
         for purchase_order in self:
             for sale_order in purchase_order.sale_orders:
@@ -33,7 +34,7 @@ class SaleOrderTemplate(models.Model):
 
                     if is_present is False:
 
-                        purchase_order.order_line = [{
+                        lines += {
                             'order_id': sale_order_line.order_id.id,
                             'product_id': sale_order_line.product_id.id,
                             'name': sale_order_line.name,
@@ -49,6 +50,8 @@ class SaleOrderTemplate(models.Model):
                             'qty_received': 0,
                             'partner_id': sale_order_line.order_id.partner_id,
                             'currency_id': sale_order_line.currency_id
-                        }]
+                        }
+
+        purchase_order.order_line = lines
 
 
