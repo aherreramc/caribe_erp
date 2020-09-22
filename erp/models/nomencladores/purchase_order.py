@@ -68,40 +68,54 @@ class SaleOrderTemplate(models.Model):
 
                         }
 
-                        lines += [line]
+                        # lines += [line]
 
-                    # -- partner_id / id(Vendor / External
-                    # ID)
+                        self.env['purchase.order.line'].create({
+                            'product_id': sale_order_line.product_id.id,
+                            'name': sale_order_line.name,
+                            'product_qty': sale_order_line.product_uom_qty,
+                            'product_uom': sale_order_line.product_uom.id,
+                            'price_unit': sale_order_line.price_unit,
+                            'partner_id': sale_order_line.order_id.partner_id.id,
 
-    # -- order_line / name(Order
-    # Lines / Description)
+                            'purchase_id': purchase_order.id
+                        })
 
-    # -- order_line / date_planned(Order      111111111
-    # Lines / Scheduled
-    # Date)
+                        # -- partner_id / id(Vendor / External
+                        # ID)
 
-    # -- order_line / product_qty(Order
-    # Lines / Quantity)
+                        # -- order_line / name(Order
+                        # Lines / Description)
 
-    # -- order_line / price_unit(Order
-    # Lines / Unit
-    # Price)
+                        # -- order_line / date_planned(Order      111111111
+                        # Lines / Scheduled
+                        # Date)
 
-    # -- order_line / product_id / id(Order
-    # Lines / Product / External
-    # ID)
+                        # -- order_line / product_qty(Order
+                        # Lines / Quantity)
 
-    # -- order_line / product_uom / id(Order
-    # Lines / Unit
-    # of
-    # Measure / External
-    # ID)
+                        # -- order_line / price_unit(Order
+                        # Lines / Unit
+                        # Price)
+
+                        # -- order_line / product_id / id(Order
+                        # Lines / Product / External
+                        # ID)
+
+                        # -- order_line / product_uom / id(Order
+                        # Lines / Unit
+                        # of
+                        # Measure / External
+                        # ID)
 
 
 
 
 
 
-        # purchase_order.order_line.create(lines)
-        # purchase_order.order_line = lines
-        self.order_line = lines
+                        # purchase_order.order_line.create(lines)
+                        # purchase_order.order_line = lines
+                        # self.order_line = lines
+                        # self.env['purchase.order.line'].create({
+                        #
+                        # })
