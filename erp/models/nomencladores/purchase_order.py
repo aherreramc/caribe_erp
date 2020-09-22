@@ -87,8 +87,8 @@ class SaleOrderTemplate(models.Model):
                             'product_qty': sale_order_line.product_uom_qty,
                             'product_uom': sale_order_line.product_uom.id,
                             'price_unit': sale_order_line.price_unit,
-                            'order_id': 6
-
+                            'order_id': 6,
+                            'partner_id': sale_order_line.order_id.partner_id.id
                         })
 
 
