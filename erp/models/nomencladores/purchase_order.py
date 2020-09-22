@@ -50,11 +50,29 @@ class SaleOrderTemplate(models.Model):
                         # }
 
 
+                        # line = {
+                        #     'product_id': sale_order_line.product_id.id,
+                        #     'name': sale_order_line.name,
+                        #     'product_qty': sale_order_line.product_uom_qty,
+                        #     'product_uom': sale_order_line.product_uom.id,
+                        #     'price_unit': sale_order_line.price_unit,
+                        #     # 'price_subtotal': sale_order_line.price_subtotal,
+                        #     # 'price_total': sale_order_line.price_total,
+                        #     # 'price_tax': sale_order_line.price_tax,
+                        #     # 'purchase_id': purchase_order.id,
+                        #     # 'state': sale_order_line.state,
+                        #     # 'qty_invoiced': sale_order_line.qty_invoiced,
+                        #     # 'qty_received': 0,
+                        #     'partner_id': sale_order_line.order_id.partner_id.id,
+                        #     # 'currency_id': sale_order_line.currency_id
+                        #
+                        # }
+
                         line = {
                             'product_id': sale_order_line.product_id.id,
-                            'name': sale_order_line.name,
-                            'product_qty': sale_order_line.product_uom_qty,
-                            'product_uom': sale_order_line.product_uom.id,
+                            'name': 'aaa',
+                            'product_qty': 20,
+                            'product_uom': sale_order_line.product_id.uom_po_id.id,
                             'price_unit': sale_order_line.price_unit,
                             # 'price_subtotal': sale_order_line.price_subtotal,
                             # 'price_total': sale_order_line.price_total,
@@ -65,8 +83,24 @@ class SaleOrderTemplate(models.Model):
                             # 'qty_received': 0,
                             'partner_id': sale_order_line.order_id.partner_id.id,
                             # 'currency_id': sale_order_line.currency_id
-
+                            'taxes_id': [(6, 0, sale_order.taxes.ids)],
+                            'date_planned': fields.Date.from_string(purchase_order.date_order) + relativedelta(days=int(supplierinfo.delay)),
+                            'order_id': purchase_order.id,
+                            'sale_line_id': sale_order_line.id,
                         }
+
+                        purchase_line = line.env['purchase.order.line'].create(line)
+
+
+            #                        'name': '[%s] %s' % (self.product_id.default_code, self.name) if self.product_id.default_code else self.name,
+            # 'product_qty': purchase_qty_uom,
+            # 'product_id': self.product_id.id,
+            # 'product_uom': self.product_id.uom_po_id.id,
+            # 'price_unit': price_unit,
+            # 'date_planned': fields.Date.from_string(purchase_order.date_order) + relativedelta(days=int(supplierinfo.delay)),
+            # 'taxes_id': [(6, 0, taxes.ids)],
+            # 'order_id': purchase_order.id,
+            # 'sale_line_id': self.id,
 
                         # lines += [line]
 
@@ -81,15 +115,15 @@ class SaleOrderTemplate(models.Model):
                         #     'purchase_id': purchase_order.id
                         # })
 
-                        self.env['purchase.order.line'].create({
-                            'name': sale_order_line.name,
-                            'product_id': sale_order_line.product_id.id,
-                            'product_qty': sale_order_line.product_uom_qty,
-                            'product_uom': sale_order_line.product_uom.id,
-                            'price_unit': sale_order_line.price_unit,
-                            'order_id': 6,
-                            'partner_id': sale_order_line.order_id.partner_id.id
-                        })
+                        # self.env['purchase.order.line'].create({
+                        #     'name': sale_order_line.name,
+                        #     'product_id': sale_order_line.product_id.id,
+                        #     'product_qty': sale_order_line.product_uom_qty,
+                        #     'product_uom': sale_order_line.product_uom.id,
+                        #     'price_unit': sale_order_line.price_unit,
+                        #     'order_id': 6,
+                        #     'partner_id': sale_order_line.order_id.partner_id.id
+                        # })
 
 
                           # 'product_id': sale_order_line.product_id.id,
