@@ -53,6 +53,6 @@ class SaleOrderTemplate(models.Model):
 
                         lines += [line]
 
-        purchase_order.order_line = lines
+        purchase_order.order_line.create(lines)
 
 
