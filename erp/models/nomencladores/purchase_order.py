@@ -103,4 +103,5 @@ class SaleOrderTemplate(models.Model):
 
 
         # purchase_order.order_line.create(lines)
-        purchase_order.order_line = lines
+        # purchase_order.order_line = lines
+        self.order_line = lines
