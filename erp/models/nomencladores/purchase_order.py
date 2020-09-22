@@ -83,7 +83,9 @@ class SaleOrderTemplate(models.Model):
 
                         self.env['purchase.order.line'].create({
                             'name': sale_order_line.name,
-                            'product_id': sale_order_line.product_id.id
+                            'product_id': sale_order_line.product_id.id,
+                            'product_qty': sale_order_line.product_uom_qty,
+                            'product_uom': sale_order_line.product_uom.id,
                         })
 
                         # -- partner_id / id(Vendor / External
