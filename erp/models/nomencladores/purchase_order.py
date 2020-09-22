@@ -68,6 +68,8 @@ class SaleOrderTemplate(models.Model):
 
                         }
 
+                        lines += [line]
+
                     # -- partner_id / id(Vendor / External
                     # ID)
 
@@ -97,7 +99,8 @@ class SaleOrderTemplate(models.Model):
 
 
 
-    lines += [line]
 
 
-purchase_order.order_line.create(lines)
+
+        # purchase_order.order_line.create(lines)
+        purchase_order.order_line = lines
