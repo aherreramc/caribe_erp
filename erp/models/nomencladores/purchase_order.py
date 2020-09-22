@@ -83,7 +83,7 @@ class SaleOrderTemplate(models.Model):
                             # 'qty_received': 0,
                             'partner_id': sale_order_line.order_id.partner_id.id,
                             # 'currency_id': sale_order_line.currency_id
-                            'taxes_id': [(6, 0, sale_order_line.taxes.ids)],
+                            # 'taxes_id': [(6, 0, sale_order_line.taxes.ids)],
                             'date_planned': fields.Date.from_string(purchase_order.date_order) + relativedelta(days=int(supplierinfo.delay)),
                             'order_id': purchase_order.id,
                             'sale_line_id': sale_order_line.id,
