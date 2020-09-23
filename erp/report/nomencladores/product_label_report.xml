@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row" style="height:100%;">
+                                <div class="row" style="height:100%!important;">
                                     <div class="col-8 border_orange_right">
                                         <div class="row">
                                             <div class="col-12">
