@@ -15,4 +15,10 @@ class AccountInvoiceLineTemplate(models.Model):
 
     @api.depends('product_id')
     def _compute_codigo_descripcion(self):
-        self.codigo_descripcion = "Producto: " + self.product_id.name + ". " + self.name
+        self.codigo_descripcion = "Producto: "
+
+        if self.product_id.name is not False:
+            self.codigo_descripcion += "Producto: " + self.product_id.name
+
+        if self.name is not False:
+            self.codigo_descripcion += ". " + self.name
