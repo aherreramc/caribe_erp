@@ -131,37 +131,37 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="row" style="height:100%!important;">
-                                            <!--<div class="col-6 border_orange_right">-->
-                                                <!--<div class="row">-->
-                                                    <!--<div class="col-12">-->
-                                                        <!--<div class="row border_orange_bottom">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/this_side_up.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="row border_orange_bottom">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/inflamable.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="row">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/away_from_heat.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-6">-->
+                                            <div class="col-6 border_orange_right">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row border_orange_bottom">
+                                                            <div class="col-12">
+                                                                <div class="icons">
+                                                                    <img src="/erp/static/src/img/this_side_up.PNG"
+                                                                         style="width:80%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row border_orange_bottom">
+                                                            <div class="col-12">
+                                                                <div class="icons">
+                                                                    <img src="/erp/static/src/img/inflamable.PNG"
+                                                                         style="width:80%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="icons">
+                                                                    <img src="/erp/static/src/img/away_from_heat.PNG"
+                                                                         style="width:80%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
                                                 <!--<span>-->
                                                     <!--&lt;!&ndash;<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"&ndash;&gt;-->
                                                     <!--&lt;!&ndash;class="alejandro_centrar_imagen_en_td"/>&ndash;&gt;-->
@@ -176,7 +176,7 @@
                                                              <!--style="height: 60px;width: 100%; margin-top: 45%;"/>-->
 
                                                 <!--</span>-->
-                                            <!--</div>-->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
