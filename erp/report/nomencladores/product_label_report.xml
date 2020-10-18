@@ -46,99 +46,90 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6 border_orange_right">
-                                                <p class="verde font_regular"></p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="verde font_regular"></p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8 border_orange_right">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-8 ">
-                                                        <div class="row border_orange_bottom">
-                                                            <div class="col-8 border_orange_right">
-                                                                <p class="verde font_bold ">Producto:</p>
-                                                            </div>
-                                                            <div class="col-4 border_orange_right">
-                                                                <p>
-                                                                    <p class="verde font_bold ">Tamaño:</p>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                    <!--<div class="col-8 border_orange_right">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-12">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-8 ">-->
+                                                        <!--<div class="row border_orange_bottom">-->
+                                                            <!--<div class="col-8 border_orange_right">-->
+                                                                <!--<p class="verde font_bold ">Producto:</p>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="col-4 border_orange_right">-->
+                                                                <!--<p>-->
+                                                                    <!--<p class="verde font_bold ">Tamaño:</p>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                                                        <div class="row border_orange_bottom">
-                                                            <div class="col-8 text-center border_orange_right abs-center">
-                                                                <p class="verde font_bold icons"
-                                                                   style="font-style: normal">
-                                                                    <t t-if="product.categ_id">
-                                                                        <span t-field="product.categ_id.name"/>
-                                                                    </t>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-4 text-center border_orange_right parent">
-                                                                <p class="verde font_regular_simple child">
-                                                                    <span t-field="product.size"/>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                                        <!--<div class="row border_orange_bottom">-->
+                                                            <!--<div class="col-8 text-center border_orange_right abs-center">-->
+                                                                <!--<p class="verde font_bold icons"-->
+                                                                   <!--style="font-style: normal">-->
+                                                                    <!--<t t-if="product.categ_id">-->
+                                                                        <!--<span t-field="product.categ_id.name"/>-->
+                                                                    <!--</t>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="col-4 text-center border_orange_right parent">-->
+                                                                <!--<p class="verde font_regular_simple child">-->
+                                                                    <!--<span t-field="product.size"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                                                        <div class="row border_orange_bottom">
-                                                            <div class="col-12 border_orange_right">
-                                                                <p class="verde font_bold">Contenido:</p>
-                                                            </div>
-                                                        </div>
+                                                        <!--<div class="row border_orange_bottom">-->
+                                                            <!--<div class="col-12 border_orange_right">-->
+                                                                <!--<p class="verde font_bold">Contenido:</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                                                        <div class="row border_orange_bottom">
-                                                            <div class="col-12 border_orange_right">
-                                                                <p class="verde font_regular_simple">
-                                                                    <span t-field="product.descripcion_cliente"/>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                                        <!--<div class="row border_orange_bottom">-->
+                                                            <!--<div class="col-12 border_orange_right">-->
+                                                                <!--<p class="verde font_regular_simple">-->
+                                                                    <!--<span t-field="product.descripcion_cliente"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
 
-                                                    </div>
+                                                    <!--</div>-->
 
-                                                    <div class="col-4 border_orange_bottom">
-                                                        <div class="row border_orange_bottom">
-                                                            <div class="col-12 ">
-                                                                <p class="verde font_bold">Código:</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12 text-center abs-center">
-                                                                <p class="verde font_bold_product child_bold icons"
-                                                                   style="padding-top:1.3em;">
-                                                                    <span t-field="product.name"/>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6 columna_telefono ">
-                                                <p class="orange font_bold_footer_table ">
-                                                    (998) 131 2322
-                                                </p>
-                                            </div>
-                                            <div class="col-6 columna_pagina">
-                                                <p class="orange font_bold_footer_table ">
-                                                    BIOTIVS.COM
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
+                                                    <!--<div class="col-4 border_orange_bottom">-->
+                                                        <!--<div class="row border_orange_bottom">-->
+                                                            <!--<div class="col-12 ">-->
+                                                                <!--<p class="verde font_bold">Código:</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-12 text-center abs-center">-->
+                                                                <!--<p class="verde font_bold_product child_bold icons"-->
+                                                                   <!--style="padding-top:1.3em;">-->
+                                                                    <!--<span t-field="product.name"/>-->
+                                                                <!--</p>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6 columna_telefono ">-->
+                                                <!--<p class="orange font_bold_footer_table ">-->
+                                                    <!--(998) 131 2322-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6 columna_pagina">-->
+                                                <!--<p class="orange font_bold_footer_table ">-->
+                                                    <!--BIOTIVS.COM-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="col-12">
                                         <div class="row" style="height:100%!important;">
                                             <div class="col-6 border_orange_right">
                                                 <div class="row">
