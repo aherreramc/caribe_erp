@@ -169,7 +169,7 @@
 
                                                 <!--</span>-->
                                             <!--</div>-->
-                                            <div class="col-12">
+                                            <div class="col-12" style="margin:auto;">
                                                                 <div class="icons">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
                                                                          style="width:80%;"/>
