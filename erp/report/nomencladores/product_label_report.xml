@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="row" style="height:100%!important;">
-                                            <div class="col-6 border_orange_right">
+                                            <div class="col-6 border_orange_right" style="height:100%!important;">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="row border_orange_bottom">
@@ -185,7 +185,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-6" style="height:100%!important;">
                                                 <span>
                                                     <!--<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"-->
                                                     <!--class="alejandro_centrar_imagen_en_td"/>-->
