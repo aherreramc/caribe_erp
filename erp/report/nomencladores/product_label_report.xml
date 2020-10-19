@@ -140,18 +140,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6 columna_telefono ">
-                                                <p class="orange font_bold_footer_table ">
-                                                    (998) 131 2322
-                                                </p>
-                                            </div>
-                                            <div class="col-6 columna_pagina">
-                                                <p class="orange font_bold_footer_table ">
-                                                    BIOTIVS.COM
-                                                </p>
-                                            </div>
-                                        </div>
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-6 columna_telefono ">-->
+                                                <!--<p class="orange font_bold_footer_table ">-->
+                                                    <!--(998) 131 2322-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-6 columna_pagina">-->
+                                                <!--<p class="orange font_bold_footer_table ">-->
+                                                    <!--BIOTIVS.COM-->
+                                                <!--</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
                                     </div>
                                     <div class="col-4">
                                         <div class="row" style="height:100%!important;">
