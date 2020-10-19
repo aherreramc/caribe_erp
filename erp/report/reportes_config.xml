@@ -5,7 +5,7 @@
                 id="product_label_repo"
                 model="product.template"
                 string="Label"
-                report_type="qweb-pdf"
+                report_type="qweb-html"
                 name="erp.product_label_repo"
                 attachment_use="True"
                 file="erp.product_label_repo"
