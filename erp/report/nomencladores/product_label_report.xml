@@ -203,7 +203,6 @@
                         .centrador{
                         position: relative;
                         height: 100%;
-                        background-color: red;
                         }
 
                         .barcode_img{
@@ -213,7 +212,7 @@
                         right: 0;
                         bottom: 0;
                         margin: auto;
-                        height: 130px;
+                        height: 90px;
                         width: 100%;
                         }
 
