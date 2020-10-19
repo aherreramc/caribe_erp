@@ -187,7 +187,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="centrador">
-                                                    <img class="barcode_img" style="margin-top:45% !important;" t-if="product.barcode"
+                                                    <img class="barcode_img" style="margin-top: 45% !important;" t-if="product.barcode"
                                                          t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"/>
                                                 </div>
 
