@@ -65,8 +65,16 @@
                                                 <div class="row">
                                                     <div class="col-8 ">
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-8 border_orange_right">
-                                                                    <p class="verde font_bold ">Producto:</p>
+                                                            <!--<div class="col-8 border_orange_right">-->
+                                                            <!--<div class="pl-3">-->
+                                                            <!--<p>-->
+                                                            <!--<p class="verde font_bold ">Producto:</p>-->
+                                                            <!--</div>-->
+
+                                                            <div class="col-8 pl-3 border_orange_right">
+                                                                <p>
+                                                                    <p class="verde font_bold ">Código:</p>
+                                                                </p>
                                                             </div>
 
 
@@ -111,13 +119,13 @@
 
                                                     <div class="col-4 border_orange_bottom">
                                                         <div class="row border_orange_bottom">
-                                                            <div class="pl-2">
+                                                            <div class="pl-3">
                                                                 <p>
                                                                     <p class="verde font_bold ">Código:</p>
                                                                 </p>
                                                             </div>
                                                             <!--<div class="col-12 ">-->
-                                                                <!--<p class="verde font_bold">Código:</p>-->
+                                                            <!--<p class="verde font_bold">Código:</p>-->
                                                             <!--</div>-->
                                                         </div>
                                                         <div class="row">
@@ -184,17 +192,17 @@
                                                 </div>
 
                                                 <!--<div class="icon">-->
-                                                    <!--&lt;!&ndash;<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;class="alejandro_centrar_imagen_en_td"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', product.name)"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;class="alejandro_centrar_imagen_en_td"/>&ndash;&gt;-->
 
 
-                                                    <!--&lt;!&ndash;<img t-if="product.name"&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 150)"&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;style="width:100%;height:20%;"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<img t-if="product.name"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.name, 600, 150)"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;style="width:100%;height:20%;"/>&ndash;&gt;-->
 
-                                                    <!--<img class="img-responsive" t-if="product.barcode"-->
-                                                         <!--t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"-->
-                                                         <!--style="height: 60px;width: 100%; margin-top: 45%;"/>-->
+                                                <!--<img class="img-responsive" t-if="product.barcode"-->
+                                                <!--t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"-->
+                                                <!--style="height: 60px;width: 100%; margin-top: 45%;"/>-->
 
                                                 <!--</div>-->
                                             </div>
