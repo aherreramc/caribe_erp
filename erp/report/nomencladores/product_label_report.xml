@@ -109,9 +109,14 @@
 
                                                     <div class="col-4 border_orange_bottom">
                                                         <div class="row border_orange_bottom">
-                                                            <div class="col-12 ">
-                                                                <p class="verde font_bold">Código:</p>
+                                                            <div class="col-4 border_orange_right">
+                                                                <p>
+                                                                    <p class="verde font_bold ">Código:</p>
+                                                                </p>
                                                             </div>
+                                                            <!--<div class="col-12 ">-->
+                                                                <!--<p class="verde font_bold">Código:</p>-->
+                                                            <!--</div>-->
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center abs-center">
