@@ -172,9 +172,8 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="centrador">
-                                                    <img class="imagen" t-if="product.barcode"
-                                                         t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"
-                                                         style="height: 100%;width: 100%;"/>
+                                                    <img class="barcode_img" t-if="product.barcode"
+                                                         t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"/>
                                                 </div>
 
                                                 <!--<div class="icon">-->
@@ -207,13 +206,15 @@
                         background-color: red;
                         }
 
-                        .imagen{
+                        .barcode_img{
                         position: absolute;
                         top: 0;
                         left: 0;
                         right: 0;
                         bottom: 0;
                         margin: auto;
+                        height: 130px;
+                        width: 100%;
                         }
 
                         .parent {
