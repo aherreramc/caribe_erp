@@ -133,7 +133,7 @@
                                         <div class="row" style="height: 100% !important;">
                                             <div class="col-6 border_orange_right border_orange_bottom" style="margin: auto;">
                                                 <div class="row">
-                                                    <div class="col-12" style="margin: auto;">
+                                                    <div class="col-12">
                                                         <div class="row border_orange_bottom">
                                                             <div class="col-12">
                                                                 <div class="icons">
@@ -142,7 +142,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row border_orange_bottom" style="margin: auto;">
+                                                        <div class="row border_orange_bottom">
                                                             <div class="col-12">
                                                                 <div class="icons">
                                                                     <img src="/erp/static/src/img/inflamable.PNG"
@@ -151,7 +151,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12" style="margin: auto;">
+                                                            <div class="col-12">
                                                                 <div class="icons">
                                                                     <img src="/erp/static/src/img/away_from_heat.PNG"
                                                                          style="width:80%;"/>
