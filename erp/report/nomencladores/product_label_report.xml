@@ -66,8 +66,10 @@
                                                     <div class="col-8 ">
                                                         <div class="row border_orange_bottom">
                                                             <div class="col-8 border_orange_right">
-                                                                <p class="verde font_bold ">Producto:</p>
+                                                                    <p class="verde font_bold ">Producto:</p>
                                                             </div>
+
+
                                                             <div class="col-4 border_orange_right">
                                                                 <p>
                                                                     <p class="verde font_bold ">Tamaño:</p>
@@ -109,7 +111,7 @@
 
                                                     <div class="col-4 border_orange_bottom">
                                                         <div class="row border_orange_bottom">
-                                                            <div>
+                                                            <div class="pl-2">
                                                                 <p>
                                                                     <p class="verde font_bold ">Código:</p>
                                                                 </p>
