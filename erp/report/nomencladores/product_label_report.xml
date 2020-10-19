@@ -46,6 +46,15 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <div class="row" style="height:100%!important;">
+                                            <div class="col-6">
+                                                <p class="verde font_regular"></p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="verde font_regular"></p>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
