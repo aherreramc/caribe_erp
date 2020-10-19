@@ -186,16 +186,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div class="centrador" style="position: relative !important;
-                        height: 100% !important;">
-                                                    <img class="barcode_img" style=" position: absolute !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        margin: auto !important;
-                        height: 85px !important;
-                        width: 100% !important;" t-if="product.barcode"
+                                                <div class="centrador">
+                                                    <img class="barcode_img" style="margin-top:45% !important;" t-if="product.barcode"
                                                          t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"/>
                                                 </div>
 
