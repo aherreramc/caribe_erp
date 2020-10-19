@@ -131,50 +131,44 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="row" style="height: 100% !important;">
-                                            <!--<div class="col-6 border_orange_right border_orange_bottom">-->
-                                                <!--<div class="row">-->
-                                                    <!--<div class="col-12">-->
-                                                        <!--<div class="row border_orange_bottom">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/this_side_up.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="row border_orange_bottom">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/inflamable.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="row">-->
-                                                            <!--<div class="col-12">-->
-                                                                <!--<div class="icons">-->
-                                                                    <!--<img src="/erp/static/src/img/away_from_heat.PNG"-->
-                                                                         <!--style="width:80%;"/>-->
-                                                                <!--</div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-6">-->
-                                                <!--<span>-->
-                                                    <!--<img class="img-responsive" t-if="product.barcode"-->
-                                                         <!--t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"-->
-                                                         <!--style="height: 60px;width: 100%; margin-top: 45%;"/>-->
-
-                                                <!--</span>-->
-                                            <!--</div>-->
-                                            <div class="col-12" style="margin:auto;">
+                                            <div class="col-6 border_orange_right border_orange_bottom" style="margin: auto;">
+                                                <div class="row">
+                                                    <div class="col-12" style="margin: auto;">
+                                                        <div class="row border_orange_bottom">
+                                                            <div class="col-12">
                                                                 <div class="icons">
                                                                     <img src="/erp/static/src/img/this_side_up.PNG"
                                                                          style="width:80%;"/>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="row border_orange_bottom" style="margin: auto;">
+                                                            <div class="col-12">
+                                                                <div class="icons">
+                                                                    <img src="/erp/static/src/img/inflamable.PNG"
+                                                                         style="width:80%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12" style="margin: auto;">
+                                                                <div class="icons">
+                                                                    <img src="/erp/static/src/img/away_from_heat.PNG"
+                                                                         style="width:80%;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <span>
+                                                    <img class="img-responsive" t-if="product.barcode"
+                                                         t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 900, 200)"
+                                                         style="height: 60px;width: 100%; margin-top: 45%;"/>
+
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
