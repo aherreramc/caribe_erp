@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row border_orange_bottom">
+                                        <div class="row">
                                             <div class="col-6 border_orange_right">
                                                 <p class="verde font_regular" style="padding-bottom:2em;">Número de
                                                     Orden:
@@ -46,15 +46,6 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6 border_orange_right">
-                                                <p class="verde font_regular"></p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p class="verde font_regular"></p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 
