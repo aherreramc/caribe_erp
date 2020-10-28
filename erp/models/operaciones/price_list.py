@@ -11,3 +11,9 @@ class PriceListTemplate(models.Model):
     _inherit = 'product.pricelist'
 
     purchaseOrder = fields.Many2one('purchase.order', string='Purchase order')
+
+    @api.onchange('purchaseOrder')
+    def purchaseOrder(self):
+
+        for purchaseOrder in self:
+            raise except_orm("E")
