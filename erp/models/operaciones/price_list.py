@@ -27,7 +27,7 @@ class PriceListItemTemplate(models.Model):
     _inherit = 'product.pricelist.item'
 
     purchase_order_line = fields.Many2one('purchase.order.order_line', string='Order Line')
-    purchase_price = fields.Monetary(string='Purchase price', related='purchase_order_line.price_unit')
+    # purchase_price = fields.Monetary(string='Purchase price', related='purchase_order_line.price_unit')
 
 
 
