@@ -15,8 +15,10 @@ class PriceListTemplate(models.Model):
     @api.onchange('purchase_order')
     def purchase_order_change(self):
         for purchaseOrder in self:
-            # raise except_orm("E")
-            pass
+            purchaseOrder.price_list.unlink();
+
+            for purchase_line in purchaseOrder.order_line:
+                raise except_orm(purchase_line.price_unit)
 
 
 
