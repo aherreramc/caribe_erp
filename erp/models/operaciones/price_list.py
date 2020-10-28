@@ -12,9 +12,9 @@ class PriceListTemplate(models.Model):
 
     purchaseOrder = fields.Many2one('purchase.order', string='Purchase order')
 
-    @api.onchange('purchaseOrder')
-    def purchaseOrder(self):
-        raise except_orm(self)
-
-        for purchaseOrder in self:
-            raise except_orm("E")
+    # @api.onchange('purchaseOrder')
+    # def purchaseOrder(self):
+    #     raise except_orm(self)
+    #
+    #     for purchaseOrder in self:
+    #         raise except_orm("E")
