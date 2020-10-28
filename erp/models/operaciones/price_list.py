@@ -19,3 +19,4 @@ class PriceListTemplate(models.Model):
     #
     #     for purchaseOrder in self:
     #         raise except_orm("E")
+
