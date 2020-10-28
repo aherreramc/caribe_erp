@@ -14,9 +14,9 @@ class PriceListTemplate(models.Model):
 
     @api.onchange('purchase_order')
     def purchase_order_change(self):
-        pass
+    #     # pass
     #     raise except_orm(self)
-    #
-    #     for purchaseOrder in self:
-    #         raise except_orm("E")
+    # #
+        for purchaseOrder in self:
+            raise except_orm("E")
 
