@@ -19,7 +19,7 @@ class PriceListTemplate(models.Model):
             if pricelist.purchase_order is not False:
 
                 purchase_order = pricelist.purchase_order
-                pricelist.item_ids.unlink();
+                # pricelist.item_ids.unlink();
 
                 new_lines = []
 
@@ -48,10 +48,10 @@ class PriceListTemplate(models.Model):
 
                     # new_lines.append(new_line)
 
-                    self.item_ids.
+                    # self.item_ids.
                 #
                 #
-                self.item_ids = new_lines
+                # self.item_ids = new_lines
 
 
 
