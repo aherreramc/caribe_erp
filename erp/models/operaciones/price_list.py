@@ -24,6 +24,7 @@ class PriceListTemplate(models.Model):
                 new_lines = []
 
                 for purchase_line in purchase_order.order_line:
+                    raise except_orm(purchase_line.name)
                     new_line = {
                         'base': 'list_price',
                         # 'applied_on': '1_product',
@@ -45,7 +46,9 @@ class PriceListTemplate(models.Model):
                     #     'compute_price': 'formula',
                     # })
 
-                    new_lines.append(new_line)
+                    # new_lines.append(new_line)
+
+                    self.item_ids.
                 #
                 #
                 self.item_ids = new_lines
