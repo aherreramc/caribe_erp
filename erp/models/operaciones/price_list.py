@@ -46,10 +46,10 @@ class PriceListTemplate(models.Model):
                     #     'compute_price': 'formula',
                     # })
 
-                    new_lines.append(new_line)
-
-
-                self.item_ids = new_lines
+                #     new_lines.append(new_line)
+                #
+                #
+                # self.item_ids = new_lines
 
 
 
