@@ -24,15 +24,16 @@ class PriceListTemplate(models.Model):
                 new_lines = []
 
                 for purchase_line in purchase_order.order_line:
-                    new_line = {
-                        'base': 'list_price',
-                        'applied_on': '1_product',
-                        'pricelist_id': pricelist.id,
-                        'product_tmpl_id': purchase_line.product_id.id,
-                        'price_discount': 0,
-                        'min_quantity': 0,
-                        'compute_price': 'fixed',
-                    }
+                    pass
+                    # new_line = {
+                    #     'base': 'list_price',
+                    #     'applied_on': '1_product',
+                    #     'pricelist_id': pricelist.id,
+                    #     'product_tmpl_id': purchase_line.product_id.id,
+                    #     'price_discount': 0,
+                    #     'min_quantity': 0,
+                    #     'compute_price': 'fixed',
+                    # }
 
 
                     # self.env['product.pricelist.item'].create({
