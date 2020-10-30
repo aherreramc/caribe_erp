@@ -16,14 +16,14 @@ class PriceListTemplate(models.Model):
     def purchase_order_change(self):
 
         for pricelist in self:
-            if pricelist.purchaseOrder is not False:
+            if pricelist.purchase_order is not False:
 
-                purchaseOrder = pricelist.purchaseOrder
-                purchaseOrder.price_list.unlink();
+                purchase_order = pricelist.purchase_order
+                pricelist.item_ids.unlink();
 
                 new_lines = []
 
-                for purchase_line in purchaseOrder.order_line:
+                for purchase_line in purchase_order.order_line:
                     new_line = {
                         'base': 'list_price',
                         'applied_on': '1_product',
