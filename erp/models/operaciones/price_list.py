@@ -14,11 +14,41 @@ class PriceListTemplate(models.Model):
 
     @api.onchange('purchase_order')
     def purchase_order_change(self):
-        for purchaseOrder in self:
-            purchaseOrder.price_list.unlink();
 
-            for purchase_line in purchaseOrder.order_line:
-                raise except_orm(purchase_line.price_unit)
+        for pricelist in self:
+            if pricelist.purchaseOrder is not False:
+
+                purchaseOrder = pricelist.purchaseOrder
+                purchaseOrder.price_list.unlink();
+
+                new_lines = []
+
+                for purchase_line in purchaseOrder.order_line:
+                    new_line = {
+                        'base': 'list_price',
+                        'applied_on': '1_product',
+                        'pricelist_id': pricelist.id,
+                        'product_tmpl_id': purchase_line.product_id.id,
+                        'price_discount': 0,
+                        'min_quantity': 0,
+                        'compute_price': 'fixed',
+                    }
+
+
+                    # self.env['product.pricelist.item'].create({
+                    #     'base': 'list_price',
+                    #     'applied_on': '1_product',
+                    #     'pricelist_id': pricelist.id,
+                    #     'product_tmpl_id': product_template.id,
+                    #     'price_discount': 20,
+                    #     'min_quantity': 2,
+                    #     'compute_price': 'formula',
+                    # })
+
+                    new_lines.append(new_line)
+
+
+                self.item_ids = new_lines
 
 
 
