@@ -48,7 +48,7 @@ class PriceListTemplate(models.Model):
                     new_lines.append(new_line)
                 #
                 #
-                # self.item_ids = new_lines
+                self.item_ids = new_lines
 
 
 
