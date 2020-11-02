@@ -10,7 +10,7 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 class PriceListTemplate(models.Model):
     _inherit = 'product.pricelist'
 
-    # purchase_order = fields.Many2one('purchase.order', string='Purchase order')
+    purchase_order = fields.Many2one('purchase.order', string='Purchase order')
     #
     # @api.onchange('purchase_order')
     # def purchase_order_change(self):
