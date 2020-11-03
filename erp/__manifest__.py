@@ -48,7 +48,7 @@
         'views/nomencladores/degradation_type.xml',
         'views/nomencladores/product_template_rondover.xml',
 
-        'views/operaciones/price_list_item.xml',
+        # 'views/operaciones/price_list_item.xml',
 
         'views/nomencladores/menus.xml',
 
