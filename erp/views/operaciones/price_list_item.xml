@@ -1,10 +1,28 @@
 <record id="product_pricelist_item_form_view_inherited" model="ir.ui.view">
-    <field name="name">product.pricelist.item.form extension</field>
+    <field name="name">product.pricelist.item.form.extension</field>
     <field name="model">product.pricelist.item</field>
-    <field name="inherit_id" ref="sale.product_pricelist_item_form_view"/>
+    <field name="inherit_id" ref="product_pricelist_item_form_view"/>
     <field name="arch" type="xml">
         <field name="base" position="after">
-            <field name="purchase_order" />
+            <field name="purchase_order"/>
         </field>
     </field>
 </record>
+
+
+<!--<record id="product_search_form_view" model="ir.ui.view">-->
+<!--<field name="name">product.product.search</field>-->
+<!--<field name="model">product.product</field>-->
+<!--<field name="mode">primary</field>-->
+<!--<field name="inherit_id" ref="product.product_template_search_view"/>-->
+<!--<field name="arch" type="xml">-->
+    <!--<field name="name" position="replace">-->
+        <!--<field name="name" string="Product"-->
+               <!--filter_domain="['|', '|', ('default_code', 'ilike', self), ('name', 'ilike', self), ('barcode', 'ilike', self)]"/>-->
+    <!--</field>-->
+    <!--<field name="attribute_line_ids" position="replace">-->
+        <!--<field name="product_template_attribute_value_ids" groups="product.group_product_variant"/>-->
+        <!--<field name="product_tmpl_id" string="Product Template"/>-->
+    <!--</field>-->
+<!--</field>-->
+<!--</record>-->
