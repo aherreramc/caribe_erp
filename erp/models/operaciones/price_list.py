@@ -68,6 +68,7 @@ class PriceListItemTemplate(models.Model):
     purchase_order = fields.Many2one('purchase.order', string='Purchase order')
 
     price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2))
+    price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
     base = fields.Selection([
