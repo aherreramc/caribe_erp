@@ -81,41 +81,41 @@ class PriceListItemTemplate(models.Model):
              'Other Pricelist : Computation of the base price based on another Pricelist.')
 
 
-    # @api.depends('applied_on', 'categ_id', 'product_tmpl_id', 'product_id', 'compute_price', 'fixed_price', \
-    #     'pricelist_id', 'percent_price', 'price_discount', 'price_surcharge', 'price_purchase')
-    # def _get_pricelist_item_name_price(self):
-    #     for item in self:
-    #         if item.categ_id and item.applied_on == '2_product_category':
-    #             item.name = _("Category: %s") % (item.categ_id.display_name)
-    #         elif item.product_tmpl_id and item.applied_on == '1_product':
-    #             item.name = _("Product: %s") % (item.product_tmpl_id.display_name)
-    #         elif item.product_id and item.applied_on == '0_product_variant':
-    #             item.name = _("Variant: %s") % (item.product_id.with_context(display_default_code=False).display_name)
-    #         else:
-    #             item.name = _("All Products")
-    #
-    #         if item.compute_price == 'fixed':
-    #             decimal_places = self.env['decimal.precision'].precision_get('Product Price')
-    #             if item.currency_id.position == 'after':
-    #                 item.price = "%s %s" % (
-    #                     float_repr(
-    #                         item.fixed_price,
-    #                         decimal_places,
-    #                     ),
-    #                     item.currency_id.symbol,
-    #                 )
-    #             else:
-    #                 item.price = "%s %s" % (
-    #                     item.currency_id.symbol,
-    #                     float_repr(
-    #                         item.fixed_price,
-    #                         decimal_places,
-    #                     ),
-    #                 )
-    #         elif item.compute_price == 'percentage':
-    #             item.price = _("%s %% discount") % (item.percent_price)
-    #         else:
-    #             item.price = _("%s %% discount and %s surcharge") % (item.price_discount, item.price_surcharge)
+    @api.depends('applied_on', 'categ_id', 'product_tmpl_id', 'product_id', 'compute_price', 'fixed_price', \
+        'pricelist_id', 'percent_price', 'price_discount', 'price_surcharge', 'price_purchase')
+    def _get_pricelist_item_name_price(self):
+        for item in self:
+            if item.categ_id and item.applied_on == '2_product_category':
+                item.name = _("Category: %s") % (item.categ_id.display_name)
+            elif item.product_tmpl_id and item.applied_on == '1_product':
+                item.name = _("Product: %s") % (item.product_tmpl_id.display_name)
+            elif item.product_id and item.applied_on == '0_product_variant':
+                item.name = _("Variant: %s") % (item.product_id.with_context(display_default_code=False).display_name)
+            else:
+                item.name = _("All Products")
+
+            if item.compute_price == 'fixed':
+                decimal_places = self.env['decimal.precision'].precision_get('Product Price')
+                if item.currency_id.position == 'after':
+                    item.price = "%s %s" % (
+                        float_repr(
+                            item.fixed_price,
+                            decimal_places,
+                        ),
+                        item.currency_id.symbol,
+                    )
+                else:
+                    item.price = "%s %s" % (
+                        item.currency_id.symbol,
+                        float_repr(
+                            item.fixed_price,
+                            decimal_places,
+                        ),
+                    )
+            elif item.compute_price == 'percentage':
+                item.price = _("%s %% discount") % (item.percent_price)
+            else:
+                item.price = _("%s %% discount and %s surcharge") % (item.price_discount, item.price_surcharge)
 
 
 
