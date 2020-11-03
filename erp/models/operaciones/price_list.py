@@ -116,22 +116,23 @@ class PriceListItemTemplate(models.Model):
     #             item.price = _("%s %% discount") % (item.percent_price)
     #         else:
     #             item.price = _("%s %% discount and %s surcharge") % (item.price_discount, item.price_surcharge)
-    #
-    #
-    #
-    # @api.onchange('compute_price')
-    # def _onchange_compute_price(self):
-    #     if self.compute_price != 'fixed':
-    #         self.fixed_price = 0.0
-    #     if self.compute_price != 'percentage':
-    #         self.percent_price = 0.0
-    #     if self.compute_price != 'formula':
-    #         self.update({
-    #             'price_discount': 0.0,
-    #             'price_surcharge': 0.0,
-    #             'price_round': 0.0,
-    #             'price_min_margin': 0.0,
-    #             'price_max_margin': 0.0,
-    #         })
+
+
+
+    @api.onchange('compute_price')
+    def _onchange_compute_price(self):
+        if self.compute_price != 'fixed':
+            self.fixed_price = 0.0
+        if self.compute_price != 'percentage':
+            self.percent_price = 0.0
+        if self.compute_price != 'formula':
+            self.update({
+                'price_purchase': 0.0,
+                'price_discount': 0.0,
+                'price_surcharge': 0.0,
+                'price_round': 0.0,
+                'price_min_margin': 0.0,
+                'price_max_margin': 0.0,
+            })
 
 
