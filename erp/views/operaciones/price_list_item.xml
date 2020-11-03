@@ -1,10 +1,10 @@
-<record id="product_pricelist_item_form_view_inherited" model="ir.ui.view">
-    <field name="name">product.pricelist.item.form extension</field>
-    <field name="model">product.pricelist.item</field>
-    <field name="inherit_id" ref="sale.product_pricelist_item_form_view"/>
-    <field name="arch" type="xml">
-        <!--<field name="base" position="after">-->
-            <!--<field name="purchase_order" />-->
-        <!--</field>-->
-    </field>
-</record>
+<!--<record id="product_pricelist_item_form_view_inherited" model="ir.ui.view">-->
+    <!--<field name="name">product.pricelist.item.form extension</field>-->
+    <!--<field name="model">product.pricelist.item</field>-->
+    <!--<field name="inherit_id" ref="sale.product_pricelist_item_form_view"/>-->
+    <!--<field name="arch" type="xml">-->
+        <!--&lt;!&ndash;<field name="base" position="after">&ndash;&gt;-->
+            <!--&lt;!&ndash;<field name="purchase_order" />&ndash;&gt;-->
+        <!--&lt;!&ndash;</field>&ndash;&gt;-->
+    <!--</field>-->
+<!--</record>-->
