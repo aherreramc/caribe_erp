@@ -6,6 +6,8 @@ import odoo.addons.decimal_precision as dp
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 
+from odoo.tools import float_repr
+
 
 class PriceListTemplate(models.Model):
     _inherit = 'product.pricelist'
