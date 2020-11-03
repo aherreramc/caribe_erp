@@ -3,8 +3,8 @@
     <field name="model">product.pricelist.item</field>
     <field name="inherit_id" ref="sale.product_pricelist_item_form_view"/>
     <field name="arch" type="xml">
-        <!--<field name="base" position="after">-->
-            <!--<field name="purchase_order" />-->
-        <!--</field>-->
+        <field name="base" position="after">
+            <field name="purchase_order" />
+        </field>
     </field>
 </record>
