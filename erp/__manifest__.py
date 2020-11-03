@@ -56,6 +56,8 @@
         'report/operaciones/footer_quotation.xml',
         'report/operaciones/quotations_report.xml',
 
+        'report/operaciones/price_list_item.xml',
+
         'report/operaciones/reportes_operaciones_config.xml',
         'report/reportes_config.xml',
 
