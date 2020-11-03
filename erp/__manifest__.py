@@ -48,6 +48,8 @@
         'views/nomencladores/degradation_type.xml',
         'views/nomencladores/product_template_rondover.xml',
 
+        'views/operaciones/price_list_item.xml',
+
         'views/nomencladores/menus.xml',
 
         # Reportes
@@ -55,8 +57,6 @@
         'report/operaciones/header_quotation.xml',
         'report/operaciones/footer_quotation.xml',
         'report/operaciones/quotations_report.xml',
-
-        'report/operaciones/price_list_item.xml',
 
         'report/operaciones/reportes_operaciones_config.xml',
         'report/reportes_config.xml',
