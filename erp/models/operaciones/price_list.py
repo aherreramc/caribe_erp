@@ -71,7 +71,7 @@ class PriceListItemTemplate(models.Model):
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
-    item_currency_id = fields.Many2one('res.currency', 'Currency')
+    item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
 
     # currency_id = fields.Many2one('res.currency', 'Currency', default=_get_default_currency_id, required=True)
 
