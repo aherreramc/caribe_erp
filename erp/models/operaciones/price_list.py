@@ -71,8 +71,12 @@ class PriceListItemTemplate(models.Model):
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
+    item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id.id')
+
+    # currency_id = fields.Many2one('res.currency', 'Currency', default=_get_default_currency_id, required=True)
+
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts cost', currency_field='pricelist_id.currency_id')
+    spare_parts = fields.Monetary(string='Spare parts cost', currency_field='item_currency_id')
 
     # po_double_validation_amount = fields.Monetary(related='company_id.po_double_validation_amount', string="Minimum Amount", currency_field='company_currency_id', readonly=False)
 
