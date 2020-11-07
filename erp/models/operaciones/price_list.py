@@ -71,6 +71,23 @@ class PriceListItemTemplate(models.Model):
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
+    spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
+    spare_parts = fields.Monetary(string='Spare parts cost', related='purchase_order_line.currency_id.id')
+
+
+#
+#     Spare parts cost
+# Transit to SZ
+# FOB charges
+# Inspection cost
+# Sea freight cost
+# Insurance cost
+# BL issuing cost
+# Zeus´margin
+# MKT
+
+
+
     compute_price = fields.Selection([
         ('fixed', 'Fixed Price'),
         ('percentage', 'Percentage (discount)'),
