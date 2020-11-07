@@ -61,11 +61,18 @@ class PriceListTemplate(models.Model):
 class PriceListItemTemplate(models.Model):
     _inherit = 'product.pricelist.item'
 
+    def _default_pricelist_id(self):
+        return self.env['product.pricelist'].search([
+            '|', ('company_id', '=', False),
+            ('company_id', '=', self.env.company.id)], limit=1)
+
     purchase_order_line = fields.Many2one('purchase.order.line', string='Order Line')
     purchase_price = fields.Float(string='Purchase price', digits=dp.get_precision('Product Price'), related='purchase_order_line.price_unit')
     # purchase_price = fields.Monetary(string='Purchase price', related='purchase_order_line.price_unit')
 
     purchase_order = fields.Many2one('purchase.order', string='Purchase order')
+
+    pricelist_id = fields.Many2one('product.pricelist', 'Pricelist', index=True, ondelete='cascade', required=True, default=_default_pricelist_id)
 
     price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2))
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
