@@ -71,6 +71,12 @@ class PriceListItemTemplate(models.Model):
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
+    compute_price = fields.Selection([
+        ('fixed', 'Fixed Price'),
+        ('percentage', 'Percentage (discount)'),
+        ('formula', 'Formula')], index=True, default='formula', required=True)
+
+
     base = fields.Selection([
         ('purchase', 'Purchase Price'),
         ('list_price', 'Sales Price'),
