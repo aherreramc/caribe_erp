@@ -73,32 +73,38 @@ class PriceListItemTemplate(models.Model):
     purchase_order = fields.Many2one('purchase.order', string='Purchase order')
 
     pricelist_id = fields.Many2one('product.pricelist', 'Pricelist', index=True, ondelete='cascade', required=True, default=_default_pricelist_id)
+    item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
 
     price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2))
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
-    item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
-
-    # currency_id = fields.Many2one('res.currency', 'Currency', default=_get_default_currency_id, required=True)
-
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts cost', currency_field='item_currency_id')
+    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id')
 
-    # po_double_validation_amount = fields.Monetary(related='company_id.po_double_validation_amount', string="Minimum Amount", currency_field='company_currency_id', readonly=False)
+    transit_percent = fields.Float('Transit %', default=0, digits=(16, 2))
+    transit = fields.Monetary(string='Transit', currency_field='item_currency_id')
 
+    fob_percent = fields.Float('FOB %', default=0, digits=(16, 2))
+    fob = fields.Monetary(string='FOB', currency_field='item_currency_id')
 
-#
-#     Spare parts cost
-# Transit to SZ
-# FOB charges
-# Inspection cost
-# Sea freight cost
-# Insurance cost
-# BL issuing cost
-# Zeus´margin
-# MKT
+    inspection_percent = fields.Float('Inspection %', default=0, digits=(16, 2))
+    inspection = fields.Monetary(string='Inspection', currency_field='item_currency_id')
 
+    freight_percent = fields.Float('Freight %', default=0, digits=(16, 2))
+    freight = fields.Monetary(string='Freight', currency_field='item_currency_id')
+
+    insurance_percent = fields.Float('Insurance %', default=0, digits=(16, 2))
+    insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id')
+
+    issuing_percent = fields.Float('Issuing %', default=0, digits=(16, 2))
+    issuing = fields.Monetary(string='Issuing', currency_field='item_currency_id')
+
+    zeus_margin_percent = fields.Float('Zeus margin %', default=0, digits=(16, 2))
+    zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id')
+
+    marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
+    marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id')
 
 
     compute_price = fields.Selection([
