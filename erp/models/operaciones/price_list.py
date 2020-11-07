@@ -72,7 +72,7 @@ class PriceListItemTemplate(models.Model):
 
 
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts cost', related='purchase_order_line.currency_id.id')
+    spare_parts = fields.Monetary(string='Spare parts cost', related='pricelist_id.currency_id.id')
 
 
 #
