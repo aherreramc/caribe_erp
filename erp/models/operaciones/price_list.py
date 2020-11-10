@@ -155,12 +155,14 @@ class PriceListItemTemplate(models.Model):
 
     @api.depends('price_purchase', 'spare_parts_percent')
     def _compute_spare_parts(self):
-        self.spare_parts = 0.0
 
-        raise except_orm(self.spare_parts_percent)
+        for price_item in self:
+            price_item.spare_parts = 0.0
 
-        if self.spare_parts_percent != 100:
-            self.spare_parts = (self.price_purchase / (1 - self.spare_parts_percent / 100)) - self.price_purchase
+            raise except_orm(price_item.spare_parts_percent)
+
+            if price_item.spare_parts_percent != 100:
+                price_item.spare_parts = (price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)) - price_item.price_purchase
 
 
 
