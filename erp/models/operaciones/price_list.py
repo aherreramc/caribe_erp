@@ -38,10 +38,12 @@ class PriceListItemTemplate(models.Model):
 
 
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_spare_parts')
+    spare_parts_total = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_part_prices')
+    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_part_prices')
 
     transit_percent = fields.Float('Transit %', default=0, digits=(16, 2))
-    transit = fields.Monetary(string='Transit', currency_field='item_currency_id')
+    transit_total = fields.Monetary(string='Transit', currency_field='item_currency_id', compute='_compute_part_prices')
+    transit = fields.Monetary(string='Transit', currency_field='item_currency_id', compute='_compute_part_prices')
 
     fob_percent = fields.Float('FOB %', default=0, digits=(16, 2))
     fob = fields.Monetary(string='FOB', currency_field='item_currency_id')
@@ -153,20 +155,36 @@ class PriceListItemTemplate(models.Model):
         self.price_purchase = sum
 
 
-    @api.depends('price_purchase', 'spare_parts_percent')
-    def _compute_spare_parts(self):
+    @api.depends('price_purchase', 'spare_parts_percent', 'spare_parts_total', 'transit_percent', 'transit_total')
+    def _compute_part_prices(self):
 
         for price_item in self:
             price_item.spare_parts = 0.0
 
             if price_item.spare_parts_percent != 100:
-                price_item.spare_parts = (price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)) - price_item.price_purchase
-
-    @api.onchange('price_purchase', 'spare_parts_percent')
-    def _compute_spare_parts_change(self):
-        self._compute_spare_parts()
+                price_item.spare_parts_total = price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)
+                price_item.spare_parts = spare_parts_total - price_item.price_purchase
 
 
+            price_item.transit = 0.0
+
+            if price_item.transit_percent != 100:
+                price_item.transit_total = price_item.spare_parts_total / (1 - price_item.transit_percent / 100)
+                price_item.transit = transit_total - spare_parts_total
+
+    @api.onchange('price_purchase', 'spare_parts_percent', 'spare_parts_total', 'transit_percent', 'transit_total')
+    def _compute_part_prices_change(self):
+        self._compute_part_prices()
+
+
+    # @api.depends('transit_percent')
+    # def _compute_transit(self):
+    #
+    #     for price_item in self:
+    #         price_item.transit = 0.0
+    #
+    #         if price_item.transit_percent != 100:
+    #             price_item.transit = (price_item.price_purchase / (1 - price_item.transit_percent / 100)) - price_item.price_purchase
 
 
 
