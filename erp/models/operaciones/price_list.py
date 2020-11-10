@@ -53,16 +53,16 @@ class PriceListItemTemplate(models.Model):
     freight = fields.Monetary(string='Freight', currency_field='item_currency_id', compute='_compute_part_prices')
 
     insurance_percent = fields.Float('Insurance %', default=0, digits=(16, 2))
-    insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id')
+    insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id', compute='_compute_part_prices')
 
     issuing_percent = fields.Float('BL Issuing %', default=0, digits=(16, 2))
-    issuing = fields.Monetary(string='BL Issuing', currency_field='item_currency_id')
+    issuing = fields.Monetary(string='BL Issuing', currency_field='item_currency_id', compute='_compute_part_prices')
 
     zeus_margin_percent = fields.Float('Zeus margin %', default=0, digits=(16, 2))
-    zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id')
+    zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id', compute='_compute_part_prices')
 
     marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
-    marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id')
+    marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices')
 
 
     compute_price = fields.Selection([
@@ -228,7 +228,6 @@ class PriceListItemTemplate(models.Model):
             if price_item.marketing_percent != 100:
                 marketing_total = zeus_margin_total / (1 - price_item.marketing_percent / 100)
                 price_item.marketing = marketing_total - zeus_margin_total
-
 
 
 
