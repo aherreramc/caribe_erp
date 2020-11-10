@@ -158,7 +158,7 @@ class PriceListItemTemplate(models.Model):
         self.spare_parts = 0.0
 
         if self.spare_parts_percent != 100:
-            self.spare_parts = self.price_purchase / (1 - self.spare_parts_percent / 100)
+            self.spare_parts = self.price_purchase - (self.price_purchase / (1 - self.spare_parts_percent / 100))
 
 
 
