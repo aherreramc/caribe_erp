@@ -169,7 +169,7 @@ class PriceListItemTemplate(models.Model):
             transit_total = 0.0
 
             if price_item.transit_percent != 100:
-                transit_total = price_item.spare_parts_total / (1 - price_item.transit_percent / 100)
+                transit_total = spare_parts_total / (1 - price_item.transit_percent / 100)
                 price_item.transit = price_item.transit_total - spare_parts_total
 
     @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent')
