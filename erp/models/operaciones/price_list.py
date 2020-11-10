@@ -233,13 +233,13 @@ class PriceListItemTemplate(models.Model):
                 price_item.marketing = marketing_total - zeus_margin_total
 
 
-            price.total_percent = price_item.spare_parts_percent + price_item.transit_percent \
+            price_item.total_percent = price_item.spare_parts_percent + price_item.transit_percent \
                                   + price_item.fob_percent + price_item.inspection_percent \
                                   + price_item.freight_percent + price_item.insurance_percent \
                                   + price_item.issuing_percent + price_item.zeus_margin_percent \
                                   + price_item.marketing_percent
 
-            price.total_margin = price_item.spare_parts + price_item.transit \
+            price_item.total_margin = price_item.spare_parts + price_item.transit \
                       + price_item.fob + price_item.inspection \
                       + price_item.freight + price_item.insurance \
                       + price_item.issuing + price_item.zeus_margin \
