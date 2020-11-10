@@ -154,7 +154,7 @@ class PriceListItemTemplate(models.Model):
 
 
     @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
-                 , 'freight_percent')
+                 , 'freight_percent', 'insurance_percent', 'issuing_percent')
     def _compute_part_prices(self):
 
         for price_item in self:
@@ -197,8 +197,24 @@ class PriceListItemTemplate(models.Model):
                 freight_total = inspection_total / (1 - price_item.freight_percent / 100)
                 price_item.freight = freight_total - inspection_total
 
+
+            price_item.insurance = 0.0
+            insurance_total = 0.0
+
+            if price_item.insurance_percent != 100:
+                insurance_total = freight_total / (1 - price_item.insurance_percent / 100)
+                price_item.insurance = insurance_total - freight_total
+
+
+            price_item.issuing = 0.0
+            issuing_total = 0.0
+
+            if price_item.issuing_percent != 100:
+                issuing_total = insurance_total / (1 - price_item.issuing_percent / 100)
+                price_item.issuing = issuing_total - insurance_total
+
     @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
-                  , 'freight_percent')
+                  , 'freight_percent', 'insurance_percent', 'issuing_percent')
     def _compute_part_prices_change(self):
         self._compute_part_prices()
 
