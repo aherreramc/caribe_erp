@@ -164,6 +164,10 @@ class PriceListItemTemplate(models.Model):
             if price_item.spare_parts_percent != 100:
                 price_item.spare_parts = (price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)) - price_item.price_purchase
 
+    @api.onchange('price_purchase', 'spare_parts_percent')
+    def _compute_spare_parts_change(self):
+        self._compute_spare_parts(self)
+
 
 
 
