@@ -154,7 +154,7 @@ class PriceListItemTemplate(models.Model):
 
 
     @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
-                 , 'freight_percent', 'insurance_percent', 'issuing_percent')
+                 , 'freight_percent', 'insurance_percent', 'issuing_percent', 'zeus_margin_percent', 'marketing_percent')
     def _compute_part_prices(self):
 
         for price_item in self:
@@ -213,8 +213,28 @@ class PriceListItemTemplate(models.Model):
                 issuing_total = insurance_total / (1 - price_item.issuing_percent / 100)
                 price_item.issuing = issuing_total - insurance_total
 
+
+            price_item.zeus_margin = 0.0
+            zeus_margin_total = 0.0
+
+            if price_item.zeus_margin_percent != 100:
+                zeus_margin_total = issuing_total / (1 - price_item.zeus_margin_percent / 100)
+                price_item.zeus_margin = zeus_margin_total - issuing_total
+
+
+            price_item.marketing = 0.0
+            marketing_total = 0.0
+
+            if price_item.marketing_percent != 100:
+                marketing_total = zeus_margin_total / (1 - price_item.marketing_percent / 100)
+                price_item.marketing = marketing_total - zeus_margin_total
+
+
+
+
+
     @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
-                  , 'freight_percent', 'insurance_percent', 'issuing_percent')
+                  , 'freight_percent', 'insurance_percent', 'issuing_percent', 'zeus_margin_percent', 'marketing_percent')
     def _compute_part_prices_change(self):
         self._compute_part_prices()
 
