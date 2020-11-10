@@ -189,7 +189,7 @@ class PriceListItemTemplate(models.Model):
                 sum += order_line.price_total
 
             if self.applied_on == '1_product'  \
-                and order_line.product_id.id == self.pricelist_id.product_tmpl_id.id:
+                and order_line.product_id.id == self.product_tmpl_id.id:
                 sum += order_line.price_total
 
         self.price_purchase = sum
