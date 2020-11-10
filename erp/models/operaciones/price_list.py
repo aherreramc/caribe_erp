@@ -44,13 +44,13 @@ class PriceListItemTemplate(models.Model):
     transit = fields.Monetary(string='Transit', currency_field='item_currency_id', compute='_compute_part_prices')
 
     fob_percent = fields.Float('FOB %', default=0, digits=(16, 2))
-    fob = fields.Monetary(string='FOB', currency_field='item_currency_id')
+    fob = fields.Monetary(string='FOB', currency_field='item_currency_id', compute='_compute_part_prices')
 
     inspection_percent = fields.Float('Inspection %', default=0, digits=(16, 2))
-    inspection = fields.Monetary(string='Inspection', currency_field='item_currency_id')
+    inspection = fields.Monetary(string='Inspection', currency_field='item_currency_id', compute='_compute_part_prices')
 
     freight_percent = fields.Float('Freight %', default=0, digits=(16, 2))
-    freight = fields.Monetary(string='Freight', currency_field='item_currency_id')
+    freight = fields.Monetary(string='Freight', currency_field='item_currency_id', compute='_compute_part_prices')
 
     insurance_percent = fields.Float('Insurance %', default=0, digits=(16, 2))
     insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id')
@@ -153,7 +153,8 @@ class PriceListItemTemplate(models.Model):
         self.price_purchase = sum
 
 
-    @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent')
+    @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
+                 , 'freight_percent')
     def _compute_part_prices(self):
 
         for price_item in self:
@@ -172,21 +173,34 @@ class PriceListItemTemplate(models.Model):
                 transit_total = spare_parts_total / (1 - price_item.transit_percent / 100)
                 price_item.transit = transit_total - spare_parts_total
 
-    @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent')
+
+            price_item.fob = 0.0
+            fob_total = 0.0
+
+            if price_item.fob_percent != 100:
+                fob_total = transit_total / (1 - price_item.fob_percent / 100)
+                price_item.fob = fob_total - transit_total
+
+
+            price_item.inspection = 0.0
+            inspection_total = 0.0
+
+            if price_item.inspection_percent != 100:
+                inspection_total = fob_total / (1 - price_item.inspection_percent / 100)
+                price_item.inspection = inspection_total - fob_total
+
+
+            price_item.freight = 0.0
+            freight_total = 0.0
+
+            if price_item.freight_percent != 100:
+                freight_total = inspection_total / (1 - price_item.freight_percent / 100)
+                price_item.freight = freight_total - inspection_total
+
+    @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
+                  , 'freight_percent')
     def _compute_part_prices_change(self):
         self._compute_part_prices()
-
-
-    # @api.depends('transit_percent')
-    # def _compute_transit(self):
-    #
-    #     for price_item in self:
-    #         price_item.transit = 0.0
-    #
-    #         if price_item.transit_percent != 100:
-    #             price_item.transit = (price_item.price_purchase / (1 - price_item.transit_percent / 100)) - price_item.price_purchase
-
-
 
 
 
