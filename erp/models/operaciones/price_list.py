@@ -12,48 +12,6 @@ from odoo.tools import float_repr
 class PriceListTemplate(models.Model):
     _inherit = 'product.pricelist'
 
-    # purchase_order = fields.Many2one('purchase.order', string='Purchase order')
-    #
-    # @api.onchange('purchase_order')
-    # def purchase_order_change(self):
-    #
-    #     for pricelist in self:
-    #         if pricelist.purchase_order is not False:
-    #
-    #             purchase_order = pricelist.purchase_order
-    #             # pricelist.item_ids.unlink();
-    #
-    #             new_lines = []
-    #
-    #             for purchase_line in purchase_order.order_line:
-    #                 raise except_orm(purchase_line.name)
-    #                 new_line = {
-    #                     'base': 'list_price',
-    #                     # 'applied_on': '1_product',
-    #                     # 'pricelist_id': pricelist.id,
-    #                     'product_tmpl_id': purchase_line.product_id.id,
-    #                     'price_discount': 0,
-    #                     'min_quantity': 0,
-    #                     # 'compute_price': 'fixed',
-    #                 }
-    #
-    #
-    #                 # self.env['product.pricelist.item'].create({
-    #                 #     'base': 'list_price',
-    #                 #     'applied_on': '1_product',
-    #                 #     'pricelist_id': pricelist.id,
-    #                 #     'product_tmpl_id': product_template.id,
-    #                 #     'price_discount': 20,
-    #                 #     'min_quantity': 2,
-    #                 #     'compute_price': 'formula',
-    #                 # })
-    #
-    #                 # new_lines.append(new_line)
-    #
-    #                 # self.item_ids.
-    #             #
-    #             #
-    #             # self.item_ids = new_lines
 
 
 
@@ -80,7 +38,7 @@ class PriceListItemTemplate(models.Model):
 
 
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id')
+    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_spare_parts')
 
     transit_percent = fields.Float('Transit %', default=0, digits=(16, 2))
     transit = fields.Monetary(string='Transit', currency_field='item_currency_id')
@@ -193,6 +151,17 @@ class PriceListItemTemplate(models.Model):
                 sum += order_line.price_total
 
         self.price_purchase = sum
+
+
+    @api.depends('spare_parts')
+    def _compute_spare_parts(self):
+        self.spare_parts = 0.0
+
+        if self.spare_parts_percent != 100:
+            self.spare_parts = self.price_purchase / (1 - self.spare_parts_percent / 100)
+
+
+
 
 
 
