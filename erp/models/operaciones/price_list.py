@@ -64,7 +64,7 @@ class PriceListItemTemplate(models.Model):
     marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
     marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices')
 
-    total = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_price_purchase')
+    total_percent = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_price_purchase')
     total_margin = fields.Monetary(string='Total margin', currency_field='item_currency_id', compute='_compute_part_prices')
 
 
