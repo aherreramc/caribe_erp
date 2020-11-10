@@ -75,7 +75,7 @@ class PriceListItemTemplate(models.Model):
     pricelist_id = fields.Many2one('product.pricelist', 'Pricelist', index=True, ondelete='cascade', required=True, default=_default_pricelist_id)
     item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
 
-    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2))
+    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2), compute='_compute_price_purchase')
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
@@ -97,8 +97,8 @@ class PriceListItemTemplate(models.Model):
     insurance_percent = fields.Float('Insurance %', default=0, digits=(16, 2))
     insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id')
 
-    issuing_percent = fields.Float('Issuing %', default=0, digits=(16, 2))
-    issuing = fields.Monetary(string='Issuing', currency_field='item_currency_id')
+    issuing_percent = fields.Float('BL Issuing %', default=0, digits=(16, 2))
+    issuing = fields.Monetary(string='BL Issuing', currency_field='item_currency_id')
 
     zeus_margin_percent = fields.Float('Zeus margin %', default=0, digits=(16, 2))
     zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id')
@@ -179,5 +179,19 @@ class PriceListItemTemplate(models.Model):
                 'price_min_margin': 0.0,
                 'price_max_margin': 0.0,
             })
+
+    @api.depends('purchase_order')
+    def _compute_price_purchase(self):
+        sum = 0.0
+
+        for order_line in purchase_order.order_line:
+            if self.pricelist_id.applied_on == '3_global':
+                sum += order_line.price_subtotal
+
+            if self.pricelist_id.applied_on == '1_product'  \
+                and order_line.product_id.id == self.pricelist_id.product_tmpl_id.id:
+                sum += order_line.price_subtotal
+
+
 
 
