@@ -157,7 +157,7 @@ class PriceListItemTemplate(models.Model):
             price_item.price_purchase = sum
 
     @api.onchange('purchase_order')
-    def _compute_price_purchase(self):
+    def _compute_price_purchase_on_change(self):
         for price_item in self:
             price_item._compute_price_purchase()
 
