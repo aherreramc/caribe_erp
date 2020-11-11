@@ -156,7 +156,7 @@ class PriceListItemTemplate(models.Model):
         self.price_purchase = sum
 
 
-    @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
+    @api.depends('price_purchase', 'spare_parts', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
                  , 'freight_percent', 'insurance_percent', 'issuing_percent', 'zeus_margin_percent', 'marketing_percent')
     def _compute_part_prices(self):
         for price_item in self:
