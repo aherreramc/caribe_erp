@@ -33,7 +33,7 @@ class PriceListItemTemplate(models.Model):
     pricelist_id = fields.Many2one('product.pricelist', 'Pricelist', index=True, ondelete='cascade', required=True, default=_default_pricelist_id)
     item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
 
-    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2), compute='_compute_price_purchase', store=True)
+    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2))
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
@@ -141,7 +141,7 @@ class PriceListItemTemplate(models.Model):
                 'price_max_margin': 0.0,
             })
 
-    @api.depends('purchase_order')
+    @api.onchange('purchase_order')
     def _compute_price_purchase(self):
         for price_item in self:
             sum = 0.0
