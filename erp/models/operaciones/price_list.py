@@ -164,7 +164,7 @@ class PriceListItemTemplate(models.Model):
             price_item.spare_parts = 0.0
             spare_parts_total = 0.0
 
-            if price_item.spare_parts_percent != 100:
+            if price_item.spare_parts_percent is not False and price_item.spare_parts_percent != 100:
                 spare_parts_total = price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)
                 price_item.spare_parts = spare_parts_total - price_item.price_purchase
 
@@ -172,7 +172,7 @@ class PriceListItemTemplate(models.Model):
             price_item.transit = 0.0
             transit_total = 0.0
 
-            if price_item.transit_percent != 100:
+            if price_item.transit_percent is not False and price_item.transit_percent != 100:
                 transit_total = spare_parts_total / (1 - price_item.transit_percent / 100)
                 price_item.transit = transit_total - spare_parts_total
 
@@ -180,7 +180,7 @@ class PriceListItemTemplate(models.Model):
             price_item.fob = 0.0
             fob_total = 0.0
 
-            if price_item.fob_percent != 100:
+            if price_item.fob_percent is not False and price_item.fob_percent != 100:
                 fob_total = transit_total / (1 - price_item.fob_percent / 100)
                 price_item.fob = fob_total - transit_total
 
@@ -188,7 +188,7 @@ class PriceListItemTemplate(models.Model):
             price_item.inspection = 0.0
             inspection_total = 0.0
 
-            if price_item.inspection_percent != 100:
+            if price_item.inspection_percent is not False and price_item.inspection_percent != 100:
                 inspection_total = fob_total / (1 - price_item.inspection_percent / 100)
                 price_item.inspection = inspection_total - fob_total
 
@@ -196,7 +196,7 @@ class PriceListItemTemplate(models.Model):
             price_item.freight = 0.0
             freight_total = 0.0
 
-            if price_item.freight_percent != 100:
+            if price_item.freight_percent is not False and price_item.freight_percent != 100:
                 freight_total = inspection_total / (1 - price_item.freight_percent / 100)
                 price_item.freight = freight_total - inspection_total
 
@@ -204,7 +204,7 @@ class PriceListItemTemplate(models.Model):
             price_item.insurance = 0.0
             insurance_total = 0.0
 
-            if price_item.insurance_percent != 100:
+            if price_item.insurance_percent is not False and price_item.insurance_percent != 100:
                 insurance_total = freight_total / (1 - price_item.insurance_percent / 100)
                 price_item.insurance = insurance_total - freight_total
 
@@ -212,7 +212,7 @@ class PriceListItemTemplate(models.Model):
             price_item.issuing = 0.0
             issuing_total = 0.0
 
-            if price_item.issuing_percent != 100:
+            if price_item.issuing_percent is not False and price_item.issuing_percent != 100:
                 issuing_total = insurance_total / (1 - price_item.issuing_percent / 100)
                 price_item.issuing = issuing_total - insurance_total
 
@@ -220,7 +220,7 @@ class PriceListItemTemplate(models.Model):
             price_item.zeus_margin = 0.0
             zeus_margin_total = 0.0
 
-            if price_item.zeus_margin_percent != 100:
+            if  price_item.zeus_margin_percent is not False and price_item.zeus_margin_percent != 100:
                 zeus_margin_total = issuing_total / (1 - price_item.zeus_margin_percent / 100)
                 price_item.zeus_margin = zeus_margin_total - issuing_total
 
@@ -228,7 +228,7 @@ class PriceListItemTemplate(models.Model):
             price_item.marketing = 0.0
             marketing_total = 0.0
 
-            if price_item.marketing_percent != 100:
+            if price_item.marketing_percent is not False and price_item.marketing_percent != 100:
                 marketing_total = zeus_margin_total / (1 - price_item.marketing_percent / 100)
                 price_item.marketing = marketing_total - zeus_margin_total
 
