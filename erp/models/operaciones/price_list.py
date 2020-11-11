@@ -33,7 +33,7 @@ class PriceListItemTemplate(models.Model):
     pricelist_id = fields.Many2one('product.pricelist', 'Pricelist', index=True, ondelete='cascade', required=True, default=_default_pricelist_id)
     item_currency_id = fields.Many2one('res.currency', 'Currency', related='pricelist_id.currency_id')
 
-    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2), compute='_compute_price_purchase')
+    price_purchase = fields.Float('Price Purchase', default=0, digits=(16, 2), compute='_compute_price_purchase', store=True)
     price_discount = fields.Float('Margin', default=0, digits=(16, 2))
 
 
@@ -64,7 +64,7 @@ class PriceListItemTemplate(models.Model):
     marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
     marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
-    total_percent = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_price_purchase')
+    total_percent = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_part_prices', store=True)
     total_margin = fields.Monetary(string='Total margin', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
 
@@ -143,17 +143,18 @@ class PriceListItemTemplate(models.Model):
 
     @api.depends('purchase_order')
     def _compute_price_purchase(self):
-        sum = 0.0
+        for price_item in self:
+            sum = 0.0
 
-        for order_line in self.purchase_order.order_line:
-            if self.applied_on == '3_global':
-                sum += order_line.price_total
+            for order_line in price_item.purchase_order.order_line:
+                if price_item.applied_on == '3_global':
+                    sum += order_line.price_total
 
-            if self.applied_on == '1_product'  \
-                and order_line.product_id.id == self.product_tmpl_id.id:
-                sum += order_line.price_total
+                if price_item.applied_on == '1_product'  \
+                    and order_line.product_id.id == price_item.product_tmpl_id.id:
+                    sum += order_line.price_total
 
-        self.price_purchase = sum
+            price_item.price_purchase = sum
 
 
     @api.depends('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
