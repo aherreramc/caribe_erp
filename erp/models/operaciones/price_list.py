@@ -255,7 +255,8 @@ class PriceListItemTemplate(models.Model):
     @api.onchange('price_purchase', 'spare_parts_percent', 'transit_percent', 'fob_percent', 'inspection_percent'
                   , 'freight_percent', 'insurance_percent', 'issuing_percent', 'zeus_margin_percent', 'marketing_percent')
     def _compute_part_prices_change(self):
-        self._compute_part_prices()
+        for price_item in self:
+            price_item._compute_part_prices()
 
 
 
