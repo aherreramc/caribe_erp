@@ -247,7 +247,7 @@ class PriceListItemTemplate(models.Model):
 
 
             if price_item.total_margin != 0:
-                price_item.total_percent = (price_item.total_margin - price_item.price_purchase) / price_item.total_margin
+                price_item.total_percent = (price_item.total_margin - price_item.price_purchase) / price_item.total_margin * 100
 
 
 
