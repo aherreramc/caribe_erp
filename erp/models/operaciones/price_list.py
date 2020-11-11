@@ -38,34 +38,34 @@ class PriceListItemTemplate(models.Model):
 
 
     spare_parts_percent = fields.Float('Spare parts %', default=0, digits=(16, 2))
-    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    spare_parts = fields.Monetary(string='Spare parts', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     transit_percent = fields.Float('Transit %', default=0, digits=(16, 2))
-    transit = fields.Monetary(string='Transit', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    transit = fields.Monetary(string='Transit', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     fob_percent = fields.Float('FOB %', default=0, digits=(16, 2))
-    fob = fields.Monetary(string='FOB', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    fob = fields.Monetary(string='FOB', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     inspection_percent = fields.Float('Inspection %', default=0, digits=(16, 2))
-    inspection = fields.Monetary(string='Inspection', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    inspection = fields.Monetary(string='Inspection', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     freight_percent = fields.Float('Freight %', default=0, digits=(16, 2))
-    freight = fields.Monetary(string='Freight', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    freight = fields.Monetary(string='Freight', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     insurance_percent = fields.Float('Insurance %', default=0, digits=(16, 2))
-    insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    insurance = fields.Monetary(string='Insurance', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     issuing_percent = fields.Float('BL Issuing %', default=0, digits=(16, 2))
-    issuing = fields.Monetary(string='BL Issuing', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    issuing = fields.Monetary(string='BL Issuing', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     zeus_margin_percent = fields.Float('Zeus margin %', default=0, digits=(16, 2))
-    zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    zeus_margin = fields.Monetary(string='Zeus margin', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
-    marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
     total_percent = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_price_purchase')
-    total_margin = fields.Monetary(string='Total margin', currency_field='item_currency_id', compute='_compute_part_prices', store=true)
+    total_margin = fields.Monetary(string='Total margin', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
 
     compute_price = fields.Selection([
