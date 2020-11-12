@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import product_template
+from . import product_product
 from . import tipo_de_espiga
 from . import potencia
 from . import tipo_de_producto
