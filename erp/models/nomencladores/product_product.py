@@ -32,7 +32,7 @@ class ProductProduct(models.Model):
         prices = dict.fromkeys(self.ids, 0.0)
         for product in products:
             prices[product.id] = product[price_type] or 0.0
-            raise except_orm(prices[product.id])
+
             if price_type == 'list_price':
                 prices[product.id] += product.price_extra
                 # we need to add the price from the attributes that do not generate variants
@@ -42,6 +42,7 @@ class ProductProduct(models.Model):
                     prices[product.id] += sum(self._context.get('no_variant_attributes_price_extra'))
 
             if uom:
+                raise except_orm("aa")
                 prices[product.id] = product.uom_id._compute_price(prices[product.id], uom)
 
             # Convert from current user company currency to asked one
