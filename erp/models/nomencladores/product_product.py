@@ -32,9 +32,8 @@ class ProductProduct(models.Model):
         prices = dict.fromkeys(self.ids, 0.0)
         for product in products:
 
-            if price_type == 'purchase':
-                raise except_orm(price_type)
-            prices[product.id] = product[price_type] or 0.0
+            if price_type != 'purchase':
+                prices[product.id] = product[price_type] or 0.0
 
             if price_type == 'list_price':
                 prices[product.id] += product.price_extra
