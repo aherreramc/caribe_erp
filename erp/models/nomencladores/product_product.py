@@ -11,6 +11,8 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
+    purchase_price = fields.Float(string="Purchase Price", digits=dp.get_precision('dosDecimales'))
+
 
     def price_compute(self, price_type, uom=False, currency=False, company=False):
         raise except_orm("Hola")
