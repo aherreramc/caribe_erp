@@ -51,6 +51,6 @@ class ProductProduct(models.Model):
                 prices[product.id] = product.currency_id._convert(
                     prices[product.id], currency, product.company_id, fields.Date.today())
 
-            raise except_orm("aa")
+            raise except_orm("ccc")
 
         return prices
