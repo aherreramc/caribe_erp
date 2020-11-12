@@ -15,7 +15,6 @@ class ProductProduct(models.Model):
 
 
     def price_compute(self, price_type, uom=False, currency=False, company=False):
-        raise except_orm("Hola")
         # TDE FIXME: delegate to template or not ? fields are reencoded here ...
         # compatibility about context keys used a bit everywhere in the code
         if not uom and self._context.get('uom'):
@@ -32,6 +31,7 @@ class ProductProduct(models.Model):
 
         prices = dict.fromkeys(self.ids, 0.0)
         for product in products:
+            raise except_orm(price_type)
             prices[product.id] = product[price_type] or 0.0
             if price_type == 'list_price':
                 prices[product.id] += product.price_extra
