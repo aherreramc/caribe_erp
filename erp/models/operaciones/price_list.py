@@ -74,19 +74,19 @@ class PriceListItemTemplate(models.Model):
         ('formula', 'Formula')], index=True, default='formula', required=True)
 
 
-    # base = fields.Selection([
-    #     ('purchase_price', 'Purchase Price'),
-    #     ('list_price', 'Sales Price'),
-    #     ('standard_price', 'Cost'),
-    #     ('pricelist', 'Other Pricelist')], "Based on",
-    #     default='purchase_price', required=True,
-    #     help='Base price for computation.\n'
-    #          'Purchase Price: The base price will be the Purchase Price.\n'
-    #          'Sales Price: The base price will be the Sales Price.\n'
-    #          'Cost Price : The base price will be the cost price.\n'
-    #          'Other Pricelist : Computation of the base price based on another Pricelist.')
-    #
-    #
+    base = fields.Selection([
+        # ('purchase_price', 'Purchase Price'),
+        ('list_price', 'Sales Price'),
+        ('standard_price', 'Cost'),
+        ('pricelist', 'Other Pricelist')], "Based on",
+        default='purchase_price', required=True,
+        help='Base price for computation.\n'
+             'Purchase Price: The base price will be the Purchase Price.\n'
+             'Sales Price: The base price will be the Sales Price.\n'
+             'Cost Price : The base price will be the cost price.\n'
+             'Other Pricelist : Computation of the base price based on another Pricelist.')
+
+
     # @api.depends('applied_on', 'categ_id', 'product_tmpl_id', 'product_id', 'compute_price', 'fixed_price', \
     #     'pricelist_id', 'percent_price', 'price_discount', 'price_surcharge', 'price_purchase')
     # def _get_pricelist_item_name_price(self):
