@@ -75,11 +75,11 @@ class PriceListItemTemplate(models.Model):
 
 
     base = fields.Selection([
-        ('purchase_price', 'Purchase Price'),
+        ('purchase', 'Purchase Price'),
         ('list_price', 'Sales Price'),
         ('standard_price', 'Cost'),
         ('pricelist', 'Other Pricelist')], "Based on",
-        default='purchase_price', required=True,
+        default='purchase', required=True,
         help='Base price for computation.\n'
              'Purchase Price: The base price will be the Purchase Price.\n'
              'Sales Price: The base price will be the Sales Price.\n'
