@@ -42,7 +42,6 @@ class ProductProduct(models.Model):
                     prices[product.id] += sum(self._context.get('no_variant_attributes_price_extra'))
 
             if uom:
-                raise except_orm("bbb")
                 prices[product.id] = product.uom_id._compute_price(prices[product.id], uom)
 
             # Convert from current user company currency to asked one
@@ -51,6 +50,5 @@ class ProductProduct(models.Model):
                 prices[product.id] = product.currency_id._convert(
                     prices[product.id], currency, product.company_id, fields.Date.today())
 
-            raise except_orm("ccc")
 
         return prices
