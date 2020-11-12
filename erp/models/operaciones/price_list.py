@@ -75,7 +75,7 @@ class PriceListItemTemplate(models.Model):
 
 
     base = fields.Selection([
-        # ('purchase_price', 'Purchase Price'),
+        ('purchase_price', 'Purchase Price'),
         ('list_price', 'Sales Price'),
         ('standard_price', 'Cost'),
         ('pricelist', 'Other Pricelist')], "Based on",
