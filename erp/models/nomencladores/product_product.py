@@ -41,7 +41,6 @@ class ProductProduct(models.Model):
                     # we have a list of price_extra that comes from the attribute values, we need to sum all that
                     prices[product.id] += sum(self._context.get('no_variant_attributes_price_extra'))
 
-            raise except_orm("aa")
             if uom:
                 raise except_orm("bbb")
                 prices[product.id] = product.uom_id._compute_price(prices[product.id], uom)
@@ -51,5 +50,7 @@ class ProductProduct(models.Model):
             if currency:
                 prices[product.id] = product.currency_id._convert(
                     prices[product.id], currency, product.company_id, fields.Date.today())
+
+            raise except_orm("aa")
 
         return prices
