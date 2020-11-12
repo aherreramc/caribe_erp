@@ -33,7 +33,7 @@ class ProductProduct(models.Model):
         for product in products:
 
             if price_type == 'purchase':
-                raise except_orm(price_type)
+                raise except_orm(product[price_type])
             prices[product.id] = product[price_type] or 0.0
 
             if price_type == 'list_price':
