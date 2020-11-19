@@ -151,6 +151,7 @@ class PriceListItemTemplate(models.Model):
                     sum += order_line.price_total
 
 
+                raise except_orm(str(order_line.product_id.id) + "  " + str(price_item.product_tmpl_id.id))
                 if price_item.applied_on == '1_product'  \
                     and order_line.product_id.id == price_item.product_tmpl_id.id:
                     raise except_orm("EE")
