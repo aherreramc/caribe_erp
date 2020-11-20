@@ -140,3 +140,7 @@ class SaleOrderLineTemplate(models.Model):
                     # self.price_unit = 7
                     self.update({'price_unit': 8})
                     # vals['price_unit'] = 9
+
+
+        result = {}
+        return result
