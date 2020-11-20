@@ -101,8 +101,6 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
-        raise except_orm("GG")
-        self.price_unit = 6
         return self.price_unit
         if not self.product_uom or not self.product_id:
             self.price_unit = 0.0
