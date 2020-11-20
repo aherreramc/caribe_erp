@@ -148,12 +148,12 @@ class PriceListItemTemplate(models.Model):
 
             for order_line in price_item.purchase_order.order_line:
                 if price_item.applied_on == '3_global':
-                    sum += order_line.price_total
+                    sum += order_line.price_subtotal
 
                 if price_item.applied_on == '1_product'  \
                     and order_line.product_id.product_tmpl_id.id == price_item.product_tmpl_id.id:
 
-                    sum += order_line.price_total
+                    sum += order_line.price_subtotal
 
             price_item.price_purchase = sum
 
