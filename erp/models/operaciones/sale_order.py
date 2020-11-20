@@ -75,60 +75,9 @@ class SaleOrderTemplate(models.Model):
 class SaleOrderLineTemplate(models.Model):
     _inherit = 'sale.order.line'
 
-    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
-    def _compute_amount(self):
-        """
-        Compute the amounts of the SO line.
-        """
-        for line in self:
-            price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
-            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)
-            # line.update({
-            #     'price_tax': sum(t.get('amount', 0.0) for t in taxes.get('taxes', [])),
-            #     'price_total': taxes['total_included'],
-            #     'price_subtotal': taxes['total_excluded'],
-            # })
-
-            line.update({
-                'price_tax': 1,
-                'price_total': 2,
-                'price_subtotal': 3,
-            })
-
-            if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
-                line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
-
-
-    @api.onchange('product_uom', 'product_uom_qty')
-    def product_uom_change(self):
-        return self.price_unit
-        if not self.product_uom or not self.product_id:
-            self.price_unit = 0.0
-            return
-        if self.order_id.pricelist_id and self.order_id.partner_id:
-            product = self.product_id.with_context(
-                lang=self.order_id.partner_id.lang,
-                partner=self.order_id.partner_id,
-                quantity=self.product_uom_qty,
-                date=self.order_id.date_order,
-                pricelist=self.order_id.pricelist_id.id,
-                uom=self.product_uom.id,
-                fiscal_position=self.env.context.get('fiscal_position')
-            )
-
-            raise except_orm("self._get_display_price(product)" + str(self._get_display_price(product)) \
-                             + "product.taxes_id" + str(product.taxes_id) \
-            + "self.tax_id" + str(self.tax_id) \
-            + "self.company_id" + str(self.company_id))
-
-            self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
-
-            raise except_orm(self.price_unit)
-
 
     @api.onchange('product_id')
     def product_id_change(self):
-        pass
         # has_product_id = self.filtered('product_id')
         # for item in has_product_id:
         #     item.product_tmpl_id = item.product_id.product_tmpl_id
@@ -137,6 +86,7 @@ class SaleOrderLineTemplate(models.Model):
         #     # Reset if product variant is removed
         #     has_product_id.update({'applied_on': '0_product_variant'})
         #     (self - has_product_id).update({'applied_on': '1_product'})
+        raise except_orm("G")
         # if self.env.context.get('default_applied_on', False) == 'purchase':
         #     raise except_orm("PO")
         #
