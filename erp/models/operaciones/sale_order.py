@@ -144,7 +144,7 @@ class SaleOrderLineTemplate(models.Model):
         #
         # return result
 
-        return true
+        return True
 
 
 
