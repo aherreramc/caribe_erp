@@ -98,3 +98,30 @@ class SaleOrderLineTemplate(models.Model):
             if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
                 line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
 
+
+    @api.onchange('product_uom', 'product_uom_qty')
+    def product_uom_change(self):
+        self.price_unit = 6
+        return self.price_unit
+        if not self.product_uom or not self.product_id:
+            self.price_unit = 0.0
+            return
+        if self.order_id.pricelist_id and self.order_id.partner_id:
+            product = self.product_id.with_context(
+                lang=self.order_id.partner_id.lang,
+                partner=self.order_id.partner_id,
+                quantity=self.product_uom_qty,
+                date=self.order_id.date_order,
+                pricelist=self.order_id.pricelist_id.id,
+                uom=self.product_uom.id,
+                fiscal_position=self.env.context.get('fiscal_position')
+            )
+
+            raise except_orm("self._get_display_price(product)" + str(self._get_display_price(product)) \
+                             + "product.taxes_id" + str(product.taxes_id) \
+            + "self.tax_id" + str(self.tax_id) \
+            + "self.company_id" + str(self.company_id))
+
+            self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
+
+            raise except_orm(self.price_unit)
