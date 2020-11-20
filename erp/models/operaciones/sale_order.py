@@ -129,5 +129,5 @@ class SaleOrderLineTemplate(models.Model):
     @api.onchange('product_id')
     def product_id_change(self):
         for price_list_item in self.order_id.pricelist_id.item_ids:
-            # if price_list_item.product_id.id == self.product_id.id:
-            self.price_unit = 5
+            if price_list_item.product_id.id == self.product_id.id:
+                self.price_unit = 5
