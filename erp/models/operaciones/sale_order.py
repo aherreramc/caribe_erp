@@ -121,7 +121,7 @@ class SaleOrderLineTemplate(models.Model):
                     vals['price_unit'] = price_list_item.total_margin
 
 
-        # self.update(vals)
+        self.update(vals)
 
         # for price_list_item in self.order_id.pricelist_id.item_ids:
         #     if price_list_item.base == 'purchase':
