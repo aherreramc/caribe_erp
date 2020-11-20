@@ -128,4 +128,6 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_id')
     def product_id_change(self):
-        self.price_unit = 4
+        for order_line in self.order_id.pricelist_id.order_line:
+            if order_line.product_id.id == self.product_id.id:
+                self.price_unit = 5
