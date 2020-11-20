@@ -127,11 +127,12 @@ class SaleOrderLineTemplate(models.Model):
             if product.sale_line_warn == 'block':
                 self.product_id = False
 
+
+
+        for price_list_item in self.order_id.pricelist_id.item_ids:
+            if price_list_item.base == 'purchase':
+                if price_list_item.product_id.id == self.product_id.id:
+                    self.price_unit = 6
+
+
         return result
-        # raise except_orm("G")
-        # if self.env.context.get('default_applied_on', False) == 'purchase':
-        #     raise except_orm("PO")
-        #
-        #     for price_list_item in self.order_id.pricelist_id.item_ids:
-        #         if price_list_item.product_id.id == self.product_id.id:
-        #             self.price_unit = 6
