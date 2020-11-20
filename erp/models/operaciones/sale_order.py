@@ -136,9 +136,9 @@ class SaleOrderLineTemplate(models.Model):
             # Reset if product variant is removed
             has_product_id.update({'applied_on': '0_product_variant'})
             (self - has_product_id).update({'applied_on': '1_product'})
-        if self.env.context.get('default_applied_on', False) == 'purchase':
-            raise except_orm("PO")
-
-            for price_list_item in self.order_id.pricelist_id.item_ids:
-                if price_list_item.product_id.id == self.product_id.id:
-                    self.price_unit = 6
+        # if self.env.context.get('default_applied_on', False) == 'purchase':
+        #     raise except_orm("PO")
+        #
+        #     for price_list_item in self.order_id.pricelist_id.item_ids:
+        #         if price_list_item.product_id.id == self.product_id.id:
+        #             self.price_unit = 6
