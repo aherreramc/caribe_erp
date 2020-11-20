@@ -138,6 +138,7 @@ class SaleOrderLineTemplate(models.Model):
         for price_list_item in self.order_id.pricelist_id.item_ids:
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+                    raise except_orm("B")
                     # self.price_unit = price_list_item.total_margin
                     # self.price_unit = 7
                     # self.update({'price_unit': price_list_item.total_margin})
