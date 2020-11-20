@@ -128,14 +128,15 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_id')
     def product_id_change(self):
-        has_product_id = self.filtered('product_id')
-        for item in has_product_id:
-            item.product_tmpl_id = item.product_id.product_tmpl_id
-        if self.env.context.get('default_applied_on', False) == '1_product':
-            # If a product variant is specified, apply on variants instead
-            # Reset if product variant is removed
-            has_product_id.update({'applied_on': '0_product_variant'})
-            (self - has_product_id).update({'applied_on': '1_product'})
+        pass
+        # has_product_id = self.filtered('product_id')
+        # for item in has_product_id:
+        #     item.product_tmpl_id = item.product_id.product_tmpl_id
+        # if self.env.context.get('default_applied_on', False) == '1_product':
+        #     # If a product variant is specified, apply on variants instead
+        #     # Reset if product variant is removed
+        #     has_product_id.update({'applied_on': '0_product_variant'})
+        #     (self - has_product_id).update({'applied_on': '1_product'})
         # if self.env.context.get('default_applied_on', False) == 'purchase':
         #     raise except_orm("PO")
         #
