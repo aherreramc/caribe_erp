@@ -124,3 +124,8 @@ class SaleOrderLineTemplate(models.Model):
             self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
 
             raise except_orm(self.price_unit)
+
+
+    @api.onchange('product_id')
+    def product_id_change(self):
+        raise except_orm("AA")
