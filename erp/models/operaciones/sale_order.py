@@ -128,4 +128,4 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_id')
     def product_id_change(self):
-        raise except_orm("AA")
+        self.price_unit = 4
