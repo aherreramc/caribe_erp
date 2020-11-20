@@ -130,10 +130,12 @@ class SaleOrderLineTemplate(models.Model):
 
 
         for price_list_item in self.order_id.pricelist_id.item_ids:
-            raise except_orm(price_list_item.base)
+
             if price_list_item.base == 'purchase':
+                raise except_orm(str(price_list_item.product_id.id) + "   " + str(self.product_id.id))
                 if price_list_item.product_id.id == self.product_id.id:
                     self.price_unit = 6
+
 
 
         return result
