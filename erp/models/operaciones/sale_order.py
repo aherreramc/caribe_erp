@@ -133,7 +133,8 @@ class SaleOrderLineTemplate(models.Model):
 
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                    self.price_unit = price_list_item.total_margin
+                    # self.price_unit = price_list_item.total_margin
+                    self.price_unit = 7
 
 
 
