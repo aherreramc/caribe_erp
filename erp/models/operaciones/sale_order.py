@@ -130,7 +130,7 @@ class SaleOrderLineTemplate(models.Model):
 
         # title = False
         # message = False
-        # result = {}
+        result = {}
         # warning = {}
         # if product.sale_line_warn != 'no-message':
         #     title = _("Warning for %s") % product.name
@@ -140,11 +140,10 @@ class SaleOrderLineTemplate(models.Model):
         #     result = {'warning': warning}
         #     if product.sale_line_warn == 'block':
         #         self.product_id = False
-        #
-        #
-        # return result
 
-        return True
+
+        return result
+
 
 
 
