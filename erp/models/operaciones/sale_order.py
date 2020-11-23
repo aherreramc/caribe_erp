@@ -16,6 +16,17 @@ class SaleOrderTemplate(models.Model):
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
     # amount_without_discount_total = fields.Monetary(compute='_amount_without_discount_total', store=True)
 
+
+
+    # Presentation letter
+    concepto = fields.Char()
+
+
+    marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")
+    marcas = fields.Many2many('erp.nomencladores.marca', 'erp_operaciones_oferta_marcas', 'oferta_id', 'marca_id', 'Marcas')
+
+
+
     @api.depends('order_line.price_total')
     def _discount_total(self):
 
