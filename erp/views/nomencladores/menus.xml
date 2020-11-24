@@ -21,7 +21,6 @@
         <menuitem name="Administracion" id="erp.nomencladores_categoria_administracion" parent="erp.nomencladores_menu_root"/>
 
 
-
         <!-- actions -->
         <menuitem name="Marca" id="erp.nomencladores_menu_marca" parent="erp.nomencladores_categoria_tipo"
                   action="erp.nomencladores_marca_action"/>
@@ -90,7 +89,7 @@
         <menuitem name="Tipo de oferta" id="erp.nomencladores_menu_tipo_oferta" parent="erp.nomencladores_categoria_administracion"
                   action="erp.nomencladores_tipo_oferta_action"/>
 
-        <menuitem name="Estado de oferta" id="erp.nomencladores_menu_estado_oferta" parent="erp.nomencladores_categoria_administracion"
+        <menuitem name="Estado de oferta " id="erp.nomencladores_menu_estado_oferta" parent="erp.nomencladores_categoria_administracion"
                   action="erp.nomencladores_estado_oferta_action"/>
 
 
