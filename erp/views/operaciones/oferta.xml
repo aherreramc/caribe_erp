@@ -63,19 +63,19 @@
 
                                 </div>
                             </div>
-                            <div class="col-xs-6 despegar">
-                                <group>
-                                    <field name="tipo_oferta" string="Tipo de oferta" options="{'no_create': True}"/>
-                                </group>
-                            </div>
+                            <!--<div class="col-xs-6 despegar">-->
+                                <!--<group>-->
+                                    <!--<field name="tipo_oferta" string="Tipo de oferta" options="{'no_create': True}"/>-->
+                                <!--</group>-->
+                            <!--</div>-->
 
 
                         </div>
 
-                        <group col="4" class="menos_margen_campo_alt1">
-                            <field name="proveedor" string="Proveedor" options="{'no_create': True}"/>
-                            <field name="estado_oferta"/>
-                        </group>
+                        <!--<group col="4" class="menos_margen_campo_alt1">-->
+                            <!--<field name="proveedor" string="Proveedor" options="{'no_create': True}"/>-->
+                            <!--<field name="estado_oferta"/>-->
+                        <!--</group>-->
 
                         <!--<notebook>-->
                             <!--<page string="Carta">-->
