@@ -58,7 +58,7 @@
 
 
         # Operaciones
-        'operaciones/oferta.xml',
+        'views/operaciones/oferta.xml',
 
 
 
