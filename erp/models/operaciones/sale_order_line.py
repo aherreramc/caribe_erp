@@ -14,9 +14,9 @@ class SaleOrderLineTemplate(models.Model):
 
     discount_total = fields.Monetary(string='Discount', readonly=True, store=True)
 
-    # @api.onchange('product_id')
-    # def product_id_change(self):
-    #     result = super(SaleOrderLineTemplate, self).product_id_change()
-    #     self.name = self.product_id.descripcion_cliente
-    #
-    #     return result
+    @api.onchange('product_id')
+    def product_id_change(self):
+        result = super(SaleOrderLineTemplate, self).product_id_change()
+        self.name = self.product_id.descripcion_cliente
+
+        return result
