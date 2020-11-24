@@ -18,4 +18,6 @@ from . import firma
 from . import degradation_type
 from . import account_invoice_line
 from . import purchase_order
+from . import tipo_oferta
+from . import estado_oferta
 

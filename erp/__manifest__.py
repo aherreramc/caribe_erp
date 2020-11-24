@@ -47,6 +47,8 @@
         'views/nomencladores/firma.xml',
         'views/nomencladores/degradation_type.xml',
         'views/nomencladores/product_template_rondover.xml',
+        'views/nomencladores/tipo_oferta.xml',
+        'views/nomencladores/estado_oferta.xml',
 
         # 'views/operaciones/price_list_item.xml',
 

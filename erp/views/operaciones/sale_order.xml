@@ -1,0 +1,18 @@
+<record model="ir.ui.view" id="view_sale_order_extend_form">
+    <field name="name">view.sale.order.extend.form</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+
+        <!-- Add show_name field in Sale order line tree view-->
+        <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="after">
+            <field name="show_name"/>
+        </xpath>
+
+        <!-- Add show_name field in Sale order line form view-->
+        <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
+            <field name="show_name"/>
+        </xpath>
+
+    </field>
+</record>

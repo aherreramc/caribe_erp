@@ -17,6 +17,9 @@
         <!-- menu categories -->
         <menuitem name="Varios" id="erp.nomencladores_categoria_varios" parent="erp.nomencladores_menu_root"/>
 
+        <!-- menu categories -->
+        <menuitem name="Administracion" id="erp.nomencladores_categoria_administracion" parent="erp.nomencladores_menu_root"/>
+
 
 
         <!-- actions -->
@@ -76,6 +79,15 @@
         <!-- actions -->
         <menuitem name="Products Rondover" id="erp.products_rondover_action" parent="erp.nomencladores_categoria_oferta"
                   action="erp.product_template_rondover_action"/>
+
+
+
+        <!-- actions Administracion-->
+        <menuitem name="Materiales" id="erp.nomencladores_menu_tipo_oferta" parent="erp.nomencladores_categoria_administracion"
+                  action="erp.nomencladores_tipo_oferta_action"/>
+
+        <menuitem name="Materiales" id="erp.nomencladores_menu_estado_oferta" parent="erp.nomencladores_categoria_administracion"
+                  action="erp.nomencladores_estado_oferta_action"/>
 
 
     </data>
