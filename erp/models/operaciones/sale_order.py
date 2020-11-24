@@ -98,10 +98,10 @@ class SaleOrderTemplate(models.Model):
 
 
 
-
-class SaleOrderLineTemplate(models.Model):
-    _inherit = 'sale.order.line'
-
+#
+# class SaleOrderLineTemplate(models.Model):
+#     _inherit = 'sale.order.line'
+#
 
     # @api.onchange('product_id')
     # def product_id_change(self):
