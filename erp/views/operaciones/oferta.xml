@@ -1,0 +1,1184 @@
+<openerp>
+    <data>
+
+        <!-- Ajustes -->
+        <record id="erp.oferta_action" model="ir.actions.act_window">
+            <field name="res_model">sale.order</field>
+            <field name="name">Quotations</field>
+        </record>
+
+        <record model="ir.ui.view" id="erp.oferta_lista">
+            <field name="name">Quotations</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Quotations"/>
+                    <field name="concepto" string="Línea"/>
+                    <!--<field name="fecha_valor"/>-->
+                    <!--<field name="estado_oferta"/>-->
+                    <!--<field name="ultima_version" string="Última versión"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="operaciones_oferta_filter" model="ir.ui.view">
+            <field name="name">Filtro oferta</field>
+            <field name="model">sale.order</field>
+
+            <field name="arch" type="xml">
+                <search string="Filtro de las ofertas">
+                    <field name="name" string="Quotations"/>
+                    <field name="concepto" string="Línea"/>
+                    <!--<field name="fecha_valor"/>-->
+                    <!--<field name="estado_oferta"/>-->
+                </search>
+            </field>
+        </record>
+
+        <record id="oferta_form" model="ir.ui.view">
+            <field name="name">Quotationss</field>
+            <field name="priority" eval="0"/>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--<header>-->
+                        <!--<button name="imprimir_cartatipo" string="Imprimir Carta Tipo" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                        <!--<button name="imprimir_oferta" string="Imprimir Quotations" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                        <!--<button name="exportar_productos_a_excel" string="Exportar productos a excel" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                        <!--<button name="exportar_conformacion" string="Exportar conformación" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                        <!--&lt;!&ndash;button name="exportar_conformacion_con_ceros" string="Exportar conformación sin importar cantidades" type="object"/&ndash;&gt;-->
+                        <!--<button name="exportar_orden_de_compra" string="Exportar orden de compra" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                    <!--</header>-->
+                    <sheet>
+                        <h1>
+                            <field name="name" string="Nombre" modifiers="{'required': true}"/>
+                        </h1>
+
+                        <div class="col-xs-12 despegar under_linea_clara">
+                            <div class="col-xs-6 despegar">
+                                <div class="col-mi-11 offset-xs-1">
+                                    <group col="2">
+                                        <field name="concepto" string="Línea"/>
+                                    </group>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-6 despegar">
+                                <group>
+                                    <field name="tipo_oferta" string="Tipo de oferta" options="{'no_create': True}"/>
+                                </group>
+                            </div>
+
+
+                        </div>
+
+                        <group col="4" class="menos_margen_campo_alt1">
+                            <field name="proveedor" string="Proveedor" options="{'no_create': True}"/>
+                            <field name="estado_oferta"/>
+                        </group>
+
+                        <!--<notebook>-->
+                            <!--<page string="Carta">-->
+                                <!--<div class="col-xs-12">-->
+                                    <!--<div class="col-xs-4 offset-xs-8">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="fecha_valor"/>-->
+                                        <!--</group>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-12">-->
+                                    <!--<div class="col-xs-8">-->
+                                        <!--<div class="col-mi-11 offset-xs-1">-->
+                                            <!--<group col="2" class="menos_margen_campo">-->
+                                                <!--<field name="cliente" options="{'no_create': True}"/>-->
+                                            <!--</group>-->
+                                        <!--</div>-->
+
+                                        <!--<div class="col-mi-11 offset-xs-1">-->
+                                            <!--<group col="2" class="menos_margen_campo representante">-->
+                                                <!--<field name="representante" string="A:"/>-->
+                                                <!--<field name="representantes_en_copia" string="Cc:" widget="many2many_tags"/>-->
+                                            <!--</group>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-10 offset-xs-1 despegar">-->
+                                    <!--&lt;!&ndash;p class="negrita">Por este medio, le comunicamos nuestra mejor oferta de productos.</p&ndash;&gt;-->
+                                    <!--<p>-->
+                                        <!--<field name="marcas_encabezado" string="Encabezado marcas:"/>-->
+                                    <!--</p>-->
+                                    <!--<field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-11 offset-xs-1 despegar">-->
+                                    <!--<p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>-->
+                                <!--</div>-->
+                                <!--<div class="col-mi-11 offset-xs-1">-->
+                                    <!--<ul class="col-xs-12 condiciones" style="margin-left: 11px;">-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<div class="col-xs-7"><label for="moneda" string="Moneda: La oferta está expresada en "/></div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: -15px;"><field name="moneda" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<div class="col-xs-5"><label for="incoterm" string="Condición de entrega: "/></div>-->
+                                                <!--<div class="col-xs-7" style="margin-left: -35px;"><field name="incoterm" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12 oe_edit_only">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-4"><label for="embalaje_nomenclador" string="Embalajes por defecto: "/></div>-->
+                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="embalaje_nomenclador" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-3"><label for="embalaje" string="Embalaje: "/></div>-->
+                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="embalaje"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-4"><label string="País y Puerto de Embarque: "/></div>-->
+                                                <!--<div class="col-xs-3" style="margin-left: -95px;">-->
+                                                    <!--<div class="col-mi-3"><label for="pais" string="País: "/></div>-->
+                                                    <!--<div class="col-mi-9"><field name="pais" options="{'no_create': True}"/></div>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: 25px;">-->
+                                                    <!--<div class="col-mi-2"><label for="puerto_de_origen" string="Puerto: "/></div>-->
+                                                    <!--<div class="col-mi-10"><field name="puerto_de_origen" options="{'no_create': True}"/></div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<group col="4">-->
+                                            <!--<field name="pais_puerto_encabezado" string="Encabezado país"/>-->
+                                            <!--<field name="pais_puerto" string="Sustituir país-puerto"/>-->
+                                        <!--</group>-->
+
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-9">-->
+                                                <!--<div class="col-xs-3"><label for="dias_para_entregar" string="Tiempo de entrega: "/></div>-->
+                                                <!--<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_entregar" options="{'no_create': True}"/></div>-->
+                                                <!--<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_entrega" string="dias a partir de: "/></div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_entrega" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--&lt;!&ndash;li class="col-xs-12">-->
+                                            <!--<div class="col-xs-9">-->
+                                                <!--<div class="col-xs-3"><label for="dias_para_entregar_etapa_entrega_a_mostar" string="Tiempo de entrega a mostar:"/></div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: -20px;"><field name="dias_para_entregar_etapa_entrega_a_mostar"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li&ndash;&gt;-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12 oe_edit_only">-->
+                                                <!--<div class="col-xs-4"><label for="pago_nomenclador" string="Pago por defecto: "/></div>-->
+                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="pago_nomenclador" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-3"><label for="pago" string="Pago: "/></div>-->
+                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="pago"/></div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1"><label for="porciento_total_mercancia" string="por el"/></div>-->
+                                                <!--<div class="col-xs-1" style="margin-left: -25px;"><field name="porciento_total_mercancia"/></div>-->
+                                                <!--<div class="col-xs-5"><label string="% del importe total de las mercancias contratadas,"/></div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-9">-->
+                                                <!--<div class="col-xs-3"><label for="dias_para_pagar" string="pagaderas a los"/></div>-->
+                                                <!--<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_pagar" options="{'no_create': True}"/></div>-->
+                                                <!--<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_pago" string="dias a partir de: "/></div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_pago" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<div class="col-xs-4"><label for="interes_anual" string="con interés anual de"/></div>-->
+                                                <!--<div class="col-xs-2"><field name="interes_anual"/></div>-->
+                                                <!--<div class="col-xs-4"><label string="%"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+
+                                        <!--<li class="col-xs-12 oe_edit_only">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-4"><label for="garantia_nomenclador" string="Garantía por defecto: "/></div>-->
+                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="garantia_nomenclador" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-3"><label for="garantia" string="Garantía: "/></div>-->
+                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>-->
+                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="descuento"/></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--descuento-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-2"><label for="validez_oferta_dias" string="Validez de la oferta: "/></div>-->
+                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_dias"/></div>-->
+                                            <!--<div class="col-xs-1"><b>días.</b></div>-->
+                                            <!--<div class="col-xs-2" style="margin-left: -5px;"><label for="validez_oferta_compute" string="Fecha: "/></div>-->
+                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_compute"/></div>-->
+
+                                            <!--<div class="col-xs-2"><label for="validez_oferta_a_mostrar" string="Validez de la oferta a mostrar: "/></div>-->
+                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_a_mostrar"/></div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-2"><label for="partida_arancelaria_oferta" string="Partida Arancelaria: "/></div>-->
+                                            <!--<div class="col-xs-2" style="margin-left: -5px;"><field name="partida_arancelaria_oferta"/></div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="manual_de_usuario_espannol"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="manual_de_usuario_espannol" string="El manual de usuario de cada equipo está en español."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="fichas_tecnicas"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="fichas_tecnicas" string="En adjunto fichas técnicas."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="certificados_inhim"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_inhim" string="Certificados del INHIM."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="certificados_onure"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_onure" string="Certificados de la ONURE."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="vision_explotada"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi11"><p><label class="negrita para_checkbox" for="vision_explotada" string="Visión explotada con listas y partes."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-12">-->
+                                                <!--<div class="col-xs-1">-->
+                                                    <!--<field name="homologados_en_cuba"/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="homologados_en_cuba" string="Todos los modelos ofertados están homologados para su venta en Cuba."/></p></div>-->
+                                            <!--</div>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+
+                                <!--<label for="observaciones">Observaciones</label>-->
+                                <!--<field name="observaciones"/>-->
+
+                                <!--<div class="col-mi-11 offset-xs-1 despegar">-->
+                                    <!--<div class="col-xs-6 offset-xs-6">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="firma" options="{'no_create': True}"/>-->
+                                        <!--</group>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</page>-->
+                            <!--<page string="Productos">-->
+                                <!--<div class="col-xs-12 despegar">-->
+                                    <!--<div class="col-xs-6">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="lista_de_precios" string="Lista de precios" options="{'no_create': True}"/>-->
+                                            <!--<field name="lleno_o_mezclado" widget="radio" string="Contenedor Lleno-Mezclado"/>-->
+                                        <!--</group>-->
+                                    <!--</div>-->
+                                    <!--<button class="btn btn-primary btn-sm" name="traer_repuestos" string="Traer repuestos" type="object"/>-->
+                                    <!--<button class="btn btn-primary btn-sm despegar_boton_hacia_la_derecha" name="actualizar_datos_entregas" string="Actualizar cantidades actuales" type="object"/>-->
+
+                                <!--</div>-->
+
+                                <!--<group col="3">-->
+
+                                    <!--<field name="otra_oferta_traer_productos" string="Otra oferta" options="{'no_create': True}"/>-->
+                                    <!--<button class="btn btn-primary btn-sm" name="otra_oferta_traer_productos_funcion" string="Traer productos de otra oferta" type="object"/>-->
+
+                                <!--</group>-->
+
+                                <!--<div class="col-xs-12 despegar">-->
+                                    <!--<button class="btn btn-primary btn-sm despegar_boton_hacia_la_derecha" name="eliminar_productos_cantidad_producto_actual_cero"-->
+                                            <!--string="Eliminar productos cantidad producto actual cero" type="object" confirm="Esta seguro de que quiere eliminar los productos con cantidad actual igual a cero. Esta acción no es reversible."/>-->
+
+                                    <!--<button class="btn btn-primary btn-sm" name="actualizar_desde_el_nomenclador" string="Actualizar desde el nomenclador" type="object"/>-->
+                                    <!--<button class="btn btn-primary btn-sm" name="poner_cantidades_a_cero" string="Poner cantidades en cero" type="object"/>-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-12 despegar">-->
+                                    <!--<field name="lineas_de_oferta" string="Lineas de oferta">-->
+                                        <!--<tree string="" create="true" editable="bottom">-->
+                                            <!--<field name="sequence"/>-->
+                                            <!--<field name="foto" nolabel="1" widget="image" height="40px" style="width:40px;" string="Imagen" editable="false" readonly="1"/>-->
+                                            <!--<field name="producto" options="{'no_create': True}" required="1"/>-->
+                                            <!--<field name="modelo"/>-->
+                                            <!--<field name="codigo_proveedor"/>-->
+
+                                            <!--<field name="tipo_de_producto" />-->
+                                            <!--<field name="orden_marca" invisible="1"/>-->
+                                            <!--<field name="orden_repuesto" invisible="1"/>-->
+
+
+
+                                            <!--<field name="cantidad_por_caja_master" string="Cantidad x caja master"/>-->
+                                            <!--<field name="volumen_caja_master" readonly="1" invisible="1"/>-->
+                                            <!--<field name="moneda" options="{'no_create': True}" invisible="1"/>-->
+                                            <!--<field name="importe_unitario" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+
+                                            <!--<field name="cantidad_minima_de_orden" invisible="1" string="MOQ"/>-->
+
+                                            <!--<field name="importe_total_de_linea" invisible="1"/>-->
+
+                                            <!--<field name="cantidad_producto_actual_oferta"/>-->
+                                            <!--<field name="cantidad_producto_total_oferta" string="MOQ-Ref"/>-->
+
+                                            <!--<field name="volumen_total_de_linea_producto" sum="Volumen"/>-->
+                                            <!--<field name="importe_total_de_linea_producto" sum="Importe"/>-->
+                                        <!--</tree>-->
+                                    <!--</field>-->
+                                <!--</div>-->
+                                <!--<div class="col-mi-12">-->
+                                    <!--<button class="btn btn-primary btn-sm" style="float:left;" name="actualizar_mercancia" string="Actualizar importes" type="object"/>-->
+
+                                    <!--<div class="col-mi-3" style="margin-left:2em; padding-top:3px;">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="autocalcular"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-4">-->
+                                            <!--<p><label class="negrita para_checkbox" for="autocalcular" string="Autocalcular"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+
+                                    <!--<group col="4" style="margin-top:2em;">-->
+                                        <!--<field name="exw" string="EXW"/>-->
+                                        <!--<field name="seguro"/>-->
+                                        <!--<field name="flete_terrestre" string="Flete terrestre"/>-->
+                                        <!--<field name="inspeccion"/>-->
+                                        <!--<field name="mercancia" string="FOB"/>-->
+                                        <!--<field name="financiamiento_importe"/>-->
+                                        <!--<field name="flete" string="Flete aereo/marítimo"/>-->
+                                        <!--<field name="importe_total"/>-->
+                                    <!--</group>-->
+                                    <!--<group col="2">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="importe_repuestos_sin_descuento"/>-->
+                                        <!--</group>-->
+                                    <!--</group>-->
+                                    <!--<group col="4">-->
+                                        <!--<field name="porciento_repuestos" string="% Repuestos"/>-->
+                                        <!--<field name="importe_descuento" string="Importe descuento"/>-->
+                                    <!--</group>-->
+                                    <!--<group col="4">-->
+                                        <!--<field name="opcional_1" placeholder="Escriba el concepto del importe"/>-->
+                                        <!--<field name="importe_opcional_1"/>-->
+                                        <!--<field name="opcional_2" placeholder="Escriba el concepto del importe"/>-->
+                                        <!--<field name="importe_opcional_2"/>-->
+                                    <!--</group>-->
+                                    <!--<group col="2">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="importe_repuestos_con_descuento"/>-->
+                                        <!--</group>-->
+                                    <!--</group>-->
+                                <!--</div>-->
+                            <!--</page>-->
+
+                            <!--<page string="Entregas">-->
+                                <!--<div class="col-mi-12 despegar">-->
+                                    <!--<div class="col-mi-3" style="padding-top: 8px;">-->
+                                        <!--<div class="col-xs-6" style="padding-left: 10px;">-->
+                                            <!--<button class="btn btn-primary btn-sm" name="crear_entrega" string="Nueva entrega" type="object"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-mi-3" style="padding-top: 8px;">-->
+                                        <!--<div class="col-xs-6" style="padding-left: 10px;">-->
+                                            <!--<field name="numero_entrega_a_duplicar"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-mi-3" style="padding-top: 8px;">-->
+                                        <!--<div class="col-xs-6" style="padding-left: 10px;">-->
+                                            <!--<button class="btn btn-primary btn-sm" name="duplicar_entrega" string="Duplicar entrega" type="object"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="col-mi-3" style="padding-top: 8px;">-->
+                                        <!--<div class="col-xs-6" style="padding-left: 10px;">-->
+                                            <!--<button class="btn btn-primary btn-sm" name="actualizar_datos_entregas" string="Actualizar cantidades actuales" type="object"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<div class="col-xs-3 despegar">-->
+                                    <!--<div class="col-mi-12 despegar">-->
+                                        <!--<label class="negrita" for="entregas" string="Plan de Entregas"/>-->
+                                        <!--<field name="entregas"  options="{'no_create': True}">-->
+                                            <!--<tree string="" create="false" edit="true" delete="true">-->
+                                                <!--<field name="name"/>-->
+                                            <!--</tree>-->
+                                        <!--</field>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</page>-->
+
+                            <!--<page string="Carátula">-->
+                                <!--<div class="col-xs-12 despegar">-->
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="imprimir_caratula"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="imprimir_caratula" string="Imprimir carátula"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<field name="imagen" string="Imágen"  widget="image"/>-->
+                                <!--</div>-->
+
+
+                            <!--</page>-->
+
+                            <!--<page string="Configuración del reporte Imprimir Quotations">-->
+                                <!--<div class="col-mi-12 bordeado depegar_adentro" style="margin-top: 10px;">-->
+                                    <!--<div class="etiqueta"><p><b>Campos de la tabla de productos</b></p></div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="image" string="Imagen"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="image" string="Imagen"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="descripcion_proveedor"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="descripcion_proveedor" string="Descripción-cliente-inglés"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="sintesis"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="sintesis" string="Síntesis"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="codigo_de_barra"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="codigo_de_barra" string="Código de barras"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_minima_de_orden"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_minima_de_orden" string="Cant Minima Orden"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="modelo"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="modelo" string="Modelo"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="codigo_cliente"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="codigo_cliente" string="Código Cliente"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="tipo_de_espiga"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="tipo_de_espiga" string="Tipo de espiga"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_contenedor_20"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_contenedor_20" string="Cant Contenedor 20'"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="marca"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="marca" string="Marca"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="tipo_de_producto"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="tipo_de_producto" string="Línea"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="codigo_proveedor"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="codigo_proveedor" string="Código DL / SAP"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="volumen_caja_master"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="volumen_caja_master" string="Volumen Caja Master"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_contenedor_40"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_contenedor_40" string="Cant Contenedor 40'"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="descripcion_cliente"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="descripcion_cliente" string="Descripcion Cliente"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="partida_arancelaria"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="partida_arancelaria" string="Partida Arancelaria"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_por_caja_master"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_por_caja_master" string="Cant X Caja Master"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_contenedor_40_hc"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_contenedor_40_hc" string="Cant Contenedor 40HC"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="medidas"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="medidas" string="Medida"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+
+
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="cantidad_producto"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="cantidad_producto" string="Cantidad de producto"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="volumen_total_de_linea_producto"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="volumen_total_de_linea_producto" string="Volumen total"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="importe_total_de_linea"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="importe_total_de_linea" string="Importe total"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+
+                                    <!--<p style="margin-left:5px;">Relativos a los adjuntos:</p>-->
+
+
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="explotado"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="explotado" string="Explotado en español"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="explotado_ingles"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="explotado_ingles" string="Explotado en inglés"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="ficha_tecnica"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="ficha_tecnica" string="Ficha técnica en español"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="ficha_tecnica_ingles"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="ficha_tecnica_ingles" string="Ficha técnica en inglés"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="caja"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="caja" string="Caja"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="manual_de_usuario"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="manual_de_usuario" string="Manual de usuario"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="col-mi-3">-->
+                                        <!--<div class="col-xs-1">-->
+                                            <!--<field name="certificado_de_onure"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-mi-11">-->
+                                            <!--<p><label class="negrita para_checkbox" for="certificado_de_onure" string="Certificado de ONURE"/></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+
+                                    <!--<div class="col-xs-12 despegar">-->
+                                        <!--<p style="margin-left:5px;">Otras configuraciones de impresión:</p>-->
+
+
+                                        <!--<div class="col-mi-3">-->
+                                            <!--<div class="col-xs-1">-->
+                                                <!--<field name="imprimir_totales_oferta"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-mi-11">-->
+                                                <!--<p><label class="negrita para_checkbox" for="imprimir_totales_oferta" string="Imprimir totales oferta"/></p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+
+                            <!--</page>-->
+                            <!--<page string="Versiones anteriores">-->
+                                <!--<button name="nueva_version" string="Nueva versión" type="object"/>-->
+
+                                <!--<field name="versiones"  options="{'no_create': True}">-->
+                                    <!--<tree string="" create="false" edit="false" delete="false">-->
+                                        <!--<field name="name"/>-->
+                                        <!--<field name="fecha_valor"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                        <!--</notebook>-->
+                    </sheet>
+                    <style type="text/css">
+
+                        /*agrandar hoja*/
+                        .o_form_view .o_form_sheet_bg .o_form_sheet {
+                        max-width: 1024px; /*originalmente 850px*/
+                        }
+
+
+                        /*Acercar label al checkbox*/
+                        .o_form_view .o_group .o_form_label.para_checkbox, .o_form_view .o_form_label.para_checkbox{
+                        margin-top: 1.5px;
+                        cursor: pointer;
+                        }
+
+                        .o_form_view .o_group.o_inner_group.menos_margen_campo{
+                        margin-left: -20px;
+                        }
+
+                        .o_form_view .o_group.o_inner_group.menos_margen_campo_alt1{
+                        margin-left: -7px;
+                        }
+
+                        ul.condiciones li{
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        }
+
+                        input[type="checkbox"], .lbl_chck{
+                        cursor: pointer;
+                        }
+
+                        .lbl_chck{
+                        margin-top: 1.5px;
+                        margin-left: 3px;
+                        }
+
+                        .o_form_view .o_group.representante > tbody > tr > td.o_td_label {
+                        text-align: right;
+                        padding-right: 45px;
+                        }
+
+                        .ajustar_padding_text_edit{
+                        padding-top: 16px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        }
+
+                        .ajustar_padding_text_show{
+                        padding-top: 9px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        }
+
+                        .ajustar_padding_text_show_data{
+                        padding-top: 13px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        }
+
+                        .under_linea_clara{
+                        border-bottom: 2px solid #cacaca;
+                        }
+
+                        .under_linea{
+                        border-bottom: 2px solid black;
+                        }
+
+                        .top_linea{
+                        border-top: 1px solid black;
+                        }
+
+                        .invisible{
+                        display:none;
+                        }
+
+                        .negrita{
+                        font-weight: bold;
+                        }
+
+                        .despegar{
+                        margin-bottom: 6px;
+                        margin-top: 6px;
+                        }
+
+                        .depegar_adentro{
+                        padding-top: 8px;
+                        }
+
+                        .espacio_grande_left{
+                        padding-left: 80px;
+                        }
+
+                        .bordeado{
+                        border: 1px solid #cacaca;
+                        border-radius: 5px;
+                        }
+
+                        .etiqueta{
+                        position: absolute;
+                        top:-10px;
+                        left: 25px;
+                        background-color: white;
+                        }
+
+                        .row {
+                        margin-left: -15px;
+                        margin-right: -15px;
+                        }
+
+                        .row::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                        }
+
+                        .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+                        position: relative;
+                        min-height: 1px;
+                        padding-right: 5px;
+                        padding-left: 5px;
+                        }
+
+                        .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+                        position: relative;
+                        min-height: 1px;
+                        }
+
+                        .col-xs-1 {
+                        float: left;
+                        width: 8.333333%;
+                        }
+
+                        .col-mi-1 {
+                        float: left;
+                        width: 8.333333%;
+                        }
+
+                        .col-xs-2 {
+                        float: left;
+                        width: 16.666667%;
+                        }
+
+                        .col-mi-2 {
+                        float: left;
+                        width: 16.666667%;
+                        }
+
+                        .col-xs-3 {
+                        float: left;
+                        width: 25%;
+                        }
+
+                        .col-mi-3 {
+                        float: left;
+                        width: 25%;
+                        }
+
+                        .col-xs-4 {
+                        float: left;
+                        width: 33.333333%;
+                        }
+
+                        .col-mi-4 {
+                        float: left;
+                        width: 33.333333%;
+                        }
+
+                        .col-xs-5 {
+                        float: left;
+                        width: 41.666667%;
+                        }
+
+                        .col-mi-5 {
+                        float: left;
+                        width: 41.666667%;
+                        }
+
+                        .col-xs-6 {
+                        float: left;
+                        width: 50%;
+                        }
+
+                        .col-mi-6 {
+                        float: left;
+                        width: 50%;
+                        }
+
+                        .col-xs-7 {
+                        float: left;
+                        width: 58.333333%;
+                        }
+
+                        .col-mi-7 {
+                        float: left;
+                        width: 58.333333%;
+                        }
+
+                        .col-xs-8 {
+                        float: left;
+                        width: 66.666667%;
+                        }
+
+                        .col-mi-8 {
+                        float: left;
+                        width: 66.666667%;
+                        }
+
+                        .col-xs-9 {
+                        float: left;
+                        width: 75%;
+                        }
+
+                        .col-mi-9 {
+                        float: left;
+                        width: 75%;
+                        }
+
+                        .col-xs-10 {
+                        float: left;
+                        width: 83.333333%;
+                        }
+
+                        .col-mi-10 {
+                        float: left;
+                        width: 83.333333%;
+                        }
+
+                        .col-xs-11 {
+                        float: left;
+                        width: 91.666667%;
+                        }
+
+                        .col-mi-11 {
+                        float: left;
+                        width: 91.666667%;
+                        }
+
+                        .col-xs-12 {
+                        float: left;
+                        width: 100%;
+                        }
+
+                        .col-mi-12 {
+                        float: left;
+                        width: 100%;
+                        }
+
+                        .offset-xs-1 {
+                        margin-left: 8.333333%;
+                        }
+
+                        .offset-xs-2 {
+                        margin-left: 16.666667%;
+                        }
+
+                        .offset-xs-3 {
+                        margin-left: 25%;
+                        }
+
+                        .offset-xs-4 {
+                        margin-left: 33.333333%;
+                        }
+
+                        .offset-xs-5 {
+                        margin-left: 41.666667%;
+                        }
+
+                        .offset-xs-6 {
+                        margin-left: 50%;
+                        }
+
+                        .offset-xs-7 {
+                        margin-left: 58.333333%;
+                        }
+
+                        .offset-xs-8 {
+                        margin-left: 66.666667%;
+                        }
+
+                        .offset-xs-9 {
+                        margin-left: 75%;
+                        }
+
+                        .offset-xs-10 {
+                        margin-left: 83.333333%;
+                        }
+
+                        .offset-xs-11 {
+                        margin-left: 91.666667%;
+                        }
+
+                        .despegar_boton_hacia_la_derecha {
+                        margin-left: 20px;
+                        }
+
+                        .o_form_view .o_group.o_inner_group.check_cuentas > tbody > tr > td.o_td_label {
+                        width: 88%;
+                        padding: 0 0 0 0;
+                        min-width: 100px;
+                        }
+                    </style>
+                    <!--script type="text/javascript">
+
+                        function cambiarShowEdit(soloVer){
+
+                        /*var texto_rep = $('.representante').last().val();
+                        alert(texto_rep);*/
+                        if(soloVer){
+                        $("#cbox20").prop('checked', true);
+                        $("#div_cont_20").removeClass('invisible');
+                        $("#cbox40").prop('checked', true);
+                        $("#div_cont_40").removeClass('invisible');
+                        $("#cbox40hq").prop('checked', true);
+                        $("#div_cont_40hq").removeClass('invisible');
+                        /*$(".parrafo_A").removeClass('ajustar_padding_text_edit');
+                        if(texto_rep != null){
+                        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+                        }else{
+                        $(".parrafo_A").addClass('ajustar_padding_text_show');
+                        }
+                        if(texto_rep != ''){
+                        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+                        }else{
+                        $(".parrafo_A").addClass('ajustar_padding_text_show');
+                        }
+                        if(texto_rep != ' '){
+                        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+                        }else{
+                        $(".parrafo_A").addClass('ajustar_padding_text_show');
+                        }*/
+
+                        }else{
+                        $("#cbox20").prop('checked', true);
+                        $("#div_cont_20").removeClass('invisible');
+                        $("#cbox40").prop('checked', false);
+                        $("#div_cont_40").addClass('invisible');
+                        $("#cbox40hq").prop('checked', false);
+                        $("#div_cont_40hq").addClass('invisible');
+                        /*$(".parrafo_A").removeClass('ajustar_padding_text_show_data');
+                        $(".parrafo_A").removeClass('ajustar_padding_text_show');
+                        $(".parrafo_A").addClass('ajustar_padding_text_edit');*/
+                        }
+
+                        }
+
+                        function initClases(){
+                        var show_mode = $(".o_form_button_edit").css('display');
+                        if(show_mode=='block'){
+                        cambiarShowEdit(true);
+                        }else{
+                        cambiarShowEdit(false);
+                        }
+                        }
+
+                        $(document).ready(function () {
+
+                        initClases();
+
+                        $(".o_form_button_edit").on('click', function(){
+                        cambiarShowEdit(false);
+                        });
+
+                        $(".o_form_button_create").on('click', function(){
+                        cambiarShowEdit(false);
+                        });
+
+                        $(".o_form_button_save").on('click', function(){
+                        cambiarShowEdit(true);
+                        });
+
+                        $(".o_form_button_cancel").on('click', function(){
+                        cambiarShowEdit(true);
+                        });
+
+                        $("#cbox20").on( 'change', function() {
+                        if( $(this).is(':checked') ) {
+                        $("#div_cont_20").removeClass('invisible');
+                        } else {
+                        $("#div_cont_20").addClass('invisible');
+                        }
+                        });
+
+                        $("#cbox40").on( 'change', function() {
+                        if( $(this).is(':checked') ) {
+                        $("#div_cont_40").removeClass('invisible');
+                        } else {
+                        $("#div_cont_40").addClass('invisible');
+                        }
+                        });
+
+                        $("#cbox40hq").on( 'change', function() {
+                        if( $(this).is(':checked') ) {
+                        $("#div_cont_40hq").removeClass('invisible');
+                        } else {
+                        $("#div_cont_40hq").addClass('invisible');
+                        }
+                        });
+
+                        $("#lbl_cbox20").on( 'click', function() {
+                        if( $("#cbox20").is(':checked') ) {
+                        $("#cbox20").prop('checked', false);
+                        $("#div_cont_20").addClass('invisible');
+                        } else {
+                        $("#cbox20").prop('checked', true);
+                        $("#div_cont_20").removeClass('invisible');
+                        }
+                        });
+
+                        $("#lbl_cbox40").on( 'click', function() {
+                        if( $("#cbox40").is(':checked') ) {
+                        $("#cbox40").prop('checked', false);
+                        $("#div_cont_40").addClass('invisible');
+                        } else {
+                        $("#cbox40").prop('checked', true);
+                        $("#div_cont_40").removeClass('invisible');
+                        }
+                        });
+
+                        $("#lbl_cbox40hq").on( 'click', function() {
+                        if( $("#cbox40hq").is(':checked') ) {
+                        $("#cbox40hq").prop('checked', false);
+                        $("#div_cont_40hq").addClass('invisible');
+                        } else {
+                        $("#cbox40hq").prop('checked', true);
+                        $("#div_cont_40hq").removeClass('invisible');
+                        }
+                        });
+                        });
+
+                    </script-->
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
