@@ -20,4 +20,6 @@ from . import account_invoice_line
 from . import purchase_order
 from . import tipo_oferta
 from . import estado_oferta
+from . import representante_cliente
+
 

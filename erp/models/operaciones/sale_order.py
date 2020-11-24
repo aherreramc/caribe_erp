@@ -11,6 +11,27 @@ from odoo.tools.misc import formatLang, get_lang
 class SaleOrderTemplate(models.Model):
     _inherit = 'sale.order'
 
+    def _tipo_oferta_defult(self):
+        tipo_oferta_defult = False
+
+        encontrado = self.env['erp.nomencladores.tipo_oferta'].search([('id', '=', 1)])
+
+        if encontrado is not False and len(encontrado) > 0:
+            tipo_oferta_defult = 1
+
+        return tipo_oferta_defult
+
+    def _estado_de_oferta_defult(self):
+        estado_de_oferta_defult = False
+
+        encontrado = self.env['erp.nomencladores.estado_oferta'].search([('id', '=', 4)])
+
+        if encontrado is not False and len(encontrado) > 0:
+            estado_de_oferta_defult = 4
+
+        return estado_de_oferta_defult
+
+
     condiciones = fields.Html('Condiciones')
 
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
@@ -22,6 +43,10 @@ class SaleOrderTemplate(models.Model):
     concepto = fields.Char()
     tipo_oferta = fields.Many2one('erp.nomencladores.tipo_oferta', default=_tipo_oferta_defult)
     estado_oferta = fields.Many2one('erp.nomencladores.estado_oferta', string ="Estado de oferta", default=_estado_de_oferta_defult)
+
+
+    representante = fields.Many2one('erp.nomencladores.representante_cliente')
+    representantes_en_copia = fields.Many2many('erp.nomencladores.representante_cliente', 'erp_operaciones_oferta_representantes_cc', 'oferta_id', 'representante_id', 'Cc:')
 
 
     marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")

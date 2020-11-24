@@ -80,13 +80,17 @@
         <menuitem name="Products Rondover" id="erp.products_rondover_action" parent="erp.nomencladores_categoria_oferta"
                   action="erp.product_template_rondover_action"/>
 
+        <!-- actions -->
+        <menuitem name="Representante cliente" id="erp.nomencladores_representante_cliente" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_representante_cliente_action"/>
+
 
 
         <!-- actions Administracion-->
-        <menuitem name="Materiales" id="erp.nomencladores_menu_tipo_oferta" parent="erp.nomencladores_categoria_administracion"
+        <menuitem name="Tipo de oferta" id="erp.nomencladores_menu_tipo_oferta" parent="erp.nomencladores_categoria_administracion"
                   action="erp.nomencladores_tipo_oferta_action"/>
 
-        <menuitem name="Materiales" id="erp.nomencladores_menu_estado_oferta" parent="erp.nomencladores_categoria_administracion"
+        <menuitem name="Estado de oferta" id="erp.nomencladores_menu_estado_oferta" parent="erp.nomencladores_categoria_administracion"
                   action="erp.nomencladores_estado_oferta_action"/>
 
 

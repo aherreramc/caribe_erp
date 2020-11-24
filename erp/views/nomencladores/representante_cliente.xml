@@ -27,7 +27,6 @@
                             <field name="name" string="Representante"/>
                             <field name="empresa" string="Empresa"/>
                             <field name="cargo" string="Cargo"/>
-                            <field name="compannia" string="Compañía"/>
                         </group>
                     </sheet>
                 </form>
