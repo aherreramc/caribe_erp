@@ -44,9 +44,12 @@ class SaleOrderTemplate(models.Model):
     tipo_oferta = fields.Many2one('erp.nomencladores.tipo_oferta', default=_tipo_oferta_defult)
     estado_oferta = fields.Many2one('erp.nomencladores.estado_oferta', string ="Estado de oferta", default=_estado_de_oferta_defult)
 
+    proveedor = fields.Many2one('res.partner',domain="[('supplier', '=', True)]")
 
     representante = fields.Many2one('erp.nomencladores.representante_cliente')
     representantes_en_copia = fields.Many2many('erp.nomencladores.representante_cliente', 'erp_operaciones_oferta_representantes_cc', 'oferta_id', 'representante_id', 'Cc:')
+
+
 
 
     marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")
