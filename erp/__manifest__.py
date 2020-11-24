@@ -56,6 +56,12 @@
 
         'views/nomencladores/menus.xml',
 
+
+        # Operaciones
+        'operaciones/oferta.xml',
+
+
+
         # Reportes
         'report/nomencladores/product_label_report.xml',
         'report/operaciones/header_quotation.xml',
