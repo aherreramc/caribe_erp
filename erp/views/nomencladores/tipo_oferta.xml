@@ -24,7 +24,6 @@
                     <sheet>
                         <group col="2">
                             <field name="name" string="Tipo de oferta"/>
-                            <field name="name_english"/>
                         </group>
                     </sheet>
                 </form>
