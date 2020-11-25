@@ -20,7 +20,7 @@ class SaleOrderLineTemplate(models.Model):
     # sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), compute='_compute_sale_comision')
     # sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', compute='_compute_sale_comision', store=True)
 
-        sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), store=True)
+    sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), store=True)
     sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', store=True)
 
     @api.onchange('product_id')
@@ -35,4 +35,4 @@ class SaleOrderLineTemplate(models.Model):
     def _compute_sale_comision_on_change(self):
         for order_line in self:
             order_line.sale_percent += 1
-            order_line.sale_percent += 1
+            order_line.sale += 1
