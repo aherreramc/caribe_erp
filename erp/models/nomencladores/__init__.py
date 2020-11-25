@@ -21,5 +21,7 @@ from . import purchase_order
 from . import tipo_oferta
 from . import estado_oferta
 from . import representante_cliente
+from . import marca
+from . import incoterm
 
 
