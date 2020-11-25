@@ -50,16 +50,11 @@ class SaleOrderTemplate(models.Model):
     representantes_en_copia = fields.Many2many('erp.nomencladores.representante_cliente', 'erp_operaciones_oferta_representantes_cc', 'oferta_id', 'representante_id', 'Cc:')
 
     marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")
-
     marcas = fields.Many2many('erp.nomencladores.marca', 'erp_operaciones_oferta_marcas', 'oferta_id', 'marca_id', 'Marcas')
 
     incoterm = fields.Many2one('erp.nomencladores.incoterm')
 
-    
 
-
-    marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")
-    marcas = fields.Many2many('erp.nomencladores.marca', 'erp_operaciones_oferta_marcas', 'oferta_id', 'marca_id', 'Marcas')
 
 
 
