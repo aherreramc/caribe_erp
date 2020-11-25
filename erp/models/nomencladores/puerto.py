@@ -13,3 +13,6 @@ class Puerto(models.Model):
 
     tipo = fields.Selection([ ('puerto', 'Puerto'),('aereopuerto', 'Aereopuerto'), ('almacen', 'Almacén')
                                 , ('bodega', 'Bodega')], string='Tipo', default='puerto')
+
+    compannia = fields.Many2one('res.company', string='Compañía', required=True,
+                            default=lambda self: self.env['res.company']._company_default_get())
