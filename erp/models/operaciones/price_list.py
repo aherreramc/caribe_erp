@@ -250,6 +250,8 @@ class PriceListItemTemplate(models.Model):
                 sale_total = zeus_margin_total / (1 - price_item.sale_percent / 100)
                 price_item.sale = sale_total - zeus_margin_total
 
+            raise except_orm(price_item.sale)
+
 
             price_item.total_margin = price_item.price_purchase + price_item.spare_parts + price_item.transit \
                       + price_item.fob + price_item.inspection \
