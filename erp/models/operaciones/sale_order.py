@@ -54,6 +54,9 @@ class SaleOrderTemplate(models.Model):
 
     incoterm = fields.Many2one('erp.nomencladores.incoterm')
 
+    embalaje_nomenclador = fields.Many2one('erp.nomencladores.embalaje')
+    embalaje = fields.Text('Embalaje')
+
 
 
 
