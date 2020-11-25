@@ -24,6 +24,7 @@ from . import representante_cliente
 from . import marca
 from . import incoterm
 from . import embalaje
+from . import puerto
 
 
 

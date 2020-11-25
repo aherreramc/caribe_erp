@@ -57,6 +57,11 @@ class SaleOrderTemplate(models.Model):
     embalaje_nomenclador = fields.Many2one('erp.nomencladores.embalaje')
     embalaje = fields.Text('Embalaje')
 
+    pais = fields.Many2one('res.country', string='País')
+    puerto_de_origen = fields.Many2one('erp.nomencladores.puerto', domain="[('pais', '=', pais)]")
+    pais_puerto_encabezado = fields.Char()
+    pais_puerto = fields.Char()
+
 
 
 
