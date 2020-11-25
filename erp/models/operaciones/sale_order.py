@@ -171,7 +171,6 @@ class SaleOrderLineTemplate(models.Model):
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
                     vals['price_unit'] = price_list_item.total_margin
 
-        raise except_orm("A")
 
         self.update(vals)
 
