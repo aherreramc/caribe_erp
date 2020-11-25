@@ -254,7 +254,7 @@ class PriceListItemTemplate(models.Model):
                       + price_item.fob + price_item.inspection \
                       + price_item.freight + price_item.insurance \
                       + price_item.issuing + price_item.zeus_margin \
-                      + price_item.marketing + price_item.sale_total
+                      + price_item.marketing + price_item.sale
 
 
             price_item.total_percent = 0.00
