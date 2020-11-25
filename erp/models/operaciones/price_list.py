@@ -64,6 +64,9 @@ class PriceListItemTemplate(models.Model):
     marketing_percent = fields.Float('Marketing %', default=0, digits=(16, 2))
     marketing = fields.Monetary(string='Marketing', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
+    sale_percent = fields.Float('Sale %', default=0, digits=(16, 2))
+    sale = fields.Monetary(string='Sale', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
+
     total_percent = fields.Float('Total %', default=0, digits=(16, 2), compute='_compute_part_prices', store=True)
     total_margin = fields.Monetary(string='Total margin', currency_field='item_currency_id', compute='_compute_part_prices', store=True)
 
@@ -239,17 +242,19 @@ class PriceListItemTemplate(models.Model):
                 price_item.marketing = marketing_total - zeus_margin_total
 
 
-            # price_item.total_percent = price_item.spare_parts_percent + price_item.transit_percent \
-            #                       + price_item.fob_percent + price_item.inspection_percent \
-            #                       + price_item.freight_percent + price_item.insurance_percent \
-            #                       + price_item.issuing_percent + price_item.zeus_margin_percent \
-            #                       + price_item.marketing_percent
+            price_item.sale = 0.0
+            sale_total = 0.0
+
+            if price_item.sale_percent is not False and price_item.sale_percent != 100:
+                sale_total = zeus_margin_total / (1 - price_item.sale_percent / 100)
+                price_item.sale = sale_total - zeus_margin_total
+
 
             price_item.total_margin = price_item.price_purchase + price_item.spare_parts + price_item.transit \
                       + price_item.fob + price_item.inspection \
                       + price_item.freight + price_item.insurance \
                       + price_item.issuing + price_item.zeus_margin \
-                      + price_item.marketing
+                      + price_item.marketing + price_item.sale_total
 
 
             price_item.total_percent = 0.00
