@@ -9,6 +9,6 @@ class Marca(models.Model):
     _name = "erp.nomencladores.marca"
 
     name = fields.Char(required=True, string="Marca:")
-    productos = fields.One2many('erp.product.product', 'marca')
+    productos = fields.One2many('product.product', 'marca')
 
     orden = fields.Integer(string='Orden')
