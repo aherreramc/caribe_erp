@@ -163,7 +163,7 @@ class SaleOrderLineTemplate(models.Model):
             #         # self.update({'price_unit': price_list_item.total_margin})
             #         self.price_unit = price_list_item.total_margin
             #         # vals['price_unit'] = price_list_item.total_margin
-
+        vals['price_unit'] = 4
         vals.update(name=self.get_sale_order_line_multiline_description_sale(product))
 
         self._compute_tax_id()
