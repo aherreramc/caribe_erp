@@ -5,8 +5,8 @@ from odoo import api, fields, models, SUPERUSER_ID, tools, _
 
 import odoo.addons.decimal_precision as dp
 from openerp.exceptions import except_orm, Warning, RedirectWarning
+from odoo.tools.misc import formatLang, get_lang
 
-from openerp.exceptions import except_orm, Warning, RedirectWarning
 
 
 class SaleOrderLineTemplate(models.Model):
