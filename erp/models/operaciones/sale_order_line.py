@@ -103,6 +103,7 @@ class SaleOrderLineTemplate(models.Model):
     @api.depends('price_unit', 'discount')
     def _get_price_reduce(self):
         for line in self:
+            raise except_orm(line.price_list_item.id)
             if line.price_list_item.id is not False:
                 raise except_orm(line.price_list_item.sale_percent - line.discount)
                 line.sale_percent = line.price_list_item.sale_percent - line.discount
