@@ -103,11 +103,12 @@ class SaleOrderLineTemplate(models.Model):
     @api.depends('price_unit', 'discount')
     def _get_price_reduce(self):
         for line in self:
-            if line.price_list_item.id is not False:
-                line.sale_percent = line.price_list_item.sale_percent - line.discount
-
-
             line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
+
+            if line.price_list_item.id is not False:
+                if line.sale_percent != 100:
+                    line.sale_percent = line.price_list_item.sale_percent - line.discount
+                    line.sale = price / (1 - line.sale_percent / 100)
 
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
@@ -116,8 +117,7 @@ class SaleOrderLineTemplate(models.Model):
         Compute the amounts of the SO line.
         """
         for line in self:
-            if line.price_list_item.id is not False:
-                line.sale_percent = line.price_list_item.sale_percent - line.discount
+
 
             price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
             taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)
@@ -128,3 +128,10 @@ class SaleOrderLineTemplate(models.Model):
             })
             if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
                 line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
+
+            if line.price_list_item.id is not False:
+                if line.sale_percent != 100:
+                    line.sale_percent = line.price_list_item.sale_percent - line.discount
+                    line.sale = price / (1 - line.sale_percent / 100)
+
+
