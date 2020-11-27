@@ -131,10 +131,6 @@ class SaleOrderLineTemplate(models.Model):
                 line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
 
 
-
-
-
-
             if line.price_list_item.id is not False:
                 if price_list_item.base == 'purchase':
 
@@ -144,5 +140,4 @@ class SaleOrderLineTemplate(models.Model):
                         line.sale_percent = line.price_list_item.sale_percent - line.discount
                         price_before_sale_comision = line.price_list_item.price_before_sale_comision()
                         line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
-
 
