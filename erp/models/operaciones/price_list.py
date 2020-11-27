@@ -162,80 +162,80 @@ class PriceListItemTemplate(models.Model):
 
     @api.onchange('purchase_order')
     def _compute_price_purchase_on_change(self):
-        for price_item in self:
-            price_item._compute_price_purchase()
+        for self in self:
+            self._compute_price_purchase()
 
     def price_before_sale_comision(self):
-        price_item.spare_parts = 0.0
+        spare_parts = 0.0
         spare_parts_total = 0.0
 
-        if price_item.spare_parts_percent is not False and price_item.spare_parts_percent != 100:
-            spare_parts_total = price_item.price_purchase / (1 - price_item.spare_parts_percent / 100)
-            price_item.spare_parts = spare_parts_total - price_item.price_purchase
+        if self.spare_parts_percent is not False and self.spare_parts_percent != 100:
+            spare_parts_total = self.price_purchase / (1 - self.spare_parts_percent / 100)
+            spare_parts = spare_parts_total - self.price_purchase
 
 
-        price_item.transit = 0.0
+        transit = 0.0
         transit_total = 0.0
 
-        if price_item.transit_percent is not False and price_item.transit_percent != 100:
-            transit_total = spare_parts_total / (1 - price_item.transit_percent / 100)
-            price_item.transit = transit_total - spare_parts_total
+        if self.transit_percent is not False and self.transit_percent != 100:
+            transit_total = spare_parts_total / (1 - self.transit_percent / 100)
+            transit = transit_total - spare_parts_total
 
 
-        price_item.fob = 0.0
+        fob = 0.0
         fob_total = 0.0
 
-        if price_item.fob_percent is not False and price_item.fob_percent != 100:
-            fob_total = transit_total / (1 - price_item.fob_percent / 100)
-            price_item.fob = fob_total - transit_total
+        if self.fob_percent is not False and self.fob_percent != 100:
+            fob_total = transit_total / (1 - self.fob_percent / 100)
+            fob = fob_total - transit_total
 
 
-        price_item.inspection = 0.0
+        inspection = 0.0
         inspection_total = 0.0
 
-        if price_item.inspection_percent is not False and price_item.inspection_percent != 100:
-            inspection_total = fob_total / (1 - price_item.inspection_percent / 100)
-            price_item.inspection = inspection_total - fob_total
+        if self.inspection_percent is not False and self.inspection_percent != 100:
+            inspection_total = fob_total / (1 - self.inspection_percent / 100)
+            inspection = inspection_total - fob_total
 
 
-        price_item.freight = 0.0
+        freight = 0.0
         freight_total = 0.0
 
-        if price_item.freight_percent is not False and price_item.freight_percent != 100:
-            freight_total = inspection_total / (1 - price_item.freight_percent / 100)
-            price_item.freight = freight_total - inspection_total
+        if self.freight_percent is not False and self.freight_percent != 100:
+            freight_total = inspection_total / (1 - self.freight_percent / 100)
+            freight = freight_total - inspection_total
 
 
-        price_item.insurance = 0.0
+        insurance = 0.0
         insurance_total = 0.0
 
-        if price_item.insurance_percent is not False and price_item.insurance_percent != 100:
-            insurance_total = freight_total / (1 - price_item.insurance_percent / 100)
-            price_item.insurance = insurance_total - freight_total
+        if self.insurance_percent is not False and self.insurance_percent != 100:
+            insurance_total = freight_total / (1 - self.insurance_percent / 100)
+            insurance = insurance_total - freight_total
 
 
-        price_item.issuing = 0.0
+        issuing = 0.0
         issuing_total = 0.0
 
-        if price_item.issuing_percent is not False and price_item.issuing_percent != 100:
-            issuing_total = insurance_total / (1 - price_item.issuing_percent / 100)
-            price_item.issuing = issuing_total - insurance_total
+        if self.issuing_percent is not False and self.issuing_percent != 100:
+            issuing_total = insurance_total / (1 - self.issuing_percent / 100)
+            issuing = issuing_total - insurance_total
 
 
-        price_item.zeus_margin = 0.0
+        zeus_margin = 0.0
         zeus_margin_total = 0.0
 
-        if  price_item.zeus_margin_percent is not False and price_item.zeus_margin_percent != 100:
-            zeus_margin_total = issuing_total / (1 - price_item.zeus_margin_percent / 100)
-            price_item.zeus_margin = zeus_margin_total - issuing_total
+        if  self.zeus_margin_percent is not False and self.zeus_margin_percent != 100:
+            zeus_margin_total = issuing_total / (1 - self.zeus_margin_percent / 100)
+            zeus_margin = zeus_margin_total - issuing_total
 
 
-        price_item.marketing = 0.0
+        marketing = 0.0
         marketing_total = 0.0
 
-        if price_item.marketing_percent is not False and price_item.marketing_percent != 100:
-            marketing_total = zeus_margin_total / (1 - price_item.marketing_percent / 100)
-            price_item.marketing = marketing_total - zeus_margin_total
+        if self.marketing_percent is not False and self.marketing_percent != 100:
+            marketing_total = zeus_margin_total / (1 - self.marketing_percent / 100)
+            marketing = marketing_total - zeus_margin_total
 
         return marketing_total
 
