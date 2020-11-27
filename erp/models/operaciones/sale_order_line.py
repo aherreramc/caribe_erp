@@ -130,10 +130,19 @@ class SaleOrderLineTemplate(models.Model):
             if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
                 line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
 
+
+
+
+
+
             if line.price_list_item.id is not False:
-                if line.sale_percent != 100:
-                    line.sale_percent = line.price_list_item.sale_percent - line.discount
-                    price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-                    line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
+                if price_list_item.base == 'purchase':
+
+                    line.price_unit = line.price_list_item.total_margin
+
+                    if line.sale_percent != 100:
+                        line.sale_percent = line.price_list_item.sale_percent - line.discount
+                        price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+                        line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
 
 
