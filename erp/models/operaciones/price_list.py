@@ -165,7 +165,7 @@ class PriceListItemTemplate(models.Model):
         for price_item in self:
             price_item._compute_price_purchase()
 
-    def price_before_sale_comision(price_item):
+    def price_before_sale_comision(self):
         price_item.spare_parts = 0.0
         spare_parts_total = 0.0
 
