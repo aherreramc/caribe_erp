@@ -22,3 +22,4 @@ class AccountMoveLineTemplate(models.Model):
 
 
     sale_order_line = fields.Many2one('sale.order.line', string ="Price list item")
+
