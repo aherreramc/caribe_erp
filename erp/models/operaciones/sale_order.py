@@ -6,6 +6,7 @@ import odoo.addons.decimal_precision as dp
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 from odoo.tools.misc import formatLang, get_lang
+from odoo.tools import float_is_zero, float_compare
 
 
 class SaleOrderTemplate(models.Model):
