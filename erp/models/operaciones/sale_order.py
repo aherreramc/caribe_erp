@@ -115,9 +115,6 @@ class SaleOrderTemplate(models.Model):
         :param final: if True, refunds will be generated if necessary
         :returns: list of created invoices
         """
-
-        raise except_orm("Hola")
-
         if not self.env['account.move'].check_access_rights('create', False):
             try:
                 self.check_access_rights('write')
@@ -147,6 +144,12 @@ class SaleOrderTemplate(models.Model):
                         invoice_vals['invoice_line_ids'].append((0, 0, pending_section._prepare_invoice_line()))
                         pending_section = None
                     invoice_vals['invoice_line_ids'].append((0, 0, line._prepare_invoice_line()))
+
+                invoice_vals['sale_order_line'].append((0, 0, line.id))
+                invoice_vals['sale_percent'].append((0, 0, line.sale_percent))
+                invoice_vals['sale'].append((0, 0, line.sale))
+
+                raise except_orm(invoice_vals['sale'])
 
             if not invoice_vals['invoice_line_ids']:
                 raise UserError(_('There is no invoiceable line. If a product has a Delivered quantities invoicing policy, please make sure that a quantity has been delivered.'))
