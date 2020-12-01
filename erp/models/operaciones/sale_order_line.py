@@ -163,7 +163,7 @@ class SaleOrderLineTemplate(models.Model):
             'analytic_account_id': self.order_id.analytic_account_id.id,
             'analytic_tag_ids': [(6, 0, self.analytic_tag_ids.ids)],
             'sale_line_ids': [(4, self.id)],
-            'sale_order_line': self.sale_order_line,
+            'sale_order_line': self.id,
             'sale_percent': self.sale_percent,
             'sale': self.sale,
         }
