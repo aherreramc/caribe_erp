@@ -19,3 +19,6 @@ class AccountMoveLineTemplate(models.Model):
 
     sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), store=True)
     sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', store=True)
+
+
+    sale_order_line = fields.Many2one('sale.order.line', string ="Price list item")
