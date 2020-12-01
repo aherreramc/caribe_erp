@@ -107,7 +107,6 @@ class SaleOrderTemplate(models.Model):
                 })
 
 
-
     def _create_invoices(self, grouped=False, final=False):
         """
         Create the invoice associated to the SO.
@@ -146,11 +145,6 @@ class SaleOrderTemplate(models.Model):
                         pending_section = None
                     invoice_vals['invoice_line_ids'].append((0, 0, line._prepare_invoice_line()))
 
-                invoice_vals['sale_order_line'].append((0, 0, line.id))
-                invoice_vals['sale_percent'].append((0, 0, line.sale_percent))
-                invoice_vals['sale'].append((0, 0, line.sale))
-
-                raise except_orm(invoice_vals['sale'])
 
             if not invoice_vals['invoice_line_ids']:
                 raise UserError(_('There is no invoiceable line. If a product has a Delivered quantities invoicing policy, please make sure that a quantity has been delivered.'))
