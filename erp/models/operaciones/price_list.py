@@ -156,9 +156,10 @@ class PriceListItemTemplate(models.Model):
                 if price_item.applied_on == '1_product'  \
                     and order_line.product_id.product_tmpl_id.id == price_item.product_tmpl_id.id:
 
-                    sum += order_line.price_subtotal
+                    # sum += order_line.price_subtotal
+                    price_item.price_purchase = order_line.unit_price
 
-            price_item.price_purchase = sum
+            # price_item.price_purchase = sum
 
     @api.onchange('purchase_order')
     def _compute_price_purchase_on_change(self):
