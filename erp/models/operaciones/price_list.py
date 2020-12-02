@@ -157,7 +157,7 @@ class PriceListItemTemplate(models.Model):
                     and order_line.product_id.product_tmpl_id.id == price_item.product_tmpl_id.id:
 
                     # sum += order_line.price_subtotal
-                    price_item.price_purchase = order_line.unit_price
+                    price_item.price_purchase = order_line.price_unit
 
             # price_item.price_purchase = sum
 
