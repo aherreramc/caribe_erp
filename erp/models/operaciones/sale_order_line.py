@@ -58,7 +58,7 @@ class SaleOrderLineTemplate(models.Model):
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
                     vals['price_list_item'] = price_list_item.id
-                    vals['price_unit'] = price_list_item.total_margin
+                    # vals['price_unit'] = price_list_item.total_margin
 
         if not self.product_uom or (self.product_id.uom_id.id != self.product_uom.id):
             vals['product_uom'] = self.product_id.uom_id
@@ -80,14 +80,14 @@ class SaleOrderLineTemplate(models.Model):
 
         self._compute_tax_id()
 
-        if self.order_id.pricelist_id and self.order_id.partner_id:
-            vals['price_unit'] = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
+        # if self.order_id.pricelist_id and self.order_id.partner_id:
+        #     vals['price_unit'] = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
 
         for price_list_item in self.order_id.pricelist_id.item_ids:
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
                     vals['price_list_item'] = price_list_item.id
-                    vals['price_unit'] = price_list_item.total_margin
+                    # vals['price_unit'] = price_list_item.total_margin
 
 
 
