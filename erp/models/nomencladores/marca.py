@@ -11,4 +11,4 @@ class Marca(models.Model):
     name = fields.Char(required=True, string="Marca:")
     productos = fields.One2many('product.product', 'marca')
 
-    orden = fields.Integer(strcompanniaing='Orden')
+    orden = fields.Integer(string='Orden')
