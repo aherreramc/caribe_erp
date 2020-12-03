@@ -24,7 +24,7 @@
                     <sheet>
                         <group col="2">
                             <field name="name" string="Material"/>
-                            <field name="compannia" string="Degradation Type" invisible="1"/>
+                            <field name="compannia" string="Compañia" invisible="1"/>
                         </group>
                     </sheet>
                 </form>

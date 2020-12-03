@@ -79,13 +79,13 @@
 
                         <notebook>
                             <page string="Carta">
-                                <div class="col-xs-12">
-                                    <div class="col-xs-4 offset-xs-8">
-                                        <group col="2">
-                                            <field name="date_order"/>
-                                        </group>
-                                    </div>
-                                </div>
+                                <!--<div class="col-xs-12">-->
+                                    <!--<div class="col-xs-4 offset-xs-8">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="date_order"/>-->
+                                        <!--</group>-->
+                                    <!--</div>-->
+                                <!--</div>-->
                                 <!--<div class="col-xs-12">-->
                                     <!--<div class="col-xs-8">-->
                                         <!--<div class="col-mi-11 offset-xs-1">-->
@@ -114,173 +114,173 @@
                                     <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>
                                 </div>
                                 <!--<div class="col-mi-11 offset-xs-1">-->
-                                    <ul class="col-xs-12 condiciones" style="margin-left: 11px;">
-                                        <li class="col-xs-12">
-                                            <div class="col-xs-6">
-                                                <div class="col-xs-7"><label for="currency_id" string="Moneda: La oferta está expresada en "/></div>
-                                                <div class="col-xs-5" style="margin-left: -15px;"><field name="currency_id" options="{'no_create': True}"/></div>
-                                            </div>
-
-                                        </li>
-                                        <li class="col-xs-12">
-                                            <div class="col-xs-6">
-                                                <div class="col-xs-5"><label for="incoterm" string="Condición de entrega: "/></div>
-                                                <div class="col-xs-7" style="margin-left: -35px;"><field name="incoterm" options="{'no_create': True}"/></div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xs-12 oe_edit_only">
-                                            <div class="col-xs-12">
-                                                <div class="col-xs-4"><label for="embalaje_nomenclador" string="Embalajes por defecto: "/></div>
-                                                <div class="col-xs-8" style="margin-left: -150px;"><field name="embalaje_nomenclador" options="{'no_create': True}"/></div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xs-12">
-                                            <div class="col-xs-12">
-                                                <div class="col-xs-3"><label for="embalaje" string="Embalaje: "/></div>
-                                                <div class="col-xs-9" style="margin-left: -150px;"><field name="embalaje"/></div>
-                                            </div>
-                                        </li>
+                                    <!--<ul class="col-xs-12 condiciones" style="margin-left: 11px;">-->
                                         <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-4"><span string="País y Puerto de Embarque: "/></div>-->
-                                                <!--<div class="col-xs-3" style="margin-left: -95px;">-->
-                                                    <!--<div class="col-mi-3"><label for="pais" string="País: "/></div>-->
-                                                    <!--<div class="col-mi-9"><field name="pais" options="{'no_create': True}"/></div>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: 25px;">-->
-                                                    <!--<div class="col-mi-2"><label for="puerto_de_origen" string="Puerto: "/></div>-->
-                                                    <!--<div class="col-mi-10"><field name="puerto_de_origen" options="{'no_create': True}"/></div>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<group col="4">-->
-                                            <!--<field name="pais_puerto_encabezado" string="Encabezado país"/>-->
-                                            <!--<field name="pais_puerto" string="Sustituir país-puerto"/>-->
-                                        <!--</group>-->
-
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-9">-->
-                                                <!--<div class="col-xs-3"><label for="dias_para_entregar" string="Tiempo de entrega: "/></div>-->
-                                                <!--<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_entregar" options="{'no_create': True}"/></div>-->
-                                                <!--<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_entrega" string="dias a partir de: "/></div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_entrega" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--&lt;!&ndash;li class="col-xs-12">-->
-                                            <!--<div class="col-xs-9">-->
-                                                <!--<div class="col-xs-3"><label for="dias_para_entregar_etapa_entrega_a_mostar" string="Tiempo de entrega a mostar:"/></div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: -20px;"><field name="dias_para_entregar_etapa_entrega_a_mostar"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li&ndash;&gt;-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12 oe_edit_only">-->
-                                                <!--<div class="col-xs-4"><label for="pago_nomenclador" string="Pago por defecto: "/></div>-->
-                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="pago_nomenclador" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="pago" string="Pago: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="pago"/></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1"><label for="porciento_total_mercancia" string="por el"/></div>-->
-                                                <!--<div class="col-xs-1" style="margin-left: -25px;"><field name="porciento_total_mercancia"/></div>-->
-                                                <!--<div class="col-xs-5"><label string="% del importe total de las mercancias contratadas,"/></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-xs-9">-->
-                                                <!--<div class="col-xs-3"><label for="dias_para_pagar" string="pagaderas a los"/></div>-->
-                                                <!--<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_pagar" options="{'no_create': True}"/></div>-->
-                                                <!--<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_pago" string="dias a partir de: "/></div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_pago" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
                                             <!--<div class="col-xs-6">-->
-                                                <!--<div class="col-xs-4"><label for="interes_anual" string="con interés anual de"/></div>-->
-                                                <!--<div class="col-xs-2"><field name="interes_anual"/></div>-->
-                                                <!--<div class="col-xs-4"><label string="%"/></div>-->
+                                                <!--<div class="col-xs-7"><label for="currency_id" string="Moneda: La oferta está expresada en "/></div>-->
+                                                <!--<div class="col-xs-5" style="margin-left: -15px;"><field name="currency_id" options="{'no_create': True}"/></div>-->
+                                            <!--</div>-->
+
+                                        <!--</li>-->
+                                        <!--<li class="col-xs-12">-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<div class="col-xs-5"><label for="incoterm" string="Condición de entrega: "/></div>-->
+                                                <!--<div class="col-xs-7" style="margin-left: -35px;"><field name="incoterm" options="{'no_create': True}"/></div>-->
                                             <!--</div>-->
                                         <!--</li>-->
-
                                         <!--<li class="col-xs-12 oe_edit_only">-->
                                             <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-4"><label for="garantia_nomenclador" string="Garantía por defecto: "/></div>-->
-                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="garantia_nomenclador" options="{'no_create': True}"/></div>-->
+                                                <!--<div class="col-xs-4"><label for="embalaje_nomenclador" string="Embalajes por defecto: "/></div>-->
+                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="embalaje_nomenclador" options="{'no_create': True}"/></div>-->
                                             <!--</div>-->
                                         <!--</li>-->
                                         <!--<li class="col-xs-12">-->
                                             <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="garantia" string="Garantía: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>-->
+                                                <!--<div class="col-xs-3"><label for="embalaje" string="Embalaje: "/></div>-->
+                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="embalaje"/></div>-->
                                             <!--</div>-->
                                         <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="descuento"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--descuento-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-2"><label for="validez_oferta_dias" string="Validez de la oferta: "/></div>-->
-                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_dias"/></div>-->
-                                            <!--<div class="col-xs-1"><b>días.</b></div>-->
-                                            <!--<div class="col-xs-2" style="margin-left: -5px;"><label for="validez_oferta_compute" string="Fecha: "/></div>-->
-                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_compute"/></div>-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-4"><span string="País y Puerto de Embarque: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3" style="margin-left: -95px;">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col-mi-3"><label for="pais" string="País: "/></div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col-mi-9"><field name="pais" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-5" style="margin-left: 25px;">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col-mi-2"><label for="puerto_de_origen" string="Puerto: "/></div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col-mi-10"><field name="puerto_de_origen" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<group col="4">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<field name="pais_puerto_encabezado" string="Encabezado país"/>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<field name="pais_puerto" string="Sustituir país-puerto"/>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</group>&ndash;&gt;-->
 
-                                            <!--<div class="col-xs-2"><label for="validez_oferta_a_mostrar" string="Validez de la oferta a mostrar: "/></div>-->
-                                            <!--<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_a_mostrar"/></div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-2"><label for="partida_arancelaria_oferta" string="Partida Arancelaria: "/></div>-->
-                                            <!--<div class="col-xs-2" style="margin-left: -5px;"><field name="partida_arancelaria_oferta"/></div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="manual_de_usuario_espannol"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="manual_de_usuario_espannol" string="El manual de usuario de cada equipo está en español."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="fichas_tecnicas"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="fichas_tecnicas" string="En adjunto fichas técnicas."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="certificados_inhim"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_inhim" string="Certificados del INHIM."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="certificados_onure"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_onure" string="Certificados de la ONURE."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="vision_explotada"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi11"><p><label class="negrita para_checkbox" for="vision_explotada" string="Visión explotada con listas y partes."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="homologados_en_cuba"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="homologados_en_cuba" string="Todos los modelos ofertados están homologados para su venta en Cuba."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                    </ul>
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-9">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="dias_para_entregar" string="Tiempo de entrega: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_entregar" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_entrega" string="dias a partir de: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_entrega" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;&lt;!&ndash;li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-9">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="dias_para_entregar_etapa_entrega_a_mostar" string="Tiempo de entrega a mostar:"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-5" style="margin-left: -20px;"><field name="dias_para_entregar_etapa_entrega_a_mostar"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li&ndash;&gt;&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12 oe_edit_only">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-4"><label for="pago_nomenclador" string="Pago por defecto: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-8" style="margin-left: -150px;"><field name="pago_nomenclador" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="pago" string="Pago: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-9" style="margin-left: -150px;"><field name="pago"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1"><label for="porciento_total_mercancia" string="por el"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -25px;"><field name="porciento_total_mercancia"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-5"><label string="% del importe total de las mercancias contratadas,"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-9">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="dias_para_pagar" string="pagaderas a los"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_pagar" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_pago" string="dias a partir de: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_pago" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-6">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-4"><label for="interes_anual" string="con interés anual de"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-2"><field name="interes_anual"/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-4"><label string="%"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                                        <!--&lt;!&ndash;<li class="col-xs-12 oe_edit_only">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-4"><label for="garantia_nomenclador" string="Garantía por defecto: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-8" style="margin-left: -150px;"><field name="garantia_nomenclador" options="{'no_create': True}"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="garantia" string="Garantía: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-9" style="margin-left: -150px;"><field name="descuento"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;descuento&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-2"><label for="validez_oferta_dias" string="Validez de la oferta: "/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_dias"/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-1"><b>días.</b></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-2" style="margin-left: -5px;"><label for="validez_oferta_compute" string="Fecha: "/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_compute"/></div>&ndash;&gt;-->
+
+                                            <!--&lt;!&ndash;<div class="col-xs-2"><label for="validez_oferta_a_mostrar" string="Validez de la oferta a mostrar: "/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-1" style="margin-left: -5px;"><field name="validez_oferta_a_mostrar"/></div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-2"><label for="partida_arancelaria_oferta" string="Partida Arancelaria: "/></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-2" style="margin-left: -5px;"><field name="partida_arancelaria_oferta"/></div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="manual_de_usuario_espannol"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi-11"><p><label class="negrita para_checkbox" for="manual_de_usuario_espannol" string="El manual de usuario de cada equipo está en español."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="fichas_tecnicas"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi-11"><p><label class="negrita para_checkbox" for="fichas_tecnicas" string="En adjunto fichas técnicas."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="certificados_inhim"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_inhim" string="Certificados del INHIM."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="certificados_onure"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_onure" string="Certificados de la ONURE."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="vision_explotada"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi11"><p><label class="negrita para_checkbox" for="vision_explotada" string="Visión explotada con listas y partes."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="col-xs-12">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-xs-1">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<field name="homologados_en_cuba"/>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="col-mi-11"><p><label class="negrita para_checkbox" for="homologados_en_cuba" string="Todos los modelos ofertados están homologados para su venta en Cuba."/></p></div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--</ul>-->
                                 <!--</div>-->
 
                                 <!--<label for="observaciones">Observaciones</label>-->
