@@ -23,16 +23,18 @@ class SaleOrderLineTemplate(models.Model):
     sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), store=True)
     sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', store=True)
 
+    price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
+
     # @api.onchange('product_id')
     # def product_id_change(self):
     #     result = super(SaleOrderLineTemplate, self).product_id_change()
     #     self.name = self.product_id.descripcion_cliente
     #
     #     return result
-    #
-    #
-    #
-    # price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
+
+
+
+
 
 
     @api.onchange('product_id')
