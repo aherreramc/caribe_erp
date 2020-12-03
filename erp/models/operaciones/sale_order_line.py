@@ -83,10 +83,10 @@ class SaleOrderLineTemplate(models.Model):
         # if self.order_id.pricelist_id and self.order_id.partner_id:
         #     vals['price_unit'] = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
 
-        for price_list_item in self.order_id.pricelist_id.item_ids:
-            if price_list_item.base == 'purchase':
-                if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                    vals['price_list_item'] = price_list_item.id
+        # for price_list_item in self.order_id.pricelist_id.item_ids:
+        #     if price_list_item.base == 'purchase':
+        #         if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+        #             vals['price_list_item'] = price_list_item.id
                     # vals['price_unit'] = price_list_item.total_margin
 
 
@@ -115,7 +115,6 @@ class SaleOrderLineTemplate(models.Model):
             line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
 
             if line.price_list_item.id is not False:
-                line.sale = line.price_list_item.total_margin
 
                 if line.sale_percent != 100:
                     line.sale_percent = line.price_list_item.sale_percent - line.discount
