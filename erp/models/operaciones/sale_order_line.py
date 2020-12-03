@@ -167,7 +167,9 @@ class SaleOrderLineTemplate(models.Model):
             + "self.tax_id" + str(self.tax_id) \
             + "self.company_id" + str(self.company_id))
 
-            self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
+            if self.price_list_item.id is not False:
+                self.price_unit = self.price_list_item.total_margin
+            # self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
 
             raise except_orm(self.price_unit)
 
