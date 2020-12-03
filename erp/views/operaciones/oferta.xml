@@ -97,7 +97,7 @@
                                         <div class="col-mi-11 offset-xs-1">
                                             <group col="2" class="menos_margen_campo representante">
                                                 <field name="representante" string="A:"/>
-                                                <field name="representantes_en_copia" string="Cc:" widget="many2many_tags"/>
+                                                <!--<field name="representantes_en_copia" string="Cc:" widget="many2many_tags"/>-->
                                             </group>
                                         </div>
 
