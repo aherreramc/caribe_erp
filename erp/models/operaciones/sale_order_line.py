@@ -28,17 +28,19 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_id')
     def product_id_change(self):
-        # if self.order_id.id is not False:
-        #     for price_list_item in self.order_id.pricelist_id.item_ids:
-        #         if price_list_item.base == 'purchase':
-        #             if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-        #                 # vals['price_list_item'] = price_list_item.id
-        #                 # vals['price_unit'] = price_list_item.total_margin
-        #
-        #                 self.price_list_item = price_list_item.id
-        #                 self.price_unit = price_list_item.total_margin
+        if not self.product_id:
+            return
+        if self.order_id.id is not False:
+            for price_list_item in self.order_id.pricelist_id.item_ids:
+                if price_list_item.base == 'purchase':
+                    if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+                        # vals['price_list_item'] = price_list_item.id
+                        # vals['price_unit'] = price_list_item.total_margin
 
-        return
+                        self.price_list_item = price_list_item.id
+                        self.price_unit = price_list_item.total_margin
+
+        return True
 
 
 
