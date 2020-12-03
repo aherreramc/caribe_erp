@@ -79,7 +79,6 @@ class SaleOrderLineTemplate(models.Model):
         for price_list_item in self.order_id.pricelist_id.item_ids:
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                    # self.price_unit = price_list_item.total_margin
                     vals['price_unit'] = price_list_item.total_margin
                     vals['price_list_item'] = price_list_item.id
 
@@ -103,21 +102,21 @@ class SaleOrderLineTemplate(models.Model):
         return result
 
 
-    # @api.depends('price_unit', 'discount')
-    # def _get_price_reduce(self):
-    #     for line in self:
-    #         line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
-    #
-    #         if line.price_list_item.id is not False:
-    #             line.sale = line.price_list_item.total_margin
-    #             line.price_unit = line.price_list_item.total_margin
-    #
-    #             if line.sale_percent != 100:
-    #                 line.sale_percent = line.price_list_item.sale_percent - line.discount
-    #                 price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-    #                 line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
-    #
-    #
+    @api.depends('price_unit', 'discount')
+    def _get_price_reduce(self):
+        for line in self:
+            line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
+
+            if line.price_list_item.id is not False:
+                line.sale = line.price_list_item.total_margin
+                line.price_unit = line.price_list_item.total_margin
+
+                if line.sale_percent != 100:
+                    line.sale_percent = line.price_list_item.sale_percent - line.discount
+                    price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+                    line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
+
+
     # @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
     # def _compute_amount(self):
     #     """
