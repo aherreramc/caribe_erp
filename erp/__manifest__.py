@@ -49,7 +49,6 @@
         'views/nomencladores/product_template_rondover.xml',
         'views/nomencladores/tipo_oferta.xml',
         'views/nomencladores/estado_oferta.xml',
-        'views/nomencladores/representante_cliente.xml',
 
 
         # 'views/operaciones/price_list_item.xml',
