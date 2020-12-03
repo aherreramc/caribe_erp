@@ -24,7 +24,7 @@ class SaleOrderLineTemplate(models.Model):
     sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', store=True)
 
     price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
-    price_unit = fields.Float('Unit Price', required=True, digits='Product Price', default=2.0)
+    price_unit = fields.Float('Unit Price', required=True, digits='Product Price', default=0.0)
 
     # @api.onchange('product_id')
     # def product_id_change(self):
@@ -148,6 +148,7 @@ class SaleOrderLineTemplate(models.Model):
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
         if not self.product_uom or not self.product_id:
+            raise except_orm(self.price_list_item.id)
             if self.price_list_item.id is not False:
                 self.price_unit = self.price_list_item.total_margin
             return
