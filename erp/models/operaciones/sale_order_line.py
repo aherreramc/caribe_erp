@@ -106,6 +106,7 @@ class SaleOrderLineTemplate(models.Model):
             line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
 
             if line.price_list_item.id is not False:
+                line.sale = line.price_list_item.total_margin
                 if line.sale_percent != 100:
                     line.sale_percent = line.price_list_item.sale_percent - line.discount
                     price_before_sale_comision = line.price_list_item.price_before_sale_comision()
