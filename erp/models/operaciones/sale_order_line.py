@@ -23,16 +23,16 @@ class SaleOrderLineTemplate(models.Model):
     sale_percent = fields.Float('Sale comision%', default=0, digits=(16, 2), store=True)
     sale = fields.Monetary(string='Sale Comision', currency_field='item_currency_id', store=True)
 
-    @api.onchange('product_id')
-    def product_id_change(self):
-        result = super(SaleOrderLineTemplate, self).product_id_change()
-        self.name = self.product_id.descripcion_cliente
-
-        return result
-
-
-
-    price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
+    # @api.onchange('product_id')
+    # def product_id_change(self):
+    #     result = super(SaleOrderLineTemplate, self).product_id_change()
+    #     self.name = self.product_id.descripcion_cliente
+    #
+    #     return result
+    #
+    #
+    #
+    # price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
 
 
     @api.onchange('product_id')
@@ -77,7 +77,7 @@ class SaleOrderLineTemplate(models.Model):
         for price_list_item in self.order_id.pricelist_id.item_ids:
             if price_list_item.base == 'purchase':
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                    self.price_unit = price_list_item.total_margin
+                    # self.price_unit = price_list_item.total_margin
                     vals['price_unit'] = price_list_item.total_margin
                     vals['price_list_item'] = price_list_item.id
 
