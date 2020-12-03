@@ -38,7 +38,7 @@ class SaleOrderLineTemplate(models.Model):
         #                 self.price_list_item = price_list_item.id
         #                 self.price_unit = price_list_item.total_margin
 
-        return True
+        return
 
 
 
