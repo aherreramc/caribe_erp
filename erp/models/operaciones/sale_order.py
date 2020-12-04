@@ -34,6 +34,9 @@ class SaleOrderTemplate(models.Model):
         return estado_de_oferta_defult
 
 
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+
+
     condiciones = fields.Html('Condiciones')
 
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
