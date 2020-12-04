@@ -45,11 +45,11 @@ class SaleOrderLineTemplate(models.Model):
                 self.product_no_variant_attribute_value_ids -= ptav
 
         vals = {}
-        # for price_list_item in self.order_id.pricelist_id.item_ids:
-        #     if price_list_item.base == 'purchase':
-        #         if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-        #             vals['price_list_item'] = price_list_item.id
-        #             vals['price_unit'] = price_list_item.total_margin
+        for price_list_item in self.order_id.pricelist_id.item_ids:
+            if price_list_item.base == 'purchase':
+                if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+                    vals['price_list_item'] = price_list_item.id
+                    vals['price_unit'] = price_list_item.total_margin
 
         if not self.product_uom or (self.product_id.uom_id.id != self.product_uom.id):
             vals['product_uom'] = self.product_id.uom_id
