@@ -112,9 +112,10 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('sale_percent')
     def change_sale(self):
-        price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-        line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
-                         * line.product_uom_qty
+        for line in self:
+            price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+            line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
+                             * line.product_uom_qty
 
 
 
