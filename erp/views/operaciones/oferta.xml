@@ -96,20 +96,20 @@
 
                                         <div class="col-mi-11 offset-xs-1">
                                             <group col="2" class="menos_margen_campo representante">
-                                                <field name="representante" string="A:"/>
+                                                <!--<field name="representante" string="A:"/>-->
                                                 <!--<field name="representantes_en_copia" string="Cc:" widget="many2many_tags"/>-->
                                             </group>
                                         </div>
 
                                     </div>
                                 </div>
-                                <!--<div class="col-xs-10 offset-xs-1 despegar">-->
+                                <div class="col-xs-10 offset-xs-1 despegar">
                                     <!--&lt;!&ndash;p class="negrita">Por este medio, le comunicamos nuestra mejor oferta de productos.</p&ndash;&gt;-->
                                     <!--<p>-->
                                         <!--<field name="marcas_encabezado" string="Encabezado marcas:"/>-->
                                     <!--</p>-->
-                                    <!--<field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>-->
-                                <!--</div>-->
+                                    <field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>
+                                </div>
                                 <div class="col-xs-11 offset-xs-1 despegar">
                                     <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>
                                 </div>
