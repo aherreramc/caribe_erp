@@ -100,35 +100,45 @@ class SaleOrderLineTemplate(models.Model):
 
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
-        if not self.product_uom or not self.product_id:
-            # self.price_unit = 4
+        super(SaleOrderLineTemplate, self).product_uom_change()
 
-            for price_list_item in self.order_id.pricelist_id.item_ids:
-                if price_list_item.base == 'purchase':
-                    if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                        self.price_list_item = price_list_item.id
-                        self.price_unit = price_list_item.total_margin
+        for price_list_item in self.order_id.pricelist_id.item_ids:
+            if price_list_item.base == 'purchase':
+                if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+                    self.price_list_item = price_list_item.id
+                    self.price_unit = price_list_item.total_margin
 
-            return
-        if self.order_id.pricelist_id and self.order_id.partner_id:
-            product = self.product_id.with_context(
-                lang=self.order_id.partner_id.lang,
-                partner=self.order_id.partner_id,
-                quantity=self.product_uom_qty,
-                date=self.order_id.date_order,
-                pricelist=self.order_id.pricelist_id.id,
-                uom=self.product_uom.id,
-                fiscal_position=self.env.context.get('fiscal_position')
-            )
+        return
 
-            raise except_orm("self._get_display_price(product)" + str(self._get_display_price(product)) \
-                             + "product.taxes_id" + str(product.taxes_id) \
-            + "self.tax_id" + str(self.tax_id) \
-            + "self.company_id" + str(self.company_id))
-
-            self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
-
-            raise except_orm(self.price_unit)
+        # if not self.product_uom or not self.product_id:
+        #     # self.price_unit = 4
+        #
+        #     for price_list_item in self.order_id.pricelist_id.item_ids:
+        #         if price_list_item.base == 'purchase':
+        #             if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+        #                 self.price_list_item = price_list_item.id
+        #                 self.price_unit = price_list_item.total_margin
+        #
+        #     return
+        # if self.order_id.pricelist_id and self.order_id.partner_id:
+        #     product = self.product_id.with_context(
+        #         lang=self.order_id.partner_id.lang,
+        #         partner=self.order_id.partner_id,
+        #         quantity=self.product_uom_qty,
+        #         date=self.order_id.date_order,
+        #         pricelist=self.order_id.pricelist_id.id,
+        #         uom=self.product_uom.id,
+        #         fiscal_position=self.env.context.get('fiscal_position')
+        #     )
+        #
+        #     raise except_orm("self._get_display_price(product)" + str(self._get_display_price(product)) \
+        #                      + "product.taxes_id" + str(product.taxes_id) \
+        #     + "self.tax_id" + str(self.tax_id) \
+        #     + "self.company_id" + str(self.company_id))
+        #
+        #     self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
+        #
+        #     raise except_orm(self.price_unit)
 
 
 
