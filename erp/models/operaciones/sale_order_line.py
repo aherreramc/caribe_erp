@@ -122,7 +122,7 @@ class SaleOrderLineTemplate(models.Model):
                     line.sale_percent = line.price_list_item.sale_percent - line.discount
                     price_before_sale_comision = line.price_list_item.price_before_sale_comision()
                     line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
-                                     * line.quantity
+                                     * line.product_uom_qty
 
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
@@ -151,7 +151,7 @@ class SaleOrderLineTemplate(models.Model):
                         line.sale_percent = line.price_list_item.sale_percent - line.discount
                         price_before_sale_comision = line.price_list_item.price_before_sale_comision()
                         line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision \
-                                        * line.quantity
+                                        * line.product_uom_qty
 
 
 
