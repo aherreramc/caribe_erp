@@ -80,10 +80,6 @@ class SaleOrderLineTemplate(models.Model):
                     vals['price_list_item'] = price_list_item.id
                     vals['price_unit'] = price_list_item.total_margin
 
-                    if price_list_item.sale_percent != 100:
-                        price_list_item.sale_percent = price_list_item.sale_percent - self.discount
-                        price_before_sale_comision = price_list_item.price_before_sale_comision()
-                        price_list_item.sale = (price_before_sale_comision / (1 - price_list_item.sale_percent / 100)) - price_before_sale_comision
 
 
 
