@@ -108,7 +108,7 @@
                                     <!--<p>-->
                                         <!--<field name="marcas_encabezado" string="Encabezado marcas:"/>-->
                                     <!--</p>-->
-                                    <field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <!--<field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>-->
                                 </div>
                                 <div class="col-xs-11 offset-xs-1 despegar">
                                     <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>
