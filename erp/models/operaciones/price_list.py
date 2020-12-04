@@ -322,7 +322,7 @@ class PriceListItemTemplate(models.Model):
 
             if price_item.sale_percent is not False and price_item.sale_percent != 100:
                 sale_total = marketing_total / (1 - price_item.sale_percent / 100)
-                price_item.sale = sale_total - zeus_margin_total
+                price_item.sale = sale_total - marketing_total
 
 
             price_item.total_margin = price_item.price_purchase + price_item.spare_parts + price_item.transit \
