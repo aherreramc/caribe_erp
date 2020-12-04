@@ -79,7 +79,6 @@ class SaleOrderLineTemplate(models.Model):
                 if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
                     vals['price_list_item'] = price_list_item.id
                     vals['price_unit'] = price_list_item.total_margin
-                    vals['price_unit'] = 7
 
 
 
@@ -102,72 +101,99 @@ class SaleOrderLineTemplate(models.Model):
         return result
 
 
-    # @api.depends('price_unit', 'discount')
-    # def _get_price_reduce(self):
-    #     for line in self:
-    #         line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
-    #
-    #         if line.price_list_item.id is not False:
-    #
-    #             if line.sale_percent != 100:
-    #                 line.sale_percent = line.price_list_item.sale_percent - line.discount
-    #                 price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-    #                 line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
-    #
-    #
-    # @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
-    # def _compute_amount(self):
-    #     """
-    #     Compute the amounts of the SO line.
-    #     """
-    #     for line in self:
-    #
-    #
-    #         price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
-    #         taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)
-    #         line.update({
-    #             'price_tax': sum(t.get('amount', 0.0) for t in taxes.get('taxes', [])),
-    #             'price_total': taxes['total_included'],
-    #             'price_subtotal': taxes['total_excluded'],
-    #         })
-    #         if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
-    #             line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
-    #
-    #
-    #         if line.price_list_item.id is not False:
-    #             if line.price_list_item.base == 'purchase':
-    #
-    #                 if line.sale_percent != 100:
-    #                     line.sale_percent = line.price_list_item.sale_percent - line.discount
-    #                     price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-    #                     line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
-    #
+    @api.onchange('product_uom', 'product_uom_qty')
+    def product_uom_change(self):
+        if not self.product_uom or not self.product_id:
+            self.price_unit = 4
+            return
+        if self.order_id.pricelist_id and self.order_id.partner_id:
+            product = self.product_id.with_context(
+                lang=self.order_id.partner_id.lang,
+                partner=self.order_id.partner_id,
+                quantity=self.product_uom_qty,
+                date=self.order_id.date_order,
+                pricelist=self.order_id.pricelist_id.id,
+                uom=self.product_uom.id,
+                fiscal_position=self.env.context.get('fiscal_position')
+            )
+
+            raise except_orm("self._get_display_price(product)" + str(self._get_display_price(product)) \
+                             + "product.taxes_id" + str(product.taxes_id) \
+            + "self.tax_id" + str(self.tax_id) \
+            + "self.company_id" + str(self.company_id))
+
+            self.price_unit = self.env['account.tax']._fix_tax_included_price_company(self._get_display_price(product), product.taxes_id, self.tax_id, self.company_id)
+
+            raise except_orm(self.price_unit)
 
 
-    # def _prepare_invoice_line(self):
-    #     """
-    #     Prepare the dict of values to create the new invoice line for a sales order line.
-    #
-    #     :param qty: float quantity to invoice
-    #     """
-    #     self.ensure_one()
-    #     res = {
-    #         'display_type': self.display_type,
-    #         'sequence': self.sequence,
-    #         'name': self.name,
-    #         'product_id': self.product_id.id,
-    #         'product_uom_id': self.product_uom.id,
-    #         'quantity': self.qty_to_invoice,
-    #         'discount': self.discount,
-    #         'price_unit': self.price_unit,
-    #         'tax_ids': [(6, 0, self.tax_id.ids)],
-    #         'analytic_account_id': self.order_id.analytic_account_id.id,
-    #         'analytic_tag_ids': [(6, 0, self.analytic_tag_ids.ids)],
-    #         'sale_line_ids': [(4, self.id)],
-    #         'sale_order_line': self.id,
-    #         'sale_percent': self.sale_percent,
-    #         'sale': self.sale,
-    #     }
-    #     if self.display_type:
-    #         res['account_id'] = False
-    #     return res
+
+    @api.depends('price_unit', 'discount')
+    def _get_price_reduce(self):
+        for line in self:
+            line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
+
+            if line.price_list_item.id is not False:
+
+                if line.sale_percent != 100:
+                    line.sale_percent = line.price_list_item.sale_percent - line.discount
+                    price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+                    line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
+
+
+    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
+    def _compute_amount(self):
+        """
+        Compute the amounts of the SO line.
+        """
+        for line in self:
+
+
+            price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
+            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)
+            line.update({
+                'price_tax': sum(t.get('amount', 0.0) for t in taxes.get('taxes', [])),
+                'price_total': taxes['total_included'],
+                'price_subtotal': taxes['total_excluded'],
+            })
+            if self.env.context.get('import_file', False) and not self.env.user.user_has_groups('account.group_account_manager'):
+                line.tax_id.invalidate_cache(['invoice_repartition_line_ids'], [line.tax_id.id])
+
+
+            if line.price_list_item.id is not False:
+                if line.price_list_item.base == 'purchase':
+
+                    if line.sale_percent != 100:
+                        line.sale_percent = line.price_list_item.sale_percent - line.discount
+                        price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+                        line.sale = (price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision
+
+
+
+    def _prepare_invoice_line(self):
+        """
+        Prepare the dict of values to create the new invoice line for a sales order line.
+
+        :param qty: float quantity to invoice
+        """
+        self.ensure_one()
+        res = {
+            'display_type': self.display_type,
+            'sequence': self.sequence,
+            'name': self.name,
+            'product_id': self.product_id.id,
+            'product_uom_id': self.product_uom.id,
+            'quantity': self.qty_to_invoice,
+            'discount': self.discount,
+            'price_unit': self.price_unit,
+            'tax_ids': [(6, 0, self.tax_id.ids)],
+            'analytic_account_id': self.order_id.analytic_account_id.id,
+            'analytic_tag_ids': [(6, 0, self.analytic_tag_ids.ids)],
+            'sale_line_ids': [(4, self.id)],
+            'sale_order_line': self.id,
+            'sale_percent': self.sale_percent,
+            'sale': self.sale,
+        }
+        if self.display_type:
+            res['account_id'] = False
+        return res
