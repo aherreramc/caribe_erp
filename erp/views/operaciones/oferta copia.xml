@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+<form>
+    <sheet>
+        <!--<h1>-->
+        <!--<field name="name" string="Nombre" modifiers="{'required': true}"/>-->
+        <!--</h1>-->
+
+        <div class="col-xs-12 despegar under_linea_clara">
+            <div class="col-xs-6 despegar">
+                <div class="col-mi-11 offset-xs-1">
+                    <group col="2">
+                        <field name="concepto" string="Línea"/>
+                    </group>
+
+                </div>
+            </div>
+            <div class="col-xs-6 despegar">
+                <group>
+                    <field name="tipo_oferta" string="Tipo de oferta" options="{'no_create': True}"/>
+                </group>
+            </div>
+
+
+        </div>
+
+        <group col="4" class="menos_margen_campo_alt1">
+            <field name="proveedor" string="Proveedor" options="{'no_create': True}"/>
+            <field name="estado_oferta"/>
+        </group>
+
+        <notebook>
+            <page string="Carta">
+                <!--<div class="col-xs-12">-->
+                <!--<div class="col-xs-4 offset-xs-8">-->
+                <!--<group col="2">-->
+                <!--<field name="date_order"/>-->
+                <!--</group>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="col-xs-12">
+                    <div class="col-xs-8">
+                        <!--<div class="col-mi-11 offset-xs-1">-->
+                        <!--<group col="2" class="menos_margen_campo">-->
+                        <!--<field name="cliente" options="{'no_create': True}"/>-->
+                        <!--</group>-->
+                        <!--</div>-->
+
+                        <div class="col-mi-11 offset-xs-1">
+                            <group col="2" class="menos_margen_campo representante">
+                                <field name="representante" string="A:"/>
+                                <field name="representantes_en_copia" string="Cc:" widget="many2many_tags"/>
+                            </group>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-10 offset-xs-1 despegar">
+                    <p class="negrita">Por este medio, le comunicamos nuestra mejor oferta de productos.</p>
+                    <p>
+                        <field name="marcas_encabezado" string="Encabezado marcas:"/>
+                    </p>
+                    <field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>
+                </div>
+                <div class="col-xs-11 offset-xs-1 despegar">
+                    <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>
+                </div>
+                <div class="col-mi-11 offset-xs-1">
+                    <ul class="col-xs-12 condiciones" style="margin-left: 11px;">
+                        <li class="col-xs-12">
+                            <div class="col-xs-6">
+                                <div class="col-xs-7">
+                                    <label for="currency_id" string="Moneda: La oferta está expresada en "/>
+                                </div>
+                                <div class="col-xs-5" style="margin-left: -15px;">
+                                    <field name="currency_id" options="{'no_create': True}"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-xs-12">
+                            <div class="col-xs-6">
+                                <div class="col-xs-5">
+                                    <label for="incoterm" string="Condición de entrega: "/>
+                                </div>
+                                <div class="col-xs-7" style="margin-left: -35px;">
+                                    <field name="incoterm" options="{'no_create': True}"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-xs-12 oe_edit_only">
+                            <div class="col-xs-12">
+                                <div class="col-xs-4">
+                                    <label for="embalaje_nomenclador" string="Embalajes por defecto: "/>
+                                </div>
+                                <div class="col-xs-8" style="margin-left: -150px;">
+                                    <field name="embalaje_nomenclador" options="{'no_create': True}"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-xs-12">
+                            <div class="col-xs-12">
+                                <div class="col-xs-3">
+                                    <label for="embalaje" string="Embalaje: "/>
+                                </div>
+                                <div class="col-xs-9" style="margin-left: -150px;">
+                                    <field name="embalaje"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-xs-12">
+                            <div class="col-xs-12">
+                                <div class="col-xs-4">
+                                    <span string="País y Puerto de Embarque: "/>
+                                </div>
+                                <div class="col-xs-3" style="margin-left: -95px;">
+                                    <div class="col-mi-3">
+                                        <label for="pais" string="País: "/>
+                                    </div>
+                                    <div class="col-mi-9">
+                                        <field name="pais" options="{'no_create': True}"/>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5" style="margin-left: 25px;">
+                                    <div class="col-mi-2">
+                                        <label for="puerto_de_origen" string="Puerto: "/>
+                                    </div>
+                                    <div class="col-mi-10">
+                                        <field name="puerto_de_origen" options="{'no_create': True}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <group col="4">
+                            <field name="pais_puerto_encabezado" string="Encabezado país"/>
+                            <field name="pais_puerto" string="Sustituir país-puerto"/>
+                        </group>
+
+                    </ul>
+                </div>
+            </page>
+        </notebook>
+    </sheet>
+    <style type="text/css">
+
+        /*agrandar hoja*/
+        .o_form_view .o_form_sheet_bg .o_form_sheet {
+        max-width: 1024px; /*originalmente 850px*/
+        }
+
+
+        /*Acercar label al checkbox*/
+        .o_form_view .o_group .o_form_label.para_checkbox, .o_form_view .o_form_label.para_checkbox{
+        margin-top: 1.5px;
+        cursor: pointer;
+        }
+
+        .o_form_view .o_group.o_inner_group.menos_margen_campo{
+        margin-left: -20px;
+        }
+
+        .o_form_view .o_group.o_inner_group.menos_margen_campo_alt1{
+        margin-left: -7px;
+        }
+
+        ul.condiciones li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        }
+
+        input[type="checkbox"], .lbl_chck{
+        cursor: pointer;
+        }
+
+        .lbl_chck{
+        margin-top: 1.5px;
+        margin-left: 3px;
+        }
+
+        .o_form_view .o_group.representante &gt; tbody &gt; tr &gt; td.o_td_label {
+        text-align: right;
+        padding-right: 45px;
+        }
+
+        .ajustar_padding_text_edit{
+        padding-top: 16px;
+        font-size: 14px;
+        font-weight: bold;
+        }
+
+        .ajustar_padding_text_show{
+        padding-top: 9px;
+        font-size: 14px;
+        font-weight: bold;
+        }
+
+        .ajustar_padding_text_show_data{
+        padding-top: 13px;
+        font-size: 14px;
+        font-weight: bold;
+        }
+
+        .under_linea_clara{
+        border-bottom: 2px solid #cacaca;
+        }
+
+        .under_linea{
+        border-bottom: 2px solid black;
+        }
+
+        .top_linea{
+        border-top: 1px solid black;
+        }
+
+        .invisible{
+        display:none;
+        }
+
+        .negrita{
+        font-weight: bold;
+        }
+
+        .despegar{
+        margin-bottom: 6px;
+        margin-top: 6px;
+        }
+
+        .depegar_adentro{
+        padding-top: 8px;
+        }
+
+        .espacio_grande_left{
+        padding-left: 80px;
+        }
+
+        .bordeado{
+        border: 1px solid #cacaca;
+        border-radius: 5px;
+        }
+
+        .etiqueta{
+        position: absolute;
+        top:-10px;
+        left: 25px;
+        background-color: white;
+        }
+
+        .row {
+        margin-left: -15px;
+        margin-right: -15px;
+        }
+
+        .row::after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10,
+        .col-xs-11, .col-xs-12{
+        position: relative;
+        min-height: 1px;
+        padding-right: 5px;
+        padding-left: 5px;
+        }
+
+        .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9, .col-mi-10,
+        .col-mi-11, .col-mi-12{
+        position: relative;
+        min-height: 1px;
+        }
+
+        .col-xs-1 {
+        float: left;
+        width: 8.333333%;
+        }
+
+        .col-mi-1 {
+        float: left;
+        width: 8.333333%;
+        }
+
+        .col-xs-2 {
+        float: left;
+        width: 16.666667%;
+        }
+
+        .col-mi-2 {
+        float: left;
+        width: 16.666667%;
+        }
+
+        .col-xs-3 {
+        float: left;
+        width: 25%;
+        }
+
+        .col-mi-3 {
+        float: left;
+        width: 25%;
+        }
+
+        .col-xs-4 {
+        float: left;
+        width: 33.333333%;
+        }
+
+        .col-mi-4 {
+        float: left;
+        width: 33.333333%;
+        }
+
+        .col-xs-5 {
+        float: left;
+        width: 41.666667%;
+        }
+
+        .col-mi-5 {
+        float: left;
+        width: 41.666667%;
+        }
+
+        .col-xs-6 {
+        float: left;
+        width: 50%;
+        }
+
+        .col-mi-6 {
+        float: left;
+        width: 50%;
+        }
+
+        .col-xs-7 {
+        float: left;
+        width: 58.333333%;
+        }
+
+        .col-mi-7 {
+        float: left;
+        width: 58.333333%;
+        }
+
+        .col-xs-8 {
+        float: left;
+        width: 66.666667%;
+        }
+
+        .col-mi-8 {
+        float: left;
+        width: 66.666667%;
+        }
+
+        .col-xs-9 {
+        float: left;
+        width: 75%;
+        }
+
+        .col-mi-9 {
+        float: left;
+        width: 75%;
+        }
+
+        .col-xs-10 {
+        float: left;
+        width: 83.333333%;
+        }
+
+        .col-mi-10 {
+        float: left;
+        width: 83.333333%;
+        }
+
+        .col-xs-11 {
+        float: left;
+        width: 91.666667%;
+        }
+
+        .col-mi-11 {
+        float: left;
+        width: 91.666667%;
+        }
+
+        .col-xs-12 {
+        float: left;
+        width: 100%;
+        }
+
+        .col-mi-12 {
+        float: left;
+        width: 100%;
+        }
+
+        .offset-xs-1 {
+        margin-left: 8.333333%;
+        }
+
+        .offset-xs-2 {
+        margin-left: 16.666667%;
+        }
+
+        .offset-xs-3 {
+        margin-left: 25%;
+        }
+
+        .offset-xs-4 {
+        margin-left: 33.333333%;
+        }
+
+        .offset-xs-5 {
+        margin-left: 41.666667%;
+        }
+
+        .offset-xs-6 {
+        margin-left: 50%;
+        }
+
+        .offset-xs-7 {
+        margin-left: 58.333333%;
+        }
+
+        .offset-xs-8 {
+        margin-left: 66.666667%;
+        }
+
+        .offset-xs-9 {
+        margin-left: 75%;
+        }
+
+        .offset-xs-10 {
+        margin-left: 83.333333%;
+        }
+
+        .offset-xs-11 {
+        margin-left: 91.666667%;
+        }
+
+        .despegar_boton_hacia_la_derecha {
+        margin-left: 20px;
+        }
+
+        .o_form_view .o_group.o_inner_group.check_cuentas &gt; tbody &gt; tr &gt; td.o_td_label {
+        width: 88%;
+        padding: 0 0 0 0;
+        min-width: 100px;
+        }
+    </style>
+    <!--script type="text/javascript">
+
+        function cambiarShowEdit(soloVer){
+
+        /*var texto_rep = $('.representante').last().val();
+        alert(texto_rep);*/
+        if(soloVer){
+        $("#cbox20").prop('checked', true);
+        $("#div_cont_20").removeClass('invisible');
+        $("#cbox40").prop('checked', true);
+        $("#div_cont_40").removeClass('invisible');
+        $("#cbox40hq").prop('checked', true);
+        $("#div_cont_40hq").removeClass('invisible');
+        /*$(".parrafo_A").removeClass('ajustar_padding_text_edit');
+        if(texto_rep != null){
+        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+        }else{
+        $(".parrafo_A").addClass('ajustar_padding_text_show');
+        }
+        if(texto_rep != ''){
+        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+        }else{
+        $(".parrafo_A").addClass('ajustar_padding_text_show');
+        }
+        if(texto_rep != ' '){
+        $(".parrafo_A").addClass('ajustar_padding_text_show_data');
+        }else{
+        $(".parrafo_A").addClass('ajustar_padding_text_show');
+        }*/
+
+        }else{
+        $("#cbox20").prop('checked', true);
+        $("#div_cont_20").removeClass('invisible');
+        $("#cbox40").prop('checked', false);
+        $("#div_cont_40").addClass('invisible');
+        $("#cbox40hq").prop('checked', false);
+        $("#div_cont_40hq").addClass('invisible');
+        /*$(".parrafo_A").removeClass('ajustar_padding_text_show_data');
+        $(".parrafo_A").removeClass('ajustar_padding_text_show');
+        $(".parrafo_A").addClass('ajustar_padding_text_edit');*/
+        }
+
+        }
+
+        function initClases(){
+        var show_mode = $(".o_form_button_edit").css('display');
+        if(show_mode=='block'){
+        cambiarShowEdit(true);
+        }else{
+        cambiarShowEdit(false);
+        }
+        }
+
+        $(document).ready(function () {
+
+        initClases();
+
+        $(".o_form_button_edit").on('click', function(){
+        cambiarShowEdit(false);
+        });
+
+        $(".o_form_button_create").on('click', function(){
+        cambiarShowEdit(false);
+        });
+
+        $(".o_form_button_save").on('click', function(){
+        cambiarShowEdit(true);
+        });
+
+        $(".o_form_button_cancel").on('click', function(){
+        cambiarShowEdit(true);
+        });
+
+        $("#cbox20").on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        $("#div_cont_20").removeClass('invisible');
+        } else {
+        $("#div_cont_20").addClass('invisible');
+        }
+        });
+
+        $("#cbox40").on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        $("#div_cont_40").removeClass('invisible');
+        } else {
+        $("#div_cont_40").addClass('invisible');
+        }
+        });
+
+        $("#cbox40hq").on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        $("#div_cont_40hq").removeClass('invisible');
+        } else {
+        $("#div_cont_40hq").addClass('invisible');
+        }
+        });
+
+        $("#lbl_cbox20").on( 'click', function() {
+        if( $("#cbox20").is(':checked') ) {
+        $("#cbox20").prop('checked', false);
+        $("#div_cont_20").addClass('invisible');
+        } else {
+        $("#cbox20").prop('checked', true);
+        $("#div_cont_20").removeClass('invisible');
+        }
+        });
+
+        $("#lbl_cbox40").on( 'click', function() {
+        if( $("#cbox40").is(':checked') ) {
+        $("#cbox40").prop('checked', false);
+        $("#div_cont_40").addClass('invisible');
+        } else {
+        $("#cbox40").prop('checked', true);
+        $("#div_cont_40").removeClass('invisible');
+        }
+        });
+
+        $("#lbl_cbox40hq").on( 'click', function() {
+        if( $("#cbox40hq").is(':checked') ) {
+        $("#cbox40hq").prop('checked', false);
+        $("#div_cont_40hq").addClass('invisible');
+        } else {
+        $("#cbox40hq").prop('checked', true);
+        $("#div_cont_40hq").removeClass('invisible');
+        }
+        });
+        });
+
+    </script-->
+</form>
