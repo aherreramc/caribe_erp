@@ -110,6 +110,13 @@ class SaleOrderLineTemplate(models.Model):
 
         return
 
+    @api.onchange('sale_percent')
+    def change_sale(self):
+        price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+        line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
+                         * line.product_uom_qty
+
+
 
     @api.depends('price_unit', 'discount')
     def _get_price_reduce(self):
