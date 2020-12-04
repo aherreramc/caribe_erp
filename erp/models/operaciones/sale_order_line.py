@@ -104,7 +104,7 @@ class SaleOrderLineTemplate(models.Model):
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
         if not self.product_uom or not self.product_id:
-            self.price_unit = 4
+            # self.price_unit = 4
             return
         if self.order_id.pricelist_id and self.order_id.partner_id:
             product = self.product_id.with_context(
