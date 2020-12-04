@@ -79,13 +79,13 @@
 
                         <notebook>
                             <page string="Carta">
-                                <!--<div class="col-xs-12">-->
-                                    <!--<div class="col-xs-4 offset-xs-8">-->
-                                        <!--<group col="2">-->
-                                            <!--<field name="date_order"/>-->
-                                        <!--</group>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                                <div class="col-xs-12">
+                                    <div class="col-xs-4 offset-xs-8">
+                                        <group col="2">
+                                            <field name="date_order"/>
+                                        </group>
+                                    </div>
+                                </div>
                                 <!--<div class="col-xs-12">-->
                                     <!--<div class="col-xs-8">-->
                                         <!--<div class="col-mi-11 offset-xs-1">-->
