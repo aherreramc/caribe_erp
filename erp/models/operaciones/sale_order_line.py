@@ -157,6 +157,7 @@ class SaleOrderLineTemplate(models.Model):
                 if line.price_list_item.base == 'purchase':
 
                     if line.sale_percent != 100:
+                        raise except_orm(str(line.product_uom_qty) + "and the original is: " + str(line._origin.product_uom_qty))
                         if line.product_uom_qty != line._origin.product_uom_qty:
                             line.sale_percent = line.price_list_item.sale_percent - line.discount
                         price_before_sale_comision = line.price_list_item.price_before_sale_comision()
