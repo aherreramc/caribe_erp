@@ -45,11 +45,11 @@ class SaleOrderLineTemplate(models.Model):
                 self.product_no_variant_attribute_value_ids -= ptav
 
         vals = {}
-        for price_list_item in self.order_id.pricelist_id.item_ids:
-            if price_list_item.base == 'purchase':
-                if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
-                    vals['price_list_item'] = price_list_item.id
-                    vals['price_unit'] = price_list_item.total_margin
+        # for price_list_item in self.order_id.pricelist_id.item_ids:
+        #     if price_list_item.base == 'purchase':
+        #         if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+        #             vals['price_list_item'] = price_list_item.id
+        #             vals['price_unit'] = price_list_item.total_margin
 
         if not self.product_uom or (self.product_id.uom_id.id != self.product_uom.id):
             vals['product_uom'] = self.product_id.uom_id
@@ -63,9 +63,6 @@ class SaleOrderLineTemplate(models.Model):
             pricelist=self.order_id.pricelist_id.id,
             uom=self.product_uom.id
         )
-
-
-
 
         vals.update(name=self.get_sale_order_line_multiline_description_sale(product))
 
@@ -105,6 +102,13 @@ class SaleOrderLineTemplate(models.Model):
     def product_uom_change(self):
         if not self.product_uom or not self.product_id:
             # self.price_unit = 4
+
+            for price_list_item in self.order_id.pricelist_id.item_ids:
+                if price_list_item.base == 'purchase':
+                    if price_list_item.product_tmpl_id.id == self.product_id.product_tmpl_id.id:
+                        self.price_list_item = price_list_item.id
+                        self.price_unit = price_list_item.total_margin
+
             return
         if self.order_id.pricelist_id and self.order_id.partner_id:
             product = self.product_id.with_context(
