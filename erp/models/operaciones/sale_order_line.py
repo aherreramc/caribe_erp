@@ -114,6 +114,7 @@ class SaleOrderLineTemplate(models.Model):
     def change_sale(self):
         for line in self:
             price_before_sale_comision = line.price_list_item.price_before_sale_comision()
+            raise except_orm(price_before_sale_comision)
             line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
                              * line.product_uom_qty
 
