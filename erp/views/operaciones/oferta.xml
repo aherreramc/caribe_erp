@@ -79,13 +79,13 @@
 
                         <notebook>
                             <page string="Carta">
-                                <div class="col-xs-12">
-                                    <div class="col-xs-4 offset-xs-8">
-                                        <group col="2">
-                                            <field name="date_order"/>
-                                        </group>
-                                    </div>
-                                </div>
+                                <!--<div class="col-xs-12">-->
+                                    <!--<div class="col-xs-4 offset-xs-8">-->
+                                        <!--<group col="2">-->
+                                            <!--<field name="date_order"/>-->
+                                        <!--</group>-->
+                                    <!--</div>-->
+                                <!--</div>-->
                                 <div class="col-xs-12">
                                     <div class="col-xs-8">
                                         <!--<div class="col-mi-11 offset-xs-1">-->
@@ -103,59 +103,59 @@
 
                                     </div>
                                 </div>
-                                <!--<div class="col-xs-10 offset-xs-1 despegar">-->
-                                    <!--<p class="negrita">Por este medio, le comunicamos nuestra mejor oferta de productos.</p>-->
-                                    <!--<p>-->
-                                        <!--<field name="marcas_encabezado" string="Encabezado marcas:"/>-->
-                                    <!--</p>-->
-                                    <!--<field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-11 offset-xs-1 despegar">-->
-                                    <!--<p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>-->
-                                <!--</div>-->
+                                <div class="col-xs-10 offset-xs-1 despegar">
+                                    <p class="negrita">Por este medio, le comunicamos nuestra mejor oferta de productos.</p>
+                                    <p>
+                                        <field name="marcas_encabezado" string="Encabezado marcas:"/>
+                                    </p>
+                                    <field name="marcas" string="marca" widget="many2many_tags" options="{'no_create': True}"/>
+                                </div>
+                                <div class="col-xs-11 offset-xs-1 despegar">
+                                    <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones Generales:</p>
+                                </div>
                                 <div class="col-mi-11 offset-xs-1">
                                     <ul class="col-xs-12 condiciones" style="margin-left: 11px;">
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-6">-->
-                                                <!--<div class="col-xs-7"><label for="currency_id" string="Moneda: La oferta está expresada en "/></div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: -15px;"><field name="currency_id" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-6">-->
-                                                <!--<div class="col-xs-5"><label for="incoterm" string="Condición de entrega: "/></div>-->
-                                                <!--<div class="col-xs-7" style="margin-left: -35px;"><field name="incoterm" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12 oe_edit_only">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-4"><label for="embalaje_nomenclador" string="Embalajes por defecto: "/></div>-->
-                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="embalaje_nomenclador" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="embalaje" string="Embalaje: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="embalaje"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-4"><span string="País y Puerto de Embarque: "/></div>-->
-                                                <!--<div class="col-xs-3" style="margin-left: -95px;">-->
-                                                    <!--<div class="col-mi-3"><label for="pais" string="País: "/></div>-->
-                                                    <!--<div class="col-mi-9"><field name="pais" options="{'no_create': True}"/></div>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: 25px;">-->
-                                                    <!--<div class="col-mi-2"><label for="puerto_de_origen" string="Puerto: "/></div>-->
-                                                    <!--<div class="col-mi-10"><field name="puerto_de_origen" options="{'no_create': True}"/></div>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<group col="4">-->
-                                            <!--<field name="pais_puerto_encabezado" string="Encabezado país"/>-->
-                                            <!--<field name="pais_puerto" string="Sustituir país-puerto"/>-->
-                                        <!--</group>-->
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-7"><label for="currency_id" string="Moneda: La oferta está expresada en "/></div>
+                                                <div class="col-xs-5" style="margin-left: -15px;"><field name="currency_id" options="{'no_create': True}"/></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-5"><label for="incoterm" string="Condición de entrega: "/></div>
+                                                <div class="col-xs-7" style="margin-left: -35px;"><field name="incoterm" options="{'no_create': True}"/></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 oe_edit_only">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-4"><label for="embalaje_nomenclador" string="Embalajes por defecto: "/></div>
+                                                <div class="col-xs-8" style="margin-left: -150px;"><field name="embalaje_nomenclador" options="{'no_create': True}"/></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-3"><label for="embalaje" string="Embalaje: "/></div>
+                                                <div class="col-xs-9" style="margin-left: -150px;"><field name="embalaje"/></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-4"><span string="País y Puerto de Embarque: "/></div>
+                                                <div class="col-xs-3" style="margin-left: -95px;">
+                                                    <div class="col-mi-3"><label for="pais" string="País: "/></div>
+                                                    <div class="col-mi-9"><field name="pais" options="{'no_create': True}"/></div>
+                                                </div>
+                                                <div class="col-xs-5" style="margin-left: 25px;">
+                                                    <div class="col-mi-2"><label for="puerto_de_origen" string="Puerto: "/></div>
+                                                    <div class="col-mi-10"><field name="puerto_de_origen" options="{'no_create': True}"/></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <group col="4">
+                                            <field name="pais_puerto_encabezado" string="Encabezado país"/>
+                                            <field name="pais_puerto" string="Sustituir país-puerto"/>
+                                        </group>
 
                                         <!--<li class="col-xs-12">-->
                                             <!--<div class="col-xs-9">-->
