@@ -210,12 +210,12 @@
                                                 <div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>
                                             </div>
                                         </li>
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="descuento"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>
+                                                <div class="col-xs-9" style="margin-left: -150px;"><field name="descuento"/></div>
+                                            </div>
+                                        </li>
                                         <!--descuento-->
                                         <!--<li class="col-xs-12">-->
                                             <!--<div class="col-xs-2"><label for="validez_oferta_dias" string="Validez de la oferta: "/></div>-->
