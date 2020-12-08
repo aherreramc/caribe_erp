@@ -198,18 +198,18 @@
                                             </div>
                                         </li>
 
-                                        <!--<li class="col-xs-12 oe_edit_only">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-4"><label for="garantia_nomenclador" string="Garantía por defecto: "/></div>-->
-                                                <!--<div class="col-xs-8" style="margin-left: -150px;"><field name="garantia_nomenclador" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-3"><label for="garantia" string="Garantía: "/></div>-->
-                                                <!--<div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
+                                        <li class="col-xs-12 oe_edit_only">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-4"><label for="garantia_nomenclador" string="Garantía por defecto: "/></div>
+                                                <div class="col-xs-8" style="margin-left: -150px;"><field name="garantia_nomenclador" options="{'no_create': True}"/></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-3"><label for="garantia" string="Garantía: "/></div>
+                                                <div class="col-xs-9" style="margin-left: -150px;"><field name="garantia"/></div>
+                                            </div>
+                                        </li>
                                         <!--<li class="col-xs-12">-->
                                             <!--<div class="col-xs-12">-->
                                                 <!--<div class="col-xs-3"><label for="descuento" string="Descuento: "/></div>-->
