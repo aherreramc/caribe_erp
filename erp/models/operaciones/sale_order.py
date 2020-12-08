@@ -87,6 +87,22 @@ class SaleOrderTemplate(models.Model):
 
 
 
+    tipo_oferta = fields.Many2one('erp.nomencladores.tipo_oferta', default=_tipo_oferta_defult)
+    estado_oferta = fields.Many2one('erp.nomencladores.estado_oferta', string ="Estado de oferta", default=_estado_de_oferta_defult)
+
+    partida_arancelaria_oferta = fields.Char()
+
+    validez_oferta_dias = fields.Integer(string="Validez de la oferta")
+    validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
+
+    validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
+
+    observaciones = fields.Html('Observaciones')
+
+    firma = fields.Many2one('erp.nomencladores.firma')
+
+
+
     @api.depends('order_line.price_total')
     def _discount_total(self):
 
