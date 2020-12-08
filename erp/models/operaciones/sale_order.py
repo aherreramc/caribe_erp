@@ -74,11 +74,11 @@ class SaleOrderTemplate(models.Model):
     pago = fields.Text('Pago')
     porciento_total_mercancia = fields.Float(digits=dp.get_precision('dosDecimales'))
     dias_para_pagar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
-    etapa_pago = fields.Many2one('erp.nomencladores.etapa')
-    interes_anual = fields.Float(digits=dp.get_precision('dosDecimales'))
-
-    garantia_nomenclador = fields.Many2one('erp.nomencladores.garantia_nomenclador')
-    garantia = fields.Text('Garantia')
+    # etapa_pago = fields.Many2one('erp.nomencladores.etapa')
+    # interes_anual = fields.Float(digits=dp.get_precision('dosDecimales'))
+    #
+    # garantia_nomenclador = fields.Many2one('erp.nomencladores.garantia_nomenclador')
+    # garantia = fields.Text('Garantia')
 
     # descuento = fields.Monetary(string='% descuento', currency_field='currency_id')
 
