@@ -34,6 +34,9 @@ class SaleOrderTemplate(models.Model):
         return estado_de_oferta_defult
 
 
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+
+
     condiciones = fields.Html('Condiciones')
 
     discount_total = fields.Monetary(compute='_discount_total', string='Discount', store=True)
@@ -45,6 +48,7 @@ class SaleOrderTemplate(models.Model):
     concepto = fields.Char()
     tipo_oferta = fields.Many2one('erp.nomencladores.tipo_oferta', default=_tipo_oferta_defult)
     estado_oferta = fields.Many2one('erp.nomencladores.estado_oferta', string ="Estado de oferta", default=_estado_de_oferta_defult)
+    date_order = fields.Datetime(string='Order Date', required=True, readonly=True, index=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]}, copy=False, default=fields.Datetime.now, help="Creation date of draft/sent orders,\nConfirmation date of confirmed orders.")
 
     proveedor = fields.Many2one('res.partner',domain="[('supplier', '=', True)]")
 
@@ -64,23 +68,6 @@ class SaleOrderTemplate(models.Model):
     pais_puerto_encabezado = fields.Char()
     pais_puerto = fields.Char()
 
-
-    # dias_para_entregar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
-    # etapa_entrega = fields.Many2one('erp.nomencladores.etapa')
-    #
-    # dias_para_entregar_etapa_entrega_a_mostar = fields.Char(string="Validez de la oferta a mostrar")
-
-    # pago_nomenclador = fields.Many2one('erp.nomencladores.pago_nomenclador')
-    # pago = fields.Text('Pago')
-    # porciento_total_mercancia = fields.Float(digits=dp.get_precision('dosDecimales'))
-    # dias_para_pagar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
-    # etapa_pago = fields.Many2one('erp.nomencladores.etapa')
-    # interes_anual = fields.Float(digits=dp.get_precision('dosDecimales'))
-    #
-    # garantia_nomenclador = fields.Many2one('erp.nomencladores.garantia_nomenclador')
-    # garantia = fields.Text('Garantia')
-
-    # descuento = fields.Monetary(string='% descuento', currency_field='currency_id')
 
 
 

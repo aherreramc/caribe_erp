@@ -152,10 +152,10 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <group col="4">
-                                            <field name="pais_puerto_encabezado" string="Encabezado país"/>
-                                            <field name="pais_puerto" string="Sustituir país-puerto"/>
-                                        </group>
+                                        <!--<group col="4">-->
+                                            <!--<field name="pais_puerto_encabezado" string="Encabezado país"/>-->
+                                            <!--<field name="pais_puerto" string="Sustituir país-puerto"/>-->
+                                        <!--</group>-->
 
                                         <!--<li class="col-xs-12">-->
                                             <!--<div class="col-xs-9">-->
