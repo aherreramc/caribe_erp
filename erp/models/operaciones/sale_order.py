@@ -92,14 +92,25 @@ class SaleOrderTemplate(models.Model):
 
     partida_arancelaria_oferta = fields.Char()
 
-    validez_oferta_dias = fields.Integer(string="Validez de la oferta")
-    validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
-
-    validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
+    # validez_oferta_dias = fields.Integer(string="Validez de la oferta")
+    # validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
+    #
+    # validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
 
     observaciones = fields.Html('Observaciones')
 
     firma = fields.Many2one('erp.nomencladores.firma')
+
+
+
+    #Las fichas técnicas y sus dependientes
+    manual_de_usuario_espannol = fields.Boolean('El manual del usuario de cada equipo está en español', default=False)
+    fichas_tecnicas = fields.Boolean('En adjunto fichas técnicas', default=False)
+    certificados_inhim = fields.Boolean('certificados del INHIM', default=False)
+    certificados_onure = fields.Boolean('certificados de la ONURE', default=False)
+    vision_explotada = fields.Boolean('Vision explotada con listas y partes', default=False)
+
+    homologados_en_cuba = fields.Boolean('Todos los modelos ofertados están homologados para su venta en Cuba', default=False)
 
 
 
