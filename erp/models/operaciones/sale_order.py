@@ -83,7 +83,7 @@ class SaleOrderTemplate(models.Model):
     garantia_nomenclador = fields.Many2one('erp.nomencladores.garantia_nomenclador')
     garantia = fields.Text('Garantia')
 
-    # descuento = fields.Monetary(string='% descuento', currency_field='moneda')
+    descuento = fields.Monetary(string='% descuento', currency_field='currency_id')
 
 
 
