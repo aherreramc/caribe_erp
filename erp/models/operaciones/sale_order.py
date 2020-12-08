@@ -72,8 +72,8 @@ class SaleOrderTemplate(models.Model):
 
     pago_nomenclador = fields.Many2one('erp.nomencladores.pago_nomenclador')
     pago = fields.Text('Pago')
-    porciento_total_mercancia = fields.Float(digits=dp.get_precision('dosDecimales'))
-    dias_para_pagar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
+    # porciento_total_mercancia = fields.Float(digits=dp.get_precision('dosDecimales'))
+    # dias_para_pagar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
     # etapa_pago = fields.Many2one('erp.nomencladores.etapa')
     # interes_anual = fields.Float(digits=dp.get_precision('dosDecimales'))
     #
