@@ -246,38 +246,38 @@
                                                 <div class="col-mi-11"><p><label class="negrita para_checkbox" for="fichas_tecnicas" string="En adjunto fichas técnicas."/></p></div>
                                             </div>
                                         </li>
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="certificados_inhim"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_inhim" string="Certificados del INHIM."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="certificados_onure"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_onure" string="Certificados de la ONURE."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="vision_explotada"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi11"><p><label class="negrita para_checkbox" for="vision_explotada" string="Visión explotada con listas y partes."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
-                                        <!--<li class="col-xs-12">-->
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1">-->
-                                                    <!--<field name="homologados_en_cuba"/>-->
-                                                <!--</div>-->
-                                                <!--<div class="col-mi-11"><p><label class="negrita para_checkbox" for="homologados_en_cuba" string="Todos los modelos ofertados están homologados para su venta en Cuba."/></p></div>-->
-                                            <!--</div>-->
-                                        <!--</li>-->
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-1">
+                                                    <field name="certificados_inhim"/>
+                                                </div>
+                                                <div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_inhim" string="Certificados del INHIM."/></p></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-1">
+                                                    <field name="certificados_onure"/>
+                                                </div>
+                                                <div class="col-mi-11"><p><label class="negrita para_checkbox" for="certificados_onure" string="Certificados de la ONURE."/></p></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-1">
+                                                    <field name="vision_explotada"/>
+                                                </div>
+                                                <div class="col-mi11"><p><label class="negrita para_checkbox" for="vision_explotada" string="Visión explotada con listas y partes."/></p></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-1">
+                                                    <field name="homologados_en_cuba"/>
+                                                </div>
+                                                <div class="col-mi-11"><p><label class="negrita para_checkbox" for="homologados_en_cuba" string="Todos los modelos ofertados están homologados para su venta en Cuba."/></p></div>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
 
