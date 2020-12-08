@@ -281,16 +281,16 @@
                                     </ul>
                                 </div>
 
-                                <!--<label for="observaciones">Observaciones</label>-->
-                                <!--<field name="observaciones"/>-->
+                                <label for="observaciones">Observaciones</label>
+                                <field name="observaciones"/>
 
-                                <!--<div class="col-mi-11 offset-xs-1 despegar">-->
-                                    <!--<div class="col-xs-6 offset-xs-6">-->
-                                        <!--<group col="2">-->
-                                            <!--<field name="firma" options="{'no_create': True}"/>-->
-                                        <!--</group>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                                <div class="col-mi-11 offset-xs-1 despegar">
+                                    <div class="col-xs-6 offset-xs-6">
+                                        <group col="2">
+                                            <field name="firma" options="{'no_create': True}"/>
+                                        </group>
+                                    </div>
+                                </div>
                             </page>
                             <!--<page string="Productos">-->
                                 <!--<div class="col-xs-12 despegar">-->
