@@ -180,22 +180,22 @@
                                                 <div class="col-xs-3"><label for="pago" string="Pago: "/></div>
                                                 <div class="col-xs-9" style="margin-left: -150px;"><field name="pago"/></div>
                                             </div>
-                                            <!--<div class="col-xs-12">-->
-                                                <!--<div class="col-xs-1"><label for="porciento_total_mercancia" string="por el"/></div>-->
-                                                <!--<div class="col-xs-1" style="margin-left: -25px;"><field name="porciento_total_mercancia"/></div>-->
-                                                <!--<div class="col-xs-5"><label string="% del importe total de las mercancias contratadas,"/></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-xs-9">-->
-                                                <!--<div class="col-xs-3"><label for="dias_para_pagar" string="pagaderas a los"/></div>-->
-                                                <!--<div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_pagar" options="{'no_create': True}"/></div>-->
-                                                <!--<div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_pago" string="dias a partir de: "/></div>-->
-                                                <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_pago" options="{'no_create': True}"/></div>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-xs-6">-->
-                                                <!--<div class="col-xs-4"><label for="interes_anual" string="con interés anual de"/></div>-->
-                                                <!--<div class="col-xs-2"><field name="interes_anual"/></div>-->
-                                                <!--<div class="col-xs-4"><label string="%"/></div>-->
-                                            <!--</div>-->
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-1"><label for="porciento_total_mercancia" string="por el"/></div>
+                                                <div class="col-xs-1" style="margin-left: -25px;"><field name="porciento_total_mercancia"/></div>
+                                                <div class="col-xs-5"><label string="% del importe total de las mercancias contratadas,"/></div>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <div class="col-xs-3"><label for="dias_para_pagar" string="pagaderas a los"/></div>
+                                                <div class="col-xs-1" style="margin-left: -20px;"><field name="dias_para_pagar" options="{'no_create': True}"/></div>
+                                                <div class="col-xs-3" style="margin-left: 20px;"><label for="etapa_pago" string="dias a partir de: "/></div>
+                                                <div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_pago" options="{'no_create': True}"/></div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-4"><label for="interes_anual" string="con interés anual de"/></div>
+                                                <div class="col-xs-2"><field name="interes_anual"/></div>
+                                                <div class="col-xs-4"><label string="%"/></div>
+                                            </div>
                                         </li>
 
                                         <!--<li class="col-xs-12 oe_edit_only">-->
