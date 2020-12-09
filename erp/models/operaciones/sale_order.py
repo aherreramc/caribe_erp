@@ -50,7 +50,7 @@ class SaleOrderTemplate(models.Model):
     estado_oferta = fields.Many2one('erp.nomencladores.estado_oferta', string ="Estado de oferta", default=_estado_de_oferta_defult)
     date_order = fields.Datetime(string='Order Date', required=True, readonly=True, index=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]}, copy=False, default=fields.Datetime.now, help="Creation date of draft/sent orders,\nConfirmation date of confirmed orders.")
 
-    proveedor = fields.Many2one('res.partner',domain="[('supplier', '=', True)]")
+    proveedor = fields.Many2one('res.partner')
 
     representante = fields.Many2one('erp.nomencladores.representante_cliente')
     representantes_en_copia = fields.Many2many('erp.nomencladores.representante_cliente', 'erp_operaciones_oferta_representantes_cc', 'oferta_id', 'representante_id', 'Cc:')
