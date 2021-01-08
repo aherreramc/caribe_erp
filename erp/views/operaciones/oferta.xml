@@ -99,7 +99,7 @@
                         <field name="state" invisible="1"/>
 
 
-                        <group col="4" class="menos_margen_campo_alt1">
+                        <group>
                             <group col="2" class="menos_margen_campo_alt1">
                                 <field name="pricelist_id" string="Lista de Precios"/>
                             </group>
