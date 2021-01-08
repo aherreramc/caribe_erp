@@ -86,15 +86,15 @@
                         </group>
 
 
-                        <div class="row">
-                            <div class="col-xs-2" style="text-align: center;">
-                                <label for="pricelist_id"
-                                       string="Lista de Precios"/>
-                            </div>
-                            <div class="col-xs-10">
-                                <field name="pricelist_id" string="Lista de Precios"/>
-                            </div>
-                        </div>
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-2" style="text-align: center;">-->
+                                <!--<label for="pricelist_id"-->
+                                       <!--string="Lista de Precios"/>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-10">-->
+                                <!--<field name="pricelist_id" string="Lista de Precios"/>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
 
 
