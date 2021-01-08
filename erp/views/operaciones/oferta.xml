@@ -151,7 +151,7 @@
                                                     <label for="currency_id"
                                                            string="Moneda: La oferta está expresada en "/>
                                                 </div>
-                                                <span t-esc="currency_id"/>
+
                                                 <!--span class="col-xs-5" style="margin-left: -15px;">
                                                     <field name="currency_id" options="{'no_create': True}"/>
                                                 </span-->
