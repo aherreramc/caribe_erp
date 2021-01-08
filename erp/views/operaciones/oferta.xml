@@ -166,7 +166,9 @@
                                                            string="Moneda: La oferta está expresada en "/>
                                                 </div>
 
-                                                <span t-esc="currency_id"/>
+
+
+                                                <field name="currency_id" options="{'no_create': True}"/>
                                             </div>
                                         </li>
                                         <li class="col-xs-12">
