@@ -86,17 +86,22 @@
                         </group>
 
 
-                        <div class="row">
-                            <div class="col-xs-2" style="text-align: center;">
-                                <label for="pricelist_id"
-                                       string="Lista de Precios"/>
-                            </div>
-                            <div class="col-xs-10">
-                                <field name="pricelist_id" string="Lista de Precios"/>
-                            </div>
-                        </div>
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-2" style="text-align: center;">-->
+                                <!--<label for="pricelist_id"-->
+                                       <!--string="Lista de Precios"/>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-10">-->
+                                <!--<field name="pricelist_id" string="Lista de Precios"/>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
                         <field name="state" invisible="1"/>
+
+
+                        <group col="4" class="menos_margen_campo_alt1">
+                            <field name="pricelist_id" string="Lista de Precios"/>
+                        </group>
 
 
 
