@@ -55,7 +55,7 @@
                         <!--</h1>-->
 
                         <div class="col-xs-12">
-                            <field name="nombre_oferta" string=""/>
+                            <field name="nombre_oferta" string="Oferta:"/>
                         </div>
 
                         <div class="col-xs-12 despegar under_linea_clara">
