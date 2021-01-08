@@ -101,7 +101,7 @@
 
 
                         <group col="4" class="menos_margen_campo_alt1">
-                            <field name="proveedor" string="Proveedor" options="{'no_create': True}"
+                            <field name="partner_id" string="Proveedor" options="{'no_create': True}"
                                    context="{'res_partner_search_mode': 'supplier'}"/>
                             <field name="estado_oferta"/>
                         </group>
