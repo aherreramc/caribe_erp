@@ -55,7 +55,7 @@
                         <!--</h1>-->
 
                         <div class="row">
-                            <div class="col-xs-2 despegar under_linea_clara">
+                            <div class="col-xs-2" style="">
                                 <label for="nombre_oferta"
                                        string="Oferta: "/>
                             </div>
