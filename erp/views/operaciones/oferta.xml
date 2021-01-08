@@ -96,6 +96,8 @@
                             </div>
                         </div>
 
+                        <field name="state" invisible="1"/>
+
 
 
                         <group col="4" class="menos_margen_campo_alt1">
