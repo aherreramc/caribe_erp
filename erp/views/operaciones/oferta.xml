@@ -113,7 +113,7 @@
 
 
                             <field name="proveedor" string="Proveedor" options="{'no_create': True}"
-                                   context="{'res_partner_search_mode': 'supplier'}"/>
+                                   domain="{'res_partner_search_mode': 'supplier'}"/>
 
                             <field name="estado_oferta"/>
                         </group>
@@ -138,7 +138,7 @@
                                         <div class="col-mi-11 offset-xs-1">
                                             <group col="2" class="menos_margen_campo representante">
                                                 <field name="partner_id" string="Cliente" options="{'no_create': True}"
-                                               context="{'res_partner_search_mode': 'customer'}"/>
+                                               domain="{'res_partner_search_mode': 'customer'}"/>
                                             </group>
                                         </div>
 
