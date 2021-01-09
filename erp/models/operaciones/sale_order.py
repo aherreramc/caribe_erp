@@ -72,7 +72,7 @@ class SaleOrderTemplate(models.Model):
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
 
     # ('usage', '=', 'customer')
-    # incoterm = fields.Many2one('erp.nomencladores.incoterm')
+    incoterm = fields.Many2one('account.incoterms')
 
     embalaje_nomenclador = fields.Many2one('erp.nomencladores.embalaje')
     embalaje = fields.Text('Embalaje')
