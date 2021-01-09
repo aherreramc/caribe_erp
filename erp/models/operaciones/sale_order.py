@@ -64,6 +64,7 @@ class SaleOrderTemplate(models.Model):
     marcas = fields.Many2many('erp.nomencladores.marca', 'erp_operaciones_oferta_marcas', 'oferta_id', 'marca_id', 'Marcas')
 
     proveedor = fields.Many2one('res.partner')
+    cliente = fields.Many2one('res.partner')
     partner_id = fields.Many2one(
         'res.partner', string='Customer', readonly=True,
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},

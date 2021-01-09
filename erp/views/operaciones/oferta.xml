@@ -139,9 +139,11 @@
 
                                         <div class="col-mi-11 offset-xs-1">
                                             <group col="2" class="menos_margen_campo representante">
-                                                <field name="partner_id" string="Cliente" domain='[["customer_rank",">",0]]'/>
+                                                <field name="cliente" string="Cliente" domain='[["customer_rank",">",0]]'/>
                                             </group>
                                         </div>
+
+                                        <field name="partner_id" invisible="1"/>
 
 
                                         <div class="col-mi-11 offset-xs-1">
