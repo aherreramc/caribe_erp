@@ -82,10 +82,10 @@ class SaleOrderTemplate(models.Model):
     pais_puerto_encabezado = fields.Char()
     pais_puerto = fields.Char()
 
-    # dias_para_entregar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
-    # etapa_entrega = fields.Many2one('erp.nomencladores.etapa')
-    #
-    # dias_para_entregar_etapa_entrega_a_mostar = fields.Char(string="Validez de la oferta a mostrar")
+    dias_para_entregar = fields.Many2one('erp.nomencladores.dias_para_cobros_y_pagos')
+    etapa_entrega = fields.Many2one('erp.nomencladores.etapa')
+
+    dias_para_entregar_etapa_entrega_a_mostar = fields.Char(string="Validez de la oferta a mostrar")
 
     pago_nomenclador = fields.Many2one('erp.nomencladores.pago_nomenclador')
     pago = fields.Text('Pago')

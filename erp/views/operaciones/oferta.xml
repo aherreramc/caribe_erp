@@ -245,12 +245,12 @@
                                         <!--<div class="col-xs-5" style="margin-left: -45px;"><field name="etapa_entrega" options="{'no_create': True}"/></div>-->
                                         <!--</div>-->
                                         <!--</li>-->
-                                        <!--li class="col-xs-12">
+                                        <li class="col-xs-12">
                                             <div class="col-xs-9">
                                                 <div class="col-xs-3"><label for="dias_para_entregar_etapa_entrega_a_mostar" string="Tiempo de entrega a mostar:"/></div>
                                                 <div class="col-xs-5" style="margin-left: -20px;"><field name="dias_para_entregar_etapa_entrega_a_mostar"/></div>
                                             </div>
-                                        </li-->
+                                        </li>
                                         <li class="col-xs-12">
                                             <div class="col-xs-12 oe_edit_only">
                                                 <div class="col-xs-4">
