@@ -115,7 +115,7 @@
                             <!--<field name="proveedor" string="Proveedor" options="{'no_create': True}"-->
                                    <!--domain="{'res_partner_search_mode': 'supplier'}"/>-->
 
-                            <field name="proveedor" string="Proveedor" options="{'no_create': True}"/>
+                            <field name="proveedor" string="Proveedor" options="{'no_create': True}" domain='[["customer_rank",">",0]]'/>
 
                             <field name="estado_oferta"/>
                         </group>
