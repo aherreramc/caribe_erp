@@ -172,14 +172,14 @@
                                             </div>
                                         </li>
                                         <li class="col-xs-12">
-                                            <div class="col-xs-6">
-                                                <div class="col-xs-5">
-                                                    <label for="incoterm" string="Condición de entrega: "/>
-                                                </div>
-                                                <div class="col-xs-7" style="margin-left: -35px;">
-                                                    <field name="incoterm" options="{'no_create': True}"/>
-                                                </div>
-                                            </div>
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<div class="col-xs-5">-->
+                                                    <!--<label for="incoterm" string="Condición de entrega: "/>-->
+                                                <!--</div>-->
+                                                <!--<div class="col-xs-7" style="margin-left: -35px;">-->
+                                                    <!--<field name="incoterm" options="{'no_create': True}"/>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
                                         </li>
                                         <li class="col-xs-12 oe_edit_only">
                                             <div class="col-xs-12">
