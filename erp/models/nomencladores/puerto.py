@@ -9,7 +9,7 @@ class Puerto(models.Model):
     _name = "erp.nomencladores.puerto"
 
     name = fields.Char(required=True, string="Nombre:")
-    pais = fields.Many2one('erp.nomencladores.pais', string='País')
+    pais = fields.Many2one('res.country', string='País')
 
     tipo = fields.Selection([ ('puerto', 'Puerto'),('aereopuerto', 'Aereopuerto'), ('almacen', 'Almacén')
                                 , ('bodega', 'Bodega')], string='Tipo', default='puerto')
