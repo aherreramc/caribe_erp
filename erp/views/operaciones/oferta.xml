@@ -115,7 +115,7 @@
                             <!--<field name="proveedor" string="Proveedor" options="{'no_create': True}"-->
                                    <!--domain="{'res_partner_search_mode': 'supplier'}"/>-->
 
-                            <field name="proveedor" string="Proveedor" options="{'no_create': True}" domain='[["supplier_rank",">",0]]'/>
+                            <field name="proveedor" string="Proveedor" domain='[["supplier_rank",">",0]]'/>
 
                             <field name="estado_oferta"/>
                         </group>
@@ -139,8 +139,7 @@
 
                                         <div class="col-mi-11 offset-xs-1">
                                             <group col="2" class="menos_margen_campo representante">
-                                                <field name="partner_id" string="Cliente" options="{'no_create': True}"
-                                               domain='[["customer_rank",">",0]]'/>
+                                                <field name="partner_id" string="Cliente" domain='[["customer_rank",">",0]]'/>
                                             </group>
                                         </div>
 
