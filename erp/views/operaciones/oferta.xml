@@ -135,8 +135,8 @@
                                         <!--</group>-->
                                         <!--</div>-->
 
-                                        <field name="partner_id" string="Cliente" options="{'no_create': True}"
-                                               context="{'res_partner_search_mode': 'customer'}"/>
+                                        <!--<field name="partner_id" string="Cliente" options="{'no_create': True}"-->
+                                               <!--context="{'res_partner_search_mode': 'customer'}"/>-->
 
 
                                         <div class="col-mi-11 offset-xs-1">
