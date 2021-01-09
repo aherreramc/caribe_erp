@@ -63,7 +63,7 @@ class SaleOrderTemplate(models.Model):
     marcas_encabezado = fields.Char(default="Por este medio, le comunicamos nuestra mejor oferta de productos de marca ")
     marcas = fields.Many2many('erp.nomencladores.marca', 'erp_operaciones_oferta_marcas', 'oferta_id', 'marca_id', 'Marcas')
 
-    proveedor = fields.Many2one('res.partner', domain="{'res_partner_search_mode': 'supplier'}")
+    proveedor = fields.Many2one('res.partner', domain="[('customer_rank' ,'>', 0)]")
     partner_id = fields.Many2one(
         'res.partner', string='Customer', readonly=True,
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
