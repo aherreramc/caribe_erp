@@ -166,8 +166,6 @@
                                                            string="Moneda: La oferta está expresada en "/>
                                                 </div>
 
-
-
                                                 <field name="currency_id" options="{'no_create': True}"/>
                                             </div>
                                         </li>
@@ -204,6 +202,7 @@
                                         <li class="col-xs-12">
                                             <div class="col-xs-12">
                                                 <div class="col-xs-4">
+                                                    País y Puerto de Embarque:
                                                     <span string="País y Puerto de Embarque: "/>
                                                 </div>
                                                 <div class="col-xs-3" style="margin-left: -95px;">
