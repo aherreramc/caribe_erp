@@ -106,10 +106,10 @@ class SaleOrderTemplate(models.Model):
 
     partida_arancelaria_oferta = fields.Char()
 
-    # validez_oferta_dias = fields.Integer(string="Validez de la oferta")
-    # validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
-    #
-    # validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
+    validez_oferta_dias = fields.Integer(string="Validez de la oferta")
+    validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
+
+    validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
 
     observaciones = fields.Html('Observaciones')
 
@@ -126,6 +126,15 @@ class SaleOrderTemplate(models.Model):
 
     homologados_en_cuba = fields.Boolean('Todos los modelos ofertados están homologados para su venta en Cuba', default=False)
 
+
+    @api.one
+    @api.depends('validez_oferta_dias', 'create_date')
+    def _validez_oferta_compute(self):
+        if self.create_date is not False:
+            self.validez_oferta_compute = datetime.strptime(self.create_date, '%Y-%m-%d') + timedelta(days = self.validez_oferta_dias)
+
+        if self.validez_oferta_dias is not False:
+            self.validez_oferta_a_mostrar = str(self.validez_oferta_dias) + " días."
 
 
     @api.depends('order_line.price_total')
