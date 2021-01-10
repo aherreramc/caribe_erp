@@ -136,7 +136,8 @@ class SaleOrderTemplate(models.Model):
     def _validez_oferta_compute(self):
         for order in self:
             if order.create_date is not False:
-                order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
+                # order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
+                order.validez_oferta_compute = order.create_date + timedelta(days = order.validez_oferta_dias)
 
             if order.validez_oferta_dias is not False:
                 order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
