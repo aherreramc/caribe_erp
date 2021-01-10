@@ -9,6 +9,9 @@ from odoo.tools.misc import formatLang, get_lang
 from odoo.tools import float_is_zero, float_compare
 from itertools import groupby
 
+import time
+from datetime import datetime, date, timedelta
+
 
 class SaleOrderTemplate(models.Model):
     _inherit = 'sale.order'
