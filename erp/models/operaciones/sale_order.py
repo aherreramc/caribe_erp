@@ -9,8 +9,10 @@ from odoo.tools.misc import formatLang, get_lang
 from odoo.tools import float_is_zero, float_compare
 from itertools import groupby
 
+from datetime import datetime, date
+from dateutil.relativedelta import relativedelta
 import time
-from datetime import datetime, date, timedelta
+from datetime import datetime, timedelta
 
 
 class SaleOrderTemplate(models.Model):
@@ -134,7 +136,7 @@ class SaleOrderTemplate(models.Model):
     def _validez_oferta_compute(self):
         for order in self:
             if order.create_date is not False:
-                order.validez_oferta_compute = datetime.strptime(str(order.create_date) + '', '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
+                order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
 
             if order.validez_oferta_dias is not False:
                 order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
