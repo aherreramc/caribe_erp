@@ -127,14 +127,14 @@ class SaleOrderTemplate(models.Model):
     homologados_en_cuba = fields.Boolean('Todos los modelos ofertados están homologados para su venta en Cuba', default=False)
 
 
-    @api.one
     @api.depends('validez_oferta_dias', 'create_date')
     def _validez_oferta_compute(self):
-        if self.create_date is not False:
-            self.validez_oferta_compute = datetime.strptime(self.create_date, '%Y-%m-%d') + timedelta(days = self.validez_oferta_dias)
+        for order in self:
+            if order.create_date is not False:
+                order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
 
-        if self.validez_oferta_dias is not False:
-            self.validez_oferta_a_mostrar = str(self.validez_oferta_dias) + " días."
+            if order.validez_oferta_dias is not False:
+                order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
 
 
     @api.depends('order_line.price_total')
