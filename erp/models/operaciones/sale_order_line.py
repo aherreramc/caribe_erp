@@ -164,7 +164,7 @@ class SaleOrderLineTemplate(models.Model):
                         # line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
                         #                 * line.product_uom_qty
 
-                        line.sale = ((price_before_sale_comision - line.price_subtotal)) * line.product_uom_qty
+                        line.sale = ((line.price_subtotal - price_before_sale_comision)) * line.product_uom_qty
 
 
 
