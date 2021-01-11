@@ -286,4 +286,6 @@ class SaleOrderTemplate(models.Model):
             data = {}
             data["oferta"] = view_id
             data["un_solo_producto"] = un_solo_producto
-            return self.env['report'].get_action(self, 'erp.imprimir_carta_tipo_report', data=data)
+            # return self.env['report'].get_action(self, 'erp.imprimir_carta_tipo_report', data=data)
+
+            self.env.ref('erp.imprimir_carta_tipo_report').report_action(self, data=data)
