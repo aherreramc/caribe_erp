@@ -74,11 +74,69 @@ class ImprimirCartaTipoReport(models.AbstractModel):
 
 
     def _get_report_values(self, docids, data=None):
-        # get the report action back as we will need its data
-        report = self.env['ir.actions.report']._get_report_from_name('imprimir_carta_tipo_report')
-        # get the records selected for this rendering of the report
-        obj = self.env[report.model].browse(docids)
-        # return a custom rendering context
-        return {
-            'lines': docids.get_lines()
-        }
+        # # get the report action back as we will need its data
+        # report = self.env['ir.actions.report']._get_report_from_name('erp.imprimir_carta_tipo_report')
+        # # get the records selected for this rendering of the report
+        # obj = self.env[report.model].browse(docids)
+        # # return a custom rendering context
+        # return {
+        #     'lines': docids.get_lines()
+        # }
+
+
+        self.model = self.env.context.get('active_model')
+        docs = self.env[self.model].browse(self.env.context.get('active_id'))
+
+
+        if docs.proveedor.id == 16: #"DE’LONGHI KENWOOD A.P.A"
+            docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'docs': docs,
+                'oferta':docs,
+                'time': time,
+                'nombre_report':'Carta Oferta',
+                'proveedor': docs.proveedor.id
+            }
+        elif docs.proveedor.id == 62: #"DE'LONGHI APPLIANCES S.R.L"
+             docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'docs': docs,
+                'oferta':docs,
+                'time': time,
+                'nombre_report':'Oferta',
+                'proveedor': docs.proveedor.id
+            }
+        elif docs.proveedor.id == 80: #"DE'LONGHI AMERICA, INC"
+             docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'docs': docs,
+                'oferta':docs,
+                'time': time,
+                'nombre_report':'Oferta',
+                'proveedor': docs.proveedor.id
+            }
+        elif docs.proveedor.id == 86: #"Zeus Caribe S.A."
+             docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'docs': docs,
+                'oferta':docs,
+                'time': time,
+                'nombre_report':'Oferta',
+                'proveedor': docs.proveedor.id
+            }
+        else:
+            docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'docs': docs,
+                'oferta':docs,
+                'time': time,
+                'nombre_report':'Carta Oferta',
+                'proveedor': False
+            }
+
+        return self.env['report'].render('erp.imprimir_carta_tipo_report', docargs)
