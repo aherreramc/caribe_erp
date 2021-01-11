@@ -41,14 +41,14 @@
             <field name="model">sale.order</field>
             <field name="arch" type="xml">
                 <form>
-                    <!--<header>-->
-                    <!--<button name="imprimir_cartatipo" string="Imprimir Carta Tipo" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
+                    <header>
+                    <button name="imprimir_carta_tipo" string="Imprimir Carta Tipo" type="object" groups=""/>
                     <!--<button name="imprimir_oferta" string="Imprimir Quotations" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
                     <!--<button name="exportar_productos_a_excel" string="Exportar productos a excel" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
                     <!--<button name="exportar_conformacion" string="Exportar conformación" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
                     <!--&lt;!&ndash;button name="exportar_conformacion_con_ceros" string="Exportar conformación sin importar cantidades" type="object"/&ndash;&gt;-->
                     <!--<button name="exportar_orden_de_compra" string="Exportar orden de compra" type="object" groups="erp.groupo_permisos_visibilidad_precios_formularios"/>-->
-                    <!--</header>-->
+                    </header>
                     <sheet>
                         <!--<h1>-->
                         <!--<field name="name" string="Nombre" modifiers="{'required': true}"/>-->

@@ -10,5 +10,15 @@
                 attachment_use="True"
                 file="Cotización"
         />
+
+        <report
+                id="imprimir_carta_tipo_report"
+                model="erp.imprimir_carta_tipo_report"
+                string="Oferta"
+                report_type="qweb-pdf"
+                name="erp.imprimir_carta_tipo_report"
+                attachment_use="True"
+                file="Oferta"
+        />
     </data>
 </odoo>

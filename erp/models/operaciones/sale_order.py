@@ -271,3 +271,20 @@ class SaleOrderTemplate(models.Model):
                 subtype_id=self.env.ref('mail.mt_note').id
             )
         return moves
+
+
+    def imprimir_carta_tipo(self):
+        pass
+
+        # #Se exportan, en caso de estar marcados, los distintos adjuntos que pueda contener el producto
+        # # self.exportar_adjuntos()
+        #
+        # un_solo_producto = 1
+        # if len(self.lineas_de_oferta) > 1:
+        #     un_solo_producto = 0
+        #
+        # view_id = self.env.ref('erp.imprimir_cartatipo_report').id
+        # data = {}
+        # data["oferta"] = view_id
+        # data["un_solo_producto"] = un_solo_producto
+        # return self.env['report'].get_action(self, 'erp.imprimir_cartatipo_report', data=data)
