@@ -277,12 +277,13 @@ class SaleOrderTemplate(models.Model):
         #Se exportan, en caso de estar marcados, los distintos adjuntos que pueda contener el producto
         # self.exportar_adjuntos()
 
-        un_solo_producto = 1
-        if len(self.lineas_de_oferta) > 1:
-            un_solo_producto = 0
+        for order in self:
+            un_solo_producto = 1
+            if len(order.lineas_de_oferta) > 1:
+                un_solo_producto = 0
 
-        view_id = self.env.ref('erp.imprimir_carta_tipo_report').id
-        data = {}
-        data["oferta"] = view_id
-        data["un_solo_producto"] = un_solo_producto
-        return self.env['report'].get_action(self, 'erp.imprimir_carta_tipo_report', data=data)
+            view_id = self.env.ref('erp.imprimir_carta_tipo_report').id
+            data = {}
+            data["oferta"] = view_id
+            data["un_solo_producto"] = un_solo_producto
+            return self.env['report'].get_action(self, 'erp.imprimir_carta_tipo_report', data=data)
