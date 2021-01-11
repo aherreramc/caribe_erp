@@ -84,6 +84,8 @@ class ImprimirCartaTipoReport(models.AbstractModel):
         # }
 
 
+
+
         self.model = self.env.context.get('active_model')
         docs = self.env[self.model].browse(self.env.context.get('active_id'))
 
@@ -139,4 +141,22 @@ class ImprimirCartaTipoReport(models.AbstractModel):
                 'proveedor': False
             }
 
-        return self.env['report'].render('erp.imprimir_carta_tipo_report', docargs)
+        # return self.env['report'].render('erp.imprimir_carta_tipo_report', docargs)
+
+
+        data = data if data is not None else {}
+        # pricelist = self.env['product.pricelist'].browse(data.get('form', {}).get('price_list', False))
+        # products = self.env['product.product'].browse(data.get('ids', data.get('active_ids')))
+        # quantities = self._get_quantity(data)
+        return {
+            'doc_ids': data.get('ids', data.get('active_ids')),
+            # 'doc_model': 'product.pricelist',
+            'doc_model': self.env.context.get('active_model'),
+            'docs': docargs,
+            # 'data': dict(
+            #     data,
+            #     pricelist=pricelist,
+            #     quantities=quantities,
+            #     categories_data=self._get_categories(pricelist, products, quantities)
+            # ),
+        }
