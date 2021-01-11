@@ -279,7 +279,7 @@ class SaleOrderTemplate(models.Model):
 
         for order in self:
             un_solo_producto = 1
-            if len(order.lineas_de_oferta) > 1:
+            if len(order.order_line) > 1:
                 un_solo_producto = 0
 
             view_id = self.env.ref('erp.imprimir_carta_tipo_report').id
