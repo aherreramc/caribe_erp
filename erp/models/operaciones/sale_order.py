@@ -288,4 +288,4 @@ class SaleOrderTemplate(models.Model):
             data["un_solo_producto"] = un_solo_producto
             # return self.env['report'].get_action(self, 'erp.imprimir_carta_tipo_report', data=data)
 
-            self.env.ref('erp.imprimir_carta_tipo_report').report_action(self, data=data)
+            return self.env.ref('erp.imprimir_carta_tipo_report').report_action(self, data=data)
