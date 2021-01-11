@@ -112,7 +112,7 @@ class SaleOrderTemplate(models.Model):
     partida_arancelaria_oferta = fields.Char()
 
     validez_oferta_dias = fields.Integer(string="Validez de la oferta")
-    validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
+    # validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
 
     validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
 
@@ -132,15 +132,15 @@ class SaleOrderTemplate(models.Model):
     homologados_en_cuba = fields.Boolean('Todos los modelos ofertados están homologados para su venta en Cuba', default=False)
 
 
-    @api.depends('validez_oferta_dias', 'create_date')
-    def _validez_oferta_compute(self):
-        for order in self:
-            if order.create_date is not False:
-                # order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
-                order.validez_oferta_compute = order.create_date + timedelta(days = order.validez_oferta_dias)
-
-            if order.validez_oferta_dias is not False:
-                order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
+    # @api.depends('validez_oferta_dias', 'create_date')
+    # def _validez_oferta_compute(self):
+    #     for order in self:
+    #         if order.create_date is not False:
+    #             # order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
+    #             order.validez_oferta_compute = order.create_date + timedelta(days = order.validez_oferta_dias)
+    #
+    #         if order.validez_oferta_dias is not False:
+    #             order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
 
 
     @api.depends('order_line.price_total')
