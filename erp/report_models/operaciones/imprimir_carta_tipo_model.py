@@ -71,3 +71,14 @@ class ImprimirCartaTipoReport(models.AbstractModel):
         return self.env['report'].render('erp.imprimir_carta_tipo_report', docargs)
 
 
+
+
+    def _get_report_values(self, docids, data=None):
+        # get the report action back as we will need its data
+        report = self.env['ir.actions.report']._get_report_from_name('erp.imprimir_carta_tipo_report')
+        # get the records selected for this rendering of the report
+        obj = self.env[report.model].browse(docids)
+        # return a custom rendering context
+        return {
+            'lines': docids.get_lines()
+        }
