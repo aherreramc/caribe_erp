@@ -166,6 +166,7 @@ class SaleOrderLineTemplate(models.Model):
 
                         # line.sale = ((line.price_subtotal - price_before_sale_comision )) * line.product_uom_qty
                         line.sale = ((line.price_unit - line.price_subtotal)) * line.product_uom_qty
+                        raise except_orm(str(line.price_unit + "   " + line.price_subtotal))
 
 
 
