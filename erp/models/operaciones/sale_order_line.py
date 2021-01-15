@@ -115,8 +115,10 @@ class SaleOrderLineTemplate(models.Model):
         for line in self:
             price_before_sale_comision = line.price_list_item.price_before_sale_comision()
             # raise except_orm(price_before_sale_comision)
-            line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
-                             * line.product_uom_qty
+            # line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
+            #                  * line.product_uom_qty
+
+            line.sale = ((line.price_unit - line.price_subtotal)) * line.product_uom_qty
 
 
 
@@ -130,8 +132,10 @@ class SaleOrderLineTemplate(models.Model):
                 if line.sale_percent != 100:
                     line.sale_percent = line.price_list_item.sale_percent - line.discount
                     price_before_sale_comision = line.price_list_item.price_before_sale_comision()
-                    line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
-                                     * line.product_uom_qty
+                    # line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
+                    #                  * line.product_uom_qty
+
+                    line.sale = ((line.price_unit - line.price_subtotal)) * line.product_uom_qty
 
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
@@ -167,7 +171,7 @@ class SaleOrderLineTemplate(models.Model):
                         # line.sale = ((line.price_subtotal - price_before_sale_comision )) * line.product_uom_qty
                         line.sale = ((line.price_unit - line.price_subtotal)) * line.product_uom_qty
                         # raise except_orm(str(line.sale_percent) + "      " + str(line.price_unit) + "   " + str(line.price_subtotal))
-                        raise except_orm(((line.price_unit - line.price_subtotal)) * line.product_uom_qty)
+                        # raise except_orm(((line.price_unit - line.price_subtotal)) * line.product_uom_qty)
 
 
     def _prepare_invoice_line(self):
