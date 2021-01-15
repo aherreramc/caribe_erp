@@ -118,7 +118,7 @@ class SaleOrderLineTemplate(models.Model):
             # line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
             #                  * line.product_uom_qty
 
-            line.sale = line.sale = (line.price_unit * line.product_uom_qty) - line.price_subtotal
+            line.sale = round(line.price_unit, 2) * line.product_uom_qty - line.price_subtotal
 
 
 
@@ -135,7 +135,7 @@ class SaleOrderLineTemplate(models.Model):
                     # line.sale = ((price_before_sale_comision / (1 - line.sale_percent / 100)) - price_before_sale_comision) \
                     #                  * line.product_uom_qty
 
-                    line.sale = line.sale = (line.price_unit * line.product_uom_qty) - line.price_subtotal
+                    line.sale = round(line.price_unit, 2) * line.product_uom_qty - line.price_subtotal
 
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
@@ -162,7 +162,7 @@ class SaleOrderLineTemplate(models.Model):
 
                     if line.sale_percent != 100:
                         line.sale_percent = line.price_list_item.sale_percent - line.discount
-                        line.sale = line.sale = (line.price_unit * line.product_uom_qty) - line.price_subtotal
+                        line.sale = round(line.price_unit, 2) * line.product_uom_qty - line.price_subtotal
                         
 
 
