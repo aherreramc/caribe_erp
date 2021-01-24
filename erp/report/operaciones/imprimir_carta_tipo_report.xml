@@ -13,7 +13,7 @@
                 <t t-set="cant_filas" t-value="1"/>
                 <div class="page">
 
-                    Hola mundo
+                    Hola mundo a
 
                     <style type="text/css">
 
