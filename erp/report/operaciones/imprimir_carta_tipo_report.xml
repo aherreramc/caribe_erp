@@ -1,12 +1,18 @@
-<template id="erp.imprimir_carta_tipo_report">
-    <t t-call="web.html_container">
-        <t t-foreach="docs" t-as="o">
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <h2>Report title</h2>
-                    <p>This object's name is <span t-field="o.name"/></p>
-                </div>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="erp.imprimir_carta_tipo_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Report title</h2>
+                        <p>This object's name is
+                            <span t-field="o.name"/>
+                        </p>
+                    </div>
+                </t>
             </t>
         </t>
-    </t>
-</template>
+    </template>
+
+</odoo>
