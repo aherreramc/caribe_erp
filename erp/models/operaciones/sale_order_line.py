@@ -26,7 +26,7 @@ class SaleOrderLineTemplate(models.Model):
     price_list_item = fields.Many2one('product.pricelist.item', string ="Price list item")
     price_unit = fields.Float('Unit Price', required=True, digits='Product Price', default=0.0)
 
-
+    name = fields.Text(string='Description', required=True)
 
 
     @api.onchange('product_id')
