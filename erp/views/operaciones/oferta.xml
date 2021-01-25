@@ -526,6 +526,7 @@
                                                         <field name="price_tax" invisible="1"/>
                                                         <field name="price_subtotal" invisible="1"/>
                                                         <label for="product_uom_qty"/>
+                                                        <field name="product_packaging"/>
                                                         <div class="o_row" name="ordered_qty">
                                                             <field context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"
                                                                    name="product_uom_qty"/>
@@ -560,6 +561,8 @@
                                                             <field name="discount" class="oe_inline"/>
                                                             %
                                                         </div>
+                                                        <field name="sale_percent"/>
+                                                        <field name="sale"/>
                                                         <!--
                                                             We need the sequence field to be here
                                                             because we want to be able to overwrite the default sequence value in the JS
