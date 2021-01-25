@@ -143,6 +143,116 @@ class SaleOrderTemplate(models.Model):
     #             order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
 
 
+
+    otra_oferta_traer_productos = fields.Many2one('sale.order')
+
+    def otra_oferta_traer_productos_funcion(self):
+        pass
+        # if self.otra_oferta_traer_productos.id is not False:
+        #     for linea_otra_oferta_traer_productos in self.otra_oferta_traer_productos.lineas_de_oferta:
+        #         existe = False
+        #
+        #         for linea in self.lineas_de_oferta:
+        #             if linea.producto.id == linea_otra_oferta_traer_productos.producto.id:
+        #                 existe = True
+        #
+        #
+        #         if existe is False:
+        #             linea_otra_oferta_traer_productos = linea_otra_oferta_traer_productos.copy()
+        #             linea_otra_oferta_traer_productos.oferta = self.id
+        #             linea_otra_oferta_traer_productos.importe_unitario = 0
+        #             linea_otra_oferta_traer_productos.importe_total_de_linea_producto = 0
+
+    def eliminar_productos_cantidad_producto_actual_cero(self):
+        pass
+        # for linea in self.lineas_de_oferta:
+        #     if linea.cantidad_producto_actual_oferta == 0:
+        #         linea.unlink()
+        #
+        # #Se eliminan también las lineas de las entregas
+        # for entrega in self.entregas:
+        #     for contenedor in entrega.contenedores_20:
+        #         for linea in contenedor.contenedor.lineas_contenedor_20:
+        #             if linea.cantidad_producto_actual_oferta == 0:
+        #                 linea.unlink()
+        #
+        # for entrega in self.entregas:
+        #     for contenedor in entrega.contenedores_40:
+        #         for linea in contenedor.contenedor.lineas_contenedor_40:
+        #             if linea.cantidad_producto_actual_oferta == 0:
+        #                 linea.unlink()
+        #
+        # for entrega in self.entregas:
+        #     for contenedor in entrega.contenedores_40_hq:
+        #         for linea in contenedor.contenedor.lineas_contenedor_40_hq:
+        #             if linea.cantidad_producto_actual_oferta == 0:
+        #                 linea.unlink()
+
+
+    def actualizar_desde_el_nomenclador(self):
+        pass
+        # for linea in self.lineas_de_oferta:
+        #     linea.foto = linea.producto.image_variant
+        #     linea.tipo_de_producto = linea.producto.tipo_de_producto.name
+        #     linea.orden_marca = linea.producto.marca.orden
+        #     linea.cantidad_por_caja_master = linea.producto.cantidad_por_caja_master
+        #
+        #     linea.volumen_caja_master = linea.producto.volumen_caja_master
+        #     linea.cantidad_producto_total_oferta = linea.producto.cantidad_minima_de_orden
+        #
+        #     if linea.cantidad_por_caja_master != 0:
+        #         linea.volumen_total_de_linea_producto = linea.cantidad_producto_actual_oferta * linea.volumen_caja_master / linea.cantidad_por_caja_master
+        #
+        #
+        # for entrega in self.entregas:
+        #     for contenedor_20 in entrega.contenedores_20:
+        #         for linea in contenedor_20.contenedor.lineas_contenedor_20:
+        #             linea.foto = linea.producto.image_variant
+        #             linea.tipo_de_producto = linea.producto.tipo_de_producto.name
+        #             linea.orden_marca = linea.producto.marca.orden
+        #             linea.cantidad_por_caja_master = linea.producto.cantidad_por_caja_master
+        #             linea.cantidad_producto_total_oferta = linea.producto.cantidad_minima_de_orden
+        #
+        #             if linea.cantidad_por_caja_master != 0:
+        #                 linea.volumen = linea.cantidad_producto * linea.producto.volumen_caja_master / linea.cantidad_por_caja_master
+        #
+        #
+        #     for contenedor_40 in entrega.contenedores_40:
+        #         for linea in contenedor_40.contenedor.lineas_contenedor_40:
+        #             linea.foto = linea.producto.image_variant
+        #             linea.tipo_de_producto = linea.producto.tipo_de_producto.name
+        #             linea.orden_marca = linea.producto.marca.orden
+        #             linea.cantidad_por_caja_master = linea.producto.cantidad_por_caja_master
+        #             linea.cantidad_producto_total_oferta = linea.producto.cantidad_minima_de_orden
+        #
+        #             if linea.cantidad_por_caja_master != 0:
+        #                 linea.volumen = linea.cantidad_producto * linea.producto.volumen_caja_master / linea.cantidad_por_caja_master
+        #
+        #
+        #     for contenedor_40_hq in entrega.contenedores_40_hq:
+        #         for linea in contenedor_40_hq.contenedor.lineas_contenedor_40_hq:
+        #             linea.foto = linea.producto.image_variant
+        #             linea.tipo_de_producto = linea.producto.tipo_de_producto.name
+        #             linea.orden_marca = linea.producto.marca.orden
+        #             linea.cantidad_por_caja_master = linea.producto.cantidad_por_caja_master
+        #             linea.cantidad_producto_total_oferta = linea.producto.cantidad_minima_de_orden
+        #
+        #             if linea.cantidad_por_caja_master != 0:
+        #                 linea.volumen = linea.cantidad_producto * linea.producto.volumen_caja_master / linea.cantidad_por_caja_master
+
+
+    def poner_cantidades_a_cero(self):
+        pass
+        # self.entregas.unlink()
+        #
+        # for linea in self.lineas_de_oferta:
+        #     linea.cantidad_producto_actual_oferta = 0
+        #     linea.volumen_total_de_linea_producto = 0
+        #     linea.importe_total_de_linea_producto = 0
+        #
+        # self.actualizar_mercancia()
+
+
     @api.depends('order_line.price_total')
     def _discount_total(self):
 
