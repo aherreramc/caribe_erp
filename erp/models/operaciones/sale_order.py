@@ -146,6 +146,26 @@ class SaleOrderTemplate(models.Model):
 
     otra_oferta_traer_productos = fields.Many2one('sale.order')
 
+    invoice_count = fields.Integer(string='Invoice Count', compute='_get_invoiced', readonly=True)
+    invoice_ids = fields.Many2many("account.move", string='Invoices', compute="_get_invoiced", readonly=True, copy=False, search="_search_invoice_ids")
+    invoice_status = fields.Selection([
+        ('upselling', 'Upselling Opportunity'),
+        ('invoiced', 'Fully Invoiced'),
+        ('to invoice', 'To Invoice'),
+        ('no', 'Nothing to Invoice')
+        ], string='Invoice Status', compute='_get_invoice_status', store=True, readonly=True)
+
+    @api.depends('order_line.invoice_lines')
+    def _get_invoiced(self):
+        # The invoice_ids are obtained thanks to the invoice lines of the SO
+        # lines, and we also search for possible refunds created directly from
+        # existing invoices. This is necessary since such a refund is not
+        # directly linked to the SO.
+        for order in self:
+            invoices = order.order_line.invoice_lines.move_id.filtered(lambda r: r.type in ('out_invoice', 'out_refund'))
+            order.invoice_ids = invoices
+            order.invoice_count = len(invoices)
+
     def otra_oferta_traer_productos_funcion(self):
         pass
         # if self.otra_oferta_traer_productos.id is not False:
