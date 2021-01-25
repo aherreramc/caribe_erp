@@ -28,6 +28,8 @@ class SaleOrderLineTemplate(models.Model):
 
     name = fields.Text(string='Description', required=True)
 
+    product_packaging = fields.Many2one( 'product.packaging', string='Package', default=False, check_company=True)
+
 
     @api.onchange('product_id')
     def product_id_change(self):
