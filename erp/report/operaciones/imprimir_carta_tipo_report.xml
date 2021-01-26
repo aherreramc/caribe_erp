@@ -17,7 +17,12 @@
     <template id="erp.imprimir_carta_tipo_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                Hola
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        Hola
+                    </div>
+                </t>
                 <!--<div class="article o_report_stock_rule">-->
                     <!--<div class="page">-->
                         <!--<h2 t-field="o.name"/>-->
