@@ -16,6 +16,7 @@
                                 </p>
                             </div>
                             <div class="col-xs-12 espacio_al_principio">
+                                aa
 
                                 <p t-if="oferta.representante.name">
                                     <b>A:</b>
