@@ -290,19 +290,23 @@
                                     </t>
                                 </ul>
                             </div>
-
+                        </div>
+                        <div class="row">
                             <div t-if="oferta.observaciones" class="col-xs-12 despegar_mas espacio_al_principio">
                                 <!--field t-esc="oferta.observaciones" widget="html"/-->
                                 <span t-raw="oferta.observaciones"/>
                                 <!--field name="oferta.observaciones" widget="html"/-->
-
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-xs-10 despegar_mas espacio_al_principio">
                                 <p>Quedamos a su disposición en caso de que requiera más detalles.</p>
                                 <p>Atentamente,</p>
                             </div>
-                            <!--div class="col-xs-10 offset-xs-1 despegar" >
-                                 <div class="col-xs-12 text-right despegar"-->
+                        </div>
+                        <!--div class="col-xs-10 offset-xs-1 despegar" >
+                             <div class="col-xs-12 text-right despegar"-->
+                        <div class="row">
                             <div class="despegar_mas div_firma">
                                 <div>
                                     <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
@@ -314,7 +318,6 @@
                                     </p>
                                 </div>
                             </div>
-
                         </div>
 
 
