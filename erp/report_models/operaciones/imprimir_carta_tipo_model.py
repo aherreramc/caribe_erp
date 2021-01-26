@@ -89,7 +89,6 @@ class ImprimirCartaTipoReport(models.AbstractModel):
         self.model = self.env.context.get('active_model')
         docs = self.env[self.model].browse(self.env.context.get('active_id'))
 
-        raise except_orm(docs)
 
 
         if docs.proveedor.id == 16: #"DE’LONGHI KENWOOD A.P.A"
@@ -154,7 +153,7 @@ class ImprimirCartaTipoReport(models.AbstractModel):
             'doc_ids': data.get('ids', data.get('active_ids')),
             # 'doc_model': 'product.pricelist',
             'doc_model': self.env.context.get('active_model'),
-            'docs': docargs,
+            'docs': docs,
             # 'data': dict(
             #     data,
             #     pricelist=pricelist,
