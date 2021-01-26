@@ -42,6 +42,16 @@
                                         </t>
                                     </div>
                                 </p>
+
+                                <t t-if="oferta.marcas" class="">
+                                <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
+                                    <p>
+                                        <span t-esc="oferta.marcas_encabezado"/>
+                                        <span t-esc="oferta.marcas_to_string()"/>
+                                    </p>
+                                </t>
+                            </t>
+
                             </div>
 
                             <t t-if="oferta.marcas" class="">
