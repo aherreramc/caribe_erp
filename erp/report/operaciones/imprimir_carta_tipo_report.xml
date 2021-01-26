@@ -44,7 +44,6 @@
                                 </p>
                             </div>
                             <div t-if="oferta.marcas" class="col-xs-10 despegar_mas espacio_al_principio">
-                                aa
                                 <t t-if="oferta.tipo_oferta"/>
                                 <t t-if="un_solo_producto==1"><!-- 1 = True-->
                                     <p>Por este medio, le comunicamos nuestra mejor

@@ -273,6 +273,30 @@ class SaleOrderTemplate(models.Model):
         #
         # self.actualizar_mercancia()
 
+    def marcas_to_string(self):
+        marcas = ""
+
+        cantidad_de_marcas_restantes = len(self.marcas)
+
+        for marca in self.marcas:
+            marcas += str(marca.name)
+
+            if len(self.marcas) > 1:
+                if cantidad_de_marcas_restantes > 2:
+                    marcas += ", "
+                    cantidad_de_marcas_restantes -= 1
+                elif cantidad_de_marcas_restantes == 2:
+                    marcas += " y "
+                    cantidad_de_marcas_restantes -= 1
+
+
+        marcas += "."
+
+        # if len(marcas) - 2 > 0:
+        #     marcas = marcas[0:len(marcas) - 2] + "."
+
+        return marcas
+
 
     @api.depends('order_line.price_total')
     def _discount_total(self):
