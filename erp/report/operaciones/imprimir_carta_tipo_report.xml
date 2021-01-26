@@ -10,12 +10,12 @@
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
                             <t t-set="un_solo_producto" t-value="0"/>
 
-                            <!--<div class="col-xs-3 offset-xs-10">-->
-                                <!--<p>-->
-                                    <!--<span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>-->
-                                    <!--aa-->
-                                <!--</p>-->
-                            <!--</div>-->
+                            <!--div class="col-xs-3 offset-xs-10">
+                                <p>
+                                    <span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>
+                                    aa
+                                </p>
+                            </div-->
 
                             <div class="col-xs-12 espacio_al_principio">
 
@@ -27,11 +27,11 @@
                                     <span style="color:white;">A:</span>
                                     <span t-esc="oferta.representante.cargo"/>
                                 </p>
-                                <!--<p>-->
-                                    <!--<b>-->
-                                        <!--<span t-esc="oferta.cliente.name"/>-->
-                                    <!--</b>-->
-                                <!--</p>-->
+                                <p>
+                                    <b>
+                                        <span t-esc="oferta.cliente.name"/>
+                                    </b>
+                                </p>
                                 <p>
                                     <div t-if="oferta.representantes_en_copia">
                                         <span>
