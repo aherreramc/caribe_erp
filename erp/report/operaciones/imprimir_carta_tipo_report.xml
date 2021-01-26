@@ -42,6 +42,8 @@
                                         </t>
                                     </div>
                                 </p>
+
+                               cc
                             </div>
                             bb
                             <div t-if="oferta.marcas" class="">
