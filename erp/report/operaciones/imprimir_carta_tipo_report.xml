@@ -42,7 +42,10 @@
                                         </t>
                                     </div>
                                 </p>
-
+dd
+                                <span t-esc="oferta.marcas"/>
+                                <span t-esc="oferta.marcas_encabezado"/>
+                                <span t-esc="oferta.marcas_to_string()"/>
                                cc
                             </div>
                             bb
