@@ -84,74 +84,120 @@
                                         </p>
                                     </li>
                                     <t t-if="oferta.pais">
-                                    <t t-if="oferta.puerto_de_origen">
-                                        <t t-if="oferta.puerto_de_origen.tipo == 'puerto'">
-                                            <li class="despegar" t-if="oferta.pais">
-                                                <p>
-                                                    <b>País<t t-if="oferta.pais">y puerto</t>de embarque:
-                                                    </b>
-                                                    <t t-if="oferta.puerto_de_origen"><span t-esc="oferta.pais.name"/>,
-                                                    </t>
-                                                    <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                </p>
-                                            </li>
-                                        </t>
+                                        <t t-if="oferta.puerto_de_origen">
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'puerto'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y puerto</t>de embarque:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
 
-                                        <t t-if="oferta.puerto_de_origen.tipo == 'aereopuerto'">
-                                            <li class="despegar" t-if="oferta.pais">
-                                                <p>
-                                                    <b>País<t t-if="oferta.pais">y aereopuerto</t>de embarque:
-                                                    </b>
-                                                    <t t-if="oferta.puerto_de_origen"><span t-esc="oferta.pais.name"/>,
-                                                    </t>
-                                                    <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                </p>
-                                            </li>
-                                        </t>
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'aereopuerto'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y aereopuerto</t>de embarque:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
 
-                                        <t t-if="oferta.puerto_de_origen.tipo == 'almacen'">
-                                            <li class="despegar" t-if="oferta.pais">
-                                                <p>
-                                                    <b>País<t t-if="oferta.pais">y almacén</t>:
-                                                    </b>
-                                                    <t t-if="oferta.puerto_de_origen"><span t-esc="oferta.pais.name"/>,
-                                                    </t>
-                                                    <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                </p>
-                                            </li>
-                                        </t>
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'almacen'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y almacén</t>:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
 
-                                        <t t-if="oferta.puerto_de_origen.tipo == 'bodega'">
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'bodega'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y almacén</t>:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
+                                        </t>
+                                        <t t-else="">
                                             <li class="despegar" t-if="oferta.pais">
                                                 <p>
-                                                    <b>País<t t-if="oferta.pais">y almacén</t>:
-                                                    </b>
-                                                    <t t-if="oferta.puerto_de_origen"><span t-esc="oferta.pais.name"/>,
-                                                    </t>
-                                                    <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    <b>País:</b>
+                                                    <span t-esc="oferta.pais.name"/>.
                                                 </p>
                                             </li>
                                         </t>
                                     </t>
                                     <t t-else="">
-                                        <li class="despegar" t-if="oferta.pais">
+                                        <li class="despegar">
                                             <p>
-                                                <b>País:</b>
-                                                <span t-esc="oferta.pais.name"/>.
+                                                <b>
+                                                    <span t-esc="oferta.pais_puerto_encabezado"/>
+                                                </b>
+                                                <span t-esc="oferta.pais_puerto"/>
                                             </p>
                                         </li>
                                     </t>
-                                </t>
-                                <t t-else="">
-                                    <li class="despegar">
+
+
+                                    <li class="despegar" t-if="oferta.dias_para_entregar">
                                         <p>
-                                            <b>
-                                                <span t-esc="oferta.pais_puerto_encabezado"/>
-                                            </b>
-                                            <span t-esc="oferta.pais_puerto"/>
+                                            <b>Tiempo de entrega:</b>
+                                            <span>En o antes de los</span>
+                                            <span t-esc="oferta.dias_para_entregar.name"/>
+                                            <t t-if="oferta.etapa_entrega">días de<span
+                                                    t-esc="oferta.etapa_entrega.name"/>.
+                                            </t>
                                         </p>
                                     </li>
-                                </t>
+                                    <li class="despegar" t-if="oferta.pago">
+                                        <p class="texto_justificado">
+                                            <b>Pago:</b>
+                                            <span t-esc="oferta.pago"/>
+                                            <!--t t-if="oferta.porciento_total_mercancia"> por el <span t-esc="oferta.porciento_total_mercancia"/>% del importe total de las mercancias contratadas</t-->
+                                            <t t-if="oferta.porciento_total_mercancia">por el 100% del importe total de
+                                                las
+                                                mercancias contratadas
+                                            </t>
+                                            <t t-if="oferta.dias_para_pagar">pagaderas a los
+                                                <span t-esc="oferta.dias_para_pagar.name"/>
+                                                <t t-if="oferta.etapa_pago">días a partir de
+                                                    <span t-esc="oferta.etapa_pago.name"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="oferta.interes_anual">, con interés anual de<span
+                                                    t-esc="oferta.interes_anual"/>%
+                                            </t>
+                                            <t t-else="">
+                                                .
+                                            </t>
+
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.garantia">
+                                        <p class="texto_justificado">
+                                            <b>Garantía:</b>
+                                            <span t-esc="oferta.garantia"/>
+                                        </p>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
