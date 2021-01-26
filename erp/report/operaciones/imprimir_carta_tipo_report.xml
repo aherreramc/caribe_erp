@@ -53,6 +53,23 @@
                                 </t>
                             </div>
 
+                            <div class="col-xs-10 espacio_al_principio">
+                                <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones
+                                    Generales:
+                                </p>
+                            </div>
+
+                            <div class="col-xs-10 offset-xs-1 interlineado">
+                                <ul>
+                                    <li class="despegar" t-if="oferta.moneda">
+                                        <p>
+                                            <b>Moneda:</b>
+                                            La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+
 
                         </div>
 
