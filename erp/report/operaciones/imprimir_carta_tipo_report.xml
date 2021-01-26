@@ -17,57 +17,65 @@
                                 </p>
                             </div-->
 
-                            <div class="col-xs-12 espacio_al_principio">
+                            <div class="row">
+                                <div class="col-xs-12 espacio_al_principio">
 
-                                <p t-if="oferta.representante.name">
-                                    <b>A:</b>
-                                    <span style="padding-right: 3px;" t-esc="oferta.representante.tratamiento"/>
-                                    <span t-esc="oferta.representante.name"/>
-                                    <br/>
-                                    <span style="color:white;">A:</span>
-                                    <span t-esc="oferta.representante.cargo"/>
-                                </p>
-                                <p>
-                                    <b>
-                                        <span t-esc="oferta.cliente.name"/>
-                                    </b>
-                                </p>
-                                <p>
-                                    <div t-if="oferta.representantes_en_copia">
-                                        <span>
-                                            <b>Cc:</b>
-                                        </span>
-                                        <t t-foreach="oferta.representantes_en_copia" t-as="representante_en_copia">
-                                            <span t-esc="representante_en_copia.name"/>
-                                        </t>
-                                    </div>
-                                </p>
-                            </div>
-
-                            <div t-if="oferta.marcas" class="col-xs-12">
-                                <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
-                                    <p>
-                                        <span t-esc="oferta.marcas_encabezado"/>
-                                        <span t-esc="oferta.marcas_to_string()"/>
+                                    <p t-if="oferta.representante.name">
+                                        <b>A:</b>
+                                        <span style="padding-right: 3px;" t-esc="oferta.representante.tratamiento"/>
+                                        <span t-esc="oferta.representante.name"/>
+                                        <br/>
+                                        <span style="color:white;">A:</span>
+                                        <span t-esc="oferta.representante.cargo"/>
                                     </p>
-                                </t>
+                                    <p>
+                                        <b>
+                                            <span t-esc="oferta.cliente.name"/>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <div t-if="oferta.representantes_en_copia">
+                                            <span>
+                                                <b>Cc:</b>
+                                            </span>
+                                            <t t-foreach="oferta.representantes_en_copia" t-as="representante_en_copia">
+                                                <span t-esc="representante_en_copia.name"/>
+                                            </t>
+                                        </div>
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="col-xs-10 espacio_al_principio">
-                                <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones
-                                    Generales:
-                                </p>
-                            </div>
-
-                            <div class="col-xs-10 offset-xs-1 interlineado">
-                                <ul>
-                                    <li class="despegar" t-if="oferta.currency_id">
+                            <div class="row">
+                                <div t-if="oferta.marcas" class="col-xs-12">
+                                    <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
                                         <p>
-                                            <b>Moneda:</b>
-                                            La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
+                                            <span t-esc="oferta.marcas_encabezado"/>
+                                            <span t-esc="oferta.marcas_to_string()"/>
                                         </p>
-                                    </li>
-                                </ul>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 espacio_al_principio">
+                                    <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones
+                                        Generales:
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 offset-xs-1 interlineado">
+                                    <ul>
+                                        <li class="despegar" t-if="oferta.currency_id">
+                                            <p>
+                                                <b>Moneda:</b>
+                                                La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
 
