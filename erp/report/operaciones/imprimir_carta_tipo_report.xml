@@ -6,46 +6,7 @@
                 <t t-call="web.external_layout">
                     <div class="page">
 
-                        <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                            <t t-set="un_solo_producto" t-value="0"/>
-
-                            <t t-foreach="oferta.lineas_de_oferta" t-as="linea">
-                                <t t-set="un_solo_producto" t-value="un_solo_producto+1"/>
-                            </t>
-
-                            <div class="col-xs-3 offset-xs-10">
-                                <!--p><span t-esc="oferta.fecha_valor"/></p-->
-                                <p>
-                                    <span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 espacio_al_principio">
-
-                                <p t-if="oferta.representante.name">
-                                    <b>A:</b>
-                                    <span style="padding-right: 3px;" t-esc="oferta.representante.tratamiento"/>
-                                    <span t-esc="oferta.representante.name"/>
-                                    <br/>
-                                    <span style="color:white;">A:</span>
-                                    <span t-esc="oferta.representante.cargo"/>
-                                </p>
-                                <p>
-                                    <b>
-                                        <span t-esc="oferta.cliente.name"/>
-                                    </b>
-                                </p>
-                                <p>
-                                    <div t-if="oferta.representantes_en_copia">
-                                        <span>
-                                            <b>Cc:</b>
-                                        </span>
-                                        <t t-foreach="oferta.representantes_en_copia" t-as="representante_en_copia">
-                                            <span t-esc="representante_en_copia.name"/>
-                                        </t>
-                                    </div>
-                                </p>
-                            </div>
-                        </div>
+                  Hola
                     </div>
                 </t>
             </t>
