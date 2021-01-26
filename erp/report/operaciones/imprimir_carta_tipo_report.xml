@@ -43,7 +43,8 @@
                                     </div>
                                 </p>
                             </div>
-                            <div t-if="oferta.marcas" class="col-xs-10 despegar_mas espacio_al_principio">
+                            bb
+                            <div t-if="oferta.marcas" class="">
                                 aa
                                 <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
                                     <p>
