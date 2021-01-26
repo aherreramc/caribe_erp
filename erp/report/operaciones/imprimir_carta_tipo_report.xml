@@ -217,7 +217,7 @@
 
                                 <t t-set="un_solo_producto" t-value="0"/>
 
-                                <t t-foreach="oferta.lineas_de_oferta" t-as="linea">
+                                <t t-foreach="oferta.order_lines" t-as="linea">
                                     <t t-set="un_solo_producto" t-value="un_solo_producto+1"/>
                                 </t>
 
