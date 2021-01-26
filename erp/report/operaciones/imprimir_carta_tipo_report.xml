@@ -44,30 +44,14 @@
                                 </p>
                             </div>
                             <div t-if="oferta.marcas" class="col-xs-10 despegar_mas espacio_al_principio">
-                                <t t-if="oferta.tipo_oferta"/>
-                                <t t-if="un_solo_producto==1"><!-- 1 = True-->
-                                    <p>Por este medio, le comunicamos nuestra mejor
-                                        <span t-esc="oferta.tipo_oferta.name"/>
-                                        de producto marca
-                                        <span t-esc="oferta.marcas_to_string()"/>
-                                    </p>
-                                </t>
-                                <t t-else="">
-                                    <p>Por este medio, le comunicamos nuestra mejor
-                                        <span t-esc="oferta.tipo_oferta.name"/>
-                                        de productos marca
-                                        <span t-esc="oferta.marcas_to_string()"/>
-                                    </p>
-                                </t>
-
+                                aa
                                 <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
                                     <p>
+                                        cc
                                         <span t-esc="oferta.marcas_encabezado"/>
                                         <span t-esc="oferta.marcas_to_string()"/>
                                     </p>
                                 </t>
-
-                                <!--/t-->
                             </div>
 
 
