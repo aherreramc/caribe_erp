@@ -198,6 +198,62 @@
                                             <span t-esc="oferta.garantia"/>
                                         </p>
                                     </li>
+                                    <t t-if="oferta.validez_oferta_a_mostrar!=0">
+                                    <li class="despegar" t-if="oferta.validez_oferta_a_mostrar">
+                                        <p>
+                                            <b>Validez de la oferta:</b>
+                                            <span t-esc="oferta.validez_oferta_a_mostrar"/>
+                                            <span></span>
+                                        </p>
+                                    </li>
+                                </t>
+                                <li class="despegar" t-if="oferta.partida_arancelaria_oferta">
+                                    <p>
+                                        <b>Partida Arancelaria:</b>
+                                        <span t-esc="oferta.partida_arancelaria_oferta"/>
+                                    </p>
+                                </li>
+
+
+                                <t t-set="un_solo_producto" t-value="0"/>
+
+                                <t t-foreach="oferta.lineas_de_oferta" t-as="linea">
+                                    <t t-set="un_solo_producto" t-value="un_solo_producto+1"/>
+                                </t>
+
+
+                                <t t-if="un_solo_producto==1"><!-- 1 = True-->
+                                    <li class="despegar" t-if="oferta.manual_de_usuario_espannol">
+                                        <p>
+                                            <b>El manual de usuario del equipo está en español.</b>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.fichas_tecnicas">
+                                        <p>
+                                            <b>En adjunto ficha técnica.</b>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.certificados_inhim">
+                                        <p>
+                                            <b>En adjunto certificado del INHIM.</b>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.certificados_onure">
+                                        <p>
+                                            <b>En adjunto certificado de la ONURE.</b>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.vision_explotada">
+                                        <p>
+                                            <b>En adjunto visión explotada con listas y partes.</b>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.homologados_en_cuba">
+                                        <p>
+                                            <b>El modelo ofertado está homologado para su venta en Cuba.</b>
+                                        </p>
+                                    </li>
+                                </t>
                                 </ul>
                             </div>
                         </div>
