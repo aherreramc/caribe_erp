@@ -43,6 +43,542 @@
                                 </p>
                             </div>
                         </div>
+
+                             <style type="text/css">
+
+                        .salto_de_pagina{
+                        page-break-before: always;
+                        }
+
+                        .fondo_azul{
+                        background-color:#A5E5E5;
+                        }
+
+                        .fondo_gris{
+                        background-color:#C0C0C0;
+                        }
+
+                        .table_head{
+                        font-size: 11px;
+                        padding-left: 3px;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                        }
+
+                        .table_body}{
+                        padding-left: 3px;
+                        padding-right: 3px;
+                        }
+
+                        .fondo_morado{
+                        background-color:#CCC0D9;
+                        }
+
+                        .inicial_mayuscula{
+                        text-transform: capitalize;
+                        }
+
+                        .mayuscula{
+                        text-transform: uppercase;
+                        }
+
+                        .fuente{
+                        font-family: Consolas;
+                        }
+
+                        .fuente_alt{
+                        font-family: Arial;
+                        }
+
+                        .fuente_clara{
+                        color: #2B2B2B;
+                        }
+                        /*
+                        .letra_chica{
+                        font-size:small;
+                        }
+
+                        .letra_chiquita{
+                        font-size:x-small;
+                        }
+                        */
+                        .text_center{
+                        text-align: center;
+                        }
+
+                        .text_left{
+                        text-align: left;
+                        }
+
+                        .espacio_iz_der{
+
+                        }
+
+                        .italica{
+                        font-style: italic;
+                        }
+
+                        .espacio_al_principio{
+                        padding-left: 15px;
+                        }
+
+                        .mas_espacio_al_principio{
+                        padding-left: 10px;
+                        }
+
+                        .espacio_al_final{
+                        padding-right: 10px;
+                        }
+
+                        .linea{
+                        border-top: 1px solid #cacaca;
+                        }
+
+                        .ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
+                        border-right: none;
+                        border-left: none;
+                        border-bottom: none;
+                        border-top: 1px solid black;
+                        }
+
+                        .tabla_productos{
+                        width: 100%;
+                        border-top: 1px solid #cacaca;
+                        }
+
+                        .tabla_productos tr.ultima_linea > td.celda_larga{
+                        border:none;
+                        padding-right: 10px;
+                        }
+
+                        .tabla_productos tr th,.tabla_productos tr td{
+                        border-bottom: none;
+                        width: 10%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
+                        width: 20%;
+                        padding-top: 5px;
+                        }
+
+                        .tabla_totales{
+                        width: 100%;
+                        }
+
+                        .tabla_totales tr th,.tabla_totales tr td{
+                        width: 14%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
+                        width: 16%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_totales tr.ultima_linea > td{
+                        border-right: none;
+                        border-left: none;
+                        border-bottom: none;
+                        border-top: 1.5px solid black;
+                        }
+
+                        .etiqueta{
+                        position: absolute;
+                        top:-10px;
+                        left: 50px;
+                        background-color: white;
+                        }
+
+                        .bordeado{
+                        border: 1px solid #cacaca;
+                        border-radius: 5px;
+                        }
+
+                        .bordeado_serio{
+                        border: 1px solid black;
+                        }
+
+                        .bordeado_serio_claro{
+                        border: 1px solid #cacaca;
+                        }
+
+                        .bordeado_serio_ancho{
+                        border: 3px solid #2B2B2B;
+                        }
+
+                        .bordeado_lateral_izq{
+                        border-left: 1px solid black;
+                        }
+
+                        .alejandro_image_margin{
+                        max-width: 95%;
+                        }
+
+                        .alejandro_centrar_imagen_en_td{
+
+                        margin-top: 3px;
+                        margin-bottom: 3px;
+
+                        margin-left: 3px;
+                        margin-right: 3px;
+
+                        max-width: 100px;
+                        max-height: 100px;
+                        }
+
+
+
+                        .alejandro_descripcion{
+                        padding-top: 8px;
+                        margin-top: 50px;
+                        margin-bottom: 5px;
+                        }
+
+                        .bordeado_lateral_der{
+                        border-right: 1px solid black;
+                        }
+
+                        .personalizacion_letra11{
+                        color:red;
+                        text-align: justify;
+                        font-family: "Arial", Helvetica, sans-serif;
+                        }
+
+                        .top_linea{
+                        border-top: 1px solid black;
+                        }
+
+                        .top_linea_clara{
+                        border-top: 1px solid #585858;
+                        }
+
+                        .bottom_linea{
+                        border-bottom: 1px solid black;
+                        }
+
+                        .todo_linea{
+                        border: 1px solid black;
+                        }
+
+                        .bottom_linea_clara{
+                        border-bottom: 2px solid #585858;
+                        }
+
+                        .despegar{
+                        margin-bottom: 6px;
+                        margin-top: 6px;
+                        }
+
+                        .depegar_adentro{
+                        padding-top: 8px;
+                        }
+
+                        .bajar{
+                        margin-top: 60px;
+                        }
+
+                        .bajar_poco{
+                        margin-top: 5px;
+                        }
+
+                        .tabla_default{
+                        width: 100%;
+                        }
+
+                        .tabla_default tr th{
+                        padding-top: 10px;
+                        }
+
+                        .tabla_default_2 tr th, .tabla_default_2 tr td{
+                        width: 50%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_3 tr th, .tabla_default_3 tr td{
+                        width: 33.333333%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_4 tr th, .tabla_default_4 tr td{
+                        width: 25%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_5 tr th, .tabla_default_5 tr td{
+                        width: 20%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_6 tr th, .tabla_default_6 tr td{
+                        width: 16.666667%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_7 tr th, .tabla_default_7 tr td{
+                        width: 14.285714%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_8 tr th, .tabla_default_8 tr td{
+                        width: 12.5%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_9 tr th, .tabla_default_9 tr td{
+                        width: 11.111111%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_10 tr th, .tabla_default_10 tr td{
+                        width: 10%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_default_11 tr th, .tabla_default_11 tr td{
+                        width: 9.090909%;
+                        padding-top: 5px;
+                        padding-left: 2px;
+                        }
+
+                        .tabla_linea_head tr th, .under_linea{
+                        border-bottom: 1px solid black;
+                        }
+
+                        .under_linea_clara{
+                        border-bottom: 2px solid #cacaca;
+                        }
+
+                        .top_linea{
+                        border-top: 1px solid black;
+                        }
+
+                        .row {
+                        margin-left: -15px;
+                        margin-right: -15px;
+                        }
+
+                        .row::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                        }
+
+                        .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+                        position: relative;
+                        min-height: 1px;
+                        padding-right: 5px;
+                        padding-left: 5px;
+                        }
+
+                        .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+                        position: relative;
+                        min-height: 1px;
+                        }
+
+                        .col-xs-1 {
+                        float: left;
+                        width: 8.333333%;
+                        }
+
+                        .col-mi-1 {
+                        float: left;
+                        width: 8.333333%;
+                        }
+
+                        .col-xs-2 {
+                        float: left;
+                        width: 16.666667%;
+                        }
+
+                        .col-mi-2 {
+                        float: left;
+                        width: 16.666667%;
+                        }
+
+                        .col-xs-3 {
+                        float: left;
+                        width: 25%;
+                        }
+
+                        .col-mi-3 {
+                        float: left;
+                        width: 25%;
+                        }
+
+                        .col-xs-4 {
+                        float: left;
+                        width: 33.333333%;
+                        }
+
+                        .col-mi-4 {
+                        float: left;
+                        width: 33.333333%;
+                        }
+
+                        .col-xs-5 {
+                        float: left;
+                        width: 41.666667%;
+                        }
+
+                        .col-mi-5 {
+                        float: left;
+                        width: 41.666667%;
+                        }
+
+                        .col-xs-6 {
+                        float: left;
+                        width: 50%;
+                        }
+
+                        .col-mi-6 {
+                        float: left;
+                        width: 50%;
+                        }
+
+                        .col-xs-7 {
+                        float: left;
+                        width: 58.333333%;
+                        }
+
+                        .col-mi-7 {
+                        float: left;
+                        width: 58.333333%;
+                        }
+
+                        .col-xs-8 {
+                        float: left;
+                        width: 66.666667%;
+                        }
+
+                        .col-mi-8 {
+                        float: left;
+                        width: 66.666667%;
+                        }
+
+                        .col-xs-9 {
+                        float: left;
+                        width: 75%;
+                        }
+
+                        .col-mi-9 {
+                        float: left;
+                        width: 75%;
+                        }
+
+                        .col-xs-10 {
+                        float: left;
+                        width: 83.333333%;
+                        }
+
+                        .col-mi-10 {
+                        float: left;
+                        width: 83.333333%;
+                        }
+
+                        .col-xs-11 {
+                        float: left;
+                        width: 91.666667%;
+                        }
+
+                        .col-mi-11 {
+                        float: left;
+                        width: 91.666667%;
+                        }
+
+                        .col-xs-12 {
+                        float: left;
+                        width: 100%;
+                        }
+
+                        .col-mi-12 {
+                        float: left;
+                        width: 100%;
+                        }
+
+                        .offset-xs-1 {
+                        margin-left: 8.333333%;
+                        }
+
+                        .offset-xs-2 {
+                        margin-left: 16.666667%;
+                        }
+
+                        .offset-xs-3 {
+                        margin-left: 25%;
+                        }
+
+                        .offset-xs-4 {
+                        margin-left: 33.333333%;
+                        }
+
+                        .offset-xs-5 {
+                        margin-left: 41.666667%;
+                        }
+
+                        .offset-xs-6 {
+                        margin-left: 50%;
+                        }
+
+                        .offset-xs-7 {
+                        margin-left: 58.333333%;
+                        }
+
+                        .offset-xs-8 {
+                        margin-left: 66.666667%;
+                        }
+
+                        .offset-xs-9 {
+                        margin-left: 75%;
+                        }
+
+                        .offset-xs-10 {
+                        margin-left: 83.333333%;
+                        }
+
+                        .offset-xs-11 {
+                        margin-left: 91.666667%;
+                        }
+
+
+                        .tabla_20_percent{
+                        width: 42%;
+                        }
+
+                        .sin_bordes{
+
+                        }
+
+                        .espacio_al_final_2{
+                        padding-right: 2px;
+                        }
+
+                        .float_right{
+                        float: right;
+                        margin-right: 0px;
+                        }
+
+                        .margin_top{
+                        margin-top: 24px;
+                        }
+
+                        .tamanno_texto{
+                        font-size: 1.2em
+                        }
+
+                    </style>
                     </div>
                 </div>
             </t>
