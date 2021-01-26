@@ -89,6 +89,8 @@ class ImprimirCartaTipoReport(models.AbstractModel):
         self.model = self.env.context.get('active_model')
         docs = self.env[self.model].browse(self.env.context.get('active_id'))
 
+        raise except_orm(docs)
+
 
         if docs.proveedor.id == 16: #"DE’LONGHI KENWOOD A.P.A"
             docargs = {
