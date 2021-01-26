@@ -83,6 +83,10 @@
         <menuitem name="Representante cliente" id="erp.nomencladores_representante_cliente" parent="erp.nomencladores_categoria_oferta"
                   action="erp.nomencladores_representante_cliente_action"/>
 
+        <!-- firmas-->
+        <menuitem name="Firmas" id="erp.nomencladores_firma" parent="erp.nomencladores_categoria_oferta"
+                  action="erp.nomencladores_firma_action"/>
+
 
 
         <!-- actions Administracion-->
