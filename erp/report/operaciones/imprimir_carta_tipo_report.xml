@@ -311,6 +311,7 @@
                                 <div>
                                     <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
                                     <p t-if="oferta.firma.name">
+                                        aa
                                         <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
                                     </p>
                                     <p t-if="oferta.firma.name">
