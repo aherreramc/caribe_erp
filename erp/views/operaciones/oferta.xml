@@ -14,7 +14,7 @@
                 <tree>
                     <field name="name" string="Quotations"/>
                     <field name="concepto" string="Línea"/>
-                    <!--<field name="fecha_valor"/>-->
+                    <field name="fecha_valor"/>
                     <!--<field name="estado_oferta"/>-->
                     <!--<field name="ultima_version" string="Última versión"/>-->
                 </tree>

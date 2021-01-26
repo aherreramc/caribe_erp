@@ -10,12 +10,11 @@
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
                             <t t-set="un_solo_producto" t-value="0"/>
 
-                            <!--<div class="col-xs-3 offset-xs-10">-->
-                                <!--&lt;!&ndash;p><span t-esc="oferta.fecha_valor"/></p&ndash;&gt;-->
-                                <!--<p>-->
-                                    <!--<span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>-->
-                                <!--</p>-->
-                            <!--</div>-->
+                            <div class="col-xs-3 offset-xs-10">
+                                <p>
+                                    <span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>
+                                </p>
+                            </div>
                             <div class="col-xs-12 espacio_al_principio">
 
                                 <p t-if="oferta.representante.name">

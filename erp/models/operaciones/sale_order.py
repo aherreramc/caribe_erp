@@ -56,6 +56,7 @@ class SaleOrderTemplate(models.Model):
 
 
     # Presentation letter
+    fecha_valor = fields.Date(string="Fecha")
     nombre_oferta = fields.Char()
     concepto = fields.Char()
     tipo_oferta = fields.Many2one('erp.nomencladores.tipo_oferta', default=_tipo_oferta_defult)
