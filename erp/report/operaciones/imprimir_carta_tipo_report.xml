@@ -61,7 +61,7 @@
 
                             <div class="col-xs-10 offset-xs-1 interlineado">
                                 <ul>
-                                    <li class="despegar" t-if="oferta.moneda">
+                                    <li class="despegar" t-if="oferta.currency_id">
                                         <p>
                                             <b>Moneda:</b>
                                             La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
