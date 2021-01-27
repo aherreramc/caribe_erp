@@ -948,7 +948,7 @@
                                                     <p class="table_head">
                                                         <b>VOLUMEN TOTAL</b>
                                                     </p>
-                                                    <p>
+                                                    <p class="table_head">
                                                         <b>m3</b>
                                                     </p>
                                                 </th>
@@ -959,7 +959,7 @@
                                                         <p class="table_head">
                                                             <b>IMPORTE</b>
                                                         </p>
-                                                        <p>
+                                                        <p class="table_head">
                                                             <b>
                                                                 <span t-esc="oferta.currency_id.name"/>
                                                             </b>
