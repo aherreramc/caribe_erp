@@ -925,7 +925,7 @@
                                                     </p>
                                                 </th>
 
-                                                <t t-if="doc.lista_de_precios">
+                                                <t t-if="doc.pricelist_id">
                                                     <th class="text_center bordeado_lateral_der">
                                                         <p class="table_head">
                                                             <b>PRECIO<br/>UNITARIO
