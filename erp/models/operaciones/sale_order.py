@@ -156,6 +156,48 @@ class SaleOrderTemplate(models.Model):
         ('no', 'Nothing to Invoice')
         ], string='Invoice Status', compute='_get_invoice_status', store=True, readonly=True)
 
+
+
+
+    #Campos para configurar la tabla a mostrar en el reporte "Imprimir Ofertas"
+    image = fields.Boolean('Imagen', default=True)
+    modelo = fields.Boolean('Modelo', default=True) #name
+    marca = fields.Boolean('Marca', default=True)
+    tipo_de_producto = fields.Boolean('Línea', default=True)
+    descripcion_cliente = fields.Boolean('Descripcion-cliente', default=True)
+    descripcion_proveedor = fields.Boolean('descripcion-cliente_ingles', default=False)
+    sintesis = fields.Boolean(u'Síntesis', default=False)
+
+    codigo_cliente = fields.Boolean('codigo-cliente', default=False)
+    codigo_proveedor = fields.Boolean('Código DL / SAP', default=False)
+
+    partida_arancelaria = fields.Boolean('partida arancelaria', default=True)
+    codigo_de_barra = fields.Boolean('codigo de barra', default=True)
+    tipo_de_espiga = fields.Boolean('tipo de espiga', default=True)
+
+    volumen_caja_master = fields.Boolean('volumen caja master', default=True)
+    cantidad_por_caja_master = fields.Boolean('cantidad por caja master', default=True)
+    cantidad_minima_de_orden = fields.Boolean('cantidad mínima de orden', default=True)
+
+    medidas = fields.Boolean('Medida', default=False)
+
+
+    cantidad_producto = fields.Boolean('Cantidad de producto', default=True)
+    volumen_total_de_linea_producto = fields.Boolean('Volumen total', default=True)
+    importe_total_de_linea = fields.Boolean('Importe total', default=True)
+
+
+    explotado = fields.Boolean('Explotado en español', default=False)
+    explotado_ingles = fields.Boolean('Explotado en inglés', default=False)
+    ficha_tecnica = fields.Boolean('Ficha técnica en español', default=False)
+    ficha_tecnica_ingles = fields.Boolean('Ficha técnica en inglés', default=False)
+    caja = fields.Boolean('Caja', default=False)
+    manual_de_usuario = fields.Boolean('Manual de usuario en español', default=False)
+    certificado_de_onure = fields.Boolean('Manual de usuario en inglés', default=False)
+
+
+    imprimir_totales_oferta = fields.Boolean('Imprimir totales oferta', default=True)
+
     @api.depends('order_line.invoice_lines')
     def _get_invoiced(self):
         # The invoice_ids are obtained thanks to the invoice lines of the SO

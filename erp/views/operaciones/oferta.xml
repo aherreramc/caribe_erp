@@ -749,6 +749,264 @@
                                         </group>
                                     </page>
 
+                                    <page string="Configuración del reporte Imprimir Oferta">
+                                <div class="col-mi-12 bordeado depegar_adentro" style="margin-top: 10px;">
+                                    <div class="etiqueta"><p><b>Campos de la tabla de productos</b></p></div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="image" string="Imagen"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="image" string="Imagen"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="descripcion_proveedor"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="descripcion_proveedor" string="Descripción-cliente-inglés"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="sintesis"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="sintesis" string="Síntesis"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="codigo_de_barra"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="codigo_de_barra" string="Código de barras"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="cantidad_minima_de_orden"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="cantidad_minima_de_orden" string="Cant Minima Orden"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="modelo"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="modelo" string="Modelo"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="codigo_cliente"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="codigo_cliente" string="Código Cliente"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="tipo_de_espiga"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="tipo_de_espiga" string="Tipo de espiga"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="marca"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="marca" string="Marca"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="tipo_de_producto"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="tipo_de_producto" string="Línea"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="codigo_proveedor"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="codigo_proveedor" string="Código DL / SAP"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="volumen_caja_master"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="volumen_caja_master" string="Volumen Caja Master"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="descripcion_cliente"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="descripcion_cliente" string="Descripcion Cliente"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="partida_arancelaria"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="partida_arancelaria" string="Partida Arancelaria"/></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="cantidad_por_caja_master"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="cantidad_por_caja_master" string="Cant X Caja Master"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="medidas"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="medidas" string="Medida"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="cantidad_producto"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="cantidad_producto" string="Cantidad de producto"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="volumen_total_de_linea_producto"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="volumen_total_de_linea_producto" string="Volumen total"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 despegar">
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="importe_total_de_linea"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="importe_total_de_linea" string="Importe total"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <p style="margin-left:5px;">Relativos a los adjuntos:</p>
+
+
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="explotado"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="explotado" string="Explotado en español"/></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="explotado_ingles"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="explotado_ingles" string="Explotado en inglés"/></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="ficha_tecnica"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="ficha_tecnica" string="Ficha técnica en español"/></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="ficha_tecnica_ingles"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="ficha_tecnica_ingles" string="Ficha técnica en inglés"/></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="caja"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="caja" string="Caja"/></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="manual_de_usuario"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="manual_de_usuario" string="Manual de usuario"/></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-mi-3">
+                                        <div class="col-xs-1">
+                                            <field name="certificado_de_onure"/>
+                                        </div>
+                                        <div class="col-mi-11">
+                                            <p><label class="negrita para_checkbox" for="certificado_de_onure" string="Certificado de ONURE"/></p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xs-12 despegar">
+                                        <p style="margin-left:5px;">Otras configuraciones de impresión:</p>
+
+
+                                        <div class="col-mi-3">
+                                            <div class="col-xs-1">
+                                                <field name="imprimir_totales_oferta"/>
+                                            </div>
+                                            <div class="col-mi-11">
+                                                <p><label class="negrita para_checkbox" for="imprimir_totales_oferta" string="Imprimir totales oferta"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </page>
+
                                 </notebook>
 
                             </page>
