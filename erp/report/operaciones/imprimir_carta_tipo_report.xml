@@ -812,8 +812,6 @@
                 <div class="article o_report_stock_rule">
                     <div class="page">
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                            hola
-
                             <div class="row contenido tamanno_texto">
                                 <div class="col-xs-12 fuente_alt">
 
@@ -857,6 +855,73 @@
                                                     <p class="table_head">
                                                         <b>CÓDIGO<br/>CLIENTE
                                                         </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.descripcion_cliente"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>DESCRIPCIÓN</b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.codigo_proveedor"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>CÓDIGO<br/>PROVEEDOR
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.descripcion_proveedor"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>DESCRIPTION
+                                                            <br/>
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.partida_arancelaria"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>PARTIDA<br/>ARANCELARIA
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>CÓDIGO<br/>BARRA
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>ALIMENTACIÓN<br/>tipo espiga
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.volumen_caja_master"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>VOLUMEN<br/>Caja<br/>master (m<sup>3</sup>)
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.cantidad_por_caja_master"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>CANTIDAD<br/>x caja<br/>master
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.medidas" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>MEDIDA
+                                                            <br/>
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.cantidad_minima_de_orden"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>MOQ</b>
                                                     </p>
                                                 </th>
                                             </tr>
