@@ -809,58 +809,62 @@
 
             <t t-foreach="docs" t-as="doc">
                 <t t-set="cant_filas" t-value="1"/>
-                <div class="page">
-                    hola
+                <div class="article o_report_stock_rule">
+                    <div class="page">
+                        <div class="row contenido tamanno_texto" style="vertical-align: middle;">
+                            hola
 
-                    <div class="row contenido tamanno_texto">
-                        <div class="col-xs-12 fuente_alt">
+                            <div class="row contenido tamanno_texto">
+                                <div class="col-xs-12 fuente_alt">
 
-                            <t t-set="cont_types" t-value="0"/>
-                            <span t-if="doc.cliente" class="">
-                                <b>Cliente:</b>
-                                <span>
-                                    <span t-esc="doc.cliente.name"/>
-                                </span>
-                            </span>
-                            <span t-if="doc.fecha_valor" style="float:right;">
-                                <b>Fecha:</b>
-                                <span>
-                                    <span t-esc="doc.fecha_valor"/>
-                                </span>
-                            </span>
+                                    <t t-set="cont_types" t-value="0"/>
+                                    <span t-if="doc.cliente" class="">
+                                        <b>Cliente:</b>
+                                        <span>
+                                            <span t-esc="doc.cliente.name"/>
+                                        </span>
+                                    </span>
+                                    <span t-if="doc.fecha_valor" style="float:right;">
+                                        <b>Fecha:</b>
+                                        <span>
+                                            <span t-esc="doc.fecha_valor"/>
+                                        </span>
+                                    </span>
 
-                            <p>
-                            </p>
+                                    <p>
+                                    </p>
 
-                            <table class="tabla_default top_linea letra_chica">
-                                <thead>
-                                    <tr class="text_center fondo_gris bottom_linea">
-                                        <th t-if="doc.image"
-                                            class="text_center bordeado_lateral_izq bordeado_lateral_der">
-                                            <p class="table_head">
-                                                <b>IMAGEN</b>
-                                            </p>
-                                        </th>
-                                        <th t-if="doc.modelo" class="text_center bordeado_lateral_der">
-                                            <p class="table_head">
-                                                <b>MODELO</b>
-                                            </p>
-                                        </th>
-                                        <th t-if="doc.marca" class="text_center bordeado_lateral_der">
-                                            <p class="table_head">
-                                                <b>MARCA</b>
-                                            </p>
-                                        </th>
-                                        <th t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
-                                            <p class="table_head">
-                                                <b>CÓDIGO<br/>CLIENTE
-                                                </b>
-                                            </p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                            </table>
+                                    <table class="tabla_default top_linea letra_chica">
+                                        <thead>
+                                            <tr class="text_center fondo_gris bottom_linea">
+                                                <th t-if="doc.image"
+                                                    class="text_center bordeado_lateral_izq bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>IMAGEN</b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.modelo" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>MODELO</b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.marca" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>MARCA</b>
+                                                    </p>
+                                                </th>
+                                                <th t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>CÓDIGO<br/>CLIENTE
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
