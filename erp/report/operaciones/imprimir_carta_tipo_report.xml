@@ -1096,7 +1096,7 @@
                                                         <span t-esc="linea.volumen_total_de_linea_producto"/>
                                                     </p>
                                                 </td>
-                                                <td t-if="doc.price_subtotal"
+                                                <td t-if="doc.importe_total_de_linea"
                                                     class="text_center bordeado_lateral_der">
                                                     <p class="table_body">
                                                         <span t-esc="linea.price_subtotal"
