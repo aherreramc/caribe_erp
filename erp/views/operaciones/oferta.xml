@@ -767,6 +767,37 @@
                                         </div>
                                     </div>
 
+                                    <group col="4" style="margin-top:2em;">
+                                        <field name="exw" string="EXW"/>
+                                        <field name="seguro"/>
+                                        <field name="flete_terrestre" string="Flete terrestre"/>
+                                        <field name="inspeccion"/>
+                                        <field name="mercancia" string="FOB"/>
+                                        <field name="financiamiento_importe"/>
+                                        <field name="flete" string="Flete aereo/marítimo"/>
+                                        <field name="importe_total"/>
+                                    </group>
+                                    <group col="2">
+                                        <group col="2">
+                                            <field name="importe_repuestos_sin_descuento"/>
+                                        </group>
+                                    </group>
+                                    <group col="4">
+                                        <field name="porciento_repuestos" string="% Repuestos"/>
+                                        <field name="importe_descuento" string="Importe descuento"/>
+                                    </group>
+                                    <group col="4">
+                                        <field name="opcional_1" placeholder="Escriba el concepto del importe"/>
+                                        <field name="importe_opcional_1"/>
+                                        <field name="opcional_2" placeholder="Escriba el concepto del importe"/>
+                                        <field name="importe_opcional_2"/>
+                                    </group>
+                                    <group col="2">
+                                        <group col="2">
+                                            <field name="importe_repuestos_con_descuento"/>
+                                        </group>
+                                    </group>
+
 
                                 </div>
                             </page>
