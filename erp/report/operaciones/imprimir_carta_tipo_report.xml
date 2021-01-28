@@ -1113,19 +1113,17 @@
                                         <table class="tabla_20_percent float_right margin_top">
                                             <tbody>
                                                 <tr t-if="doc.exw" class="sin_bordes italica">
-                                                    <t t-if="doc.pricelist.pago.name=='EXW'">
-                                                        <td colspan="6" class="text-right espacio_al_final_2">
-                                                            <p>
-                                                                <b>Importe EXW:</b>
-                                                            </p>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <p>
-                                                                <span t-esc="doc.exw"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                            </p>
-                                                        </td>
-                                                    </t>
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe EXW:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.exw"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                        </p>
+                                                    </td>
                                                 </tr>
                                                 <tr t-if="doc.flete_terrestre" class="sin_bordes italica">
                                                     <td colspan="6" class="text-right espacio_al_final_2">
