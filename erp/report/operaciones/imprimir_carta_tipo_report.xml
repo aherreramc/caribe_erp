@@ -977,6 +977,55 @@
 
                                             </tr>
                                         </thead>
+
+
+                                        <tbody>
+                                            <tr t-foreach="doc.order_line" t-as="linea" class="bottom_linea">
+                                                <t t-if="doc.image">
+                                                    <t t-if="linea.product_id.image_variant">
+                                                        <!--td class="text_center bordeado_lateral_izq bordeado_lateral_der"-->
+                                                        <td class="text_center bordeado_lateral_izq bordeado_lateral_der">
+
+                                                            <!--p><span class="alejandro_image_margin" t-esc="linea.producto.image_medium" t-options="{'widget': 'image'}"/></p-->
+                                                            <p>
+                                                                <span>
+                                                                    <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_variant"
+                                                                         class="alejandro_centrar_imagen_en_td"/>
+                                                                </span>
+                                                            </p>
+                                                        </td>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <td class="text_center bordeado_lateral_izq bordeado_lateral_der"></td>
+                                                    </t>
+                                                </t>
+
+                                                <td t-if="doc.modelo" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.name"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.marca" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.marca.name"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.codigo_cliente"/>
+                                                    </p>
+                                                </td>
+
+                                                <td t-if="doc.descripcion_cliente"
+                                                    class="text_left bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.name_get_to_string()"/>
+                                                    </p>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+
                                     </table>
 
                                 </div>
