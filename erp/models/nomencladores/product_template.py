@@ -129,6 +129,40 @@ class ProductTemplate(models.Model):
 
         return nombre_a_mostrar
 
+    @api.model
+    def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        args = args or []
+        recs = self.browse()
+        if name:
+            recs = self.search((args + ['|', '|', '|', ('name', 'ilike', name), ('descripcion_cliente', 'ilike', name)
+                                , ('tipo_de_espiga', 'ilike', name), ('marca', 'ilike', name)]),
+                               limit=limit)
+        if not recs:
+            recs = self.search([('name', operator, name)] + args, limit=limit)
+        return recs.name_get()
+
+    @api.model
+    def _name_search_descripcion_proveedor(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        args = args or []
+        recs = self.browse()
+        if name:
+            recs = self.search((args + ['|', '|', '|', ('name', 'ilike', name), ('descripcion_proveedor', 'ilike', name)
+                                , ('tipo_de_espiga', 'ilike', name), ('marca', 'ilike', name)]),
+                               limit=limit)
+        if not recs:
+            recs = self.search([('name', operator, name)] + args, limit=limit)
+        return recs.name_get()
+
+
+
+    @api.one
+    @api.depends('name', 'alto', 'profundidad')
+    def _compute_name_to_search(self):
+        self.name_to_search = str(self.name)
+
+        if self.descripcion_cliente is not False:
+            self.name_to_search += str(self.descripcion_cliente)
+
     def name_get_without_process(self):
         return super(ProductTemplate, self).name_get()
         # return res

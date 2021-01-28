@@ -54,3 +54,10 @@ class ProductProduct(models.Model):
 
 
         return prices
+
+    def name_get_to_string(self):
+        nombre_a_mostrar = ""
+        for llave in self.name_get():
+            nombre_a_mostrar += llave[1]
+
+        return nombre_a_mostrar
