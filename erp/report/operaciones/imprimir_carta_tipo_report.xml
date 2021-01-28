@@ -1073,7 +1073,7 @@
                                         <td t-if="doc.cantidad_minima_de_orden"
                                             class="text_center bordeado_lateral_der">
                                             <p class="table_body">
-                                                <span t-esc="linea.cantidad_producto_total_oferta"/>
+                                                <span t-esc="linea.product_id.cantidad_minima_de_orden"/>
                                             </p>
                                         </td>
 
