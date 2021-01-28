@@ -1059,36 +1059,50 @@
                                                 </td>
 
                                                 <td t-if="doc.cantidad_por_caja_master"
-                                            class="text_center bordeado_lateral_der">
-                                            <p class="table_body">
-                                                <span t-esc="linea.product_id.cantidad_por_caja_master"/>
-                                            </p>
-                                        </td>
-                                        <td t-if="doc.medidas" class="text_center bordeado_lateral_der">
-                                            <p class="table_body">
-                                                <span t-esc="linea.product_id.medidas"/>
-                                            </p>
-                                        </td>
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.cantidad_por_caja_master"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.medidas" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.medidas"/>
+                                                    </p>
+                                                </td>
 
-                                        <td t-if="doc.cantidad_minima_de_orden"
-                                            class="text_center bordeado_lateral_der">
-                                            <p class="table_body">
-                                                <span t-esc="linea.product_id.cantidad_minima_de_orden"/>
-                                            </p>
-                                        </td>
+                                                <td t-if="doc.cantidad_minima_de_orden"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.cantidad_minima_de_orden"/>
+                                                    </p>
+                                                </td>
 
                                                 <td class="text_center bordeado_lateral_der">
-                                            <p class="table_body">
-                                                <span t-esc="linea.price_unit"
-                                                      t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
-                                            </p>
-                                        </td>
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.price_unit"
+                                                              t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
+                                                    </p>
+                                                </td>
 
-                                        <td t-if="doc.cantidad_producto" class="text_center bordeado_lateral_der">
-                                            <p class="table_body">
-                                                <span t-esc="linea.product_uom_qty"/>
-                                            </p>
-                                        </td>
+                                                <td t-if="doc.cantidad_producto"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_uom_qty"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.volumen_total_de_linea_producto"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.volumen_total_de_linea_producto"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.price_tutotal"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.price_tutotal"
+                                                              t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
+                                                    </p>
+                                                </td>
 
                                             </tr>
                                         </tbody>
