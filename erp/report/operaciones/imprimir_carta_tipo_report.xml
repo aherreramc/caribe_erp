@@ -1113,7 +1113,7 @@
                                         <table class="tabla_20_percent float_right margin_top">
                                             <tbody>
                                                 <tr t-if="doc.exw" class="sin_bordes italica">
-                                                    <t t-if="doc.price_list.pago.name=='EXW'">
+                                                    <t t-if="doc.pricelist.pago.name=='EXW'">
                                                         <td colspan="6" class="text-right espacio_al_final_2">
                                                             <p>
                                                                 <b>Importe EXW:</b>
@@ -1122,7 +1122,7 @@
                                                         <td class="text-right">
                                                             <p>
                                                                 <span t-esc="doc.exw"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                             </p>
                                                         </td>
                                                     </t>
@@ -1136,7 +1136,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.flete_terrestre"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1150,7 +1150,7 @@
                                                         <td class="text-right">
                                                             <p>
                                                                 <span t-esc="doc.mercancia"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                             </p>
                                                         </td>
                                                     </t>
@@ -1164,7 +1164,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.flete"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1177,7 +1177,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.seguro"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1190,7 +1190,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.inspeccion"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1203,7 +1203,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.financiamiento_importe"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1219,7 +1219,7 @@
                                                         <td class="text-right">
                                                             <p>
                                                                 <span t-esc="doc.importe_total"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                             </p>
                                                         </td>
                                                     </tr>
@@ -1234,7 +1234,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.importe_repuestos_sin_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1247,7 +1247,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.importe_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1261,7 +1261,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.importe_opcional_1"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1275,7 +1275,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.importe_opcional_2"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -1289,7 +1289,7 @@
                                                     <td class="text-right">
                                                         <p>
                                                             <span t-esc="doc.importe_repuestos_con_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                         </p>
                                                     </td>
                                                 </tr>
