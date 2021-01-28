@@ -205,26 +205,26 @@ class SaleOrderTemplate(models.Model):
     #Campos para calcular los importes totales de la oferta
     autocalcular = fields.Boolean('Autocalcular', default=True)
 
-    exw = fields.Monetary(string='EXW', currency_field='moneda')
-    flete_terrestre = fields.Monetary(string='Flete terrestre', currency_field='moneda')
-    mercancia = fields.Monetary(string='Mercancía', currency_field='moneda')
-    flete = fields.Monetary(string='Flete', currency_field='moneda')
-    seguro = fields.Monetary(string='Seguro', currency_field='moneda')
-    inspeccion = fields.Monetary(string='Inspección', currency_field='moneda')
-    financiamiento_importe = fields.Monetary(string='Financiamiento', currency_field = 'moneda')
+    exw = fields.Monetary(string='EXW', currency_field='currency_id')
+    flete_terrestre = fields.Monetary(string='Flete terrestre', currency_field='currency_id')
+    mercancia = fields.Monetary(string='Mercancía', currency_field='currency_id')
+    flete = fields.Monetary(string='Flete', currency_field='currency_id')
+    seguro = fields.Monetary(string='Seguro', currency_field='currency_id')
+    inspeccion = fields.Monetary(string='Inspección', currency_field='currency_id')
+    financiamiento_importe = fields.Monetary(string='Financiamiento', currency_field = 'currency_id')
 
-    importe_total = fields.Monetary(string='Importe total sin repuestos', currency_field='moneda')
+    importe_total = fields.Monetary(string='Importe total sin repuestos', currency_field='currency_id')
 
-    importe_repuestos_sin_descuento = fields.Monetary(string='Importe total repuestos', currency_field='moneda')
-    importe_descuento = fields.Monetary(string='Descuento sobre importe mercancías', currency_field='moneda')
+    importe_repuestos_sin_descuento = fields.Monetary(string='Importe total repuestos', currency_field='currency_id')
+    importe_descuento = fields.Monetary(string='Descuento sobre importe mercancías', currency_field='currency_id')
 
     porciento_repuestos = fields.Float(digits=dp.get_precision('dosDecimales'))
     opcional_1 = fields.Char()
-    importe_opcional_1 = fields.Monetary(string='', currency_field='moneda')
+    importe_opcional_1 = fields.Monetary(string='', currency_field='currency_id')
     opcional_2 = fields.Char()
-    importe_opcional_2 = fields.Monetary(string='', currency_field='moneda')
+    importe_opcional_2 = fields.Monetary(string='', currency_field='currency_id')
 
-    importe_repuestos_con_descuento = fields.Monetary(string='Importe total repuestos con descuento', currency_field='moneda')
+    importe_repuestos_con_descuento = fields.Monetary(string='Importe total repuestos con descuento', currency_field='currency_id')
 
 
 
