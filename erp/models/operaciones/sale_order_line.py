@@ -30,6 +30,8 @@ class SaleOrderLineTemplate(models.Model):
 
     product_packaging = fields.Many2one( 'product.packaging', string='Package', default=False, check_company=True)
 
+    volumen_total_de_linea_producto = fields.Float(string='Volumen total producto', digits=dp.get_precision('seisDecimales'))
+
 
     @api.onchange('product_id')
     def product_id_change(self):
