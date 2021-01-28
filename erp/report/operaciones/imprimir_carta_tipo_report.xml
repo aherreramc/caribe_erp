@@ -1023,6 +1023,41 @@
                                                     </p>
                                                 </td>
 
+                                                <td t-if="doc.codigo_proveedor"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.codigo_proveedor"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.descripcion_proveedor"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.descripcion_proveedor"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.partida_arancelaria"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.partida_arancelaria"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.codigo_de_barra"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.tipo_de_espiga.name"/>
+                                                    </p>
+                                                </td>
+                                                <td t-if="doc.volumen_caja_master"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_body">
+                                                        <span t-esc="linea.product_id.volumen_caja_master"/>
+                                                    </p>
+                                                </td>
+
                                             </tr>
                                         </tbody>
 
