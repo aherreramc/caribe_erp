@@ -1106,9 +1106,197 @@
 
                                             </tr>
                                         </tbody>
-
                                     </table>
 
+
+                                    <t t-if="oferta.imprimir_totales_oferta">
+                                        <table class="tabla_20_percent float_right margin_top">
+                                            <tbody>
+                                                <tr t-if="doc.exw" class="sin_bordes italica">
+                                                    <t t-if="doc.lista_de_precios.pago.name=='EXW'">
+                                                        <td colspan="6" class="text-right espacio_al_final_2">
+                                                            <p>
+                                                                <b>Importe EXW:</b>
+                                                            </p>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <p>
+                                                                <span t-esc="doc.exw"
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                            </p>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr t-if="doc.flete_terrestre" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Flete Terrestre:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.flete_terrestre"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.mercancia" class="sin_bordes italica">
+                                                    <t t-if="doc.mercancia != doc.exw">
+                                                        <td colspan="6" class="text-right espacio_al_final_2">
+                                                            <p>
+                                                                <b>Importe FOB:</b>
+                                                            </p>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <p>
+                                                                <span t-esc="doc.mercancia"
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                            </p>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr t-if="doc.flete" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Flete:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.flete"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.seguro" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Seguro:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.seguro"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.inspeccion" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Inspección:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.inspeccion"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.financiamiento_importe" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Financiamiento:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.financiamiento_importe"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.importe_total != doc.mercancia"
+                                                    class="sin_bordes italica">
+                                                    <tr t-if="doc.importe_total != doc.importe_repuestos_con_descuento"
+                                                        class="sin_bordes italica">
+                                                        <td colspan="6" class="text-right espacio_al_final_2">
+                                                            <p>
+                                                                <b>Importe Subtotal:</b>
+                                                            </p>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <p>
+                                                                <span t-esc="doc.importe_total"
+                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tr>
+                                                <tr t-if="doc.importe_repuestos_sin_descuento"
+                                                    class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Repuestos:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_repuestos_sin_descuento"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.importe_descuento" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Descuento Repuestos:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_descuento"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.importe_opcional_1" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b><span t-esc="doc.opcional_1"/>:
+                                                            </b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_opcional_1"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.importe_opcional_2" class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b><span t-esc="doc.opcional_2"/>:
+                                                            </b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_opcional_2"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr t-if="doc.importe_repuestos_con_descuento"
+                                                    class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Total:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_repuestos_con_descuento"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.moneda}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </t>
                                 </div>
                             </div>
                         </div>
