@@ -1113,7 +1113,7 @@
                                         <table class="tabla_20_percent float_right margin_top">
                                             <tbody>
                                                 <tr t-if="doc.exw" class="sin_bordes italica">
-                                                    <t t-if="doc.lista_de_precios.pago.name=='EXW'">
+                                                    <t t-if="doc.price_list.pago.name=='EXW'">
                                                         <td colspan="6" class="text-right espacio_al_final_2">
                                                             <p>
                                                                 <b>Importe EXW:</b>
