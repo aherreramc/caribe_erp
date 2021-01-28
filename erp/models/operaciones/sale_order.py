@@ -198,6 +198,36 @@ class SaleOrderTemplate(models.Model):
 
     imprimir_totales_oferta = fields.Boolean('Imprimir totales oferta', default=True)
 
+
+
+
+
+    #Campos para calcular los importes totales de la oferta
+    autocalcular = fields.Boolean('Autocalcular', default=True)
+
+    exw = fields.Monetary(string='EXW', currency_field='moneda')
+    flete_terrestre = fields.Monetary(string='Flete terrestre', currency_field='moneda')
+    mercancia = fields.Monetary(string='Mercancía', currency_field='moneda')
+    flete = fields.Monetary(string='Flete', currency_field='moneda')
+    seguro = fields.Monetary(string='Seguro', currency_field='moneda')
+    inspeccion = fields.Monetary(string='Inspección', currency_field='moneda')
+    financiamiento_importe = fields.Monetary(string='Financiamiento', currency_field = 'moneda')
+
+    importe_total = fields.Monetary(string='Importe total sin repuestos', currency_field='moneda')
+
+    importe_repuestos_sin_descuento = fields.Monetary(string='Importe total repuestos', currency_field='moneda')
+    importe_descuento = fields.Monetary(string='Descuento sobre importe mercancías', currency_field='moneda')
+
+    porciento_repuestos = fields.Float(digits=dp.get_precision('dosDecimales'))
+    opcional_1 = fields.Char()
+    importe_opcional_1 = fields.Monetary(string='', currency_field='moneda')
+    opcional_2 = fields.Char()
+    importe_opcional_2 = fields.Monetary(string='', currency_field='moneda')
+
+    importe_repuestos_con_descuento = fields.Monetary(string='Importe total repuestos con descuento', currency_field='moneda')
+
+
+
     @api.depends('order_line.invoice_lines')
     def _get_invoiced(self):
         # The invoice_ids are obtained thanks to the invoice lines of the SO
