@@ -1096,10 +1096,10 @@
                                                         <span t-esc="linea.volumen_total_de_linea_producto"/>
                                                     </p>
                                                 </td>
-                                                <td t-if="doc.price_tutotal"
+                                                <td t-if="doc.price_subtotal"
                                                     class="text_center bordeado_lateral_der">
                                                     <p class="table_body">
-                                                        <span t-esc="linea.price_tutotal"
+                                                        <span t-esc="linea.price_subtotal"
                                                               t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
                                                     </p>
                                                 </td>
