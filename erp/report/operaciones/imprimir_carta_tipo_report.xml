@@ -1079,7 +1079,7 @@
 
                                                 <td class="text_center bordeado_lateral_der">
                                             <p class="table_body">
-                                                <span t-esc="linea.importe_unitario"
+                                                <span t-esc="linea.price_unit"
                                                       t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
                                             </p>
                                         </td>
