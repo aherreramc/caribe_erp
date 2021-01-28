@@ -129,40 +129,6 @@ class ProductTemplate(models.Model):
 
         return nombre_a_mostrar
 
-    @api.model
-    def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
-        args = args or []
-        recs = self.browse()
-        if name:
-            recs = self.search((args + ['|', '|', '|', ('name', 'ilike', name), ('descripcion_cliente', 'ilike', name)
-                                , ('tipo_de_espiga', 'ilike', name), ('marca', 'ilike', name)]),
-                               limit=limit)
-        if not recs:
-            recs = self.search([('name', operator, name)] + args, limit=limit)
-        return recs.name_get()
-
-    @api.model
-    def _name_search_descripcion_proveedor(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
-        args = args or []
-        recs = self.browse()
-        if name:
-            recs = self.search((args + ['|', '|', '|', ('name', 'ilike', name), ('descripcion_proveedor', 'ilike', name)
-                                , ('tipo_de_espiga', 'ilike', name), ('marca', 'ilike', name)]),
-                               limit=limit)
-        if not recs:
-            recs = self.search([('name', operator, name)] + args, limit=limit)
-        return recs.name_get()
-
-
-
-    @api.one
-    @api.depends('name', 'alto', 'profundidad')
-    def _compute_name_to_search(self):
-        self.name_to_search = str(self.name)
-
-        if self.descripcion_cliente is not False:
-            self.name_to_search += str(self.descripcion_cliente)
-
     def name_get_without_process(self):
         return super(ProductTemplate, self).name_get()
         # return res
@@ -184,10 +150,6 @@ class ProductTemplate(models.Model):
         # return data
 
 
-    # @api.model
-    # def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
-    # def _name_search(self, name='', args=None, operator='ilike', limit=100):
-
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
         args = args or []
@@ -208,30 +170,17 @@ class ProductTemplate(models.Model):
         if self.descripcion_cliente is not False:
             self.name_to_search += str(self.descripcion_cliente)
 
-
-    # @api.onchange('volumen_caja_master', 'cantidad_por_caja_master', 'cantidad_minima_de_orden', 'cantidad_contenedor_20'
-    #               , 'cantidad_contenedor_40', 'cantidad_contenedor_40_hc')
-    # def _onchange_actualizar_ofertas_y_contratos(self):
-    #     if self._origin.id is not False:
-    #         lineas_de_ofertas = self.env['erp.operaciones.linea_de_oferta'].search([('producto', '=', self._origin.id)])
-    #
-    #         for linea_de_oferta in lineas_de_ofertas:
-    #             #Actualizando en caso que proceda el/los campo volumen_caja_master y volumen_total_de_linea_producto
-    #             volumen_total_de_linea_producto = 0
-    #
-    #             if linea_de_oferta.cantidad_por_caja_master != 0:
-    #                 volumen_total_de_linea_producto = linea_de_oferta.cantidad_producto_total_oferta * self.volumen_caja_master / linea_de_oferta.cantidad_por_caja_master
-    #
-    #
-    #             linea_de_oferta.write({
-    #                 'volumen_caja_master': self.volumen_caja_master,
-    #                 'volumen_total_de_linea_producto': volumen_total_de_linea_producto
-    #             })
-    #
-    #             #Actualizando en caso que proceda el/los campo cantidad_por_caja_master
-    #             linea_de_oferta.write({
-    #                 'cantidad_por_caja_master': self.cantidad_por_caja_master
-    #             })
+    @api.model
+    def _name_search_descripcion_proveedor(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        args = args or []
+        recs = self.browse()
+        if name:
+            recs = self.search((args + ['|', '|', '|', ('name', 'ilike', name), ('descripcion_proveedor', 'ilike', name)
+                                , ('tipo_de_espiga', 'ilike', name), ('marca', 'ilike', name)]),
+                               limit=limit)
+        if not recs:
+            recs = self.search([('name', operator, name)] + args, limit=limit)
+        return recs.name_get()
 
 
     @api.depends('image_variant', 'image')
