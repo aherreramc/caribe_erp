@@ -1058,6 +1058,38 @@
                                                     </p>
                                                 </td>
 
+                                                <td t-if="doc.cantidad_por_caja_master"
+                                            class="text_center bordeado_lateral_der">
+                                            <p class="table_body">
+                                                <span t-esc="linea.product_id.cantidad_por_caja_master"/>
+                                            </p>
+                                        </td>
+                                        <td t-if="doc.medidas" class="text_center bordeado_lateral_der">
+                                            <p class="table_body">
+                                                <span t-esc="linea.product_id.medidas"/>
+                                            </p>
+                                        </td>
+
+                                        <td t-if="doc.cantidad_minima_de_orden"
+                                            class="text_center bordeado_lateral_der">
+                                            <p class="table_body">
+                                                <span t-esc="linea.cantidad_producto_total_oferta"/>
+                                            </p>
+                                        </td>
+
+                                                <td class="text_center bordeado_lateral_der">
+                                            <p class="table_body">
+                                                <span t-esc="linea.importe_unitario"
+                                                      t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
+                                            </p>
+                                        </td>
+
+                                        <td t-if="doc.cantidad_producto" class="text_center bordeado_lateral_der">
+                                            <p class="table_body">
+                                                <span t-esc="linea.product_uom_qty"/>
+                                            </p>
+                                        </td>
+
                                             </tr>
                                         </tbody>
 
