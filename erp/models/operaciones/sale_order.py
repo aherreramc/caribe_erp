@@ -484,9 +484,13 @@ class SaleOrderTemplate(models.Model):
             if order.autocalcular is True:
                 order.mercancia = amount_untaxed
 
+            self.calcular_importes(order)
 
-                order.importe_repuestos_con_descuento = order.exw + order.flete_terrestre + order.mercancia
-                + order.flete + order.seguro + order.inspeccion + order.financiamiento_importe + order.importe_descuento
+
+
+    def calcular_importes(self, order):
+        order.importe_repuestos_con_descuento = order.exw + order.flete_terrestre + order.mercancia \
+                + order.flete + order.seguro + order.inspeccion + order.financiamiento_importe + order.importe_descuento \
                 + order.importe_opcional_1 + order.importe_opcional_2
 
 
