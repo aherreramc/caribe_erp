@@ -348,16 +348,16 @@ class SaleOrderTemplate(models.Model):
     @api.onchange('concepto', 'cliente', 'fecha_valor')
     def _onchange_concepto_cliente(self):
         #Modificando el nombre de la oferta
-        self.name = ""
+        self.nombre_oferta = ""
 
         if self.cliente.name is not False:
-            self.name += self.cliente.name.capitalize()
+            self.nombre_oferta += self.cliente.name.capitalize()
 
         if self.concepto is not False:
-            self.name += ", " + self.concepto
+            self.nombre_oferta += ", " + self.concepto
 
         if self.fecha_valor is not False:
-            self.name += ", " + self.fecha_valor
+            self.nombre_oferta += ", " + self.fecha_valor
 
     def marcas_to_string(self):
 
