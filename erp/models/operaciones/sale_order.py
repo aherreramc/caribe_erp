@@ -384,7 +384,7 @@ class SaleOrderTemplate(models.Model):
     @api.onchange('embalaje_nomenclador')
     def _onchange_embalaje_nomenclador(self):
         raise except_orm(self.embalaje)
-        if self.embalaje is False and self.embalaje_nomenclador.name is not False:
+        if self.embalaje is False and self.embalaje_nomenclador.name is not False or self.embalaje == "":
             self.embalaje = self.embalaje_nomenclador.name
 
     @api.onchange('manual_de_usuario_espannol', 'fichas_tecnicas', 'certificados_inhim', 'certificados_onure', 'vision_explotada')
