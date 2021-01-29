@@ -359,9 +359,8 @@ class SaleOrderTemplate(models.Model):
                 order.nombre_oferta += ", " + order.concepto
 
             if order.fecha_valor is not False:
-                order.nombre_oferta += ", " + order.fecha_valor
+                order.nombre_oferta += ", " + str(order.fecha_valor)
 
-            raise except_orm(order.nombre_oferta)
 
     def marcas_to_string(self):
 
