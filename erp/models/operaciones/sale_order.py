@@ -481,6 +481,9 @@ class SaleOrderTemplate(models.Model):
                     'amount_total': amount_untaxed + amount_tax - self.discount_total,
                 })
 
+            if order.autocalcular is True:
+                order.mercancia = amount_untaxed
+
 
     def _create_invoices(self, grouped=False, final=False):
         """
