@@ -531,18 +531,18 @@
                                                                    groups="uom.group_uom" class="oe_no_button"
                                                                    attrs="{'readonly': [('state', 'in', ('sale', 'done', 'cancel'))], 'required': [('display_type', '=', False)],}"/>
                                                         </div>
-                                                        <label for="qty_delivered" string="Delivered"
+                                                        <label for="qty_delivered" string="Delivered" invisible="1"
                                                                attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
-                                                        <div name="delivered_qty"
+                                                        <div name="delivered_qty" invisible="1"
                                                              attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">
                                                             <field name="qty_delivered"
                                                                    attrs="{'readonly': [('qty_delivered_method', '!=', 'manual')]}"/>
                                                         </div>
-                                                        <label for="qty_invoiced" string="Invoiced"
+                                                        <label for="qty_invoiced" string="Invoiced" invisible="1"
                                                                attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
                                                         <div name="invoiced_qty"
                                                              attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">
-                                                            <field name="qty_invoiced"
+                                                            <field name="qty_invoiced" invisible="1"
                                                                    attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
                                                         </div>
                                                         <field name="price_unit"/>
