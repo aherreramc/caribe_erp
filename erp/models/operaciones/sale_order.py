@@ -485,6 +485,12 @@ class SaleOrderTemplate(models.Model):
                 order.mercancia = amount_untaxed
 
 
+                order.importe_repuestos_con_descuento = order.exw + order.flete_terrestre + order.mercancia
+                + order.flete + order.seguro + order.inspeccion + order.financiamiento_importe + order.importe_descuento
+                + order.importe_opcional_1 + order.importe_opcional_2
+
+
+
     def _create_invoices(self, grouped=False, final=False):
         """
         Create the invoice associated to the SO.
