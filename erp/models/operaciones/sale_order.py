@@ -494,6 +494,9 @@ class SaleOrderTemplate(models.Model):
                 + order.importe_opcional_1 + order.importe_opcional_2
 
 
+    def actualizar_mercancia(self):
+        self.calcular_importes(self)
+
 
     def _create_invoices(self, grouped=False, final=False):
         """
