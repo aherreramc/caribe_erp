@@ -361,6 +361,59 @@ class SaleOrderTemplate(models.Model):
             if order.fecha_valor is not False:
                 order.nombre_oferta += ", " + str(order.fecha_valor)
 
+    @api.onchange('representante')
+    def _onchange_representante(self):
+        if self.representante.empresa is not False:
+            self.cliente = self.representante.empresa.id
+
+    @api.onchange('garantia_nomenclador')
+    def _onchange_garantia_nomenclador(self):
+        if self.garantia is False and self.garantia_nomenclador.name is not False:
+            self.garantia = self.garantia_nomenclador.name
+
+            if self.garantia_nomenclador.name == 'Se realizará un descuento de hasta el 1% del valor FOB de la mercancía en la compra de repuestos.':
+                self.descuento = 1
+
+    @api.onchange('pago_nomenclador')
+    def _onchange_pago_nomenclador(self):
+        # if self.pago is False and self.pago_nomenclador.name is not False:
+        self.pago = self.pago_nomenclador.name
+
+
+
+    @api.onchange('embalaje_nomenclador')
+    def _onchange_embalaje_nomenclador(self):
+        if self.embalaje is False and self.embalaje_nomenclador.name is not False:
+            self.embalaje = self.embalaje_nomenclador.name
+
+    @api.onchange('manual_de_usuario_espannol', 'fichas_tecnicas', 'certificados_inhim', 'certificados_onure', 'vision_explotada')
+    def _onchange_tasa(self):
+
+        if self.vision_explotada is True:
+            self.explotado = True
+        else:
+            self.explotado = False
+
+        if self.manual_de_usuario_espannol is True:
+            self.manual_de_usuario = True
+        else:
+            self.manual_de_usuario = False
+
+        if self.fichas_tecnicas is True:
+            self.ficha_tecnica = True
+        else:
+            self.ficha_tecnica = False
+
+        if self.certificados_onure is True:
+            self.certificado_de_onure = True
+        else:
+            self.certificado_de_onure = False
+
+        if self.certificados_inhim is True or self.certificados_onure is True:
+            self.homologados_en_cuba = True
+        else:
+            self.homologados_en_cuba = False
+
 
     def marcas_to_string(self):
 
