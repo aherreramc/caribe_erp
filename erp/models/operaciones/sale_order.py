@@ -113,7 +113,6 @@ class SaleOrderTemplate(models.Model):
     partida_arancelaria_oferta = fields.Char()
 
     validez_oferta_dias = fields.Integer(string="Validez de la oferta")
-    # validez_oferta_compute = fields.Date(compute='_validez_oferta_compute')
 
     validez_oferta_a_mostrar = fields.Char(string="Validez de la oferta a mostrar")
 
@@ -131,18 +130,6 @@ class SaleOrderTemplate(models.Model):
     vision_explotada = fields.Boolean('Vision explotada con listas y partes', default=False)
 
     homologados_en_cuba = fields.Boolean('Todos los modelos ofertados están homologados para su venta en Cuba', default=False)
-
-
-    # @api.depends('validez_oferta_dias', 'create_date')
-    # def _validez_oferta_compute(self):
-    #     for order in self:
-    #         if order.create_date is not False:
-    #             # order.validez_oferta_compute = datetime.strptime(order.create_date, '%Y-%m-%d') + timedelta(days = order.validez_oferta_dias)
-    #             order.validez_oferta_compute = order.create_date + timedelta(days = order.validez_oferta_dias)
-    #
-    #         if order.validez_oferta_dias is not False:
-    #             order.validez_oferta_a_mostrar = str(order.validez_oferta_dias) + " días."
-
 
 
     otra_oferta_traer_productos = fields.Many2one('sale.order')
@@ -200,8 +187,6 @@ class SaleOrderTemplate(models.Model):
 
 
 
-
-
     #Campos para calcular los importes totales de la oferta
     autocalcular = fields.Boolean('Autocalcular', default=True)
 
@@ -240,21 +225,21 @@ class SaleOrderTemplate(models.Model):
             order.invoice_count = len(invoices)
 
     def otra_oferta_traer_productos_funcion(self):
-        pass
-        # if self.otra_oferta_traer_productos.id is not False:
-        #     for linea_otra_oferta_traer_productos in self.otra_oferta_traer_productos.lineas_de_oferta:
-        #         existe = False
-        #
-        #         for linea in self.lineas_de_oferta:
-        #             if linea.producto.id == linea_otra_oferta_traer_productos.producto.id:
-        #                 existe = True
-        #
-        #
-        #         if existe is False:
-        #             linea_otra_oferta_traer_productos = linea_otra_oferta_traer_productos.copy()
-        #             linea_otra_oferta_traer_productos.oferta = self.id
-        #             linea_otra_oferta_traer_productos.importe_unitario = 0
-        #             linea_otra_oferta_traer_productos.importe_total_de_linea_producto = 0
+        for order in self:
+            if order.otra_oferta_traer_productos.id is not False:
+                for linea_otra_oferta_traer_productos in order.otra_oferta_traer_productos.order_line:
+                    existe = False
+
+                    for linea in order.order_line:
+                        if linea.producto.id == linea_otra_oferta_traer_productos.producto.id:
+                            existe = True
+
+
+                    if existe is False:
+                        linea_otra_oferta_traer_productos = linea_otra_oferta_traer_productos.copy()
+                        linea_otra_oferta_traer_productos.oferta = order.id
+                        linea_otra_oferta_traer_productos.importe_unitario = 0
+                        linea_otra_oferta_traer_productos.importe_total_de_linea_producto = 0
 
     def eliminar_productos_cantidad_producto_actual_cero(self):
         pass
