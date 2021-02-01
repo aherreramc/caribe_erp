@@ -1,536 +1,544 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="header_oferta"
-              inherit_id="report.external_layout_header">
-        <xpath expr="//div[@class='header']" position="replace">
+    <!--<template id="header_oferta"-->
+              <!--inherit_id="report.external_layout_header">-->
+        <!--<xpath expr="//div[@class='header']" position="replace">-->
+            <!--<div class="header">-->
+                <!--<div class="row">-->
+                    <!--Hola-->
+                    <!--<div t-if="proveedor==16" class="col-xs-12"> &lt;!&ndash;"DE’LONGHI KENWOOD A.P.A"&ndash;&gt;-->
+                        <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
+                    <!--</div>-->
+                    <!--<div t-if="proveedor==62" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI APPLIANCES S.R.L"&ndash;&gt;-->
+                        <!--<img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>-->
+                    <!--</div>-->
+                    <!--<div t-if="proveedor==80" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI AMERICA, INC."&ndash;&gt;-->
+                        <!--<img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>-->
+                    <!--</div>-->
+                    <!--<div t-if="proveedor==86" class="col-xs-12"> &lt;!&ndash;"Zeus Caribe"&ndash;&gt;-->
+                        <!--<img src="/erp/static/src/img/header_factura_img.png"/>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;div t-if="proveedor=='DLUSA'" class="col-xs-12">-->
+                       <!--<img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>-->
+                    <!--</div&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</xpath>-->
+    <!--</template>-->
+
+    <data inherit_id="web.external_layout_background">
+        <xpath expr="//div[hasclass('o_background_header')]" position="replace">
             <div class="header">
-                <div class="row">
-                    Hola
-                    <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
-                        <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
-                    </div>
-                    <div t-if="proveedor==62" class="col-xs-12"> <!--"DE'LONGHI APPLIANCES S.R.L"-->
-                        <img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>
-                    </div>
-                    <div t-if="proveedor==80" class="col-xs-12"> <!--"DE'LONGHI AMERICA, INC."-->
-                        <img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>
-                    </div>
-                    <div t-if="proveedor==86" class="col-xs-12"> <!--"Zeus Caribe"-->
-                        <img src="/erp/static/src/img/header_factura_img.png"/>
-                    </div>
-                    <!--div t-if="proveedor=='DLUSA'" class="col-xs-12">
-                       <img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>
-                    </div-->
-                </div>
+               Hola
             </div>
         </xpath>
-    </template>
+    </data>
 
 
     <!--<template id="header_oferta">-->
 
-        <!--<div class="header">-->
-
-            <!--&lt;!&ndash;div class="row bottom_linea"&ndash;&gt;-->
-            <!--<div class="row">-->
-                <!--<div t-if="proveedor==16" class="col-xs-12"> &lt;!&ndash;"DE’LONGHI KENWOOD A.P.A"&ndash;&gt;-->
-                    <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
-                <!--</div>-->
-                <!--<div t-if="proveedor==62" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI APPLIANCES S.R.L"&ndash;&gt;-->
-                    <!--<img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>-->
-                <!--</div>-->
-                <!--<div t-if="proveedor==80" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI AMERICA, INC."&ndash;&gt;-->
-                    <!--<img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>-->
-                <!--</div>-->
-                <!--<div t-if="proveedor==86" class="col-xs-12"> &lt;!&ndash;"Zeus Caribe"&ndash;&gt;-->
-                    <!--<img src="/erp/static/src/img/header_factura_img.png"/>-->
-                <!--</div>-->
-                <!--&lt;!&ndash;div t-if="proveedor=='DLUSA'" class="col-xs-12">-->
-                   <!--<img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>-->
-                <!--</div&ndash;&gt;-->
-            <!--</div>-->
-
-            <!--&lt;!&ndash;div class="row">-->
-                <!--<div t-if="is_group" class="col-xs-12 text_center">-->
-                    <!--<img src="/erp/static/src/img/delonghi_logo_todos.png" style="max-width:100%;"/>-->
-                <!--</div>-->
-                <!--<div t-if="no_group" class="col-xs-12 text_center">-->
-                    <!--<img src="/erp/static/src/img/delonghi_logo_todos.png" style="max-width:100%;"/>-->
-                    <!--img src="/erp/static/src/img/delonghi_logo_solo.png" style="max-width:100%; max-height:80px;"/>-->
-                <!--</div>-->
-            <!--</div&ndash;&gt;-->
-
-
-            <!--&lt;!&ndash;div class="row bottom_linea">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<t t-foreach="oferta.marcas" t-as="marca">-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'DE`LONGHI'">-->
-                            <!--<img src="/erp/static/src/img/delonghi_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'KENWOOD'">-->
-                            <!--<img src="/erp/static/src/img/kenwood_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'BRAUM'">-->
-                            <!--<img src="/erp/static/src/img/braun_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'ARIETE'">-->
-                            <!--<img src="/erp/static/src/img/ariete_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'MIZUSHI'">-->
-                            <!--<img src="/erp/static/src/img/mizushi_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                        <!--<div class="col-mi-2" t-if="marca.name == 'NESTLE'">-->
-                            <!--<img src="/erp/static/src/img/nestle_logo.png" style="max-width:100%; max-height:80px;"/>-->
-                        <!--</div>-->
-                    <!--</t>-->
-                <!--</div>-->
-            <!--</div&ndash;&gt;-->
-
-
-            <!--<style type="text/css">-->
-
-                <!--.fuente{-->
-                <!--font-family: Consolas;-->
-                <!--}-->
-
-                <!--.fuente_clara{-->
-                <!--color: #2B2B2B;-->
-                <!--}-->
-
-                <!--.letra_chica{-->
-                <!--font-size:small;-->
-                <!--}-->
-
-                <!--.text_center{-->
-                <!--text-align: center;-->
-                <!--}-->
-
-                <!--.italica{-->
-                <!--font-style: italic;-->
-                <!--}-->
-
-                <!--.tabla_productos{-->
-                <!--border-top:1px solid #cacaca;-->
-                <!--width: 100%;-->
-                <!--}-->
-
-                <!--.espacio_al_principio{-->
-                <!--padding-left: 40px;-->
-                <!--}-->
-
-                <!--.espacio_al_final{-->
-                <!--padding-right: 5px;-->
-                <!--}-->
-
-                <!--.linea{-->
-                <!--border-top: 1px solid #cacaca;-->
-                <!--width: 100%;-->
-                <!--margin-top: 15px-->
-                <!--}-->
-
-                <!--.ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{-->
-                <!--border-right: none;-->
-                <!--border-left: none;-->
-                <!--border-bottom: none;-->
-                <!--border-top: 1px solid black;-->
-                <!--}-->
-
-                <!--.tabla_productos tr.ultima_linea > td.celda_larga{-->
-                <!--border:none;-->
-                <!--padding-right: 10px;-->
-                <!--}-->
-
-                <!--.tabla_productos tr th,.tabla_productos tr td{-->
-                <!--border-bottom: none;-->
-                <!--width: 12.5%;-->
-                <!--padding-top: 5px;-->
-                <!--padding-left: 2px;-->
-                <!--}-->
-
-                <!--.tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{-->
-                <!--width: 25%;-->
-                <!--padding-top: 5px;-->
-                <!--}-->
-
-                <!--.tabla_totales tr th,.tabla_totales tr td{-->
-                <!--width: 14%;-->
-                <!--padding-top: 5px;-->
-                <!--padding-left: 2px;-->
-                <!--}-->
-
-                <!--.tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{-->
-                <!--border: none;-->
-                <!--width: 30%;-->
-                <!--padding-top: 5px;-->
-                <!--}-->
-
-                <!--.tabla_totales tr.ultima_linea > td{-->
-                <!--border-right: none;-->
-                <!--border-left: none;-->
-                <!--border-bottom: none;-->
-                <!--border-top: 1.5px solid black;-->
-                <!--}-->
-
-                <!--.etiqueta{-->
-                <!--position: absolute;-->
-                <!--top:-10px;-->
-                <!--left: 50px;-->
-                <!--background-color: white;-->
-                <!--}-->
-
-                <!--.bordeado{-->
-                <!--border: 1px solid #cacaca;-->
-                <!--border-radius: 5px;-->
-                <!--}-->
-
-                <!--.bordeado_serio{-->
-                <!--border: 1px solid black;-->
-                <!--border-radius: 1px;-->
-                <!--}-->
-
-                <!--.bordeado_serio_ancho{-->
-                <!--border: 3px solid #2B2B2B;-->
-                <!--}-->
-
-                <!--.bordeado_lateral_izq{-->
-                <!--border-left: 1px solid black;-->
-                <!--}-->
-
-                <!--.bordeado_lateral_der{-->
-                <!--border-right: 1px solid black;-->
-                <!--}-->
-
-                <!--.top_linea{-->
-                <!--border-top: 1px solid black;-->
-                <!--}-->
-
-                <!--.bottom_linea{-->
-                <!--padding-bottom: 8px;-->
-                <!--/* border-bottom: 1px solid black;*/-->
-                <!--}-->
-
-
-                <!--.despegar{-->
-                <!--margin-bottom: 6px;-->
-                <!--margin-top: 6px;-->
-                <!--}-->
-
-                <!--.depegar_adentro{-->
-                <!--padding-top: 8px;-->
-                <!--}-->
-
-                <!--.bajar{-->
-                <!--margin-top: 60px;-->
-                <!--}-->
-
-                <!--.bajar_poco{-->
-                <!--margin-top: 5px;-->
-                <!--}-->
-
-                <!--.tabla_default,tabla_totales{-->
-                <!--width: 100%;-->
-                <!--}-->
-
-                <!--.tabla_linea_head tr th, .under_linea{-->
-                <!--border-bottom: 1px solid black;-->
-                <!--}-->
-
-                <!--.row {-->
-                <!--margin-left: -15px;-->
-                <!--margin-right: -15px;-->
-                <!--}-->
-
-                <!--.row::after {-->
-                <!--content: "";-->
-                <!--display: table;-->
-                <!--clear: both;-->
-                <!--}-->
-
-                <!--.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9,-->
-                <!--.col-xs-10, .col-xs-11, .col-xs-12{-->
-                <!--position: relative;-->
-                <!--min-height: 1px;-->
-                <!--padding-right: 5px;-->
-                <!--padding-left: 5px;-->
-                <!--}-->
-
-                <!--.col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9,-->
-                <!--.col-mi-10, .col-mi-11, .col-mi-12{-->
-                <!--position: relative;-->
-                <!--min-height: 1px;-->
-                <!--}-->
-
-                <!--.col-xs-1 {-->
-                <!--float: left;-->
-                <!--width: 8.333333%;-->
-                <!--}-->
-
-                <!--.col-mi-1 {-->
-                <!--float: left;-->
-                <!--width: 8.333333%;-->
-                <!--}-->
-
-                <!--.col-xs-2 {-->
-                <!--float: left;-->
-                <!--width: 16.666667%;-->
-                <!--}-->
-
-                <!--.col-mi-2 {-->
-                <!--float: left;-->
-                <!--width: 16.666667%;-->
-                <!--}-->
-
-                <!--.col-xs-3 {-->
-                <!--float: left;-->
-                <!--width: 25%;-->
-                <!--}-->
-
-                <!--.col-mi-3 {-->
-                <!--float: left;-->
-                <!--width: 25%;-->
-                <!--}-->
-
-                <!--.col-xs-4 {-->
-                <!--float: left;-->
-                <!--width: 33.333333%;-->
-                <!--}-->
-
-                <!--.col-mi-4 {-->
-                <!--float: left;-->
-                <!--width: 33.333333%;-->
-                <!--}-->
-
-                <!--.col-xs-5 {-->
-                <!--float: left;-->
-                <!--width: 41.666667%;-->
-                <!--}-->
-
-                <!--.col-mi-5 {-->
-                <!--float: left;-->
-                <!--width: 41.666667%;-->
-                <!--}-->
-
-                <!--.col-xs-6 {-->
-                <!--float: left;-->
-                <!--width: 50%;-->
-                <!--}-->
-
-                <!--.col-mi-6 {-->
-                <!--float: left;-->
-                <!--width: 50%;-->
-                <!--}-->
-
-                <!--.col-xs-7 {-->
-                <!--float: left;-->
-                <!--width: 58.333333%;-->
-                <!--}-->
-
-                <!--.col-mi-7 {-->
-                <!--float: left;-->
-                <!--width: 58.333333%;-->
-                <!--}-->
-
-                <!--.col-xs-8 {-->
-                <!--float: left;-->
-                <!--width: 66.666667%;-->
-                <!--}-->
-
-                <!--.col-mi-8 {-->
-                <!--float: left;-->
-                <!--width: 66.666667%;-->
-                <!--}-->
-
-                <!--.col-xs-9 {-->
-                <!--float: left;-->
-                <!--width: 75%;-->
-                <!--}-->
-
-                <!--.col-mi-9 {-->
-                <!--float: left;-->
-                <!--width: 75%;-->
-                <!--}-->
-
-                <!--.col-xs-10 {-->
-                <!--float: left;-->
-                <!--width: 83.333333%;-->
-                <!--}-->
-
-                <!--.col-mi-10 {-->
-                <!--float: left;-->
-                <!--width: 83.333333%;-->
-                <!--}-->
-
-                <!--.col-xs-11 {-->
-                <!--float: left;-->
-                <!--width: 91.666667%;-->
-                <!--}-->
-
-                <!--.col-mi-11 {-->
-                <!--float: left;-->
-                <!--width: 91.666667%;-->
-                <!--}-->
-
-                <!--.col-xs-12 {-->
-                <!--float: left;-->
-                <!--width: 100%;-->
-                <!--}-->
-
-                <!--.col-mi-12 {-->
-                <!--float: left;-->
-                <!--width: 100%;-->
-                <!--}-->
-
-                <!--.pull-xs-0 {-->
-                <!--right: auto;-->
-                <!--}-->
-
-                <!--.pull-xs-1 {-->
-                <!--right: 8.333333%;-->
-                <!--}-->
-
-                <!--.pull-xs-2 {-->
-                <!--right: 16.666667%;-->
-                <!--}-->
-
-                <!--.pull-xs-3 {-->
-                <!--right: 25%;-->
-                <!--}-->
-
-                <!--.pull-xs-4 {-->
-                <!--right: 33.333333%;-->
-                <!--}-->
-
-                <!--.pull-xs-5 {-->
-                <!--right: 41.666667%;-->
-                <!--}-->
-
-                <!--.pull-xs-6 {-->
-                <!--right: 50%;-->
-                <!--}-->
-
-                <!--.pull-xs-7 {-->
-                <!--right: 58.333333%;-->
-                <!--}-->
-
-                <!--.pull-xs-8 {-->
-                <!--right: 66.666667%;-->
-                <!--}-->
-
-                <!--.pull-xs-9 {-->
-                <!--right: 75%;-->
-                <!--}-->
-
-                <!--.pull-xs-10 {-->
-                <!--right: 83.333333%;-->
-                <!--}-->
-
-                <!--.pull-xs-11 {-->
-                <!--right: 91.666667%;-->
-                <!--}-->
-
-                <!--.pull-xs-12 {-->
-                <!--right: 100%;-->
-                <!--}-->
-
-                <!--.push-xs-0 {-->
-                <!--left: auto;-->
-                <!--}-->
-
-                <!--.push-xs-1 {-->
-                <!--left: 8.333333%;-->
-                <!--}-->
-
-                <!--.push-xs-2 {-->
-                <!--left: 16.666667%;-->
-                <!--}-->
-
-                <!--.push-xs-3 {-->
-                <!--left: 25%;-->
-                <!--}-->
-
-                <!--.push-xs-4 {-->
-                <!--left: 33.333333%;-->
-                <!--}-->
-
-                <!--.push-xs-5 {-->
-                <!--left: 41.666667%;-->
-                <!--}-->
-
-                <!--.push-xs-6 {-->
-                <!--left: 50%;-->
-                <!--}-->
-
-                <!--.push-xs-7 {-->
-                <!--left: 58.333333%;-->
-                <!--}-->
-
-                <!--.push-xs-8 {-->
-                <!--left: 66.666667%;-->
-                <!--}-->
-
-                <!--.push-xs-9 {-->
-                <!--left: 75%;-->
-                <!--}-->
-
-                <!--.push-xs-10 {-->
-                <!--left: 83.333333%;-->
-                <!--}-->
-
-                <!--.push-xs-11 {-->
-                <!--left: 91.666667%;-->
-                <!--}-->
-
-                <!--.push-xs-12 {-->
-                <!--left: 100%;-->
-                <!--}-->
-
-                <!--.offset-xs-1 {-->
-                <!--margin-left: 8.333333%;-->
-                <!--}-->
-
-                <!--.offset-xs-2 {-->
-                <!--margin-left: 16.666667%;-->
-                <!--}-->
-
-                <!--.offset-xs-3 {-->
-                <!--margin-left: 25%;-->
-                <!--}-->
-
-                <!--.offset-xs-4 {-->
-                <!--margin-left: 33.333333%;-->
-                <!--}-->
-
-                <!--.offset-xs-5 {-->
-                <!--margin-left: 41.666667%;-->
-                <!--}-->
-
-                <!--.offset-xs-6 {-->
-                <!--margin-left: 50%;-->
-                <!--}-->
-
-                <!--.offset-xs-7 {-->
-                <!--margin-left: 58.333333%;-->
-                <!--}-->
-
-                <!--.offset-xs-8 {-->
-                <!--margin-left: 66.666667%;-->
-                <!--}-->
-
-                <!--.offset-xs-9 {-->
-                <!--margin-left: 75%;-->
-                <!--}-->
-
-                <!--.offset-xs-10 {-->
-                <!--margin-left: 83.333333%;-->
-                <!--}-->
-
-                <!--.offset-xs-11 {-->
-                <!--margin-left: 91.666667%;-->
-                <!--}-->
-
-            <!--</style>-->
-        <!--</div>-->
+    <!--<div class="header">-->
+
+    <!--&lt;!&ndash;div class="row bottom_linea"&ndash;&gt;-->
+    <!--<div class="row">-->
+    <!--<div t-if="proveedor==16" class="col-xs-12"> &lt;!&ndash;"DE’LONGHI KENWOOD A.P.A"&ndash;&gt;-->
+    <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
+    <!--</div>-->
+    <!--<div t-if="proveedor==62" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI APPLIANCES S.R.L"&ndash;&gt;-->
+    <!--<img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>-->
+    <!--</div>-->
+    <!--<div t-if="proveedor==80" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI AMERICA, INC."&ndash;&gt;-->
+    <!--<img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>-->
+    <!--</div>-->
+    <!--<div t-if="proveedor==86" class="col-xs-12"> &lt;!&ndash;"Zeus Caribe"&ndash;&gt;-->
+    <!--<img src="/erp/static/src/img/header_factura_img.png"/>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;div t-if="proveedor=='DLUSA'" class="col-xs-12">-->
+    <!--<img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>-->
+    <!--</div&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;div class="row">-->
+    <!--<div t-if="is_group" class="col-xs-12 text_center">-->
+    <!--<img src="/erp/static/src/img/delonghi_logo_todos.png" style="max-width:100%;"/>-->
+    <!--</div>-->
+    <!--<div t-if="no_group" class="col-xs-12 text_center">-->
+    <!--<img src="/erp/static/src/img/delonghi_logo_todos.png" style="max-width:100%;"/>-->
+    <!--img src="/erp/static/src/img/delonghi_logo_solo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--</div&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;div class="row bottom_linea">-->
+    <!--<div class="col-xs-12">-->
+    <!--<t t-foreach="oferta.marcas" t-as="marca">-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'DE`LONGHI'">-->
+    <!--<img src="/erp/static/src/img/delonghi_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'KENWOOD'">-->
+    <!--<img src="/erp/static/src/img/kenwood_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'BRAUM'">-->
+    <!--<img src="/erp/static/src/img/braun_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'ARIETE'">-->
+    <!--<img src="/erp/static/src/img/ariete_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'MIZUSHI'">-->
+    <!--<img src="/erp/static/src/img/mizushi_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-mi-2" t-if="marca.name == 'NESTLE'">-->
+    <!--<img src="/erp/static/src/img/nestle_logo.png" style="max-width:100%; max-height:80px;"/>-->
+    <!--</div>-->
+    <!--</t>-->
+    <!--</div>-->
+    <!--</div&ndash;&gt;-->
+
+
+    <!--<style type="text/css">-->
+
+    <!--.fuente{-->
+    <!--font-family: Consolas;-->
+    <!--}-->
+
+    <!--.fuente_clara{-->
+    <!--color: #2B2B2B;-->
+    <!--}-->
+
+    <!--.letra_chica{-->
+    <!--font-size:small;-->
+    <!--}-->
+
+    <!--.text_center{-->
+    <!--text-align: center;-->
+    <!--}-->
+
+    <!--.italica{-->
+    <!--font-style: italic;-->
+    <!--}-->
+
+    <!--.tabla_productos{-->
+    <!--border-top:1px solid #cacaca;-->
+    <!--width: 100%;-->
+    <!--}-->
+
+    <!--.espacio_al_principio{-->
+    <!--padding-left: 40px;-->
+    <!--}-->
+
+    <!--.espacio_al_final{-->
+    <!--padding-right: 5px;-->
+    <!--}-->
+
+    <!--.linea{-->
+    <!--border-top: 1px solid #cacaca;-->
+    <!--width: 100%;-->
+    <!--margin-top: 15px-->
+    <!--}-->
+
+    <!--.ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{-->
+    <!--border-right: none;-->
+    <!--border-left: none;-->
+    <!--border-bottom: none;-->
+    <!--border-top: 1px solid black;-->
+    <!--}-->
+
+    <!--.tabla_productos tr.ultima_linea > td.celda_larga{-->
+    <!--border:none;-->
+    <!--padding-right: 10px;-->
+    <!--}-->
+
+    <!--.tabla_productos tr th,.tabla_productos tr td{-->
+    <!--border-bottom: none;-->
+    <!--width: 12.5%;-->
+    <!--padding-top: 5px;-->
+    <!--padding-left: 2px;-->
+    <!--}-->
+
+    <!--.tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{-->
+    <!--width: 25%;-->
+    <!--padding-top: 5px;-->
+    <!--}-->
+
+    <!--.tabla_totales tr th,.tabla_totales tr td{-->
+    <!--width: 14%;-->
+    <!--padding-top: 5px;-->
+    <!--padding-left: 2px;-->
+    <!--}-->
+
+    <!--.tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{-->
+    <!--border: none;-->
+    <!--width: 30%;-->
+    <!--padding-top: 5px;-->
+    <!--}-->
+
+    <!--.tabla_totales tr.ultima_linea > td{-->
+    <!--border-right: none;-->
+    <!--border-left: none;-->
+    <!--border-bottom: none;-->
+    <!--border-top: 1.5px solid black;-->
+    <!--}-->
+
+    <!--.etiqueta{-->
+    <!--position: absolute;-->
+    <!--top:-10px;-->
+    <!--left: 50px;-->
+    <!--background-color: white;-->
+    <!--}-->
+
+    <!--.bordeado{-->
+    <!--border: 1px solid #cacaca;-->
+    <!--border-radius: 5px;-->
+    <!--}-->
+
+    <!--.bordeado_serio{-->
+    <!--border: 1px solid black;-->
+    <!--border-radius: 1px;-->
+    <!--}-->
+
+    <!--.bordeado_serio_ancho{-->
+    <!--border: 3px solid #2B2B2B;-->
+    <!--}-->
+
+    <!--.bordeado_lateral_izq{-->
+    <!--border-left: 1px solid black;-->
+    <!--}-->
+
+    <!--.bordeado_lateral_der{-->
+    <!--border-right: 1px solid black;-->
+    <!--}-->
+
+    <!--.top_linea{-->
+    <!--border-top: 1px solid black;-->
+    <!--}-->
+
+    <!--.bottom_linea{-->
+    <!--padding-bottom: 8px;-->
+    <!--/* border-bottom: 1px solid black;*/-->
+    <!--}-->
+
+
+    <!--.despegar{-->
+    <!--margin-bottom: 6px;-->
+    <!--margin-top: 6px;-->
+    <!--}-->
+
+    <!--.depegar_adentro{-->
+    <!--padding-top: 8px;-->
+    <!--}-->
+
+    <!--.bajar{-->
+    <!--margin-top: 60px;-->
+    <!--}-->
+
+    <!--.bajar_poco{-->
+    <!--margin-top: 5px;-->
+    <!--}-->
+
+    <!--.tabla_default,tabla_totales{-->
+    <!--width: 100%;-->
+    <!--}-->
+
+    <!--.tabla_linea_head tr th, .under_linea{-->
+    <!--border-bottom: 1px solid black;-->
+    <!--}-->
+
+    <!--.row {-->
+    <!--margin-left: -15px;-->
+    <!--margin-right: -15px;-->
+    <!--}-->
+
+    <!--.row::after {-->
+    <!--content: "";-->
+    <!--display: table;-->
+    <!--clear: both;-->
+    <!--}-->
+
+    <!--.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9,-->
+    <!--.col-xs-10, .col-xs-11, .col-xs-12{-->
+    <!--position: relative;-->
+    <!--min-height: 1px;-->
+    <!--padding-right: 5px;-->
+    <!--padding-left: 5px;-->
+    <!--}-->
+
+    <!--.col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8, .col-mi-9,-->
+    <!--.col-mi-10, .col-mi-11, .col-mi-12{-->
+    <!--position: relative;-->
+    <!--min-height: 1px;-->
+    <!--}-->
+
+    <!--.col-xs-1 {-->
+    <!--float: left;-->
+    <!--width: 8.333333%;-->
+    <!--}-->
+
+    <!--.col-mi-1 {-->
+    <!--float: left;-->
+    <!--width: 8.333333%;-->
+    <!--}-->
+
+    <!--.col-xs-2 {-->
+    <!--float: left;-->
+    <!--width: 16.666667%;-->
+    <!--}-->
+
+    <!--.col-mi-2 {-->
+    <!--float: left;-->
+    <!--width: 16.666667%;-->
+    <!--}-->
+
+    <!--.col-xs-3 {-->
+    <!--float: left;-->
+    <!--width: 25%;-->
+    <!--}-->
+
+    <!--.col-mi-3 {-->
+    <!--float: left;-->
+    <!--width: 25%;-->
+    <!--}-->
+
+    <!--.col-xs-4 {-->
+    <!--float: left;-->
+    <!--width: 33.333333%;-->
+    <!--}-->
+
+    <!--.col-mi-4 {-->
+    <!--float: left;-->
+    <!--width: 33.333333%;-->
+    <!--}-->
+
+    <!--.col-xs-5 {-->
+    <!--float: left;-->
+    <!--width: 41.666667%;-->
+    <!--}-->
+
+    <!--.col-mi-5 {-->
+    <!--float: left;-->
+    <!--width: 41.666667%;-->
+    <!--}-->
+
+    <!--.col-xs-6 {-->
+    <!--float: left;-->
+    <!--width: 50%;-->
+    <!--}-->
+
+    <!--.col-mi-6 {-->
+    <!--float: left;-->
+    <!--width: 50%;-->
+    <!--}-->
+
+    <!--.col-xs-7 {-->
+    <!--float: left;-->
+    <!--width: 58.333333%;-->
+    <!--}-->
+
+    <!--.col-mi-7 {-->
+    <!--float: left;-->
+    <!--width: 58.333333%;-->
+    <!--}-->
+
+    <!--.col-xs-8 {-->
+    <!--float: left;-->
+    <!--width: 66.666667%;-->
+    <!--}-->
+
+    <!--.col-mi-8 {-->
+    <!--float: left;-->
+    <!--width: 66.666667%;-->
+    <!--}-->
+
+    <!--.col-xs-9 {-->
+    <!--float: left;-->
+    <!--width: 75%;-->
+    <!--}-->
+
+    <!--.col-mi-9 {-->
+    <!--float: left;-->
+    <!--width: 75%;-->
+    <!--}-->
+
+    <!--.col-xs-10 {-->
+    <!--float: left;-->
+    <!--width: 83.333333%;-->
+    <!--}-->
+
+    <!--.col-mi-10 {-->
+    <!--float: left;-->
+    <!--width: 83.333333%;-->
+    <!--}-->
+
+    <!--.col-xs-11 {-->
+    <!--float: left;-->
+    <!--width: 91.666667%;-->
+    <!--}-->
+
+    <!--.col-mi-11 {-->
+    <!--float: left;-->
+    <!--width: 91.666667%;-->
+    <!--}-->
+
+    <!--.col-xs-12 {-->
+    <!--float: left;-->
+    <!--width: 100%;-->
+    <!--}-->
+
+    <!--.col-mi-12 {-->
+    <!--float: left;-->
+    <!--width: 100%;-->
+    <!--}-->
+
+    <!--.pull-xs-0 {-->
+    <!--right: auto;-->
+    <!--}-->
+
+    <!--.pull-xs-1 {-->
+    <!--right: 8.333333%;-->
+    <!--}-->
+
+    <!--.pull-xs-2 {-->
+    <!--right: 16.666667%;-->
+    <!--}-->
+
+    <!--.pull-xs-3 {-->
+    <!--right: 25%;-->
+    <!--}-->
+
+    <!--.pull-xs-4 {-->
+    <!--right: 33.333333%;-->
+    <!--}-->
+
+    <!--.pull-xs-5 {-->
+    <!--right: 41.666667%;-->
+    <!--}-->
+
+    <!--.pull-xs-6 {-->
+    <!--right: 50%;-->
+    <!--}-->
+
+    <!--.pull-xs-7 {-->
+    <!--right: 58.333333%;-->
+    <!--}-->
+
+    <!--.pull-xs-8 {-->
+    <!--right: 66.666667%;-->
+    <!--}-->
+
+    <!--.pull-xs-9 {-->
+    <!--right: 75%;-->
+    <!--}-->
+
+    <!--.pull-xs-10 {-->
+    <!--right: 83.333333%;-->
+    <!--}-->
+
+    <!--.pull-xs-11 {-->
+    <!--right: 91.666667%;-->
+    <!--}-->
+
+    <!--.pull-xs-12 {-->
+    <!--right: 100%;-->
+    <!--}-->
+
+    <!--.push-xs-0 {-->
+    <!--left: auto;-->
+    <!--}-->
+
+    <!--.push-xs-1 {-->
+    <!--left: 8.333333%;-->
+    <!--}-->
+
+    <!--.push-xs-2 {-->
+    <!--left: 16.666667%;-->
+    <!--}-->
+
+    <!--.push-xs-3 {-->
+    <!--left: 25%;-->
+    <!--}-->
+
+    <!--.push-xs-4 {-->
+    <!--left: 33.333333%;-->
+    <!--}-->
+
+    <!--.push-xs-5 {-->
+    <!--left: 41.666667%;-->
+    <!--}-->
+
+    <!--.push-xs-6 {-->
+    <!--left: 50%;-->
+    <!--}-->
+
+    <!--.push-xs-7 {-->
+    <!--left: 58.333333%;-->
+    <!--}-->
+
+    <!--.push-xs-8 {-->
+    <!--left: 66.666667%;-->
+    <!--}-->
+
+    <!--.push-xs-9 {-->
+    <!--left: 75%;-->
+    <!--}-->
+
+    <!--.push-xs-10 {-->
+    <!--left: 83.333333%;-->
+    <!--}-->
+
+    <!--.push-xs-11 {-->
+    <!--left: 91.666667%;-->
+    <!--}-->
+
+    <!--.push-xs-12 {-->
+    <!--left: 100%;-->
+    <!--}-->
+
+    <!--.offset-xs-1 {-->
+    <!--margin-left: 8.333333%;-->
+    <!--}-->
+
+    <!--.offset-xs-2 {-->
+    <!--margin-left: 16.666667%;-->
+    <!--}-->
+
+    <!--.offset-xs-3 {-->
+    <!--margin-left: 25%;-->
+    <!--}-->
+
+    <!--.offset-xs-4 {-->
+    <!--margin-left: 33.333333%;-->
+    <!--}-->
+
+    <!--.offset-xs-5 {-->
+    <!--margin-left: 41.666667%;-->
+    <!--}-->
+
+    <!--.offset-xs-6 {-->
+    <!--margin-left: 50%;-->
+    <!--}-->
+
+    <!--.offset-xs-7 {-->
+    <!--margin-left: 58.333333%;-->
+    <!--}-->
+
+    <!--.offset-xs-8 {-->
+    <!--margin-left: 66.666667%;-->
+    <!--}-->
+
+    <!--.offset-xs-9 {-->
+    <!--margin-left: 75%;-->
+    <!--}-->
+
+    <!--.offset-xs-10 {-->
+    <!--margin-left: 83.333333%;-->
+    <!--}-->
+
+    <!--.offset-xs-11 {-->
+    <!--margin-left: 91.666667%;-->
+    <!--}-->
+
+    <!--</style>-->
+    <!--</div>-->
     <!--</template>-->
 
 </odoo> 
