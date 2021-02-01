@@ -242,29 +242,9 @@ class SaleOrderTemplate(models.Model):
                         linea_otra_oferta_traer_productos.importe_total_de_linea_producto = 0
 
     def eliminar_productos_cantidad_producto_actual_cero(self):
-        pass
-        # for linea in self.lineas_de_oferta:
-        #     if linea.cantidad_producto_actual_oferta == 0:
-        #         linea.unlink()
-        #
-        # #Se eliminan también las lineas de las entregas
-        # for entrega in self.entregas:
-        #     for contenedor in entrega.contenedores_20:
-        #         for linea in contenedor.contenedor.lineas_contenedor_20:
-        #             if linea.cantidad_producto_actual_oferta == 0:
-        #                 linea.unlink()
-        #
-        # for entrega in self.entregas:
-        #     for contenedor in entrega.contenedores_40:
-        #         for linea in contenedor.contenedor.lineas_contenedor_40:
-        #             if linea.cantidad_producto_actual_oferta == 0:
-        #                 linea.unlink()
-        #
-        # for entrega in self.entregas:
-        #     for contenedor in entrega.contenedores_40_hq:
-        #         for linea in contenedor.contenedor.lineas_contenedor_40_hq:
-        #             if linea.cantidad_producto_actual_oferta == 0:
-        #                 linea.unlink()
+        for linea in self.lineas_de_oferta:
+            if linea.cantidad_producto_actual_oferta == 0:
+                linea.unlink()
 
 
     def actualizar_desde_el_nomenclador(self):
@@ -321,14 +301,13 @@ class SaleOrderTemplate(models.Model):
 
     def poner_cantidades_a_cero(self):
         pass
-        # self.entregas.unlink()
-        #
-        # for linea in self.lineas_de_oferta:
-        #     linea.cantidad_producto_actual_oferta = 0
-        #     linea.volumen_total_de_linea_producto = 0
-        #     linea.importe_total_de_linea_producto = 0
-        #
-        # self.actualizar_mercancia()
+
+        for linea in self.lineas_de_oferta:
+            linea.cantidad_producto_actual_oferta = 0
+            linea.volumen_total_de_linea_producto = 0
+            linea.importe_total_de_linea_producto = 0
+
+        self.actualizar_mercancia()
 
     @api.onchange('concepto', 'cliente', 'fecha_valor')
     def _onchange_concepto_cliente(self):
