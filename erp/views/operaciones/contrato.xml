@@ -105,17 +105,6 @@
                                 </div>
 
                                 <div class="col-mi-12">
-                                    <button class="btn btn-primary btn-sm" name="actualizar_mercancia" string="Actualizar importes" type="object"/>
-                                    <div class="col-mi-3" style="margin-left:2em; padding-top:3px;">
-                                        <div class="col-xs-1">
-                                            <field name="autocalcular"/>
-                                        </div>
-                                        <div class="col-mi-4">
-                                            <p><label class="negrita para_checkbox" for="autocalcular" string="Autocalcular"/></p>
-                                        </div>
-                                    </div>
-
-
                                     <group col="4" style="margin-top:2em;">
                                         <field name="exw" string="EXW"/>
                                         <field name="seguro"/>
@@ -180,7 +169,7 @@
 
 
                             </page>
-                            <!--page string="Productos">
+                            <page string="Productos">
                                 <div class="col-xs-12 despegar">
                                     <div class="col-xs-6">
                                         <group col="2">
@@ -234,7 +223,7 @@
                                         </tree>
                                     </field>
                                 </div>
-                            </page-->
+                            </page>
                             <page string="Carta de crédito">
                                 <div class="col-xs-12">
                                     <div class="col-mi-6">
