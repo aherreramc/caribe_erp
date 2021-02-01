@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="web_external_layout_iherited"
-              inherit_id="web.external_layout_standard" customize_show="True"
-              name="Automatic Header">
-        <xpath expr="//div[@class='header']" position="replace">
-            Hola
-        </xpath>
-    </template>
 
 
 </odoo> 
