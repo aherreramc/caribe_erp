@@ -1239,7 +1239,7 @@
                 <div class="article o_report_stock_rule">
                     <div class="page">
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                            <div class="row contenido tamanno_texto">
+
                                 <div class="col-xs-12 fuente_alt">
 
                                     <t t-set="cont_types" t-value="0"/>
@@ -1725,7 +1725,6 @@
                                         </table>
                                     </t>
                                 </div>
-                            </div>
                         </div>
 
                         <style type="text/css">
