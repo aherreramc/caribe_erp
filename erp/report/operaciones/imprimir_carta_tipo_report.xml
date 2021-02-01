@@ -330,8 +330,10 @@
 
                             <div class="despegar_mas div_firma">
                                 <div>
+                                    a
                                     <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
                                     <p t-if="oferta.firma.name">
+                                        b
                                         <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
                                     </p>
                                     <p t-if="oferta.firma.name">
