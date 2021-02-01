@@ -23,9 +23,9 @@ class Contrato(models.Model):
     _name = "erp.operaciones.contrato"
     _order = "fecha_valor desc"
 
-    # @api.model
-    # def _default_currency(self):
-    #     return 3
+    @api.model
+    def _default_currency(self):
+        return 3
 
     @api.model
     def _default_currency_euro(self):
