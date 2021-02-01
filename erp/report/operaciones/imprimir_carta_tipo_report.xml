@@ -5,813 +5,826 @@
     <template id="erp.imprimir_carta_tipo_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="oferta">
-                <t t-call="erp.header_oferta"/>
-                    <!--<div class="header">-->
-                        <!--<div class="row">-->
-                            <!--Header-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <div class="article o_report_stock_rule">
-                        <div class="page">
-                            <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                                <t t-set="un_solo_producto" t-value="0"/>
+                <div class="header">
+                    <div class="row">
+                        <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
+                            <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
+                        </div>
+                        <div t-if="proveedor==62" class="col-xs-12"> <!--"DE'LONGHI APPLIANCES S.R.L"-->
+                            <img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>
+                        </div>
+                        <div t-if="proveedor==80" class="col-xs-12"> <!--"DE'LONGHI AMERICA, INC."-->
+                            <img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>
+                        </div>
+                        <div t-if="proveedor==86" class="col-xs-12"> <!--"Zeus Caribe"-->
+                            <img src="/erp/static/src/img/header_factura_img.png"/>
+                        </div>
+                        <!--div t-if="proveedor=='DLUSA'" class="col-xs-12">
+                           <img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>
+                        </div-->
+                    </div>
+                </div>
+                <div class="article o_report_stock_rule">
+                    <div class="page">
+                        <div class="row contenido tamanno_texto" style="vertical-align: middle;">
+                            <t t-set="un_solo_producto" t-value="0"/>
 
-                                <!--div class="col-xs-3 offset-xs-10">
-                                    <p>
-                                        <span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>
-                                        aa
-                                    </p>
-                                </div-->
+                            <!--div class="col-xs-3 offset-xs-10">
+                                <p>
+                                    <span t-field="oferta.fecha_valor" t-field-options='{"format": "d MMMM, y"}'/>
+                                    aa
+                                </p>
+                            </div-->
 
-                                <div class="col-xs-12 espacio_al_principio">
+                            <div class="col-xs-12 espacio_al_principio">
 
-                                    <p t-if="oferta.representante.name">
-                                        <b>A:</b>
-                                        <span style="padding-right: 3px;" t-esc="oferta.representante.tratamiento"/>
-                                        <span t-esc="oferta.representante.name"/>
-                                        <br/>
-                                        <span style="color:white;">A:</span>
-                                        <span t-esc="oferta.representante.cargo"/>
-                                    </p>
-                                    <p>
-                                        <b>
-                                            <span t-esc="oferta.cliente.name"/>
-                                        </b>
-                                    </p>
-                                    <p>
-                                        <div t-if="oferta.representantes_en_copia">
-                                            <span>
-                                                <b>Cc:</b>
-                                            </span>
-                                            <t t-foreach="oferta.representantes_en_copia" t-as="representante_en_copia">
-                                                <span t-esc="representante_en_copia.name"/>
-                                            </t>
-                                        </div>
-                                    </p>
-                                </div>
+                                <p t-if="oferta.representante.name">
+                                    <b>A:</b>
+                                    <span style="padding-right: 3px;" t-esc="oferta.representante.tratamiento"/>
+                                    <span t-esc="oferta.representante.name"/>
+                                    <br/>
+                                    <span style="color:white;">A:</span>
+                                    <span t-esc="oferta.representante.cargo"/>
+                                </p>
+                                <p>
+                                    <b>
+                                        <span t-esc="oferta.cliente.name"/>
+                                    </b>
+                                </p>
+                                <p>
+                                    <div t-if="oferta.representantes_en_copia">
+                                        <span>
+                                            <b>Cc:</b>
+                                        </span>
+                                        <t t-foreach="oferta.representantes_en_copia" t-as="representante_en_copia">
+                                            <span t-esc="representante_en_copia.name"/>
+                                        </t>
+                                    </div>
+                                </p>
                             </div>
-                            <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                                <div t-if="oferta.marcas" class="col-xs-12">
-                                    <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
+                        </div>
+                        <div class="row contenido tamanno_texto" style="vertical-align: middle;">
+                            <div t-if="oferta.marcas" class="col-xs-12">
+                                <t t-if="oferta.marcas_encabezado"><!-- 1 = True-->
+                                    <p>
+                                        <span t-esc="oferta.marcas_encabezado"/>
+                                        <span t-esc="oferta.marcas_to_string()"/>
+                                    </p>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row contenido tamanno_texto" style="vertical-align: middle;">
+                            <div class="col-xs-12 espacio_al_principio">
+                                <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones
+                                    Generales:
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 offset-xs-1 interlineado">
+                                <ul>
+                                    <li class="despegar" t-if="oferta.currency_id">
                                         <p>
-                                            <span t-esc="oferta.marcas_encabezado"/>
-                                            <span t-esc="oferta.marcas_to_string()"/>
+                                            <b>Moneda:</b>
+                                            La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
                                         </p>
-                                    </t>
-                                </div>
-                            </div>
-                            <div class="row contenido tamanno_texto" style="vertical-align: middle;">
-                                <div class="col-xs-12 espacio_al_principio">
-                                    <p class="negrita under_linea" style="font-size: 14px;width: 170px;">Condiciones
-                                        Generales:
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-xs-12 offset-xs-1 interlineado">
-                                    <ul>
-                                        <li class="despegar" t-if="oferta.currency_id">
-                                            <p>
-                                                <b>Moneda:</b>
-                                                La oferta está expresada en<span t-esc="oferta.currency_id.name"/>.
-                                            </p>
-                                        </li>
-                                        <li class="despegar" t-if="oferta.incoterm">
-                                            <p>
-                                                <b>Condición de entrega:</b>
-                                                <span t-esc="oferta.incoterm.name"/>.
-                                            </p>
-                                        </li>
-                                        <li class="despegar" t-if="oferta.embalaje">
-                                            <p class="texto_justificado">
-                                                <b>Embalaje:</b>
-                                                <span t-esc="oferta.embalaje"/>
-                                            </p>
-                                        </li>
-                                        <t t-if="oferta.pais">
-                                            <t t-if="oferta.puerto_de_origen">
-                                                <t t-if="oferta.puerto_de_origen.tipo == 'puerto'">
-                                                    <li class="despegar" t-if="oferta.pais">
-                                                        <p>
-                                                            <b>País<t t-if="oferta.pais">y puerto</t>de embarque:
-                                                            </b>
-                                                            <t t-if="oferta.puerto_de_origen"><span
-                                                                    t-esc="oferta.pais.name"/>,
-                                                            </t>
-                                                            <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                        </p>
-                                                    </li>
-                                                </t>
-
-                                                <t t-if="oferta.puerto_de_origen.tipo == 'aereopuerto'">
-                                                    <li class="despegar" t-if="oferta.pais">
-                                                        <p>
-                                                            <b>País<t t-if="oferta.pais">y aereopuerto</t>de embarque:
-                                                            </b>
-                                                            <t t-if="oferta.puerto_de_origen"><span
-                                                                    t-esc="oferta.pais.name"/>,
-                                                            </t>
-                                                            <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                        </p>
-                                                    </li>
-                                                </t>
-
-                                                <t t-if="oferta.puerto_de_origen.tipo == 'almacen'">
-                                                    <li class="despegar" t-if="oferta.pais">
-                                                        <p>
-                                                            <b>País<t t-if="oferta.pais">y almacén</t>:
-                                                            </b>
-                                                            <t t-if="oferta.puerto_de_origen"><span
-                                                                    t-esc="oferta.pais.name"/>,
-                                                            </t>
-                                                            <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                        </p>
-                                                    </li>
-                                                </t>
-
-                                                <t t-if="oferta.puerto_de_origen.tipo == 'bodega'">
-                                                    <li class="despegar" t-if="oferta.pais">
-                                                        <p>
-                                                            <b>País<t t-if="oferta.pais">y almacén</t>:
-                                                            </b>
-                                                            <t t-if="oferta.puerto_de_origen"><span
-                                                                    t-esc="oferta.pais.name"/>,
-                                                            </t>
-                                                            <span t-esc="oferta.puerto_de_origen.name"/>.
-                                                        </p>
-                                                    </li>
-                                                </t>
-                                            </t>
-                                            <t t-else="">
+                                    </li>
+                                    <li class="despegar" t-if="oferta.incoterm">
+                                        <p>
+                                            <b>Condición de entrega:</b>
+                                            <span t-esc="oferta.incoterm.name"/>.
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.embalaje">
+                                        <p class="texto_justificado">
+                                            <b>Embalaje:</b>
+                                            <span t-esc="oferta.embalaje"/>
+                                        </p>
+                                    </li>
+                                    <t t-if="oferta.pais">
+                                        <t t-if="oferta.puerto_de_origen">
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'puerto'">
                                                 <li class="despegar" t-if="oferta.pais">
                                                     <p>
-                                                        <b>País:</b>
-                                                        <span t-esc="oferta.pais.name"/>.
+                                                        <b>País<t t-if="oferta.pais">y puerto</t>de embarque:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
+
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'aereopuerto'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y aereopuerto</t>de embarque:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
+
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'almacen'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y almacén</t>:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
+                                                    </p>
+                                                </li>
+                                            </t>
+
+                                            <t t-if="oferta.puerto_de_origen.tipo == 'bodega'">
+                                                <li class="despegar" t-if="oferta.pais">
+                                                    <p>
+                                                        <b>País<t t-if="oferta.pais">y almacén</t>:
+                                                        </b>
+                                                        <t t-if="oferta.puerto_de_origen"><span
+                                                                t-esc="oferta.pais.name"/>,
+                                                        </t>
+                                                        <span t-esc="oferta.puerto_de_origen.name"/>.
                                                     </p>
                                                 </li>
                                             </t>
                                         </t>
                                         <t t-else="">
-                                            <li class="despegar">
+                                            <li class="despegar" t-if="oferta.pais">
                                                 <p>
-                                                    <b>
-                                                        <span t-esc="oferta.pais_puerto_encabezado"/>
-                                                    </b>
-                                                    <span t-esc="oferta.pais_puerto"/>
+                                                    <b>País:</b>
+                                                    <span t-esc="oferta.pais.name"/>.
                                                 </p>
                                             </li>
                                         </t>
-
-
-                                        <li class="despegar" t-if="oferta.dias_para_entregar">
+                                    </t>
+                                    <t t-else="">
+                                        <li class="despegar">
                                             <p>
-                                                <b>Tiempo de entrega:</b>
-                                                <span>En o antes de los</span>
-                                                <span t-esc="oferta.dias_para_entregar.name"/>
-                                                <t t-if="oferta.etapa_entrega">días de<span
-                                                        t-esc="oferta.etapa_entrega.name"/>.
-                                                </t>
+                                                <b>
+                                                    <span t-esc="oferta.pais_puerto_encabezado"/>
+                                                </b>
+                                                <span t-esc="oferta.pais_puerto"/>
                                             </p>
                                         </li>
-                                        <li class="despegar" t-if="oferta.pago">
-                                            <p class="texto_justificado">
-                                                <b>Pago:</b>
-                                                <span t-esc="oferta.pago"/>
-                                                <!--t t-if="oferta.porciento_total_mercancia"> por el <span t-esc="oferta.porciento_total_mercancia"/>% del importe total de las mercancias contratadas</t-->
-                                                <t t-if="oferta.porciento_total_mercancia">por el 100% del importe total
-                                                    de
-                                                    las
-                                                    mercancias contratadas
-                                                </t>
-                                                <t t-if="oferta.dias_para_pagar">pagaderas a los
-                                                    <span t-esc="oferta.dias_para_pagar.name"/>
-                                                    <t t-if="oferta.etapa_pago">días a partir de
-                                                        <span t-esc="oferta.etapa_pago.name"/>
-                                                    </t>
-                                                </t>
-                                                <t t-if="oferta.interes_anual">, con interés anual de<span
-                                                        t-esc="oferta.interes_anual"/>%
-                                                </t>
-                                                <t t-else="">
-                                                    .
-                                                </t>
+                                    </t>
 
-                                            </p>
-                                        </li>
-                                        <li class="despegar" t-if="oferta.garantia">
-                                            <p class="texto_justificado">
-                                                <b>Garantía:</b>
-                                                <span t-esc="oferta.garantia"/>
-                                            </p>
-                                        </li>
-                                        <t t-if="oferta.validez_oferta_a_mostrar!=0">
-                                            <li class="despegar" t-if="oferta.validez_oferta_a_mostrar">
-                                                <p>
-                                                    <b>Validez de la oferta:</b>
-                                                    <span t-esc="oferta.validez_oferta_a_mostrar"/>
-                                                    <span></span>
-                                                </p>
-                                            </li>
-                                        </t>
-                                        <li class="despegar" t-if="oferta.partida_arancelaria_oferta">
+
+                                    <li class="despegar" t-if="oferta.dias_para_entregar">
+                                        <p>
+                                            <b>Tiempo de entrega:</b>
+                                            <span>En o antes de los</span>
+                                            <span t-esc="oferta.dias_para_entregar.name"/>
+                                            <t t-if="oferta.etapa_entrega">días de<span
+                                                    t-esc="oferta.etapa_entrega.name"/>.
+                                            </t>
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.pago">
+                                        <p class="texto_justificado">
+                                            <b>Pago:</b>
+                                            <span t-esc="oferta.pago"/>
+                                            <!--t t-if="oferta.porciento_total_mercancia"> por el <span t-esc="oferta.porciento_total_mercancia"/>% del importe total de las mercancias contratadas</t-->
+                                            <t t-if="oferta.porciento_total_mercancia">por el 100% del importe total
+                                                de
+                                                las
+                                                mercancias contratadas
+                                            </t>
+                                            <t t-if="oferta.dias_para_pagar">pagaderas a los
+                                                <span t-esc="oferta.dias_para_pagar.name"/>
+                                                <t t-if="oferta.etapa_pago">días a partir de
+                                                    <span t-esc="oferta.etapa_pago.name"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="oferta.interes_anual">, con interés anual de<span
+                                                    t-esc="oferta.interes_anual"/>%
+                                            </t>
+                                            <t t-else="">
+                                                .
+                                            </t>
+
+                                        </p>
+                                    </li>
+                                    <li class="despegar" t-if="oferta.garantia">
+                                        <p class="texto_justificado">
+                                            <b>Garantía:</b>
+                                            <span t-esc="oferta.garantia"/>
+                                        </p>
+                                    </li>
+                                    <t t-if="oferta.validez_oferta_a_mostrar!=0">
+                                        <li class="despegar" t-if="oferta.validez_oferta_a_mostrar">
                                             <p>
-                                                <b>Partida Arancelaria:</b>
-                                                <span t-esc="oferta.partida_arancelaria_oferta"/>
+                                                <b>Validez de la oferta:</b>
+                                                <span t-esc="oferta.validez_oferta_a_mostrar"/>
+                                                <span></span>
                                             </p>
                                         </li>
-
-
-                                        <t t-set="un_solo_producto" t-value="0"/>
-
-                                        <t t-foreach="oferta.order_line" t-as="linea">
-                                            <t t-set="un_solo_producto" t-value="un_solo_producto+1"/>
-                                        </t>
-
-
-                                        <t t-if="un_solo_producto==1"><!-- 1 = True-->
-                                            <li class="despegar" t-if="oferta.manual_de_usuario_espannol">
-                                                <p>
-                                                    <b>El manual de usuario del equipo está en español.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.fichas_tecnicas">
-                                                <p>
-                                                    <b>En adjunto ficha técnica.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.certificados_inhim">
-                                                <p>
-                                                    <b>En adjunto certificado del INHIM.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.certificados_onure">
-                                                <p>
-                                                    <b>En adjunto certificado de la ONURE.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.vision_explotada">
-                                                <p>
-                                                    <b>En adjunto visión explotada con listas y partes.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.homologados_en_cuba">
-                                                <p>
-                                                    <b>El modelo ofertado está homologado para su venta en Cuba.</b>
-                                                </p>
-                                            </li>
-                                        </t>
-                                        <t t-else="">
-                                            <li class="despegar" t-if="oferta.manual_de_usuario_espannol">
-                                                <p>
-                                                    <b>El manual de usuario de cada equipo está en español.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.fichas_tecnicas">
-                                                <p>
-                                                    <b>En adjunto fichas técnicas.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.certificados_inhim">
-                                                <p>
-                                                    <b>En adjunto certificados del INHIM.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.certificados_onure">
-                                                <p>
-                                                    <b>En adjunto certificados de la ONURE.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.vision_explotada">
-                                                <p>
-                                                    <b>En adjunto visión explotada con listas y partes.</b>
-                                                </p>
-                                            </li>
-                                            <li class="despegar" t-if="oferta.homologados_en_cuba">
-                                                <p>
-                                                    <b>Todos los modelos ofertados están homologados para su venta en
-                                                        Cuba.
-                                                    </b>
-                                                </p>
-                                            </li>
-                                        </t>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div t-if="oferta.observaciones" class="col-xs-12 despegar_mas espacio_al_principio">
-                                    <!--field t-esc="oferta.observaciones" widget="html"/-->
-                                    <span t-raw="oferta.observaciones"/>
-                                    <!--field name="oferta.observaciones" widget="html"/-->
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-10 despegar_mas espacio_al_principio">
-                                    <p>Quedamos a su disposición en caso de que requiera más detalles.</p>
-                                    <p>Atentamente,</p>
-                                </div>
-                            </div>
-                            <!--div class="col-xs-10 offset-xs-1 despegar" >
-                                 <div class="col-xs-12 text-right despegar"-->
-                            <div class="row">
-                                <div class="despegar_mas div_firma">
-                                    <div>
-                                        <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
-                                        <p t-if="oferta.firma.name">
-                                            aa
-                                            <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
+                                    </t>
+                                    <li class="despegar" t-if="oferta.partida_arancelaria_oferta">
+                                        <p>
+                                            <b>Partida Arancelaria:</b>
+                                            <span t-esc="oferta.partida_arancelaria_oferta"/>
                                         </p>
-                                        <p t-if="oferta.firma.name">
-                                            <span t-esc="oferta.firma.name"/>
-                                        </p>
-                                    </div>
-                                </div>
+                                    </li>
+
+
+                                    <t t-set="un_solo_producto" t-value="0"/>
+
+                                    <t t-foreach="oferta.order_line" t-as="linea">
+                                        <t t-set="un_solo_producto" t-value="un_solo_producto+1"/>
+                                    </t>
+
+
+                                    <t t-if="un_solo_producto==1"><!-- 1 = True-->
+                                        <li class="despegar" t-if="oferta.manual_de_usuario_espannol">
+                                            <p>
+                                                <b>El manual de usuario del equipo está en español.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.fichas_tecnicas">
+                                            <p>
+                                                <b>En adjunto ficha técnica.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.certificados_inhim">
+                                            <p>
+                                                <b>En adjunto certificado del INHIM.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.certificados_onure">
+                                            <p>
+                                                <b>En adjunto certificado de la ONURE.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.vision_explotada">
+                                            <p>
+                                                <b>En adjunto visión explotada con listas y partes.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.homologados_en_cuba">
+                                            <p>
+                                                <b>El modelo ofertado está homologado para su venta en Cuba.</b>
+                                            </p>
+                                        </li>
+                                    </t>
+                                    <t t-else="">
+                                        <li class="despegar" t-if="oferta.manual_de_usuario_espannol">
+                                            <p>
+                                                <b>El manual de usuario de cada equipo está en español.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.fichas_tecnicas">
+                                            <p>
+                                                <b>En adjunto fichas técnicas.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.certificados_inhim">
+                                            <p>
+                                                <b>En adjunto certificados del INHIM.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.certificados_onure">
+                                            <p>
+                                                <b>En adjunto certificados de la ONURE.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.vision_explotada">
+                                            <p>
+                                                <b>En adjunto visión explotada con listas y partes.</b>
+                                            </p>
+                                        </li>
+                                        <li class="despegar" t-if="oferta.homologados_en_cuba">
+                                            <p>
+                                                <b>Todos los modelos ofertados están homologados para su venta en
+                                                    Cuba.
+                                                </b>
+                                            </p>
+                                        </li>
+                                    </t>
+                                </ul>
                             </div>
-
-
-                            <style type="text/css">
-
-                                span.firma img{
-                                width: 180px;
-                                }
-
-                                .div_firma{
-                                text-align: center;
-                                float: right;
-                                margin-right: 50px
-                                }
-
-                                .texto_justificado{
-                                text-align: justify
-                                }
-
-                                .salto_de_pagina{
-                                page-break-before: always;
-                                }
-
-                                .fondo_azul{
-                                background-color:#A5E5E5;
-                                }
-
-                                .fondo_morado{
-                                background-color:#CCC0D9;
-                                }
-
-                                .inicial_mayuscula{
-                                text-transform: capitalize;
-                                }
-
-                                .mayuscula{
-                                text-transform: uppercase;
-                                }
-
-                                .fuente{
-                                font-family: Consolas;
-                                }
-
-                                .fuente_alt{
-                                font-family: Arial;
-                                }
-
-                                .fuente_clara{
-                                color: #2B2B2B;
-                                }
-
-                                .letra_chica{
-                                font-size:small;
-                                }
-
-                                .letra_chiquita{
-                                font-size:x-small;
-                                }
-
-                                .negrita{
-                                font-weight: bold;
-                                }
-
-                                .text_center{
-                                text-align: center;
-                                }
-
-                                .italica{
-                                font-style: italic;
-                                }
-
-                                .espacio_al_principio{
-                                padding-left: 30px;
-                                }
-
-                                .mas_espacio_al_principio{
-                                padding-left: 10px;
-                                }
-
-                                .espacio_al_final{
-                                padding-right: 10px;
-                                }
-
-                                .linea{
-                                border-top: 1px solid #cacaca;
-                                }
-
-                                .ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
-                                border-right: none;
-                                border-left: none;
-                                border-bottom: none;
-                                border-top: 1px solid black;
-                                }
-
-                                .tabla_productos{
-                                width: 100%;
-                                border-top: 1px solid #cacaca;
-                                }
-
-                                .tabla_productos tr.ultima_linea > td.celda_larga{
-                                border:none;
-                                padding-right: 10px;
-                                }
-
-                                .tabla_productos tr th,.tabla_productos tr td{
-                                border-bottom: none;
-                                width: 10%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
-                                width: 20%;
-                                padding-top: 5px;
-                                }
-
-                                .tabla_totales{
-                                width: 100%;
-                                }
-
-                                .tabla_totales tr th,.tabla_totales tr td{
-                                width: 14%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
-                                width: 16%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_totales tr.ultima_linea > td{
-                                border-right: none;
-                                border-left: none;
-                                border-bottom: none;
-                                border-top: 1.5px solid black;
-                                }
-
-                                .etiqueta{
-                                position: absolute;
-                                top:-10px;
-                                left: 50px;
-                                background-color: white;
-                                }
-
-                                .bordeado{
-                                border: 1px solid #cacaca;
-                                border-radius: 5px;
-                                }
-
-                                .bordeado_serio{
-                                border: 1px solid black;
-                                }
-
-                                .bordeado_serio_claro{
-                                border: 1px solid #cacaca;
-                                }
-
-                                .bordeado_serio_ancho{
-                                border: 3px solid #2B2B2B;
-                                }
-
-                                .bordeado_lateral_izq{
-                                border-left: 1px solid black;
-                                }
-
-                                .bordeado_lateral_der{
-                                border-right: 1px solid black;
-                                }
-
-                                .top_linea{
-                                border-top: 1px solid black;
-                                }
-
-                                .top_linea_clara{
-                                border-top: 1px solid #585858;
-                                }
-
-                                .bottom_linea{
-                                border-bottom: 1px solid black;
-                                }
-
-                                .bottom_linea_clara{
-                                border-bottom: 2px solid #585858;
-                                }
-
-                                .despegar{
-                                margin-bottom: 6px;
-                                margin-top: 6px;
-                                }
-
-                                .despegar_mas{
-                                margin-bottom: 6px;
-                                margin-top: 20px;
-                                }
-
-
-                                .depegar_adentro{
-                                padding-top: 8px;
-                                }
-
-                                .bajar{
-                                margin-top: 60px;
-                                }
-
-                                .bajar_poco{
-                                margin-top: 5px;
-                                }
-
-                                .tabla_default{
-                                width: 100%;
-                                }
-
-                                .tabla_default_2 tr th, .tabla_default_2 tr td{
-                                width: 50%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .interlineado{
-                                line-height : 1em;
-                                }
-
-                                .tabla_default_3 tr th, .tabla_default_3 tr td{
-                                width: 33.333333%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_4 tr th, .tabla_default_4 tr td{
-                                width: 25%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_5 tr th, .tabla_default_5 tr td{
-                                width: 20%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_6 tr th, .tabla_default_6 tr td{
-                                width: 16.666667%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_7 tr th, .tabla_default_7 tr td{
-                                width: 14.285714%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_8 tr th, .tabla_default_8 tr td{
-                                width: 12.5%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_9 tr th, .tabla_default_9 tr td{
-                                width: 11.111111%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_10 tr th, .tabla_default_10 tr td{
-                                width: 10%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_default_11 tr th, .tabla_default_11 tr td{
-                                width: 9.090909%;
-                                padding-top: 5px;
-                                padding-left: 2px;
-                                }
-
-                                .tabla_linea_head tr th, .under_linea{
-                                border-bottom: 1px solid black;
-                                }
-
-                                .under_linea_clara{
-                                border-bottom: 2px solid #cacaca;
-                                }
-
-                                .top_linea{
-                                border-top: 1px solid black;
-                                }
-
-                                .row {
-                                margin-left: -15px;
-                                margin-right: -15px;
-                                }
-
-                                .row::after {
-                                content: "";
-                                display: table;
-                                clear: both;
-                                }
-
-                                .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8,
-                                .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
-                                position: relative;
-                                min-height: 1px;
-                                padding-right: 5px;
-                                padding-left: 5px;
-                                }
-
-                                .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8,
-                                .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
-                                position: relative;
-                                min-height: 1px;
-                                }
-
-                                .col-xs-1 {
-                                float: left;
-                                width: 8.333333%;
-                                }
-
-                                .col-mi-1 {
-                                float: left;
-                                width: 8.333333%;
-                                }
-
-                                .col-xs-2 {
-                                float: left;
-                                width: 16.666667%;
-                                }
-
-                                .col-mi-2 {
-                                float: left;
-                                width: 16.666667%;
-                                }
-
-                                .col-xs-3 {
-                                float: left;
-                                width: 25%;
-                                }
-
-                                .col-mi-3 {
-                                float: left;
-                                width: 25%;
-                                }
-
-                                .col-xs-4 {
-                                float: left;
-                                width: 33.333333%;
-                                }
-
-                                .col-mi-4 {
-                                float: left;
-                                width: 33.333333%;
-                                }
-
-                                .col-xs-5 {
-                                float: left;
-                                width: 41.666667%;
-                                }
-
-                                .col-mi-5 {
-                                float: left;
-                                width: 41.666667%;
-                                }
-
-                                .col-xs-6 {
-                                float: left;
-                                width: 50%;
-                                }
-
-                                .col-mi-6 {
-                                float: left;
-                                width: 50%;
-                                }
-
-                                .col-xs-7 {
-                                float: left;
-                                width: 58.333333%;
-                                }
-
-                                .col-mi-7 {
-                                float: left;
-                                width: 58.333333%;
-                                }
-
-                                .col-xs-8 {
-                                float: left;
-                                width: 66.666667%;
-                                }
-
-                                .col-mi-8 {
-                                float: left;
-                                width: 66.666667%;
-                                }
-
-                                .col-xs-9 {
-                                float: left;
-                                width: 75%;
-                                }
-
-                                .col-mi-9 {
-                                float: left;
-                                width: 75%;
-                                }
-
-                                .col-xs-10 {
-                                float: left;
-                                width: 83.333333%;
-                                }
-
-                                .col-mi-10 {
-                                float: left;
-                                width: 83.333333%;
-                                }
-
-                                .col-xs-11 {
-                                float: left;
-                                width: 91.666667%;
-                                }
-
-                                .col-mi-11 {
-                                float: left;
-                                width: 91.666667%;
-                                }
-
-                                .col-xs-12 {
-                                float: left;
-                                width: 100%;
-                                }
-
-                                .col-mi-12 {
-                                float: left;
-                                width: 100%;
-                                }
-
-                                .offset-xs-1 {
-                                margin-left: 8.333333%;
-                                }
-
-                                .offset-xs-2 {
-                                margin-left: 16.666667%;
-                                }
-
-                                .offset-xs-3 {
-                                margin-left: 25%;
-                                }
-
-                                .offset-xs-4 {
-                                margin-left: 33.333333%;
-                                }
-
-                                .offset-xs-5 {
-                                margin-left: 41.666667%;
-                                }
-
-                                .offset-xs-6 {
-                                margin-left: 50%;
-                                }
-
-                                .offset-xs-7 {
-                                margin-left: 58.333333%;
-                                }
-
-                                .offset-xs-8 {
-                                margin-left: 66.666667%;
-                                }
-
-                                .offset-xs-9 {
-                                margin-left: 75%;
-                                }
-
-                                .offset-xs-10 {
-                                margin-left: 83.333333%;
-                                }
-
-                                .offset-xs-11 {
-                                margin-left: 91.666667%;
-                                }
-
-                                .tamanno_texto{
-                                font-size: 1.2em
-                                }
-
-                            </style>
                         </div>
+                        <div class="row">
+                            <div t-if="oferta.observaciones" class="col-xs-12 despegar_mas espacio_al_principio">
+                                <!--field t-esc="oferta.observaciones" widget="html"/-->
+                                <span t-raw="oferta.observaciones"/>
+                                <!--field name="oferta.observaciones" widget="html"/-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-10 despegar_mas espacio_al_principio">
+                                <p>Quedamos a su disposición en caso de que requiera más detalles.</p>
+                                <p>Atentamente,</p>
+                            </div>
+                        </div>
+                        <!--div class="col-xs-10 offset-xs-1 despegar" >
+                             <div class="col-xs-12 text-right despegar"-->
+                        <div class="row">
+                            <div class="despegar_mas div_firma">
+                                <div>
+                                    <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
+                                    <p t-if="oferta.firma.name">
+                                        aa
+                                        <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
+                                    </p>
+                                    <p t-if="oferta.firma.name">
+                                        <span t-esc="oferta.firma.name"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <style type="text/css">
+
+                            span.firma img{
+                            width: 180px;
+                            }
+
+                            .div_firma{
+                            text-align: center;
+                            float: right;
+                            margin-right: 50px
+                            }
+
+                            .texto_justificado{
+                            text-align: justify
+                            }
+
+                            .salto_de_pagina{
+                            page-break-before: always;
+                            }
+
+                            .fondo_azul{
+                            background-color:#A5E5E5;
+                            }
+
+                            .fondo_morado{
+                            background-color:#CCC0D9;
+                            }
+
+                            .inicial_mayuscula{
+                            text-transform: capitalize;
+                            }
+
+                            .mayuscula{
+                            text-transform: uppercase;
+                            }
+
+                            .fuente{
+                            font-family: Consolas;
+                            }
+
+                            .fuente_alt{
+                            font-family: Arial;
+                            }
+
+                            .fuente_clara{
+                            color: #2B2B2B;
+                            }
+
+                            .letra_chica{
+                            font-size:small;
+                            }
+
+                            .letra_chiquita{
+                            font-size:x-small;
+                            }
+
+                            .negrita{
+                            font-weight: bold;
+                            }
+
+                            .text_center{
+                            text-align: center;
+                            }
+
+                            .italica{
+                            font-style: italic;
+                            }
+
+                            .espacio_al_principio{
+                            padding-left: 30px;
+                            }
+
+                            .mas_espacio_al_principio{
+                            padding-left: 10px;
+                            }
+
+                            .espacio_al_final{
+                            padding-right: 10px;
+                            }
+
+                            .linea{
+                            border-top: 1px solid #cacaca;
+                            }
+
+                            .ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1px solid black;
+                            }
+
+                            .tabla_productos{
+                            width: 100%;
+                            border-top: 1px solid #cacaca;
+                            }
+
+                            .tabla_productos tr.ultima_linea > td.celda_larga{
+                            border:none;
+                            padding-right: 10px;
+                            }
+
+                            .tabla_productos tr th,.tabla_productos tr td{
+                            border-bottom: none;
+                            width: 10%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
+                            width: 20%;
+                            padding-top: 5px;
+                            }
+
+                            .tabla_totales{
+                            width: 100%;
+                            }
+
+                            .tabla_totales tr th,.tabla_totales tr td{
+                            width: 14%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
+                            width: 16%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_totales tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1.5px solid black;
+                            }
+
+                            .etiqueta{
+                            position: absolute;
+                            top:-10px;
+                            left: 50px;
+                            background-color: white;
+                            }
+
+                            .bordeado{
+                            border: 1px solid #cacaca;
+                            border-radius: 5px;
+                            }
+
+                            .bordeado_serio{
+                            border: 1px solid black;
+                            }
+
+                            .bordeado_serio_claro{
+                            border: 1px solid #cacaca;
+                            }
+
+                            .bordeado_serio_ancho{
+                            border: 3px solid #2B2B2B;
+                            }
+
+                            .bordeado_lateral_izq{
+                            border-left: 1px solid black;
+                            }
+
+                            .bordeado_lateral_der{
+                            border-right: 1px solid black;
+                            }
+
+                            .top_linea{
+                            border-top: 1px solid black;
+                            }
+
+                            .top_linea_clara{
+                            border-top: 1px solid #585858;
+                            }
+
+                            .bottom_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .bottom_linea_clara{
+                            border-bottom: 2px solid #585858;
+                            }
+
+                            .despegar{
+                            margin-bottom: 6px;
+                            margin-top: 6px;
+                            }
+
+                            .despegar_mas{
+                            margin-bottom: 6px;
+                            margin-top: 20px;
+                            }
+
+
+                            .depegar_adentro{
+                            padding-top: 8px;
+                            }
+
+                            .bajar{
+                            margin-top: 60px;
+                            }
+
+                            .bajar_poco{
+                            margin-top: 5px;
+                            }
+
+                            .tabla_default{
+                            width: 100%;
+                            }
+
+                            .tabla_default_2 tr th, .tabla_default_2 tr td{
+                            width: 50%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .interlineado{
+                            line-height : 1em;
+                            }
+
+                            .tabla_default_3 tr th, .tabla_default_3 tr td{
+                            width: 33.333333%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_4 tr th, .tabla_default_4 tr td{
+                            width: 25%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_5 tr th, .tabla_default_5 tr td{
+                            width: 20%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_6 tr th, .tabla_default_6 tr td{
+                            width: 16.666667%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_7 tr th, .tabla_default_7 tr td{
+                            width: 14.285714%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_8 tr th, .tabla_default_8 tr td{
+                            width: 12.5%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_9 tr th, .tabla_default_9 tr td{
+                            width: 11.111111%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_10 tr th, .tabla_default_10 tr td{
+                            width: 10%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_default_11 tr th, .tabla_default_11 tr td{
+                            width: 9.090909%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_linea_head tr th, .under_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .under_linea_clara{
+                            border-bottom: 2px solid #cacaca;
+                            }
+
+                            .top_linea{
+                            border-top: 1px solid black;
+                            }
+
+                            .row {
+                            margin-left: -15px;
+                            margin-right: -15px;
+                            }
+
+                            .row::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                            }
+
+                            .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8,
+                            .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 5px;
+                            padding-left: 5px;
+                            }
+
+                            .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8,
+                            .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+                            position: relative;
+                            min-height: 1px;
+                            }
+
+                            .col-xs-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-mi-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-xs-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-mi-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-xs-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-mi-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-xs-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-mi-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-xs-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-mi-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-xs-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-mi-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-xs-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-mi-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-xs-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-mi-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-xs-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-mi-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-xs-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-mi-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-xs-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-mi-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-xs-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .col-mi-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .offset-xs-1 {
+                            margin-left: 8.333333%;
+                            }
+
+                            .offset-xs-2 {
+                            margin-left: 16.666667%;
+                            }
+
+                            .offset-xs-3 {
+                            margin-left: 25%;
+                            }
+
+                            .offset-xs-4 {
+                            margin-left: 33.333333%;
+                            }
+
+                            .offset-xs-5 {
+                            margin-left: 41.666667%;
+                            }
+
+                            .offset-xs-6 {
+                            margin-left: 50%;
+                            }
+
+                            .offset-xs-7 {
+                            margin-left: 58.333333%;
+                            }
+
+                            .offset-xs-8 {
+                            margin-left: 66.666667%;
+                            }
+
+                            .offset-xs-9 {
+                            margin-left: 75%;
+                            }
+
+                            .offset-xs-10 {
+                            margin-left: 83.333333%;
+                            }
+
+                            .offset-xs-11 {
+                            margin-left: 91.666667%;
+                            }
+
+                            .tamanno_texto{
+                            font-size: 1.2em
+                            }
+
+                        </style>
                     </div>
+                </div>
             </t>
 
 
