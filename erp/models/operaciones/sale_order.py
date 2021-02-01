@@ -242,14 +242,14 @@ class SaleOrderTemplate(models.Model):
                         linea_otra_oferta_traer_productos.importe_total_de_linea_producto = 0
 
     def eliminar_productos_cantidad_producto_actual_cero(self):
-        for linea in self.lineas_de_oferta:
+        for linea in self.order_line:
             if linea.cantidad_producto_actual_oferta == 0:
                 linea.unlink()
 
 
     def actualizar_desde_el_nomenclador(self):
         pass
-        # for linea in self.lineas_de_oferta:
+        # for linea in self.order_line:
         #     linea.foto = linea.producto.image_variant
         #     linea.tipo_de_producto = linea.producto.tipo_de_producto.name
         #     linea.orden_marca = linea.producto.marca.orden
@@ -302,7 +302,7 @@ class SaleOrderTemplate(models.Model):
     def poner_cantidades_a_cero(self):
         pass
 
-        for linea in self.lineas_de_oferta:
+        for linea in self.order_line:
             linea.cantidad_producto_actual_oferta = 0
             linea.volumen_total_de_linea_producto = 0
             linea.importe_total_de_linea_producto = 0
