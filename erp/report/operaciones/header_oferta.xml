@@ -27,13 +27,13 @@
         <!--</xpath>-->
     <!--</template>-->
 
-    <data inherit_id="web.external_layout_background">
+    <template inherit_id="web.external_layout_background">
         <xpath expr="//div[hasclass('o_background_header')]" position="replace">
             <div class="header">
                Hola
             </div>
         </xpath>
-    </data>
+    </template>
 
 
     <!--<template id="header_oferta">-->
