@@ -470,16 +470,8 @@ class Contrato(models.Model):
                     else:
                         importe_repuestos_sin_descuento += linea.importe_total_de_linea_producto
 
-        if self.lista_de_precios.pago.id is not False:
-            if self.lista_de_precios.pago.name != 'EXW' and self.exw > 0:
-                raise except_orm("Atención, la lista de precios no tiene seleccionada como forma de pago EXW "
-                                 "y está intentando ponerle un valor mayor a cero.")
-            if self.lista_de_precios.pago.name == 'EXW':
-                self.exw = mercancia
-                self.mercancia = self.exw
-            else:
-                self.exw = 0
-                self.mercancia = mercancia
+        self.exw = 0
+        self.mercancia = mercancia
 
         if self.flete_terrestre is not False:
             self.mercancia += self.flete_terrestre
