@@ -1408,10 +1408,9 @@
                                     <tbody>
                                         <tr t-foreach="doc.order_line" t-as="linea" class="bottom_linea">
                                             <t t-if="doc.image">
-                                                <t t-if="linea.product_id.image_variant">
+                                                <t t-if="linea.product_id.image_1920">
                                                     <td class="text-center" width="30%" height="5%">
-                                                        <span t-esc="linea.product_id.image_variant"/>
-                                                        <img t-attf-src="data:image/*;base64,{{linea.product_id.image_variant}}"
+                                                        <img t-attf-src="data:image/*;base64,{{linea.product_id.image_1920}}"
                                                              style="width:100;height:40"/>
                                                     </td>
 
