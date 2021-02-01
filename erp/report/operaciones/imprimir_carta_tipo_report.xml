@@ -8,7 +8,7 @@
                 <div class="header">
                     <div class="row">
                         hey
-                        <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
+                        <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
                         <!--<div t-if="proveedor==16" class="col-xs-12"> &lt;!&ndash;"DE’LONGHI KENWOOD A.P.A"&ndash;&gt;-->
                             <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
                         <!--</div>-->
