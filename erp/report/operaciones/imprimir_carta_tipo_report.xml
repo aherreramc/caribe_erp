@@ -327,6 +327,18 @@
                                 <p>Quedamos a su disposición en caso de que requiera más detalles.</p>
                                 <p>Atentamente,</p>
                             </div>
+
+                            <div class="despegar_mas div_firma">
+                                <div>
+                                    <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
+                                    <p t-if="oferta.firma.name">
+                                        <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
+                                    </p>
+                                    <p t-if="oferta.firma.name">
+                                        <span t-esc="oferta.firma.name"/>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <!--div class="col-xs-10 offset-xs-1 despegar" >
                              <div class="col-xs-12 text-right despegar"-->
@@ -832,7 +844,395 @@
 
                 <div class="footer">
                     <div class="row">
-                       hola footer
+                        <div class="col-xs-12">
+                            <div t-if="proveedor==16" class="col-xs-12"> <!-- De’Longhi Kenwood A.P.A. Ltd. -->
+                                <div class="col-xs-4">
+                                    <p>
+                                        <b>De’Longhi Kenwood A.P.A. Ltd.</b>
+                                        <br/>
+                                        16/F Tins Enterprises Center,
+                                        <br/>
+                                        777 Lai Chi Kok Road, Cheung Sha Wan,
+                                        <br/>
+                                        Kowloon, Hong Kong
+                                        <br/>
+                                        De’Longhi Group www.delonguigroup.com
+                                    </p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <p>
+                                        <br/>
+                                        Tel. +852.3412.0000
+                                        <br/>
+                                        Fax +852.2370.0830
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div t-if="proveedor==80" class="col-xs-12"> <!-- DE'LONGHI AMERICA, INC. -->
+                                <div class="col-xs-4">
+                                    <p style="font-family: 'Times New Roman', Times, serif;">
+                                        2 Park Way &amp; Route 17 South
+                                        <br/>
+                                        Suite 3A
+                                        <br/>
+                                        Upper Saddle River, NJ 07458
+                                        <br/>
+                                        <b style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">FAX #
+                                            201-818-3154
+                                        </b>
+                                        <br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style type="text/css">
+
+                            .fuente{
+                            font-family: Consolas;
+                            }
+
+                            .fuente_clara{
+                            color: #2B2B2B;
+                            }
+
+                            .letra_chica{
+                            font-size:small;
+                            }
+
+                            .text_center{
+                            text-align: center;
+                            }
+
+                            .italica{
+                            font-style: italic;
+                            }
+
+                            .tabla_productos{
+                            border-top:1px solid #cacaca;
+                            width: 100%;
+                            }
+
+                            .tabla_bordes, .tabla_bordes tr th, .tabla_bordes tr td{
+                            border:1px solid black;
+                            border-radius: 1px;
+                            }
+
+                            .tabla_bordes tr th, .tabla_bordes tr td{
+                            padding-left:5px;
+                            border-radius: 1px;
+                            }
+
+                            .espacio_al_principio{
+                            padding-left: 40px;
+                            }
+
+                            .espacio_al_final{
+                            padding-right: 5px;
+                            }
+
+                            .linea{
+                            border-top: 1px solid #cacaca;
+                            width: 100%;
+                            margin-top: 15px
+                            }
+
+                            .ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1px solid black;
+                            }
+
+                            .tabla_productos tr.ultima_linea > td.celda_larga{
+                            border:none;
+                            padding-right: 10px;
+                            }
+
+                            .tabla_productos tr th,.tabla_productos tr td{
+                            border-bottom: none;
+                            width: 15%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
+                            width: 40%;
+                            padding-top: 5px;
+                            }
+
+                            .tabla_totales tr th,.tabla_totales tr td{
+                            width: 14%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
+                            border: none;
+                            width: 30%;
+                            padding-top: 5px;
+                            }
+
+                            .tabla_totales tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1.5px solid black;
+                            }
+
+                            .etiqueta{
+                            position: absolute;
+                            top:-10px;
+                            left: 50px;
+                            background-color: white;
+                            }
+
+                            .bordeado{
+                            border: 1px solid #cacaca;
+                            border-radius: 5px;
+                            }
+
+                            .bordeado_serio{
+                            border: 1px solid black;
+                            border-radius: 1px;
+                            }
+
+                            .bordeado_serio_ancho{
+                            border: 3px solid #2B2B2B;
+                            }
+
+                            .bordeado_lateral_izq{
+                            border-left: 1px solid black;
+                            }
+
+                            .bordeado_lateral_der{
+                            border-right: 1px solid black;
+                            }
+
+                            .top_linea{
+                            border-top: 1px solid black;
+                            }
+
+                            .bottom_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .despegar{
+                            margin-bottom: 6px;
+                            margin-top: 6px;
+                            }
+
+                            .depegar_adentro{
+                            padding-top: 8px;
+                            }
+
+                            .bajar{
+                            margin-top: 60px;
+                            }
+
+                            .bajar_poco{
+                            margin-top: 5px;
+                            }
+
+                            .tabla_default,tabla_totales{
+                            width: 100%;
+                            }
+
+                            .tabla_linea_head tr th, .under_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .row {
+                            margin-left: -15px;
+                            margin-right: -15px;
+                            }
+
+                            .row::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                            }
+
+                            .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8,
+                            .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 5px;
+                            padding-left: 5px;
+                            }
+
+                            .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8,
+                            .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+                            position: relative;
+                            min-height: 1px;
+                            }
+
+                            .col-xs-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-mi-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-xs-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-mi-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-xs-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-mi-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-xs-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-mi-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-xs-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-mi-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-xs-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-mi-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-xs-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-mi-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-xs-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-mi-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-xs-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-mi-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-xs-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-mi-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-xs-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-mi-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-xs-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .col-mi-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .offset-xs-1 {
+                            margin-left: 8.333333%;
+                            }
+
+                            .offset-xs-2 {
+                            margin-left: 16.666667%;
+                            }
+
+                            .offset-xs-3 {
+                            margin-left: 25%;
+                            }
+
+                            .offset-xs-4 {
+                            margin-left: 33.333333%;
+                            }
+
+                            .offset-xs-5 {
+                            margin-left: 41.666667%;
+                            }
+
+                            .offset-xs-6 {
+                            margin-left: 50%;
+                            }
+
+                            .offset-xs-7 {
+                            margin-left: 58.333333%;
+                            }
+
+                            .offset-xs-8 {
+                            margin-left: 66.666667%;
+                            }
+
+                            .offset-xs-9 {
+                            margin-left: 75%;
+                            }
+
+                            .offset-xs-10 {
+                            margin-left: 83.333333%;
+                            }
+
+                            .offset-xs-11 {
+                            margin-left: 91.666667%;
+                            }
+
+                        </style>
                     </div>
                 </div>
             </t>
@@ -1887,6 +2287,400 @@
 
                             .tamanno_texto{
                             font-size: 1.2em
+                            }
+
+                        </style>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div t-if="proveedor==16" class="col-xs-12"> <!-- De’Longhi Kenwood A.P.A. Ltd. -->
+                                <div class="col-xs-4">
+                                    <p>
+                                        <b>De’Longhi Kenwood A.P.A. Ltd.</b>
+                                        <br/>
+                                        16/F Tins Enterprises Center,
+                                        <br/>
+                                        777 Lai Chi Kok Road, Cheung Sha Wan,
+                                        <br/>
+                                        Kowloon, Hong Kong
+                                        <br/>
+                                        De’Longhi Group www.delonguigroup.com
+                                    </p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <p>
+                                        <br/>
+                                        Tel. +852.3412.0000
+                                        <br/>
+                                        Fax +852.2370.0830
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div t-if="proveedor==80" class="col-xs-12"> <!-- DE'LONGHI AMERICA, INC. -->
+                                <div class="col-xs-4">
+                                    <p style="font-family: 'Times New Roman', Times, serif;">
+                                        2 Park Way &amp; Route 17 South
+                                        <br/>
+                                        Suite 3A
+                                        <br/>
+                                        Upper Saddle River, NJ 07458
+                                        <br/>
+                                        <b style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">FAX #
+                                            201-818-3154
+                                        </b>
+                                        <br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style type="text/css">
+
+                            .fuente{
+                            font-family: Consolas;
+                            }
+
+                            .fuente_clara{
+                            color: #2B2B2B;
+                            }
+
+                            .letra_chica{
+                            font-size:small;
+                            }
+
+                            .text_center{
+                            text-align: center;
+                            }
+
+                            .italica{
+                            font-style: italic;
+                            }
+
+                            .tabla_productos{
+                            border-top:1px solid #cacaca;
+                            width: 100%;
+                            }
+
+                            .tabla_bordes, .tabla_bordes tr th, .tabla_bordes tr td{
+                            border:1px solid black;
+                            border-radius: 1px;
+                            }
+
+                            .tabla_bordes tr th, .tabla_bordes tr td{
+                            padding-left:5px;
+                            border-radius: 1px;
+                            }
+
+                            .espacio_al_principio{
+                            padding-left: 40px;
+                            }
+
+                            .espacio_al_final{
+                            padding-right: 5px;
+                            }
+
+                            .linea{
+                            border-top: 1px solid #cacaca;
+                            width: 100%;
+                            margin-top: 15px
+                            }
+
+                            .ultima_linea, tr.ultima_linea td, .tabla_productos tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1px solid black;
+                            }
+
+                            .tabla_productos tr.ultima_linea > td.celda_larga{
+                            border:none;
+                            padding-right: 10px;
+                            }
+
+                            .tabla_productos tr th,.tabla_productos tr td{
+                            border-bottom: none;
+                            width: 15%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_productos tr th.celda_larga,.tabla_productos tr td.celda_larga{
+                            width: 40%;
+                            padding-top: 5px;
+                            }
+
+                            .tabla_totales tr th,.tabla_totales tr td{
+                            width: 14%;
+                            padding-top: 5px;
+                            padding-left: 2px;
+                            }
+
+                            .tabla_totales tr td.celda_larga,.tabla_totales tr th.celda_larga{
+                            border: none;
+                            width: 30%;
+                            padding-top: 5px;
+                            }
+
+                            .tabla_totales tr.ultima_linea > td{
+                            border-right: none;
+                            border-left: none;
+                            border-bottom: none;
+                            border-top: 1.5px solid black;
+                            }
+
+                            .etiqueta{
+                            position: absolute;
+                            top:-10px;
+                            left: 50px;
+                            background-color: white;
+                            }
+
+                            .bordeado{
+                            border: 1px solid #cacaca;
+                            border-radius: 5px;
+                            }
+
+                            .bordeado_serio{
+                            border: 1px solid black;
+                            border-radius: 1px;
+                            }
+
+                            .bordeado_serio_ancho{
+                            border: 3px solid #2B2B2B;
+                            }
+
+                            .bordeado_lateral_izq{
+                            border-left: 1px solid black;
+                            }
+
+                            .bordeado_lateral_der{
+                            border-right: 1px solid black;
+                            }
+
+                            .top_linea{
+                            border-top: 1px solid black;
+                            }
+
+                            .bottom_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .despegar{
+                            margin-bottom: 6px;
+                            margin-top: 6px;
+                            }
+
+                            .depegar_adentro{
+                            padding-top: 8px;
+                            }
+
+                            .bajar{
+                            margin-top: 60px;
+                            }
+
+                            .bajar_poco{
+                            margin-top: 5px;
+                            }
+
+                            .tabla_default,tabla_totales{
+                            width: 100%;
+                            }
+
+                            .tabla_linea_head tr th, .under_linea{
+                            border-bottom: 1px solid black;
+                            }
+
+                            .row {
+                            margin-left: -15px;
+                            margin-right: -15px;
+                            }
+
+                            .row::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                            }
+
+                            .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8,
+                            .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 5px;
+                            padding-left: 5px;
+                            }
+
+                            .col-mi-1, .col-mi-2, .col-mi-3, .col-mi-4, .col-mi-5, .col-mi-6, .col-mi-7, .col-mi-8,
+                            .col-mi-9, .col-mi-10, .col-mi-11, .col-mi-12{
+                            position: relative;
+                            min-height: 1px;
+                            }
+
+                            .col-xs-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-mi-1 {
+                            float: left;
+                            width: 8.333333%;
+                            }
+
+                            .col-xs-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-mi-2 {
+                            float: left;
+                            width: 16.666667%;
+                            }
+
+                            .col-xs-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-mi-3 {
+                            float: left;
+                            width: 25%;
+                            }
+
+                            .col-xs-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-mi-4 {
+                            float: left;
+                            width: 33.333333%;
+                            }
+
+                            .col-xs-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-mi-5 {
+                            float: left;
+                            width: 41.666667%;
+                            }
+
+                            .col-xs-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-mi-6 {
+                            float: left;
+                            width: 50%;
+                            }
+
+                            .col-xs-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-mi-7 {
+                            float: left;
+                            width: 58.333333%;
+                            }
+
+                            .col-xs-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-mi-8 {
+                            float: left;
+                            width: 66.666667%;
+                            }
+
+                            .col-xs-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-mi-9 {
+                            float: left;
+                            width: 75%;
+                            }
+
+                            .col-xs-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-mi-10 {
+                            float: left;
+                            width: 83.333333%;
+                            }
+
+                            .col-xs-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-mi-11 {
+                            float: left;
+                            width: 91.666667%;
+                            }
+
+                            .col-xs-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .col-mi-12 {
+                            float: left;
+                            width: 100%;
+                            }
+
+                            .offset-xs-1 {
+                            margin-left: 8.333333%;
+                            }
+
+                            .offset-xs-2 {
+                            margin-left: 16.666667%;
+                            }
+
+                            .offset-xs-3 {
+                            margin-left: 25%;
+                            }
+
+                            .offset-xs-4 {
+                            margin-left: 33.333333%;
+                            }
+
+                            .offset-xs-5 {
+                            margin-left: 41.666667%;
+                            }
+
+                            .offset-xs-6 {
+                            margin-left: 50%;
+                            }
+
+                            .offset-xs-7 {
+                            margin-left: 58.333333%;
+                            }
+
+                            .offset-xs-8 {
+                            margin-left: 66.666667%;
+                            }
+
+                            .offset-xs-9 {
+                            margin-left: 75%;
+                            }
+
+                            .offset-xs-10 {
+                            margin-left: 83.333333%;
+                            }
+
+                            .offset-xs-11 {
+                            margin-left: 91.666667%;
                             }
 
                         </style>
