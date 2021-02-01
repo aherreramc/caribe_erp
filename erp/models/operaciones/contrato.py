@@ -23,17 +23,17 @@ class Contrato(models.Model):
     _name = "erp.operaciones.contrato"
     _order = "fecha_valor desc"
 
-    @api.model
-    def _default_currency(self):
-        return 3
+    # @api.model
+    # def _default_currency(self):
+    #     return 3
 
     @api.model
     def _default_currency_euro(self):
         return 1
 
-    @api.model
-    def _default_compannia(self):
-        return 3
+    # @api.model
+    # def _default_compannia(self):
+    #     return 3
 
     @api.model
     def _default_tasa(self):
@@ -55,7 +55,7 @@ class Contrato(models.Model):
         return dominio
 
     name = fields.Char(required=True, default="Nuevo Contrato")
-    compannia = fields.Many2one('res.company', required=True, default=_default_compannia)
+    compannia = fields.Many2one('res.company', required=True)
     proveedor = fields.Many2one('res.partner', domain="[('supplier', '=', True)]")
     fecha_valor = fields.Date()
     fecha_entrega_documentos_banco = fields.Date()
