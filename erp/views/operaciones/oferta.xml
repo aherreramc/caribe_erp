@@ -1157,6 +1157,42 @@
                                 </div>
 
                             </page>
+                            <page string="Other Info" name="other_information">
+                            <group>
+                                <group name="sales_person" string="Sales">
+                                    <field name="user_id"/>
+                                    <field name="team_id" kanban_view_ref="736" options="{'no_create': True}"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                    <field name="require_signature"/>
+                                    <field name="require_payment"/>
+                                    <field name="reference" readonly="1" attrs="{'invisible': [('reference', '=', False)]}"/>
+                                    <field name="client_order_ref"/>
+                                </group>
+                                <group name="sale_info" string="Invoicing">
+                                    <field name="fiscal_position_id" options="{'no_create': True}"/>
+                                    <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" attrs="{'readonly': [('invoice_count','!=',0),('state','=','sale')]}" groups="analytic.group_analytic_accounting" force_save="1"/>
+                                    <field name="invoice_status" states="sale,done" groups="base.group_no_one"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group name="sale_shipping">
+                                    <label for="commitment_date" string="Delivery Date"/>
+                                    <div class="o_row">
+                                        <field name="commitment_date"/> <span class="text-muted">Expected: <field name="expected_date" widget="date"/></span>
+                                    </div>
+                                </group>
+                                <group string="Reporting" name="sale_reporting" groups="base.group_no_one">
+                                    <group name="technical" colspan="2" class="mb-0">
+                                        <field name="origin"/>
+                                    </group>
+                                    <group name="utm_link" colspan="2" class="mt-0">
+                                        <field name="campaign_id"/>
+                                        <field name="medium_id"/>
+                                        <field name="source_id"/>
+                                    </group>
+                                </group>
+                            </group>
+                        </page>
                         </notebook>
                     </sheet>
                     <style type="text/css">
