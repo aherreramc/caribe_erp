@@ -1409,19 +1409,19 @@
                                         <tr t-foreach="doc.order_line" t-as="linea" class="bottom_linea">
                                             <t t-if="doc.image">
                                                 <t t-if="linea.product_id.image">
-                                                    <!--td class="text-center" width="30%" height="5%">
+                                                    <td class="bordeado_lateral_izq text-center" width="30%" height="5%">
                                                         <img t-attf-src="data:image/*;base64,{{linea.product_id.image_1920}}"
                                                              style="width:100;height:40"/>
-                                                    </td-->
+                                                    </td>
 
-                                                    <td class="text_center  bordeado_lateral_der">
+                                                    <!--td class="bordeado_lateral_izq text_center bordeado_lateral_der">
                                                         <p>
                                                             <span>
                                                                 <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_1920"
                                                                      class="alejandro_centrar_imagen_en_td"/>
                                                             </span>
                                                         </p>
-                                                    </td>
+                                                    </td-->
                                                 </t>
                                                 <t t-else="">
                                                     <td class="text_center bordeado_lateral_izq bordeado_lateral_der"></td>
