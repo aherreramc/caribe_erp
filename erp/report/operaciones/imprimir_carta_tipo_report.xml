@@ -5,6 +5,7 @@
     <template id="erp.imprimir_carta_tipo_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="oferta">
+                <t t-call="erp.header_oferta"/>
                 <div class="article o_report_stock_rule">
                     <div class="page">
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
@@ -807,7 +808,9 @@
                 </div>
             </t>
 
+
             <t t-foreach="docs" t-as="doc">
+                <t t-call="erp.header_oferta"/>
                 <t t-set="cant_filas" t-value="1"/>
                 <div class="article o_report_stock_rule">
                     <div class="page">
