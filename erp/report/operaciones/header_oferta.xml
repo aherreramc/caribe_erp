@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--<template id="external_layout_header_inherit_cr"-->
-              <!--inherit_id="report.external_layout_header">-->
-        <!--<xpath expr="//div[@class='header']" position="replace">-->
-            <!--<div class="header">-->
-                <!--&lt;!&ndash; code &ndash;&gt;-->
-            <!--</div>-->
-        <!--</xpath>-->
-    <!--</template>-->
-  <!---->
+    <template id="web_external_layout_iherited"
+              inherit_id="web.external_layout_standard" customize_show="True"
+              name="Automatic Header">
+        <xpath expr="//div[@class='header']" position="replace">
+            Hola
+        </xpath>
+    </template>
+
+
 </odoo> 
