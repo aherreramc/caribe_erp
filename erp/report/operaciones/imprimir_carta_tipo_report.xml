@@ -327,49 +327,6 @@
                                 <p>Quedamos a su disposición en caso de que requiera más detalles.</p>
                                 <p>Atentamente,</p>
                             </div>
-
-                             <div class="despegar_mas div_firma">
-
-                                    a
-                                    <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
-                                    <p t-if="oferta.firma.name">
-                                        b
-                                        <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
-                                    </p>
-                                    <p t-if="oferta.firma.name">
-                                        <span t-esc="oferta.firma.name"/>
-                                    </p>
-
-
-                            <!--<div class="despegar_mas div_firma">-->
-                                <!--<div>-->
-                                    <!--a-->
-                                    <!--&lt;!&ndash;p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p&ndash;&gt;-->
-                                    <!--<p t-if="oferta.firma.name">-->
-                                        <!--b-->
-                                        <!--<span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>-->
-                                    <!--</p>-->
-                                    <!--<p t-if="oferta.firma.name">-->
-                                        <!--<span t-esc="oferta.firma.name"/>-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            </div>
-                        </div>
-                        <!--div class="col-xs-10 offset-xs-1 despegar" >
-                             <div class="col-xs-12 text-right despegar"-->
-                        <div class="row">
-                            <div class="despegar_mas div_firma">
-                                <div>
-                                    <!--p t-if="oferta.firma.name"><span class="firma" t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/></p-->
-                                    <p t-if="oferta.firma.name">
-                                        aa
-                                        <span t-esc="oferta.firma.firma" t-options="{'widget': 'image'}"/>
-                                    </p>
-                                    <p t-if="oferta.firma.name">
-                                        <span t-esc="oferta.firma.name"/>
-                                    </p>
-                                </div>
-                            </div>
                         </div>
 
 
