@@ -243,7 +243,7 @@ class SaleOrderTemplate(models.Model):
 
     def eliminar_productos_cantidad_producto_actual_cero(self):
         for linea in self.order_line:
-            if linea.cantidad_producto_actual_oferta == 0:
+            if linea.product_uom_qty == 0:
                 linea.unlink()
 
 
@@ -259,7 +259,7 @@ class SaleOrderTemplate(models.Model):
         #     linea.cantidad_producto_total_oferta = linea.producto.cantidad_minima_de_orden
         #
         #     if linea.cantidad_por_caja_master != 0:
-        #         linea.volumen_total_de_linea_producto = linea.cantidad_producto_actual_oferta * linea.volumen_caja_master / linea.cantidad_por_caja_master
+        #         linea.volumen_total_de_linea_producto = linea.product_uom_qty * linea.volumen_caja_master / linea.cantidad_por_caja_master
         #
         #
         # for entrega in self.entregas:
@@ -303,7 +303,7 @@ class SaleOrderTemplate(models.Model):
         pass
 
         for linea in self.order_line:
-            linea.cantidad_producto_actual_oferta = 0
+            linea.product_uom_qty = 0
             linea.volumen_total_de_linea_producto = 0
             linea.importe_total_de_linea_producto = 0
 
