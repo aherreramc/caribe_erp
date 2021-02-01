@@ -104,11 +104,6 @@ class Contrato(models.Model):
 
     lista_de_precios = fields.Many2one('erp.nomencladores.lista_de_precios', string='Lista de precios')
 
-    lleno_o_mezclado = fields.Selection([
-        (1, "Lleno"),
-        (2, "Mezclado"),
-    ], default=2)
-
     # Campos para calcular los importes totales de la oferta
     autocalcular = fields.Boolean('Autocalcular', default=True)
 
