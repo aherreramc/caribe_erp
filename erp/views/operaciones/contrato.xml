@@ -162,7 +162,7 @@
                                 </div>
 
 
-                                <!--div class="col-xs-12">
+                                <div class="col-xs-12">
                                     <label for="descripcion_contrato_para_facturas">Descripción para imprimir en las facturas</label>
                                     <field name="descripcion_contrato_para_facturas" widget="html"/>
                                 </div>
@@ -176,7 +176,7 @@
                                 <div class="col-xs-12">
                                     <label for="observaciones">Observaciones</label>
                                     <field name="observaciones"/>
-                                </div-->
+                                </div>
 
 
                             </page>
@@ -235,7 +235,7 @@
                                     </field>
                                 </div>
                             </page-->
-                            <!--page string="Carta de crédito">
+                            <page string="Carta de crédito">
                                 <div class="col-xs-12">
                                     <div class="col-mi-6">
                                         <group col="2">
@@ -300,8 +300,8 @@
                                     </tree>
                                 </field>
 
-                            </page-->
-                            <!--page string="Original y suplementos">
+                            </page>
+                            <page string="Original y suplementos">
                                 <button name="nueva_version" string="Nuevo suplemento" type="object"/>
 
                                 <field name="versiones"  options="{'no_create': True}">
@@ -310,7 +310,7 @@
                                         <field name="fecha_valor"/>
                                     </tree>
                                 </field>
-                            </page-->
+                            </page>
                         </notebook>
                     </sheet>
 
