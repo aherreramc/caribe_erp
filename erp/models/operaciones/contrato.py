@@ -2,7 +2,6 @@
 
 from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
-from odoo.addons.base.res.res_partner import WARNING_MESSAGE, WARNING_HELP
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from openerp.exceptions import except_orm, Warning, RedirectWarning
