@@ -94,8 +94,8 @@ class Contrato(models.Model):
     financiamiento_usd_importe = fields.Monetary(string='Financiamiento USD', currency_field='moneda_usd')
     financiamiento_euro_importe = fields.Monetary(string='Financiamiento USD', currency_field='moneda_informativa')
 
-    proveedor = fields.Many2one('res.partner', domain="[('supplier', '=', True)]")
-    cliente = fields.Many2one('res.partner', required=True, domain="[('customer', '=', True)]")
+    proveedor = fields.Many2one('res.partner', domain="[('supplier_rank', '>', 0)]")
+    cliente = fields.Many2one('res.partner', required=True, domain="[('customer_rank', '>', 0)]")
 
     descripcion_contrato_para_facturas = fields.Text('Descripción para imprimir en las facturas')
     descripcion_contrato_para_beneficiario = fields.Text('Descripción para imprimir la declaración de beneficiario')
