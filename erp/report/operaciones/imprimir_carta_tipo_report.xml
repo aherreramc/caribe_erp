@@ -6,22 +6,26 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="oferta">
                 <div class="header">
-                    a
-                    <span t-esc="proveedor"/>
-                    bc
                     <div class="row">
-                        <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
-                            <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
-                        </div>
-                        <div t-if="proveedor==62" class="col-xs-12"> <!--"DE'LONGHI APPLIANCES S.R.L"-->
-                            <img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>
-                        </div>
-                        <div t-if="proveedor==80" class="col-xs-12"> <!--"DE'LONGHI AMERICA, INC."-->
-                            <img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>
-                        </div>
-                        <div t-if="proveedor==86" class="col-xs-12"> <!--"Zeus Caribe"-->
-                            <img src="/erp/static/src/img/header_factura_img.png"/>
-                        </div>
+                        <t t-if="proveedor">
+                            <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
+                                <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
+                            </div>
+                            <div t-if="proveedor==62" class="col-xs-12"> <!--"DE'LONGHI APPLIANCES S.R.L"-->
+                                <img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>
+                            </div>
+                            <div t-if="proveedor==80" class="col-xs-12"> <!--"DE'LONGHI AMERICA, INC."-->
+                                <img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>
+                            </div>
+                            <div t-if="proveedor==86" class="col-xs-12"> <!--"Zeus Caribe"-->
+                                <img src="/erp/static/src/img/header_factura_img.png"/>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div t-else="" class="col-xs-12"> <!--"Zeus Caribe"-->
+                                <img src="/erp/static/src/img/header_factura_img.png"/>
+                            </div>
+                        </t>
                     </div>
                 </div>
                 <div class="article o_report_stock_rule">
