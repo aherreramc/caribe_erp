@@ -8,7 +8,7 @@
                 <div class="header">
                     a
                     <span t-esc="proveedor"/>
-                    b
+                    bc
                     <div class="row">
                         <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
                             <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
