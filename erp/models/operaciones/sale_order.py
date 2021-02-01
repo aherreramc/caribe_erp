@@ -230,6 +230,8 @@ class SaleOrderTemplate(models.Model):
                 for linea_otra_oferta_traer_productos in order.otra_oferta_traer_productos.order_line:
                     existe = False
 
+                    raise except_orm("A")
+
                     for linea in order.order_line:
                         if linea.producto.id == linea_otra_oferta_traer_productos.producto.id:
                             existe = True
