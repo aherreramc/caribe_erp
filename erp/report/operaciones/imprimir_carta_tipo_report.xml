@@ -7,18 +7,20 @@
             <t t-foreach="docs" t-as="oferta">
                 <div class="header">
                     <div class="row">
-                        <div t-if="proveedor==16" class="col-xs-12"> <!--"DE’LONGHI KENWOOD A.P.A"-->
-                            <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
-                        </div>
-                        <div t-if="proveedor==62" class="col-xs-12"> <!--"DE'LONGHI APPLIANCES S.R.L"-->
-                            <img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>
-                        </div>
-                        <div t-if="proveedor==80" class="col-xs-12"> <!--"DE'LONGHI AMERICA, INC."-->
-                            <img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>
-                        </div>
-                        <div t-if="proveedor==86" class="col-xs-12"> <!--"Zeus Caribe"-->
-                            <img src="/erp/static/src/img/header_factura_img.png"/>
-                        </div>
+                        hey
+                        <img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>
+                        <!--<div t-if="proveedor==16" class="col-xs-12"> &lt;!&ndash;"DE’LONGHI KENWOOD A.P.A"&ndash;&gt;-->
+                            <!--<img src="/erp/static/src/img/delonghi_logo_todos.jpg" style="max-width:70%;"/>-->
+                        <!--</div>-->
+                        <!--<div t-if="proveedor==62" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI APPLIANCES S.R.L"&ndash;&gt;-->
+                            <!--<img src="/erp/static/src/img/delonghi_logo_solo.png" style="height:85px;"/>-->
+                        <!--</div>-->
+                        <!--<div t-if="proveedor==80" class="col-xs-12"> &lt;!&ndash;"DE'LONGHI AMERICA, INC."&ndash;&gt;-->
+                            <!--<img src="/erp/static/src/img/delongui_america_inc.jpg" style="height:85px;"/>-->
+                        <!--</div>-->
+                        <!--<div t-if="proveedor==86" class="col-xs-12"> &lt;!&ndash;"Zeus Caribe"&ndash;&gt;-->
+                            <!--<img src="/erp/static/src/img/header_factura_img.png"/>-->
+                        <!--</div>-->
                         <!--div t-if="proveedor=='DLUSA'" class="col-xs-12">
                            <img src="/erp/static/src/img/dlusa.png" style="height:85px;"/>
                         </div-->
