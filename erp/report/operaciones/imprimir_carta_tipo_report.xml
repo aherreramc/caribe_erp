@@ -1417,7 +1417,7 @@
                                                     <td class="text_center bordeado_lateral_izq bordeado_lateral_der">
                                                         <p>
                                                             <span>
-                                                                <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_128"
+                                                                <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_variant_128"
                                                                      class="alejandro_centrar_imagen_en_td"/>
                                                             </span>
                                                         </p>
