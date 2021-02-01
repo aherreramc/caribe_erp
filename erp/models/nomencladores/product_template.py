@@ -104,22 +104,43 @@ class ProductTemplate(models.Model):
 
 
     def name_get(self):
-        res = super(ProductTemplate, self).name_get()
+        res = super(Producto, self).name_get()
         data = []
-
-        for product in self:
+        for producto in self:
             display_value = ''
 
-            if product.name is not False:
-                display_value += product.name
+            if producto.descripcion_cliente is not False:
+                display_value += "" + producto.descripcion_cliente
 
-            if product.descripcion_cliente is not False:
-                if product.name is not False:
-                    display_value += ": "
-                display_value += product.descripcion_cliente
+            if producto.name is not False:
+                display_value += ", Modelo: " + producto.name
 
-            data.append((product.id, display_value))
+            if producto.tipo_de_producto.id is not False and producto.tipo_de_producto.name == 'Pieza de repuesto':
+                if len(producto.repuestos) > 0:
+                    display_value += ", Repuesto de: "
+                    cantidad_de_repuestos_restantes = len(producto.repuestos)
 
+                    for repuesto in producto.repuestos:
+                        display_value += repuesto.name
+
+                        if cantidad_de_repuestos_restantes > 2:
+                            display_value += ", "
+                            cantidad_de_repuestos_restantes -= 1
+                        elif cantidad_de_repuestos_restantes == 2:
+                            display_value += " y "
+                            cantidad_de_repuestos_restantes -= 1
+
+                if producto.posicion is not False:
+                    display_value += ", Posición: " + producto.posicion
+
+
+            # if producto.tipo_de_espiga.name is not False:
+            #     display_value += ", " + producto.tipo_de_espiga.name
+
+            if producto.marca.name is not False:
+                display_value += ", Marca: " + producto.marca.name
+
+            data.append((producto.id, display_value))
         return data
 
     def name_get_to_string(self):
