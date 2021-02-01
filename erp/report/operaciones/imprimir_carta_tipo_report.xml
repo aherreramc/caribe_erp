@@ -22,7 +22,7 @@
                             </div>
                         </t>
                         <t t-else="">
-                            <div t-else="" class="col-xs-12"> <!--"Zeus Caribe"-->
+                            <div class="col-xs-12"> <!--"Zeus Caribe"-->
                                 <img src="/erp/static/src/img/header_factura_img.png"/>
                             </div>
                         </t>
