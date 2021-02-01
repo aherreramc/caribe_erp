@@ -1415,7 +1415,7 @@
                                                     </td-->
 
                                                     <td class="bordeado_lateral_izq text-center" width="30%" height="5%">
-                                                        <img t-if="product_variant" t-att-src="'/web/image/product.product/%s/image_1024' % linea.product_id.image_1920" class="d-block product_detail_img" alt="Product Image"/>
+                                                        <!--img t-if="product_variant" t-att-src="'/web/image/product.product/%s/image_1024' % linea.product_id.image_1920" class="d-block product_detail_img" alt="Product Image"/-->
                                                     </td>
 
                                                     <!--td class="bordeado_lateral_izq text_center bordeado_lateral_der">
