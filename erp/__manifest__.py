@@ -58,7 +58,7 @@
 
         # Operaciones
         'views/operaciones/oferta.xml',
-
+        'views/operaciones/contrato.xml',
 
 
         # Reportes
