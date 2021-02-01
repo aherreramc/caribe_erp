@@ -104,7 +104,7 @@ class ProductTemplate(models.Model):
 
 
     def name_get(self):
-        res = super(Producto, self).name_get()
+        res = super(ProductTemplate, self).name_get()
         data = []
         for producto in self:
             display_value = ''
