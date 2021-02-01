@@ -6,10 +6,7 @@ from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from openerp.exceptions import except_orm, Warning, RedirectWarning
 from imp import reload
-import sys
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 from os import walk
 import shutil, os
