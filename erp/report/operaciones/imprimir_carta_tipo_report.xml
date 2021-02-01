@@ -1239,492 +1239,491 @@
                 <div class="article o_report_stock_rule">
                     <div class="page">
                         <div class="row contenido tamanno_texto" style="vertical-align: middle;">
+                            <div class="col-xs-12 fuente_alt">
 
-                                <div class="col-xs-12 fuente_alt">
-
-                                    <t t-set="cont_types" t-value="0"/>
-                                    <span t-if="doc.cliente" class="">
-                                        <b>Cliente:</b>
-                                        <span>
-                                            <span t-esc="doc.cliente.name"/>
-                                        </span>
+                                <t t-set="cont_types" t-value="0"/>
+                                <span t-if="doc.cliente" class="">
+                                    <b>Cliente:</b>
+                                    <span>
+                                        <span t-esc="doc.cliente.name"/>
                                     </span>
-                                    <span t-if="doc.fecha_valor" style="float:right;">
-                                        <b>Fecha:</b>
-                                        <span>
-                                            <span t-esc="doc.fecha_valor"/>
-                                        </span>
+                                </span>
+                                <span t-if="doc.fecha_valor" style="float:right;">
+                                    <b>Fecha:</b>
+                                    <span>
+                                        <span t-esc="doc.fecha_valor"/>
                                     </span>
+                                </span>
 
-                                    <p>
-                                    </p>
+                                <p>
+                                </p>
 
-                                    <table class="tabla_default top_linea letra_chica">
-                                        <thead>
-                                            <tr class="text_center fondo_gris bottom_linea">
-                                                <th t-if="doc.image"
-                                                    class="text_center bordeado_lateral_izq bordeado_lateral_der">
+                                <table class="tabla_default top_linea letra_chica">
+                                    <thead>
+                                        <tr class="text_center fondo_gris bottom_linea">
+                                            <th t-if="doc.image"
+                                                class="text_center bordeado_lateral_izq bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>IMAGEN</b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.modelo" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>MODELO</b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.marca" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>MARCA</b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>CÓDIGO<br/>CLIENTE
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.descripcion_cliente"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>DESCRIPCIÓN</b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.codigo_proveedor"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>CÓDIGO<br/>PROVEEDOR
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.descripcion_proveedor"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>DESCRIPTION
+                                                        <br/>
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.partida_arancelaria"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>PARTIDA<br/>ARANCELARIA
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>CÓDIGO<br/>BARRA
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>ALIMENTACIÓN<br/>tipo espiga
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.volumen_caja_master"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>VOLUMEN<br/>Caja<br/>master (m<sup>3</sup>)
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.cantidad_por_caja_master"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>CANTIDAD<br/>x caja<br/>master
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.medidas" class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>MEDIDA
+                                                        <br/>
+                                                    </b>
+                                                </p>
+                                            </th>
+                                            <th t-if="doc.cantidad_minima_de_orden"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>MOQ</b>
+                                                </p>
+                                            </th>
+
+                                            <t t-if="doc.pricelist_id">
+                                                <th class="text_center bordeado_lateral_der">
                                                     <p class="table_head">
-                                                        <b>IMAGEN</b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.modelo" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>MODELO</b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.marca" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>MARCA</b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>CÓDIGO<br/>CLIENTE
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.descripcion_cliente"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>DESCRIPCIÓN</b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.codigo_proveedor"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>CÓDIGO<br/>PROVEEDOR
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.descripcion_proveedor"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>DESCRIPTION
+                                                        <b>PRECIO<br/>UNITARIO
                                                             <br/>
                                                         </b>
                                                     </p>
                                                 </th>
-                                                <th t-if="doc.partida_arancelaria"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>PARTIDA<br/>ARANCELARIA
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>CÓDIGO<br/>BARRA
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>ALIMENTACIÓN<br/>tipo espiga
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.volumen_caja_master"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>VOLUMEN<br/>Caja<br/>master (m<sup>3</sup>)
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.cantidad_por_caja_master"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>CANTIDAD<br/>x caja<br/>master
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.medidas" class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>MEDIDA
-                                                            <br/>
-                                                        </b>
-                                                    </p>
-                                                </th>
-                                                <th t-if="doc.cantidad_minima_de_orden"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>MOQ</b>
-                                                    </p>
-                                                </th>
+                                            </t>
 
-                                                <t t-if="doc.pricelist_id">
-                                                    <th class="text_center bordeado_lateral_der">
-                                                        <p class="table_head">
-                                                            <b>PRECIO<br/>UNITARIO
-                                                                <br/>
-                                                            </b>
+                                            <th t-if="doc.cantidad_producto"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>CANTIDAD<br/>de producto
+                                                    </b>
+                                                </p>
+                                            </th>
+
+                                            <th t-if="doc.volumen_total_de_linea_producto"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_head">
+                                                    <b>VOLUMEN TOTAL</b>
+                                                </p>
+                                                <p class="table_head">
+                                                    <b>m3</b>
+                                                </p>
+                                            </th>
+
+                                            <t t-if="oferta.currency_id">
+                                                <th t-if="doc.importe_total_de_linea"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>IMPORTE</b>
+                                                    </p>
+                                                    <p class="table_head">
+                                                        <b>
+                                                            <span t-esc="oferta.currency_id.name"/>
+                                                        </b>
+                                                    </p>
+                                                </th>
+                                            </t>
+                                            <t t-else="">
+                                                <th t-if="doc.importe_total_de_linea"
+                                                    class="text_center bordeado_lateral_der">
+                                                    <p class="table_head">
+                                                        <b>IMPORTE</b>
+                                                    </p>
+                                                </th>
+                                            </t>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        <tr t-foreach="doc.order_line" t-as="linea" class="bottom_linea">
+                                            <t t-if="linea.product_id.image_variant">
+                                                <t t-if="linea.product_id.image_variant">
+                                                    <td class="text-center" width="30%" height="5%">
+                                                        <img t-attf-src="data:image/*;base64,{{linea.product_id.image_variant}}"
+                                                             style="width:100;height:40"/>
+                                                    </td>
+
+                                                    <!--td class="text_center bordeado_lateral_izq bordeado_lateral_der">
+                                                        <p>
+                                                            <span>
+                                                                <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_variant"
+                                                                     class="alejandro_centrar_imagen_en_td"/>
+                                                            </span>
                                                         </p>
-                                                    </th>
-                                                </t>
-
-                                                <th t-if="doc.cantidad_producto"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>CANTIDAD<br/>de producto
-                                                        </b>
-                                                    </p>
-                                                </th>
-
-                                                <th t-if="doc.volumen_total_de_linea_producto"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_head">
-                                                        <b>VOLUMEN TOTAL</b>
-                                                    </p>
-                                                    <p class="table_head">
-                                                        <b>m3</b>
-                                                    </p>
-                                                </th>
-
-                                                <t t-if="oferta.currency_id">
-                                                    <th t-if="doc.importe_total_de_linea"
-                                                        class="text_center bordeado_lateral_der">
-                                                        <p class="table_head">
-                                                            <b>IMPORTE</b>
-                                                        </p>
-                                                        <p class="table_head">
-                                                            <b>
-                                                                <span t-esc="oferta.currency_id.name"/>
-                                                            </b>
-                                                        </p>
-                                                    </th>
+                                                    </td-->
                                                 </t>
                                                 <t t-else="">
-                                                    <th t-if="doc.importe_total_de_linea"
-                                                        class="text_center bordeado_lateral_der">
-                                                        <p class="table_head">
-                                                            <b>IMPORTE</b>
-                                                        </p>
-                                                    </th>
+                                                    <td class="text_center bordeado_lateral_izq bordeado_lateral_der"></td>
                                                 </t>
+                                            </t>
 
-                                            </tr>
-                                        </thead>
+                                            <td t-if="doc.modelo" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.name"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.marca" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.marca.name"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.codigo_cliente"/>
+                                                </p>
+                                            </td>
+
+                                            <td t-if="doc.descripcion_cliente"
+                                                class="text_left bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.name_get_to_string()"/>
+                                                </p>
+                                            </td>
+
+                                            <td t-if="doc.codigo_proveedor"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.codigo_proveedor"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.descripcion_proveedor"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.descripcion_proveedor"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.partida_arancelaria"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.partida_arancelaria"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.codigo_de_barra"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.tipo_de_espiga.name"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.volumen_caja_master"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.volumen_caja_master"/>
+                                                </p>
+                                            </td>
+
+                                            <td t-if="doc.cantidad_por_caja_master"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.cantidad_por_caja_master"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.medidas" class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.medidas"/>
+                                                </p>
+                                            </td>
+
+                                            <td t-if="doc.cantidad_minima_de_orden"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_id.cantidad_minima_de_orden"/>
+                                                </p>
+                                            </td>
+
+                                            <td class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.price_unit"
+                                                          t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
+                                                </p>
+                                            </td>
+
+                                            <td t-if="doc.cantidad_producto"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.product_uom_qty"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.volumen_total_de_linea_producto"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.volumen_total_de_linea_producto"/>
+                                                </p>
+                                            </td>
+                                            <td t-if="doc.importe_total_de_linea"
+                                                class="text_center bordeado_lateral_der">
+                                                <p class="table_body">
+                                                    <span t-esc="linea.price_subtotal"
+                                                          t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
+                                                </p>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
 
 
+                                <t t-if="oferta.imprimir_totales_oferta">
+                                    <table class="tabla_20_percent float_right margin_top">
                                         <tbody>
-                                            <tr t-foreach="doc.order_line" t-as="linea" class="bottom_linea">
-                                                <t t-if="doc.image">
-                                                    <t t-if="linea.product_id.image_variant">
-                                                        <td class="text-center" width="30%" height="5%">
-                                                            <img t-attf-src="data:image/*;base64,{{linea.product_id.image_variant}}"
-                                                                 style="width:100;height:40"/>
-                                                        </td>
-
-                                                        <!--td class="text_center bordeado_lateral_izq bordeado_lateral_der">
-                                                            <p>
-                                                                <span>
-                                                                    <img t-att-src="'data:image/png;base64,%s' % linea.product_id.image_variant"
-                                                                         class="alejandro_centrar_imagen_en_td"/>
-                                                                </span>
-                                                            </p>
-                                                        </td-->
-                                                    </t>
-                                                    <t t-else="">
-                                                        <td class="text_center bordeado_lateral_izq bordeado_lateral_der"></td>
-                                                    </t>
-                                                </t>
-
-                                                <td t-if="doc.modelo" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.name"/>
+                                            <tr t-if="doc.exw" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe EXW:</b>
                                                     </p>
                                                 </td>
-                                                <td t-if="doc.marca" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.marca.name"/>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.exw"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
                                                     </p>
                                                 </td>
-                                                <td t-if="doc.codigo_cliente" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.codigo_cliente"/>
-                                                    </p>
-                                                </td>
-
-                                                <td t-if="doc.descripcion_cliente"
-                                                    class="text_left bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.name_get_to_string()"/>
-                                                    </p>
-                                                </td>
-
-                                                <td t-if="doc.codigo_proveedor"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.codigo_proveedor"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.descripcion_proveedor"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.descripcion_proveedor"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.partida_arancelaria"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.partida_arancelaria"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.codigo_de_barra" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.codigo_de_barra"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.tipo_de_espiga" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.tipo_de_espiga.name"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.volumen_caja_master"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.volumen_caja_master"/>
-                                                    </p>
-                                                </td>
-
-                                                <td t-if="doc.cantidad_por_caja_master"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.cantidad_por_caja_master"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.medidas" class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.medidas"/>
-                                                    </p>
-                                                </td>
-
-                                                <td t-if="doc.cantidad_minima_de_orden"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_id.cantidad_minima_de_orden"/>
-                                                    </p>
-                                                </td>
-
-                                                <td class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.price_unit"
-                                                              t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
-                                                    </p>
-                                                </td>
-
-                                                <td t-if="doc.cantidad_producto"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.product_uom_qty"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.volumen_total_de_linea_producto"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.volumen_total_de_linea_producto"/>
-                                                    </p>
-                                                </td>
-                                                <td t-if="doc.importe_total_de_linea"
-                                                    class="text_center bordeado_lateral_der">
-                                                    <p class="table_body">
-                                                        <span t-esc="linea.price_subtotal"
-                                                              t-options="{'widget': 'monetary', 'display_currency': linea.currency_id}"/>
-                                                    </p>
-                                                </td>
-
                                             </tr>
+                                            <tr t-if="doc.flete_terrestre" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Flete Terrestre:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.flete_terrestre"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.mercancia" class="sin_bordes italica">
+                                                <t t-if="doc.mercancia != doc.exw">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe FOB:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.mercancia"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                        </p>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                            <tr t-if="doc.flete" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Flete:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.flete"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.seguro" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Seguro:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.seguro"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.inspeccion" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Inspección:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.inspeccion"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.financiamiento_importe" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Financiamiento:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.financiamiento_importe"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.importe_total != doc.mercancia"
+                                                class="sin_bordes italica">
+                                                <tr t-if="doc.importe_total != doc.importe_repuestos_con_descuento"
+                                                    class="sin_bordes italica">
+                                                    <td colspan="6" class="text-right espacio_al_final_2">
+                                                        <p>
+                                                            <b>Importe Subtotal:</b>
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <p>
+                                                            <span t-esc="doc.importe_total"
+                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                            <tr t-if="doc.importe_repuestos_sin_descuento"
+                                                class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Repuestos:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.importe_repuestos_sin_descuento"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.importe_descuento" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Descuento Repuestos:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.importe_descuento"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.importe_opcional_1" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b><span t-esc="doc.opcional_1"/>:
+                                                        </b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.importe_opcional_1"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.importe_opcional_2" class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b><span t-esc="doc.opcional_2"/>:
+                                                        </b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.importe_opcional_2"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="doc.importe_repuestos_con_descuento"
+                                                class="sin_bordes italica">
+                                                <td colspan="6" class="text-right espacio_al_final_2">
+                                                    <p>
+                                                        <b>Importe Total:</b>
+                                                    </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <span t-esc="doc.importe_repuestos_con_descuento"
+                                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
                                         </tbody>
                                     </table>
-
-
-                                    <t t-if="oferta.imprimir_totales_oferta">
-                                        <table class="tabla_20_percent float_right margin_top">
-                                            <tbody>
-                                                <tr t-if="doc.exw" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe EXW:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.exw"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.flete_terrestre" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Flete Terrestre:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.flete_terrestre"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.mercancia" class="sin_bordes italica">
-                                                    <t t-if="doc.mercancia != doc.exw">
-                                                        <td colspan="6" class="text-right espacio_al_final_2">
-                                                            <p>
-                                                                <b>Importe FOB:</b>
-                                                            </p>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <p>
-                                                                <span t-esc="doc.mercancia"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                            </p>
-                                                        </td>
-                                                    </t>
-                                                </tr>
-                                                <tr t-if="doc.flete" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Flete:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.flete"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.seguro" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Seguro:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.seguro"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.inspeccion" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Inspección:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.inspeccion"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.financiamiento_importe" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Financiamiento:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.financiamiento_importe"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.importe_total != doc.mercancia"
-                                                    class="sin_bordes italica">
-                                                    <tr t-if="doc.importe_total != doc.importe_repuestos_con_descuento"
-                                                        class="sin_bordes italica">
-                                                        <td colspan="6" class="text-right espacio_al_final_2">
-                                                            <p>
-                                                                <b>Importe Subtotal:</b>
-                                                            </p>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <p>
-                                                                <span t-esc="doc.importe_total"
-                                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tr>
-                                                <tr t-if="doc.importe_repuestos_sin_descuento"
-                                                    class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Repuestos:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.importe_repuestos_sin_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.importe_descuento" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Descuento Repuestos:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.importe_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.importe_opcional_1" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b><span t-esc="doc.opcional_1"/>:
-                                                            </b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.importe_opcional_1"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.importe_opcional_2" class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b><span t-esc="doc.opcional_2"/>:
-                                                            </b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.importe_opcional_2"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr t-if="doc.importe_repuestos_con_descuento"
-                                                    class="sin_bordes italica">
-                                                    <td colspan="6" class="text-right espacio_al_final_2">
-                                                        <p>
-                                                            <b>Importe Total:</b>
-                                                        </p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <p>
-                                                            <span t-esc="doc.importe_repuestos_con_descuento"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </t>
-                                </div>
+                                </t>
+                            </div>
                         </div>
 
                         <style type="text/css">
