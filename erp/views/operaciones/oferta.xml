@@ -44,7 +44,7 @@
                     <header>
                         <button name="imprimir_carta_tipo" string="Imprimir Carta Tipo" type="object" groups=""/>
 
-                        <field name="authorized_transaction_ids" invisible="1"/>
+                        <!--field name="authorized_transaction_ids" invisible="1"/>
                         <button name="payment_action_capture" type="object" string="Capture Transaction" class="oe_highlight" attrs="{'invisible': [('authorized_transaction_ids', '=', [])]}"/>
                         <button name="payment_action_void" type="object" string="Void Transaction" confirm="Are you sure you want to void the authorized transaction? This action can't be undone." attrs="{'invisible': [('authorized_transaction_ids', '=', [])]}"/>
                         <button name="381" string="Create Invoice" type="action" class="btn-primary" attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
@@ -56,7 +56,7 @@
                         <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('invoice_count','&gt;=',1)]}" context="{'proforma': True}"/>
                         <button name="action_quotation_send" string="Send by Email" type="object" states="sent,sale"/>
                         <button name="action_cancel" states="draft,sent,sale" type="object" string="Cancel"/>
-                        <button name="action_draft" states="cancel" type="object" string="Set to Quotation"/>
+                        <button name="action_draft" states="cancel" type="object" string="Set to Quotation"/-->
                         <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
 
 
@@ -1157,7 +1157,7 @@
                                 </div>
 
                             </page>
-                            <page string="Other Info" name="other_information">
+                            <!--page string="Other Info" name="other_information">
                             <group>
                                 <group name="sales_person" string="Sales">
                                     <field name="user_id"/>
@@ -1192,7 +1192,7 @@
                                     </group>
                                 </group>
                             </group>
-                        </page>
+                        </page-->
                         </notebook>
                     </sheet>
                     <style type="text/css">
