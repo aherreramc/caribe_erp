@@ -693,7 +693,6 @@ class Contrato(models.Model):
         return sinTildes
 
 
-    @api.multi
     def copy(self, default=None):
         registro = super(Contrato, self).copy(default)
         registro.fecha_valor = date.today()
