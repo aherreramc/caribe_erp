@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xs-12">
+                                <!--div class="col-xs-12">
                                     <div class="col-mi-6">
                                         <group col="2">
                                             <field name="numero"/>
@@ -176,7 +176,7 @@
                                 <div class="col-xs-12">
                                     <label for="observaciones">Observaciones</label>
                                     <field name="observaciones"/>
-                                </div>
+                                </div-->
 
 
                             </page>
